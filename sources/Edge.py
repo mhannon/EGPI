@@ -13,9 +13,6 @@ class Edge:
     def get_id(self):
         return self.id
 
-    def is_at_same_position(self, other):
-        return self.u == other.u and self.v == other.v
-
     def __copy__(self):
         return Edge(self.u, self.v, self.id)
 

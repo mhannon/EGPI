@@ -1,9 +1,9 @@
 from sources.ExperimentEdge import ExperimentEdge
+from sources.EdgesSet import EdgesSet
 
-
-class ExperimentEdgesSet:
+class ExperimentEdgesSet(EdgesSet):
     def __init__(self):
-        self.edges = set()
+        super().__init__()
 
     def weight(self):
         if not self.edges:
@@ -20,6 +20,21 @@ class ExperimentEdgesSet:
             vertex_colouring[edge.get_u()] = edge.get_u_colour()
             vertex_colouring[edge.get_v()] = edge.get_v_colour()
         return tuple(vertex_colouring)
+
+    def to_dict(self, number_of_nodes):
+        return {
+            "weight": {
+                "real": self.weight().real,
+                "imaginary": self.weight().imag
+            },
+            "induced_vertex_colouring": self.get_vertex_colouring(number_of_nodes),
+            "edges": [edge.to_dict() for edge in self.edges]
+        }
+
+    def add_edge(self, edge):
+        if type(edge) != ExperimentEdge:
+            raise TypeError("The edge must be of type ExperimentEdge.")
+        self.edges.add(edge)
 
     def __add__(self, other):
         if type(other) == ExperimentEdge:

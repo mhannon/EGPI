@@ -5,7 +5,9 @@ class EdgesSet:
     def __init__(self):
         self.edges = set()
 
-    def add_edge(self, edge: Edge):
+    def add_edge(self, edge):
+        if type(edge) != Edge:
+            raise TypeError("The edge must be of type Edge.")
         self.edges.add(edge)
 
     def remove_edge(self, edge: Edge):

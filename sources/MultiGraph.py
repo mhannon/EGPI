@@ -86,11 +86,11 @@ class MultiGraph:
         new_graph.number_of_edges = self.number_of_edges
         return new_graph
 
+    def __eq__(self, other):
+        return self.adjacency == other.adjacency
+
     def __str__(self):
         return str(self.adjacency)
 
     def __repr__(self):
         return str(self)
-
-    def __eq__(self, other):
-        return self.adjacency == other.adjacency

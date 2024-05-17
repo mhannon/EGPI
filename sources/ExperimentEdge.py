@@ -48,6 +48,19 @@ class ExperimentEdge(Edge):
             return str(real_part) + "-i"
         return str(real_part) + "-" + str(-imaginary_part) + "i"
 
+    def to_dict(self):
+        return {
+            "u": self.u,
+            "v": self.v,
+            "edge_id": self.id,
+            "weight": {
+                "real": self.weight.real,
+                "imaginary": self.weight.imag
+            },
+            "u_colour": self.u_colour,
+            "v_colour": self.v_colour
+        }
+
     def __copy__(self):
         return ExperimentEdge(self.u, self.v, self.id, self.weight, self.u_colour, self.v_colour)
 
