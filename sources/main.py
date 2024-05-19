@@ -4,6 +4,7 @@ Date: 2024-05-07
 """
 
 import itertools
+import json
 import os
 import random
 from sources.ExperimentGraph import ExperimentGraph
@@ -162,42 +163,24 @@ def number_of_saved_graph_in(folder: str):
     return len([file for file in files if file.endswith(".json")])
 
 
-"""
-def generate_all_graphs(number_of_nodes: int,
-                        colours: list,
-                        weights: list,
-                        results_folder: str,
-                        min_matching_index: int):
-    
-    Draws all possible graphs with the given parameters.
-    :param number_of_nodes: number of nodes in the graph
-    :param number_of_colours: determines the number of colours to use for the edges
-    :param real_numbers: list of real numbers to use as the real part of the weights
-    :param imaginary_numbers: list of real numbers to use as the imaginary part of the weights
-    :param results_folder: folder where the results will be stored
-    :param min_matching_index: minimum matching index to consider
-    :return:
-    
-    possible_edge_positions = list(itertools.combinations(range(number_of_nodes), 2))
-    possible_edges = list(itertools.product(possible_edge_positions, colours, weights))
+def count_bipartite_graphs_in_folder(folder: str):
+    """
+    Counts the number of bipartite graphs in a folder.
+    :param folder: folder to look for the graphs in
+    :return: number of bipartite graphs in the folder
+    """
+    if not os.path.exists(folder):
+        raise FileNotFoundError("The folder " + folder + " does not exist.")
 
-    perfectly_monochromatic_graphs_counter = 0
-    graph_counter = 0
-
-    for edge_set in powerset(possible_edges, min_size=number_of_nodes // 2):
-        graph_counter += 1
-        exp_graph = ExperimentGraph()
-        exp_graph.add_nodes_from(range(number_of_nodes))
-        for edge in edge_set:
-            u, v = edge[0]
-            u_colour, v_colour = edge[1]
-            c_weight = edge[2]
-            exp_graph.add_edge(u, v, u_colour, v_colour, c_weight)
-        if exp_graph.get_weighted_matching_index() >= min_matching_index:
-            perfectly_monochromatic_graphs_counter += 1
-            exp_graph.to_pdf(results_folder, "graph_" + str(perfectly_monochromatic_graphs_counter))
-        del exp_graph
-"""
+    counter = 0
+    files = os.listdir(folder)
+    for file in files:
+        if file.endswith(".json"):
+            with open(folder + "/" + file, "r") as f:
+                data = json.load(f)
+                if data["is_bipartite"]:
+                    counter += 1
+    return counter
 
 
 def main():
@@ -206,6 +189,7 @@ def main():
     research process and performs it.
     :return: None
     """
+
     number_of_graphs = int(input(
         "Enter the number of graphs to generate: "))
     number_of_nodes = int(input(

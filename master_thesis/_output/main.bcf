@@ -2389,27 +2389,27 @@
     <bcf:citekey order="25" intorder="1">gu2020compact</bcf:citekey>
     <bcf:citekey order="26" intorder="1">pivoluska2018layered</bcf:citekey>
     <bcf:citekey order="27" intorder="1">Krenn_2017</bcf:citekey>
+    <bcf:citekey order="27" intorder="2">bogdanov</bcf:citekey>
+    <bcf:citekey order="27" intorder="3">chandran</bcf:citekey>
+    <bcf:citekey order="27" intorder="4">chandran2023graphtheoretic</bcf:citekey>
     <bcf:citekey order="28" intorder="1">bogdanov</bcf:citekey>
     <bcf:citekey order="29" intorder="1">chandran</bcf:citekey>
-    <bcf:citekey order="30" intorder="1">chandran2023graphtheoretic</bcf:citekey>
-    <bcf:citekey order="31" intorder="1">bogdanov</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">chandran</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">chandran</bcf:citekey>
     <bcf:citekey order="32" intorder="1">chandran</bcf:citekey>
     <bcf:citekey order="33" intorder="1">chandran</bcf:citekey>
     <bcf:citekey order="34" intorder="1">chandran</bcf:citekey>
-    <bcf:citekey order="35" intorder="1">chandran</bcf:citekey>
-    <bcf:citekey order="36" intorder="1">chandran</bcf:citekey>
+    <bcf:citekey order="35" intorder="1">chandran2023graphtheoretic</bcf:citekey>
+    <bcf:citekey order="36" intorder="1">chandran2023graphtheoretic</bcf:citekey>
     <bcf:citekey order="37" intorder="1">chandran</bcf:citekey>
-    <bcf:citekey order="38" intorder="1">chandran2023graphtheoretic</bcf:citekey>
-    <bcf:citekey order="39" intorder="1">chandran2023graphtheoretic</bcf:citekey>
-    <bcf:citekey order="40" intorder="1">chandran</bcf:citekey>
-    <bcf:citekey order="41" intorder="1">bogdanov</bcf:citekey>
-    <bcf:citekey order="42" intorder="1">python</bcf:citekey>
-    <bcf:citekey order="43" intorder="1">wikipediaBinomialTheorem</bcf:citekey>
-    <bcf:citekey order="44" intorder="1">wordpress</bcf:citekey>
-    <bcf:citekey order="45" intorder="1">bogdanov</bcf:citekey>
-    <bcf:citekey order="46" intorder="1">bogdanov</bcf:citekey>
-    <bcf:citekey order="47" intorder="1">chandran</bcf:citekey>
-    <bcf:citekey order="48" intorder="1" nocite="1">*</bcf:citekey>
+    <bcf:citekey order="38" intorder="1">bogdanov</bcf:citekey>
+    <bcf:citekey order="39" intorder="1">python</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">wikipediaBinomialTheorem</bcf:citekey>
+    <bcf:citekey order="41" intorder="1">wordpress</bcf:citekey>
+    <bcf:citekey order="42" intorder="1">bogdanov</bcf:citekey>
+    <bcf:citekey order="43" intorder="1">bogdanov</bcf:citekey>
+    <bcf:citekey order="44" intorder="1">chandran</bcf:citekey>
+    <bcf:citekey order="45" intorder="1" nocite="1">*</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

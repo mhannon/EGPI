@@ -7,6 +7,55 @@
         "perfect_matchings": [
             {
                 "weight": {
+                    "real": 1.0,
+                    "imaginary": 0.0
+                },
+                "induced_vertex_colouring": [
+                    "red",
+                    "green",
+                    "green",
+                    "red",
+                    "green",
+                    "red"
+                ],
+                "edges": [
+                    {
+                        "u": 3,
+                        "v": 1,
+                        "edge_id": 0,
+                        "weight": {
+                            "real": -1.0,
+                            "imaginary": 0.0
+                        },
+                        "u_colour": "red",
+                        "v_colour": "green"
+                    },
+                    {
+                        "u": 4,
+                        "v": 5,
+                        "edge_id": 0,
+                        "weight": {
+                            "real": -1.0,
+                            "imaginary": 0.0
+                        },
+                        "u_colour": "green",
+                        "v_colour": "red"
+                    },
+                    {
+                        "u": 2,
+                        "v": 0,
+                        "edge_id": 0,
+                        "weight": {
+                            "real": 1.0,
+                            "imaginary": 0.0
+                        },
+                        "u_colour": "green",
+                        "v_colour": "red"
+                    }
+                ]
+            },
+            {
+                "weight": {
                     "real": -1.0,
                     "imaginary": 0.0
                 },
@@ -16,12 +65,12 @@
                     "green",
                     "red",
                     "green",
-                    "green"
+                    "red"
                 ],
                 "edges": [
                     {
-                        "u": 2,
-                        "v": 3,
+                        "u": 4,
+                        "v": 5,
                         "edge_id": 0,
                         "weight": {
                             "real": -1.0,
@@ -31,8 +80,8 @@
                         "v_colour": "red"
                     },
                     {
-                        "u": 5,
-                        "v": 4,
+                        "u": 2,
+                        "v": 1,
                         "edge_id": 0,
                         "weight": {
                             "real": 0.0,
@@ -42,71 +91,22 @@
                         "v_colour": "green"
                     },
                     {
-                        "u": 0,
-                        "v": 1,
+                        "u": 3,
+                        "v": 0,
                         "edge_id": 0,
                         "weight": {
                             "real": 0.0,
                             "imaginary": -1.0
                         },
                         "u_colour": "red",
-                        "v_colour": "green"
-                    }
-                ]
-            },
-            {
-                "weight": {
-                    "real": 1.0,
-                    "imaginary": -0.0
-                },
-                "induced_vertex_colouring": [
-                    "red",
-                    "green",
-                    "green",
-                    "red",
-                    "green",
-                    "green"
-                ],
-                "edges": [
-                    {
-                        "u": 5,
-                        "v": 4,
-                        "edge_id": 0,
-                        "weight": {
-                            "real": 0.0,
-                            "imaginary": 1.0
-                        },
-                        "u_colour": "green",
-                        "v_colour": "green"
-                    },
-                    {
-                        "u": 0,
-                        "v": 3,
-                        "edge_id": 0,
-                        "weight": {
-                            "real": -1.0,
-                            "imaginary": 0.0
-                        },
-                        "u_colour": "red",
                         "v_colour": "red"
-                    },
-                    {
-                        "u": 2,
-                        "v": 1,
-                        "edge_id": 0,
-                        "weight": {
-                            "real": 0.0,
-                            "imaginary": 1.0
-                        },
-                        "u_colour": "green",
-                        "v_colour": "green"
                     }
                 ]
             },
             {
                 "weight": {
                     "real": 1.0,
-                    "imaginary": -0.0
+                    "imaginary": 0.0
                 },
                 "induced_vertex_colouring": [
                     "red",
@@ -118,30 +118,30 @@
                 ],
                 "edges": [
                     {
-                        "u": 2,
-                        "v": 5,
+                        "u": 3,
+                        "v": 0,
                         "edge_id": 0,
                         "weight": {
-                            "real": 1.0,
-                            "imaginary": 0.0
+                            "real": 0.0,
+                            "imaginary": -1.0
                         },
                         "u_colour": "red",
                         "v_colour": "red"
                     },
                     {
                         "u": 4,
-                        "v": 1,
+                        "v": 2,
                         "edge_id": 0,
                         "weight": {
-                            "real": -1.0,
-                            "imaginary": 0.0
+                            "real": 0.0,
+                            "imaginary": -1.0
                         },
                         "u_colour": "red",
                         "v_colour": "red"
                     },
                     {
-                        "u": 0,
-                        "v": 3,
+                        "u": 1,
+                        "v": 5,
                         "edge_id": 0,
                         "weight": {
                             "real": -1.0,
@@ -155,7 +155,7 @@
             {
                 "weight": {
                     "real": 1.0,
-                    "imaginary": 0.0
+                    "imaginary": -0.0
                 },
                 "induced_vertex_colouring": [
                     "green",
@@ -167,12 +167,12 @@
                 ],
                 "edges": [
                     {
-                        "u": 4,
-                        "v": 0,
+                        "u": 0,
+                        "v": 4,
                         "edge_id": 0,
                         "weight": {
-                            "real": 0.0,
-                            "imaginary": -1.0
+                            "real": -1.0,
+                            "imaginary": 0.0
                         },
                         "u_colour": "green",
                         "v_colour": "green"
@@ -193,8 +193,8 @@
                         "v": 5,
                         "edge_id": 0,
                         "weight": {
-                            "real": 1.0,
-                            "imaginary": 0.0
+                            "real": 0.0,
+                            "imaginary": 1.0
                         },
                         "u_colour": "green",
                         "v_colour": "green"
@@ -207,12 +207,12 @@
         "0": {
             "3": [
                 {
-                    "u": 0,
-                    "v": 3,
+                    "u": 3,
+                    "v": 0,
                     "edge_id": 0,
                     "weight": {
-                        "real": -1.0,
-                        "imaginary": 0.0
+                        "real": 0.0,
+                        "imaginary": -1.0
                     },
                     "u_colour": "red",
                     "v_colour": "red"
@@ -220,36 +220,36 @@
             ],
             "4": [
                 {
-                    "u": 4,
-                    "v": 0,
+                    "u": 0,
+                    "v": 4,
                     "edge_id": 0,
                     "weight": {
-                        "real": 0.0,
-                        "imaginary": -1.0
+                        "real": -1.0,
+                        "imaginary": 0.0
                     },
                     "u_colour": "green",
                     "v_colour": "green"
                 }
             ],
-            "1": [
+            "2": [
                 {
-                    "u": 0,
-                    "v": 1,
+                    "u": 2,
+                    "v": 0,
                     "edge_id": 0,
                     "weight": {
-                        "real": 0.0,
-                        "imaginary": -1.0
+                        "real": 1.0,
+                        "imaginary": 0.0
                     },
-                    "u_colour": "red",
-                    "v_colour": "green"
+                    "u_colour": "green",
+                    "v_colour": "red"
                 }
             ]
         },
         "1": {
-            "4": [
+            "5": [
                 {
-                    "u": 4,
-                    "v": 1,
+                    "u": 1,
+                    "v": 5,
                     "edge_id": 0,
                     "weight": {
                         "real": -1.0,
@@ -272,14 +272,14 @@
                     "v_colour": "green"
                 }
             ],
-            "0": [
+            "3": [
                 {
-                    "u": 0,
+                    "u": 3,
                     "v": 1,
                     "edge_id": 0,
                     "weight": {
-                        "real": 0.0,
-                        "imaginary": -1.0
+                        "real": -1.0,
+                        "imaginary": 0.0
                     },
                     "u_colour": "red",
                     "v_colour": "green"
@@ -287,14 +287,14 @@
             ]
         },
         "2": {
-            "5": [
+            "4": [
                 {
-                    "u": 2,
-                    "v": 5,
+                    "u": 4,
+                    "v": 2,
                     "edge_id": 0,
                     "weight": {
-                        "real": 1.0,
-                        "imaginary": 0.0
+                        "real": 0.0,
+                        "imaginary": -1.0
                     },
                     "u_colour": "red",
                     "v_colour": "red"
@@ -313,13 +313,13 @@
                     "v_colour": "green"
                 }
             ],
-            "3": [
+            "0": [
                 {
                     "u": 2,
-                    "v": 3,
+                    "v": 0,
                     "edge_id": 0,
                     "weight": {
-                        "real": -1.0,
+                        "real": 1.0,
                         "imaginary": 0.0
                     },
                     "u_colour": "green",
@@ -330,12 +330,12 @@
         "3": {
             "0": [
                 {
-                    "u": 0,
-                    "v": 3,
+                    "u": 3,
+                    "v": 0,
                     "edge_id": 0,
                     "weight": {
-                        "real": -1.0,
-                        "imaginary": 0.0
+                        "real": 0.0,
+                        "imaginary": -1.0
                     },
                     "u_colour": "red",
                     "v_colour": "red"
@@ -347,31 +347,16 @@
                     "v": 5,
                     "edge_id": 0,
                     "weight": {
-                        "real": 1.0,
-                        "imaginary": 0.0
+                        "real": 0.0,
+                        "imaginary": 1.0
                     },
                     "u_colour": "green",
                     "v_colour": "green"
                 }
             ],
-            "2": [
-                {
-                    "u": 2,
-                    "v": 3,
-                    "edge_id": 0,
-                    "weight": {
-                        "real": -1.0,
-                        "imaginary": 0.0
-                    },
-                    "u_colour": "green",
-                    "v_colour": "red"
-                }
-            ]
-        },
-        "4": {
             "1": [
                 {
-                    "u": 4,
+                    "u": 3,
                     "v": 1,
                     "edge_id": 0,
                     "weight": {
@@ -379,17 +364,32 @@
                         "imaginary": 0.0
                     },
                     "u_colour": "red",
+                    "v_colour": "green"
+                }
+            ]
+        },
+        "4": {
+            "2": [
+                {
+                    "u": 4,
+                    "v": 2,
+                    "edge_id": 0,
+                    "weight": {
+                        "real": 0.0,
+                        "imaginary": -1.0
+                    },
+                    "u_colour": "red",
                     "v_colour": "red"
                 }
             ],
             "0": [
                 {
-                    "u": 4,
-                    "v": 0,
+                    "u": 0,
+                    "v": 4,
                     "edge_id": 0,
                     "weight": {
-                        "real": 0.0,
-                        "imaginary": -1.0
+                        "real": -1.0,
+                        "imaginary": 0.0
                     },
                     "u_colour": "green",
                     "v_colour": "green"
@@ -397,26 +397,26 @@
             ],
             "5": [
                 {
-                    "u": 5,
-                    "v": 4,
+                    "u": 4,
+                    "v": 5,
                     "edge_id": 0,
                     "weight": {
-                        "real": 0.0,
-                        "imaginary": 1.0
+                        "real": -1.0,
+                        "imaginary": 0.0
                     },
                     "u_colour": "green",
-                    "v_colour": "green"
+                    "v_colour": "red"
                 }
             ]
         },
         "5": {
-            "2": [
+            "1": [
                 {
-                    "u": 2,
+                    "u": 1,
                     "v": 5,
                     "edge_id": 0,
                     "weight": {
-                        "real": 1.0,
+                        "real": -1.0,
                         "imaginary": 0.0
                     },
                     "u_colour": "red",
@@ -429,8 +429,8 @@
                     "v": 5,
                     "edge_id": 0,
                     "weight": {
-                        "real": 1.0,
-                        "imaginary": 0.0
+                        "real": 0.0,
+                        "imaginary": 1.0
                     },
                     "u_colour": "green",
                     "v_colour": "green"
@@ -438,15 +438,15 @@
             ],
             "4": [
                 {
-                    "u": 5,
-                    "v": 4,
+                    "u": 4,
+                    "v": 5,
                     "edge_id": 0,
                     "weight": {
-                        "real": 0.0,
-                        "imaginary": 1.0
+                        "real": -1.0,
+                        "imaginary": 0.0
                     },
                     "u_colour": "green",
-                    "v_colour": "green"
+                    "v_colour": "red"
                 }
             ]
         }

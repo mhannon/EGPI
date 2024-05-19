@@ -1,19 +1,27 @@
 \setcounter{secnumdepth}{2}
 
 \chapter{Description of the problem}
+\label{ch:description-of-the-problem}
+
 
 \section{Prerequisites and used notations}
+\label{sec:prerequisites-and-used-notations}
 
-In order to understand the following chapters, it is needed to (re)introduce some useful notations that are widely used in the context of graph theory \cite{graphtheory}.
+In order to understand the following chapters, it is needed to (re)introduce some useful notations that are widely used in the context of graph theory~\cite{graphtheory}.
 
 
 \subsection{The different definitions of graphs}
+\label{subsec:the-different-definitions-of-graphs}
 
-In the context of discrete mathematics, a \textit{graph} $G = (V, E)$ is a set $V$ of objects, called \textit{vertices}, and a set $E$ of tuples (or pairs) between these vertices, called \textit{edges}. The notations $V(G)$ and $E(G)$ denote the set of vertices and the set of edges of $G$ respectively. Graph theorists distinguish different types of graphs. The following definitions cover the graphs that will be used in the context of this master thesis.
+In the context of discrete mathematics, a \textit{graph} $G = (V, E)$ is a set $V$ of objects, called \textit{vertices}, and a set $E$ of tuples (or pairs) between these vertices, called \textit{edges}.
+The notations $V(G)$ and $E(G)$ denote the set of vertices and the set of edges of $G$ respectively.
+Graph theorists distinguish different types of graphs.
+The following definitions cover the graphs that will be used in the context of this master thesis.
 
 \begin{definition}[Simple graph]
     \label{def:simple_graph}
-    A graph $G$ is said to be \textit{simple} if it has maximum one edge between each pair of its vertices. Furthermore, a simple graph has no edge that begins and ends at the same vertex.
+    A graph $G$ is said to be \textit{simple} if it has at most one edge between each pair of its vertices.
+    Furthermore, a simple graph has no edge that begins and ends at the same vertex.
 \end{definition}
 
 \begin{definition}[Undirected graph]
@@ -28,16 +36,21 @@ In the context of discrete mathematics, a \textit{graph} $G = (V, E)$ is a set $
 
 \begin{definition}[Mixed edge-coloured graph]
     \label{def:mixed_edge_coloured_graph}
-    An \textit{mixed edge-colouring} $k$ of a graph $G$ is a function that maps each edge $e = (v_1, v_2) \in E(G)$ to 2 colours $k(e, v_1)$ and $k(e, v_2)$ (often represented as unsigned integers). An \textit{mixed edge-coloured graph} $G_k$ is a graph $G$ equipped with a mixed edge-colouring $k$.
+    A \textit{mixed edge-colouring} $k$ of a graph $G$ is a function that maps each edge $e = (v_1, v_2) \in E(G)$ to two colours $k(e, v_1)$ and $k(e, v_2)$ (often represented as unsigned integers).
+    A \textit{mixed edge-coloured graph} $G_k$ is a graph $G$ equipped with a mixed edge-colouring $k$.
 \end{definition}
 
 \begin{definition}[Weighted graph]
     \label{def:weighted_graph}
-    A \textit{weight attribution} $w$ of a graph $G$ is a function that maps each edge $e \in E(G)$ to a weight $w(e)$. Most often, this weight is assumed to be a real number. But in the context of this master thesis, this weight is a complex number. A \textit{weighted graph} $G^w$ is a graph $G$ equipped with a weight attribution $w$.
+    A \textit{weight attribution} $w$ of a graph $G$ is a function that maps each edge $e \in E(G)$ to a weight $w(e)$.
+    Most often, this weight is assumed to be a real number.
+    But in the context of this master thesis, this weight is a complex number.
+    A \textit{weighted graph} $G^w$ is a graph $G$ equipped with a weight attribution $w$.
 \end{definition}
 
 
 \subsection{Paths and connectivity concepts}
+\label{subsec:paths-and-connectivity-concepts}
 
 \begin{definition}[Path]
     \label{def:path}
@@ -51,38 +64,32 @@ In the context of discrete mathematics, a \textit{graph} $G = (V, E)$ is a set $
     \label{def:hamiltonian_path}
     A path $H$ of a graph $G$ is said to be \textit{Hamiltonian} if
     \begin{center}
-        $\left\{
-        \begin{tabular}{l}
-            All the vertices in $V(G)$ appear in $H$ and \\
-            $H$ begins and ends at the same vertex.
-        \end{tabular}
-        \right.$
+        $\left\{\begin{array}{l}
+            \mbox{All the vertices in } V(G) \mbox{ appear in } H \mbox{ and} \\
+            H \mbox{ begins and ends at the same vertex.}
+        \end{array}\right.$
     \end{center}
 \end{definition}
 
 \begin{definition}[Arc of Hamiltonian cycle]
     \label{def:arc}
-    Let $G$ be a graph that admits a Hamiltonian cycle $H = (v_1, v_2, \dots, v_n)$. In the context of this master thesis, what is called the \textit{arc} from $v_i$ to $v_j$ on $H$, denoted by $H_{i, j}$, is defined as follow.
+    Let $G$ be a graph that admits a Hamiltonian cycle $H = (v_1, v_2, \dots, v_n)$.
+    In the context of this master thesis, what is called the \textit{arc} from $v_i$ to $v_j$ on $H$, denoted by $H_{i, j}$, is defined as follows.
     
     \begin{center}
-        $H_{i, j} = \left\{
-        \begin{array}{l l}
-            \left\{
-                \{v_i, v_{i+1}\}, \{v_{i+1}, v_{i+2}\}, \dots, \{v_{j-1}, v_j\}
-            \right\} & \mbox{ if } i < j \\
-            \left\{
-                \{v_i, v_{i+1}\}, \{v_{i+1}, v_{i+2}\}, \dots, \{v_n - 1, v_n\},  \{v_n, v_1\}, \{v_1, v_2\}, \dots, \{v_{j-1}, v_j\}
-            \right\} & \mbox{ if } j < i \\
-            \left\{\right\} & \mbox{ if } i = j
-        \end{array}
-        \right.$
+        $H_{i, j} = \left\{\begin{array}{l l}
+            \left\{\{v_i, v_{i+1}\}, \{v_{i+1}, v_{i+2}\}, \dots, \{v_{j-1}, v_j\}\right\}                                                       & \mbox{ if } i < j \\
+            \left\{\{v_i, v_{i+1}\}, \{v_{i+1}, v_{i+2}\}, \dots, \{v_n - 1, v_n\},  \{v_n, v_1\}, \{v_1, v_2\}, \dots, \{v_{j-1}, v_j\}\right\} & \mbox{ if } j < i \\
+            \left\{\right\}                                                                                                                      & \mbox{ if } i = j
+        \end{array}\right.$
     \end{center}
     
-    In other words, $H_{i, j}$ is the set of edges that builds the path from $v_i$ to $v_j$ along $H$ when being allowed to go only in the positive direction. An example is shown in figure \ref{fig:H_i_j}.
+    In other words, $H_{i, j}$ is the set of edges that builds the path from $v_i$ to $v_j$ along $H$ when being allowed to go only in the positive direction.
+    An example is shown in figure~\ref{fig:H_i_j}.
 
     \begin{figure}[H]
         \ctikzfig{figures/problem_presentation/definitions/H_i_j}
-        \caption{Visualisation of the arc $H_{5, 2}$ on a Hamiltonian path $H$ of some graph $G$ from $v_5$ to $v_2$. The arc is marked using thicker edges.}
+        \caption{Visualization of the arc $H_{5, 2}$ on a Hamiltonian path $H$ of some graph $G$ from $v_5$ to $v_2$. The arc is marked using thicker edges.}
         \label{fig:H_i_j}
     \end{figure}
     
@@ -90,7 +97,8 @@ In the context of discrete mathematics, a \textit{graph} $G = (V, E)$ is a set $
 
 \begin{definition}[Connected graph]
     \label{def:connected_graph}
-    A graph $G$ is said to be \textit{connected} if $\forall v_1, v_2 \in V(G), \exists$ a path $P$ between $v_1$ and $v_2$ in $G$. If this property is not satisfied, then $G$ is \textit{disconnected}.
+    A graph $G$ is said to be \textit{connected} if $\forall v_1, v_2 \in V(G), \exists$ a path $P$ between $v_1$ and $v_2$ in $G$.
+    If this property is not satisfied, then $G$ is \textit{disconnected}.
 \end{definition}
 
 \begin{definition}[Edge connectivity]
@@ -100,7 +108,8 @@ In the context of discrete mathematics, a \textit{graph} $G = (V, E)$ is a set $
 
 \begin{definition}[Maximum and minimum degree]
     \label{def:degree}
-    The \textit{degree} of a vertex $v$ in a graph $G$, denoted $d(v)$, is the number of edges touching $v$ in $E(G)$. The \textit{minimum degree} of $G$, denoted $\delta(G)$, and the \textit{maximum degree} of $G$, denoted $\Delta(G)$, are defined as follow
+    The \textit{degree} of a vertex $v$ in a graph $G$, denoted $d(v)$, is the number of edges touching $v$ in $E(G)$.
+    The \textit{minimum degree} of $G$, denoted $\delta(G)$, and the \textit{maximum degree} of $G$, denoted $\Delta(G)$, are defined as follows.
     \begin{center}
         $\left\{
         \begin{array}{l}
@@ -112,45 +121,53 @@ In the context of discrete mathematics, a \textit{graph} $G = (V, E)$ is a set $
 \end{definition}
 
 
-\subsection{Matchings definitions and notations}
+\subsection{Matching definitions and notations}
+\label{subsec:matching-definitions-and-notations}
 
-The studied problem in this master thesis is centered about the (non)existence of matchings in specific graphs. For this reason, the matchings-related concepts are (re)defined here. \cite{graphtheory}
+The studied problem in this master thesis is centered about the (non)existence of matchings in specific graphs.
+For this reason, the matching-related concepts are (re)defined here. \cite{graphtheory}
 
 \begin{definition}[Matching]
     \label{def:matching}
-    Given a graph $G$, two edges from $E(G)$ are said to be \textit{independent} if they do not contain any vertex in common. A \textit{matching} $M$ of $G$ is a set of independent edges of $E(G)$. 
+    Given a graph $G$, two edges in $E(G)$ are said to be \textit{independent} if they do not contain any vertex in common.
+    A \textit{matching} $M$ of $G$ is a set of independent edges of $E(G)$.
 \end{definition}
 
 \begin{definition}[Perfect matching]
     \label{def:perfect_matching}
-    A matching $M$ of a graph $G$ is said to be \textit{perfect} if it covers the whole set of $G$'s vertices, i.e. if every vertex $v \in V(G)$ appears in one of the edges of $M$.
+    A matching $M$ of a graph $G$ is said to be \textit{perfect} if it covers the whole set of $G'$s vertices, i.e., if every vertex $v \in V(G)$ appears in one of the edges of $M$.
 \end{definition}
 
 
 
 \section{Simplified version of the conjecture (solved)}
+\label{sec:simplified-version-of-the-conjecture}
 
-The following statements and definitions directly come from Mario Krenn's formulation of the problem in \cite{wordpress}. He first defines the notion of monochromatic graphs, followed by the notion of its matching index.
+The following statements and definitions directly come from Mario Krenn's formulation of the problem in~\cite{wordpress}.
+He first defines the notion of monochromatic graphs, followed by the notion of its matching index.
 
 \begin{definition}[Monochromatic graph]
     \label{def:monochromatic_graph}
-    An edge-coloured graph $G_k$ is said to be \textit{monochromatic} if all its perfect matchings are monochromatic, i.e. for all perfect matchings $M$, the edges of $M$ are all of the same colour.
+    An edge-coloured graph $G_k$ is said to be \textit{monochromatic} if all its perfect matchings are monochromatic, i.e., for all perfect matchings $M$, the edges of $M$ are all the same colour.
 \end{definition}
 
-An example of monochromatic graph is shown in Figure \ref{fig:k4_pm}.
+An example of monochromatic graph is shown in figure~\ref{fig:k4_pm}.
 
 \begin{definition}[Matching index]
     \label{def:matching_index}
-    Let $G$ be a graph. For any edge-colouring $k$ such that $G_k$ is monochromatic, let $c(G, k)$ be defined as the number of different colour classes containing at least one perfect matching of $G_k$. The \textit{matching index} of $G$, denoted $c(G)$, is the maximum value that $c(G, k)$ can take.
+    Let $G$ be a graph.
+    For any edge-colouring $k$ such that $G_k$ is monochromatic, let $c(G, k)$ be defined as the number of different colour classes containing at least one perfect matching of $G_k$.
+    The \textit{matching index} of $G$, denoted $c(G)$, is the maximum value that $c(G, k)$ can take.
     \begin{center}
         $c(G) = \max\limits_{k \in \mathcal{K}(G)}(c(G, k))$
     \end{center}
-    where $\mathcal{K}(G)$ describes here the set of all possible edges-colourings $k$ of $G$ such that $G_{k}$ is monochromatic.
+    Where $\mathcal{K}(G)$ describes here the set of all possible edges-colourings $k$ of $G$ such that $G_{k}$ is monochromatic.
 \end{definition}
 
 \begin{figure}[H]
     \ctikzfig{figures/problem_presentation/simplified/k4_pm}
-    \caption{Example of monochromatic graph : an edge coloured version of $K_4$. It has maximum 3 monochromatic perfect matchings of different colours. Therefore, $c(K_4) = 3$.}
+    \caption{Example of monochromatic graph: an edge-coloured version of $K_4$. It has at most three monochromatic perfect matchings of different colours.
+        Therefore, $c(K_4) = 3$.}
     \label{fig:k4_pm}
 \end{figure}
 
@@ -158,24 +175,33 @@ Equipped with these concepts, the reader has now all the knowledge to understand
 
 \begin{theorem}[Simplified version of Krenn's conjecture]
     \label{thm:bogdanov}
-    For all graph $G$, if $G$ is isomorphic to $K_4$, then $c(G) = 3$. Otherwise, $c(G) \leq 2$.
+    For all graphs $G$, if $G$ is isomorphic to $K_4$, then $c(G) = 3$.
+    Otherwise, $c(G) \leq 2$.
 \end{theorem}
 
-The proof of theorem \ref{thm:bogdanov} was first proposed by Ilya Bogdanov in a post on a forum. \cite{bogdanov} I rewrote it in my own terms to make it clearer according to our own formulation of the problem.
+The proof of theorem~\ref{thm:bogdanov} was first proposed by Ilya Bogdanov in a post on a forum. \cite{bogdanov}
+I rewrote it in my own terms to make it clearer, according to our own formulation of the problem.
 
 \begin{proof}
-    Let $G$ be a monochromatic graph with a matching index $c(G) \geq 2$, and let $k$ be an edge-colouring of $G$ such that $c(G, k) = c(G)$. Let $M_1$, $M_2$ be 2 monochromatic perfect matchings of $G_k$ of different colours. Clearly, they are disjoint. 
+    Let $G$ be a monochromatic graph with a matching index $c(G) \geq 2$, and let $k$ be an edge-colouring of $G$ such that $c(G, k) = c(G)$.
+    Let $M_1$, $M_2$ be two monochromatic perfect matchings of $G_k$ of different colours.
+    Clearly, they are disjoint.
     
     \begin{claim}
         \label{clm:even_cycles}
-        The union of $M_1$ and $M_2$ form a disjoint union of cycles of even length.
+        The union of $M_1$ and $M_2$ form a disjointed union of cycles of even length.
     \end{claim}
     
     \begin{proof}[Proof of the claim]
-        For each vertex $v \in V(G_k)$, $v$ is touched by exactly one edge from $M_1$ and one edge of $M_2$ (by definition \ref{def:perfect_matching} of a perfect matching). So all the vertices are of degree 2 in $M_1 \bigcup M_2$. This already proves the first statement. Then, on each cycle in $M_1 \bigcup M_2$, the edges must be alternating between edges from $M_1$ and edges from $M_2$ (otherwise we would have 2 edges from the same perfect matching that touch the same vertex, which is forbidden by definition \ref{def:matching}). This condition is satisfied only if the cycles are of even length.
+        For each vertex $v \in V(G_k)$, $v$ is touched by exactly one edge from $M_1$ and one edge of $M_2$ (by definition~\ref{def:perfect_matching} of a perfect matching).
+        So all the vertices are of degree 2 in $M_1 \bigcup M_2$.
+        This already proves the first statement.
+        Then, on each cycle in $M_1 \bigcup M_2$, the edges must be alternating between edges from $M_1$ and edges from $M_2$ (otherwise we would have two edges from the same perfect matching that touch the same vertex, which is forbidden by definition~\ref{def:matching}).
+        This condition is satisfied only if the cycles are of even length.
     \end{proof}
     
-    Let say there are $\mathcal{C}$ different cycles formed by $M_1 \bigcup M_2$. If $\mathcal{C} \geq 2$, then a new non-monochromatic perfect matching $N$ can be found as follow.
+    Let say there are $\mathcal{C}$ different cycles formed by $M_1 \bigcup M_2$.
+    If $\mathcal{C} \geq 2$, then a new non-monochromatic perfect matching $N$ can be found as follows.
     
     \begin{center}
         $N = \left\{

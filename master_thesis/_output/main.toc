@@ -27,6 +27,9 @@
 \contentsline {subsection}{\numberline {4.2.1}Motivation}{33}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Functionalities of EGPI}{34}{subsection.4.2.2}%
 \contentsline {subsection}{\numberline {4.2.3}Details of implementation}{35}{subsection.4.2.3}%
-\contentsline {paragraph}{Complexity of algorithm \ref {alg:perfect_matchings} :}{37}{section*.4}%
-\contentsline {subsection}{\numberline {4.2.4}Limitations of EGPI}{38}{subsection.4.2.4}%
-\contentsline {chapter}{Conclusion}{40}{chapter*.5}%
+\contentsline {paragraph}{Complexity of algorithm \ref {alg:perfect_matchings}:}{36}{section*.4}%
+\contentsline {subsection}{\numberline {4.2.4}Limitations of EGPI}{39}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}Realized experiments with EGPI}{41}{subsection.4.2.5}%
+\contentsline {subsubsection}{Research for counter-examples}{41}{section*.5}%
+\contentsline {subsubsection}{Research for perfectly monochromatic graphs with a weighted matching index of $2$}{42}{section*.6}%
+\contentsline {chapter}{Conclusion}{43}{chapter*.7}%
