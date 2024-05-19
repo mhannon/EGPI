@@ -60,10 +60,10 @@ class ExperimentGraph(MultiGraph):
 
     def get_perfect_matchings(self):
         if self.perfect_matchings is None:
-            self.perfect_matchings = self._recursively_compute_PMs(set(range(self.number_of_nodes)))
+            self.perfect_matchings = self._recursively_compute_pms(set(range(self.number_of_nodes)))
         return self.perfect_matchings
 
-    def _recursively_compute_PMs(self, remaining_nodes) -> list[ExperimentEdgesSet]:
+    def _recursively_compute_pms(self, remaining_nodes) -> list[ExperimentEdgesSet]:
 
         # Base case: no nodes left
         if not remaining_nodes:
@@ -74,7 +74,7 @@ class ExperimentGraph(MultiGraph):
         u = remaining_nodes.pop()
         for v in remaining_nodes:
             if self.has_edges(u, v):
-                sub_perfect_matchings = self._recursively_compute_PMs(remaining_nodes - {v})
+                sub_perfect_matchings = self._recursively_compute_pms(remaining_nodes - {v})
                 for matching in sub_perfect_matchings:
                     for edge in self.edges(u, v):
                         new_matching = matching + edge
@@ -242,27 +242,39 @@ class ExperimentGraph(MultiGraph):
         latex += "\\end{document}"
         return latex
 
-    def to_pdf(self, folder: str, filename: str):
+    def to_pdf(self, folder: str, graph_name: str):
         """
         Generates a PDF file with the LaTeX representation of the graph.
-        :param folder: folder where the PDF file will be stored.
-        :param filename: name of the file to generate (without the .tex).
+        :param folder: folder where the PDF file will be stored (with no / at the end).
+        :param graph_name: name of the file to generate inside folder (without the .tex).
         :return: None
         """
-        path = folder + "/" + filename
-        # print(os.path.abspath(os.curdir))
+        # Check that the folder exists, if not, create it
+        if not os.path.exists(folder):
+            os.makedirs(folder)
+
+        # Check that pdflatex is installed
+        assert os.system("pdflatex --version") == 0, \
+            "pdflatex is not installed. Please install it manually."
+
+        path = folder + "/" + graph_name
         with open(f"{path}.tex", "w") as f:
             f.write(self._generate_latex())
-        os.system(f"pdflatex {path}.tex" + " -output-directory=" + folder)  # " >/dev/null 2>&1"
-        os.remove(f"{path}.log")
-        os.remove(f"{path}.aux")
+        os.system(f"pdflatex {path}.tex")  # " >/dev/null 2>&1"
+        os.rename(f"{graph_name}.pdf", f"{path}.pdf")
+        os.remove(f"{graph_name}.log")
+        os.remove(f"{graph_name}.aux")
 
-    def to_json(self, filename: str):
+    def to_json(self, folder: str, graph_name: str):
         """
         Generates a JSON file with the graph representation.
-        :param filename: name of the file to generate (without the .json).
+        :param folder: folder where the JSON file will be stored (with no / at the end).
+        :param graph_name: name of the file to generate inside folder (without the .json).
         :return: None
         """
+        if not os.path.exists(folder):
+            os.makedirs(folder)
+
         infos = {"properties":
                  {"number_of_nodes": self.number_of_nodes,
                   "number_of_edges": self.number_of_edges,
@@ -271,7 +283,8 @@ class ExperimentGraph(MultiGraph):
                   "perfect_matchings": [pm.to_dict(self.number_of_nodes) for pm in self.get_perfect_matchings()],
                   },
                  "graph": self.to_dict()}
-        with open(filename + ".json", "w") as f:
+
+        with open(folder + "/" + graph_name + ".json", "w") as f:
             f.write(json.dumps(infos, indent=4))
 
     def _get_nodes_coordinates(self, space_between_nodes):

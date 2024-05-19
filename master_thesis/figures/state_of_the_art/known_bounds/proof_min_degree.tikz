@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=new style 0] (0) at (0, 0) {$v$};
+		\node [style=none] (1) at (-1.5, 3) {};
+		\node [style=none] (2) at (-3, 1) {};
+		\node [style=none] (3) at (1.5, 3) {};
+		\node [style=none] (4) at (3, 1) {};
+		\node [style=none] (5) at (-1.75, 1) {$e_1$};
+		\node [style=none] (6) at (-0.5, 2) {$e_2$};
+		\node [style=none] (7) at (1.5, 1.75) {$\dots$};
+		\node [style=none] (8) at (2.25, 0.25) {$e_{\Tilde{c}(G)}$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=blue edge] (0) to (2.center);
+		\draw [style=red edge] (0) to (1.center);
+		\draw (0) to (3.center);
+		\draw [style=green edge] (0) to (4.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

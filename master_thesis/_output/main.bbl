@@ -1,0 +1,718 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{bell1964}{article}{}
+      \name{author}{1}{}{%
+        {{hash=cf630862cd70124837828aa7e08bbf1f}{%
+           family={Bell},
+           familyi={B\bibinitperiod},
+           given={John\bibnamedelima S},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {APS}%
+      }
+      \strng{namehash}{cf630862cd70124837828aa7e08bbf1f}
+      \strng{fullhash}{cf630862cd70124837828aa7e08bbf1f}
+      \strng{bibnamehash}{cf630862cd70124837828aa7e08bbf1f}
+      \strng{authorbibnamehash}{cf630862cd70124837828aa7e08bbf1f}
+      \strng{authornamehash}{cf630862cd70124837828aa7e08bbf1f}
+      \strng{authorfullhash}{cf630862cd70124837828aa7e08bbf1f}
+      \field{labelalpha}{Bel64}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physics Physique Fizika}
+      \field{number}{3}
+      \field{title}{On the einstein podolsky rosen paradox}
+      \field{volume}{1}
+      \field{year}{1964}
+      \field{pages}{195}
+      \range{pages}{1}
+    \endentry
+    \entry{bogdanov}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b1b63c7d76b0f168beec5fa21c8b3424}{%
+           family={Bogdanov},
+           familyi={B\bibinitperiod},
+           given={Ilya},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{b1b63c7d76b0f168beec5fa21c8b3424}
+      \strng{fullhash}{b1b63c7d76b0f168beec5fa21c8b3424}
+      \strng{bibnamehash}{b1b63c7d76b0f168beec5fa21c8b3424}
+      \strng{authorbibnamehash}{b1b63c7d76b0f168beec5fa21c8b3424}
+      \strng{authornamehash}{b1b63c7d76b0f168beec5fa21c8b3424}
+      \strng{authorfullhash}{b1b63c7d76b0f168beec5fa21c8b3424}
+      \field{labelalpha}{Bog}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labeldatesource}{nodate}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2023-04-19}
+      \field{title}{Answer to : Graphs with only disjoint perfect matchings}
+      \verb{urlraw}
+      \verb https://mathoverflow.net/a/267013/63938
+      \endverb
+      \verb{url}
+      \verb https://mathoverflow.net/a/267013/63938
+      \endverb
+    \endentry
+    \entry{Bouwmeester_1999}{article}{}
+      \name{author}{5}{}{%
+        {{hash=144350cee34f25a099f928aa1a3cfa47}{%
+           family={Bouwmeester},
+           familyi={B\bibinitperiod},
+           given={Dik},
+           giveni={D\bibinitperiod}}}%
+        {{hash=63e76a4430d6085c95db64c899e02284}{%
+           family={Pan},
+           familyi={P\bibinitperiod},
+           given={Jian-Wei},
+           giveni={J\bibinithyphendelim W\bibinitperiod}}}%
+        {{hash=0002967224722ac3e85f74a86be0f3a7}{%
+           family={Daniell},
+           familyi={D\bibinitperiod},
+           given={Matthew},
+           giveni={M\bibinitperiod}}}%
+        {{hash=ebdf6a8a3edc28cc9c608fabbd805369}{%
+           family={Weinfurter},
+           familyi={W\bibinitperiod},
+           given={Harald},
+           giveni={H\bibinitperiod}}}%
+        {{hash=a961661d22885d8f3bcba104deec38f0}{%
+           family={Zeilinger},
+           familyi={Z\bibinitperiod},
+           given={Anton},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society (APS)}%
+      }
+      \strng{namehash}{54b6f2e990566b227404983259586f4e}
+      \strng{fullhash}{ed193dcd9c166b61e5e51bc77aa4dea9}
+      \strng{bibnamehash}{54b6f2e990566b227404983259586f4e}
+      \strng{authorbibnamehash}{54b6f2e990566b227404983259586f4e}
+      \strng{authornamehash}{54b6f2e990566b227404983259586f4e}
+      \strng{authorfullhash}{ed193dcd9c166b61e5e51bc77aa4dea9}
+      \field{labelalpha}{Bou+99}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1079-7114}
+      \field{journaltitle}{Physical Review Letters}
+      \field{month}{2}
+      \field{number}{7}
+      \field{title}{Observation of Three-Photon Greenberger-Horne-Zeilinger Entanglement}
+      \field{volume}{82}
+      \field{year}{1999}
+      \field{pages}{1345\bibrangedash 1349}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1103/physrevlett.82.1345
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1103/PhysRevLett.82.1345
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1103/PhysRevLett.82.1345
+      \endverb
+    \endentry
+    \entry{chandran}{article}{}
+      \name{author}{2}{}{%
+        {{hash=2db57e1737eb906be68f15b77242c7c2}{%
+           family={Chandran},
+           familyi={C\bibinitperiod},
+           given={L.\bibnamedelimi Sunil},
+           giveni={L\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=438e2c619bff36d1638666787033f015}{%
+           family={Gajjala},
+           familyi={G\bibinitperiod},
+           given={Rishikesh},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{66c65e2508ec7e5d8994786ebad74562}
+      \strng{fullhash}{66c65e2508ec7e5d8994786ebad74562}
+      \strng{bibnamehash}{66c65e2508ec7e5d8994786ebad74562}
+      \strng{authorbibnamehash}{66c65e2508ec7e5d8994786ebad74562}
+      \strng{authornamehash}{66c65e2508ec7e5d8994786ebad74562}
+      \strng{authorfullhash}{66c65e2508ec7e5d8994786ebad74562}
+      \field{extraname}{1}
+      \field{labelalpha}{CG22}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.DM}
+      \field{eprinttype}{arXiv}
+      \field{title}{Perfect Matchings and Quantum Physics: Progress on Krenn's Conjecture}
+      \field{year}{2022}
+      \verb{eprint}
+      \verb 2202.05562
+      \endverb
+    \endentry
+    \entry{chandran2023graphtheoretic}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=2db57e1737eb906be68f15b77242c7c2}{%
+           family={Chandran},
+           familyi={C\bibinitperiod},
+           given={L.\bibnamedelimi Sunil},
+           giveni={L\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=438e2c619bff36d1638666787033f015}{%
+           family={Gajjala},
+           familyi={G\bibinitperiod},
+           given={Rishikesh},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{66c65e2508ec7e5d8994786ebad74562}
+      \strng{fullhash}{66c65e2508ec7e5d8994786ebad74562}
+      \strng{bibnamehash}{66c65e2508ec7e5d8994786ebad74562}
+      \strng{authorbibnamehash}{66c65e2508ec7e5d8994786ebad74562}
+      \strng{authornamehash}{66c65e2508ec7e5d8994786ebad74562}
+      \strng{authorfullhash}{66c65e2508ec7e5d8994786ebad74562}
+      \field{extraname}{2}
+      \field{labelalpha}{CG23}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{quant-ph}
+      \field{eprinttype}{arXiv}
+      \field{title}{Graph-theoretic insights on the constructability of complex entangled states}
+      \field{year}{2023}
+      \verb{eprint}
+      \verb 2304.06407
+      \endverb
+    \endentry
+    \entry{graphtheory}{book}{}
+      \name{author}{1}{}{%
+        {{hash=d7750765c1eb004bdcdce07ed2272ba7}{%
+           family={Diestel},
+           familyi={D\bibinitperiod},
+           given={Reinhard},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{d7750765c1eb004bdcdce07ed2272ba7}
+      \strng{fullhash}{d7750765c1eb004bdcdce07ed2272ba7}
+      \strng{bibnamehash}{d7750765c1eb004bdcdce07ed2272ba7}
+      \strng{authorbibnamehash}{d7750765c1eb004bdcdce07ed2272ba7}
+      \strng{authornamehash}{d7750765c1eb004bdcdce07ed2272ba7}
+      \strng{authorfullhash}{d7750765c1eb004bdcdce07ed2272ba7}
+      \field{labelalpha}{Die17}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Graduate Texts in Mathematics}
+      \field{volume}{Graph theory}
+      \field{year}{2017}
+    \endentry
+    \entry{dirac1939}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=59342ede3a101402b34939644b51ad06}{%
+           family={Dirac},
+           familyi={D\bibinitperiod},
+           given={Paul\bibnamedelimb Adrien\bibnamedelima Maurice},
+           giveni={P\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{59342ede3a101402b34939644b51ad06}
+      \strng{fullhash}{59342ede3a101402b34939644b51ad06}
+      \strng{bibnamehash}{59342ede3a101402b34939644b51ad06}
+      \strng{authorbibnamehash}{59342ede3a101402b34939644b51ad06}
+      \strng{authornamehash}{59342ede3a101402b34939644b51ad06}
+      \strng{authorfullhash}{59342ede3a101402b34939644b51ad06}
+      \field{labelalpha}{Dir39}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Mathematical proceedings of the Cambridge philosophical society}
+      \field{number}{3}
+      \field{title}{A new notation for quantum mechanics}
+      \field{volume}{35}
+      \field{year}{1939}
+      \field{pages}{416\bibrangedash 418}
+      \range{pages}{3}
+    \endentry
+    \entry{EPR}{article}{}
+      \name{author}{3}{}{%
+        {{hash=29a34a00e610eaed35baff40f473278f}{%
+           family={Einstein},
+           familyi={E\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d59186c1b85b3f8d68d260a37ffb83da}{%
+           family={Podolsky},
+           familyi={P\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=70e8d4071d8f81779da7f6d13af0e080}{%
+           family={Rosen},
+           familyi={R\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{0d4a6a8d249279c2e8e4d3b157d92276}
+      \strng{fullhash}{0d4a6a8d249279c2e8e4d3b157d92276}
+      \strng{bibnamehash}{0d4a6a8d249279c2e8e4d3b157d92276}
+      \strng{authorbibnamehash}{0d4a6a8d249279c2e8e4d3b157d92276}
+      \strng{authornamehash}{0d4a6a8d249279c2e8e4d3b157d92276}
+      \strng{authorfullhash}{0d4a6a8d249279c2e8e4d3b157d92276}
+      \field{labelalpha}{EPR35}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{10}
+      \field{journaltitle}{Phys. Rev.}
+      \field{month}{5}
+      \field{title}{Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?}
+      \field{volume}{47}
+      \field{year}{1935}
+      \field{pages}{777\bibrangedash 780}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1103/PhysRev.47.777
+      \endverb
+      \verb{urlraw}
+      \verb https://link.aps.org/doi/10.1103/PhysRev.47.777
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRev.47.777
+      \endverb
+    \endentry
+    \entry{GHZ}{incollection}{}
+      \name{author}{3}{}{%
+        {{hash=2b8f55fc2323595cb5dcea31c228d9ed}{%
+           family={Greenberger},
+           familyi={G\bibinitperiod},
+           given={Daniel\bibnamedelima M},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=20dfaecae0b6e07694031e773dc00794}{%
+           family={Horne},
+           familyi={H\bibinitperiod},
+           given={Michael\bibnamedelima A},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=a961661d22885d8f3bcba104deec38f0}{%
+           family={Zeilinger},
+           familyi={Z\bibinitperiod},
+           given={Anton},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{5be6098f74e58b12be5f2fb0e64024e5}
+      \strng{fullhash}{5be6098f74e58b12be5f2fb0e64024e5}
+      \strng{bibnamehash}{5be6098f74e58b12be5f2fb0e64024e5}
+      \strng{authorbibnamehash}{5be6098f74e58b12be5f2fb0e64024e5}
+      \strng{authornamehash}{5be6098f74e58b12be5f2fb0e64024e5}
+      \strng{authorfullhash}{5be6098f74e58b12be5f2fb0e64024e5}
+      \field{labelalpha}{GHZ89}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Bell’s theorem, quantum theory and conceptions of the universe}
+      \field{title}{Going beyond Bell’s theorem}
+      \field{year}{1989}
+      \field{pages}{69\bibrangedash 72}
+      \range{pages}{4}
+    \endentry
+    \entry{gu2020compact}{article}{}
+      \name{author}{2}{}{%
+        {{hash=d1b83e27db21981a6d0e2dbd913c0f92}{%
+           family={Gu},
+           familyi={G\bibinitperiod},
+           given={Xuemei},
+           giveni={X\bibinitperiod}}}%
+        {{hash=f924a10adb49d1b1042cff6432a3e12b}{%
+           family={Krenn},
+           familyi={K\bibinitperiod},
+           given={Mario},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Nature BV}%
+      }
+      \strng{namehash}{e3ffbce7f143a6ece6c034f5d38da1c3}
+      \strng{fullhash}{e3ffbce7f143a6ece6c034f5d38da1c3}
+      \strng{bibnamehash}{e3ffbce7f143a6ece6c034f5d38da1c3}
+      \strng{authorbibnamehash}{e3ffbce7f143a6ece6c034f5d38da1c3}
+      \strng{authornamehash}{e3ffbce7f143a6ece6c034f5d38da1c3}
+      \strng{authorfullhash}{e3ffbce7f143a6ece6c034f5d38da1c3}
+      \field{labelalpha}{GK20}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Frontiers of Physics}
+      \field{number}{6}
+      \field{title}{Compact Greenberger—Horne—Zeilinger state generation via frequency combs and graph theory}
+      \field{volume}{15}
+      \field{year}{2020}
+      \field{pages}{61502}
+      \range{pages}{1}
+    \endentry
+    \entry{wordpress}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=f924a10adb49d1b1042cff6432a3e12b}{%
+           family={Krenn},
+           familyi={K\bibinitperiod},
+           given={Mario},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{f924a10adb49d1b1042cff6432a3e12b}
+      \strng{fullhash}{f924a10adb49d1b1042cff6432a3e12b}
+      \strng{bibnamehash}{f924a10adb49d1b1042cff6432a3e12b}
+      \strng{authorbibnamehash}{f924a10adb49d1b1042cff6432a3e12b}
+      \strng{authornamehash}{f924a10adb49d1b1042cff6432a3e12b}
+      \strng{authorfullhash}{f924a10adb49d1b1042cff6432a3e12b}
+      \field{labelalpha}{Kre}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labeldatesource}{nodate}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2023-05-07}
+      \field{title}{Inherited Vertex Coloring of Graphs}
+      \verb{urlraw}
+      \verb https://mariokrenn.wordpress.com/graph-theory-question/
+      \endverb
+      \verb{url}
+      \verb https://mariokrenn.wordpress.com/graph-theory-question/
+      \endverb
+    \endentry
+    \entry{Krenn_2017}{article}{}
+      \name{author}{3}{}{%
+        {{hash=f924a10adb49d1b1042cff6432a3e12b}{%
+           family={Krenn},
+           familyi={K\bibinitperiod},
+           given={Mario},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d1b83e27db21981a6d0e2dbd913c0f92}{%
+           family={Gu},
+           familyi={G\bibinitperiod},
+           given={Xuemei},
+           giveni={X\bibinitperiod}}}%
+        {{hash=a961661d22885d8f3bcba104deec38f0}{%
+           family={Zeilinger},
+           familyi={Z\bibinitperiod},
+           given={Anton},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society ({APS})}%
+      }
+      \strng{namehash}{d3693ea8c07556da91ed4f7f11ec232a}
+      \strng{fullhash}{d3693ea8c07556da91ed4f7f11ec232a}
+      \strng{bibnamehash}{d3693ea8c07556da91ed4f7f11ec232a}
+      \strng{authorbibnamehash}{d3693ea8c07556da91ed4f7f11ec232a}
+      \strng{authornamehash}{d3693ea8c07556da91ed4f7f11ec232a}
+      \strng{authorfullhash}{d3693ea8c07556da91ed4f7f11ec232a}
+      \field{labelalpha}{KGZ17}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review Letters}
+      \field{month}{12}
+      \field{number}{24}
+      \field{title}{Quantum Experiments and Graphs: Multiparty States as Coherent Superpositions of Perfect Matchings}
+      \field{volume}{119}
+      \field{year}{2017}
+      \verb{doi}
+      \verb 10.1103/physrevlett.119.240403
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1103%2Fphysrevlett.119.240403
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1103%2Fphysrevlett.119.240403
+      \endverb
+    \endentry
+    \entry{pivoluska2018layered}{article}{}
+      \name{author}{3}{}{%
+        {{hash=a4bc397b21f84be05d0f27e4698e4d82}{%
+           family={Pivoluska},
+           familyi={P\bibinitperiod},
+           given={Matej},
+           giveni={M\bibinitperiod}}}%
+        {{hash=93d146cf476e422f1aaaf5815edef308}{%
+           family={Huber},
+           familyi={H\bibinitperiod},
+           given={Marcus},
+           giveni={M\bibinitperiod}}}%
+        {{hash=b7e1dc83319824c2fea68713304516c7}{%
+           family={Malik},
+           familyi={M\bibinitperiod},
+           given={Mehul},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {APS}%
+      }
+      \strng{namehash}{7eff6e2f92798f42b446dbebb78c76a7}
+      \strng{fullhash}{7eff6e2f92798f42b446dbebb78c76a7}
+      \strng{bibnamehash}{7eff6e2f92798f42b446dbebb78c76a7}
+      \strng{authorbibnamehash}{7eff6e2f92798f42b446dbebb78c76a7}
+      \strng{authornamehash}{7eff6e2f92798f42b446dbebb78c76a7}
+      \strng{authorfullhash}{7eff6e2f92798f42b446dbebb78c76a7}
+      \field{labelalpha}{PHM18}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical Review A}
+      \field{number}{3}
+      \field{title}{Layered quantum key distribution}
+      \field{volume}{97}
+      \field{year}{2018}
+      \field{pages}{032312}
+      \range{pages}{1}
+    \endentry
+    \entry{python}{misc}{}
+      \field{sortinit}{p}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labeldatesource}{nodate}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.python.org/about/}}
+      \field{note}{[Accessed 17-05-2024]}
+      \field{title}{python.org}
+    \endentry
+    \entry{2012QuantumTA}{article}{}
+      \field{labelalpha}{12}
+      \field{sortinit}{Q}
+      \field{sortinithash}{ce69a400a872ddd02ee7fdb3b38c6abd}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature}
+      \field{title}{Quantum teleportation achieved over record distances}
+      \field{year}{2012}
+      \verb{urlraw}
+      \verb https://api.semanticscholar.org/CorpusID:124852641
+      \endverb
+      \verb{url}
+      \verb https://api.semanticscholar.org/CorpusID:124852641
+      \endverb
+    \endentry
+    \entry{nobelprizeNobelPrize}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=6c93d64505949649697649ac5699457a}{%
+           family={Sciences},
+           familyi={S\bibinitperiod},
+           given={The\bibnamedelimb Royal\bibnamedelimb Swedish\bibnamedelima Academy},
+           giveni={T\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim A\bibinitperiod},
+           prefix={of},
+           prefixi={o\bibinitperiod}}}%
+      }
+      \strng{namehash}{6c93d64505949649697649ac5699457a}
+      \strng{fullhash}{6c93d64505949649697649ac5699457a}
+      \strng{bibnamehash}{6c93d64505949649697649ac5699457a}
+      \strng{authorbibnamehash}{6c93d64505949649697649ac5699457a}
+      \strng{authornamehash}{6c93d64505949649697649ac5699457a}
+      \strng{authorfullhash}{6c93d64505949649697649ac5699457a}
+      \field{labelalpha}{Sci22}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.nobelprize.org/prizes/physics/2022/press-release/}}
+      \field{note}{[Accessed 18-04-2024]}
+      \field{title}{{T}he {N}obel {P}rize in {P}hysics 2022 --- nobelprize.org}
+      \field{year}{2022}
+    \endentry
+    \entry{notFasterThanLight}{article}{}
+      \name{author}{1}{}{%
+        {{hash=6f4556ca6e47d62045ecd733d56d4c41}{%
+           family={Siegel},
+           familyi={S\bibinitperiod},
+           given={Ethan},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{6f4556ca6e47d62045ecd733d56d4c41}
+      \strng{fullhash}{6f4556ca6e47d62045ecd733d56d4c41}
+      \strng{bibnamehash}{6f4556ca6e47d62045ecd733d56d4c41}
+      \strng{authorbibnamehash}{6f4556ca6e47d62045ecd733d56d4c41}
+      \strng{authornamehash}{6f4556ca6e47d62045ecd733d56d4c41}
+      \strng{authorfullhash}{6f4556ca6e47d62045ecd733d56d4c41}
+      \field{labelalpha}{Sie20}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Forbes}
+      \field{title}{No, We Still Can't Use Quantum Entanglement To Communicate Faster Than Light}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://www.forbes.com/sites/startswithabang/2020/01/02/no-we-still-cant-use-quantum-entanglement-to-communicate-faster-than-light/
+      \endverb
+      \verb{url}
+      \verb https://www.forbes.com/sites/startswithabang/2020/01/02/no-we-still-cant-use-quantum-entanglement-to-communicate-faster-than-light/
+      \endverb
+    \endentry
+    \entry{wang2016experimental}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{hash=f6d788481c827133e3b016efe5b57f47}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Xi-Lin},
+           giveni={X\bibinithyphendelim L\bibinitperiod}}}%
+        {{hash=888e40dc47b9dab92d15778a6f0ccf47}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Luo-Kan},
+           giveni={L\bibinithyphendelim K\bibinitperiod}}}%
+        {{hash=be6f1b6df7f1ddfafad18806238fa391}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+        {{hash=4f8def1f1d0c52db14944d2ef2d69409}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={H-L},
+           giveni={H\bibinithyphendelim L\bibinitperiod}}}%
+        {{hash=9d9ac6815e27331ba6620def723e357f}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Chang},
+           giveni={C\bibinitperiod}}}%
+        {{hash=531c7be3c2524682e36a7baa8d7ab92f}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Chao},
+           giveni={C\bibinitperiod}}}%
+        {{hash=ae27f755104c52cb26dacefb422e0680}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Y-H},
+           giveni={Y\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=a2b2bb172d0ffb65c4460949315ecd01}{%
+           family={Su},
+           familyi={S\bibinitperiod},
+           given={Z-E},
+           giveni={Z\bibinithyphendelim E\bibinitperiod}}}%
+        {{hash=457a24ed2e5e3879679323a275ff24fb}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Dian},
+           giveni={D\bibinitperiod}}}%
+        {{hash=aff4f9606c192c3ace20310268c6c7a8}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Z-D},
+           giveni={Z\bibinithyphendelim D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {APS}%
+      }
+      \strng{namehash}{815360274df21a5ae56c2eaca2023fca}
+      \strng{fullhash}{2e6c4e8d46cd967adbe960daed767bf6}
+      \strng{bibnamehash}{815360274df21a5ae56c2eaca2023fca}
+      \strng{authorbibnamehash}{815360274df21a5ae56c2eaca2023fca}
+      \strng{authornamehash}{815360274df21a5ae56c2eaca2023fca}
+      \strng{authorfullhash}{2e6c4e8d46cd967adbe960daed767bf6}
+      \field{labelalpha}{Wan+16}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physical review letters}
+      \field{number}{21}
+      \field{title}{Experimental ten-photon entanglement}
+      \field{volume}{117}
+      \field{year}{2016}
+      \field{pages}{210502}
+      \range{pages}{1}
+    \endentry
+    \entry{wikipediaBinomialTheorem}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=9c677286866aad38f8e9b660f5411814}{%
+           family={Wikipedia},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
+      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
+      \field{labelalpha}{Wik}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labeldatesource}{nodate}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://en.wikipedia.org/wiki/Binomial_theorem}}
+      \field{note}{[Accessed 12-05-2024]}
+      \field{title}{{B}inomial theorem - {W}ikipedia --- en.wikipedia.org}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

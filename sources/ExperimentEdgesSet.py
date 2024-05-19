@@ -15,7 +15,7 @@ class ExperimentEdgesSet(EdgesSet):
         return current_weight
 
     def get_vertex_colouring(self, number_of_nodes):
-        vertex_colouring = [""] * number_of_nodes
+        vertex_colouring = [None] * number_of_nodes
         for edge in self.edges:
             vertex_colouring[edge.get_u()] = edge.get_u_colour()
             vertex_colouring[edge.get_v()] = edge.get_v_colour()

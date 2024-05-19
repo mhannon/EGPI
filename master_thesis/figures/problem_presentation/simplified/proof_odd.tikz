@@ -1,0 +1,32 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=new style 0] (0) at (-1, 4) {$v_i$};
+		\node [style=new style 0] (1) at (1, 4) {};
+		\node [style=new style 0] (2) at (3, 3) {};
+		\node [style=new style 0] (3) at (-3, 3) {};
+		\node [style=new style 0] (4) at (4, 1) {};
+		\node [style=new style 0] (5) at (-4, 1) {};
+		\node [style=new style 0] (6) at (-4, -1) {};
+		\node [style=new style 0] (7) at (4, -1) {};
+		\node [style=new style 0] (8) at (3, -3) {$v_j$};
+		\node [style=new style 0] (9) at (-3, -3) {};
+		\node [style=new style 0] (10) at (-1, -4) {};
+		\node [style=new style 0] (11) at (1, -4) {};
+		\node [style=none] (12) at (0.25, 0) {e};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=bold green] (0) to (8);
+		\draw [style=bold blue] (11) to (10);
+		\draw [style=bold blue] (9) to (6);
+		\draw [style=bold blue] (5) to (3);
+		\draw [style=bold red] (1) to (2);
+		\draw [style=bold red] (4) to (7);
+		\draw [style=blue edge] (0) to (1);
+		\draw [style=blue edge] (2) to (4);
+		\draw [style=blue edge] (7) to (8);
+		\draw [style=red edge] (8) to (11);
+		\draw [style=red edge] (10) to (9);
+		\draw [style=red edge] (6) to (5);
+		\draw [style=red edge] (3) to (0);
+	\end{pgfonlayer}
+\end{tikzpicture}

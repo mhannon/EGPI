@@ -1,0 +1,67 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=white dot] (0) at (-1.5, 6) {};
+		\node [style=white dot] (1) at (1.5, 6) {};
+		\node [style=white dot] (2) at (3, 3.5) {};
+		\node [style=white dot] (3) at (1.5, 1) {};
+		\node [style=white dot] (4) at (-1.5, 1) {};
+		\node [style=white dot] (5) at (-3, 3.5) {};
+		\node [style=white dot] (6) at (-7, -2) {};
+		\node [style=white dot] (7) at (-4, -2) {};
+		\node [style=white dot] (8) at (-2.5, -4.5) {};
+		\node [style=white dot] (9) at (-4, -7) {};
+		\node [style=white dot] (10) at (-7, -7) {};
+		\node [style=white dot] (11) at (-8.5, -4.5) {};
+		\node [style=white dot] (12) at (4, -2) {};
+		\node [style=white dot] (13) at (7, -2) {};
+		\node [style=white dot] (14) at (8.5, -4.5) {};
+		\node [style=white dot] (15) at (7, -7) {};
+		\node [style=white dot] (16) at (4, -7) {};
+		\node [style=white dot] (17) at (2.5, -4.5) {};
+		\node [style=none] (18) at (4.75, -5.75) {};
+		\node [style=none] (19) at (6.25, -5.75) {};
+		\node [style=none] (20) at (5.5, -1.5) {$1$};
+		\node [style=none] (21) at (8, -2.75) {$1$};
+		\node [style=none] (22) at (3, -2.75) {$1$};
+		\node [style=none] (23) at (8, -6.25) {$1$};
+		\node [style=none] (24) at (3, -6.25) {$1$};
+		\node [style=none] (25) at (5.5, -4) {$1$};
+		\node [style=none] (26) at (4.75, -5.25) {$i$};
+		\node [style=none] (27) at (6.25, -5.25) {$i$};
+		\node [style=none] (28) at (5.5, -7.5) {$1$};
+		\node [style=none] (29) at (2, -1.5) {$G_{k'}^w$};
+		\node [style=none] (30) at (-9, -1.5) {$G_k$};
+		\node [style=none] (31) at (-3.5, 6.5) {$G$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1);
+		\draw (1) to (2);
+		\draw (2) to (3);
+		\draw (3) to (4);
+		\draw (4) to (5);
+		\draw (5) to (0);
+		\draw (5) to (3);
+		\draw (2) to (4);
+		\draw (5) to (2);
+		\draw [style=red edge] (6) to (7);
+		\draw [style=red edge] (7) to (8);
+		\draw [style=red edge] (8) to (9);
+		\draw [style=red edge] (9) to (10);
+		\draw [style=red edge] (10) to (11);
+		\draw [style=red edge] (11) to (6);
+		\draw [style=red edge] (11) to (8);
+		\draw [style=red edge] (8) to (10);
+		\draw [style=red edge] (9) to (11);
+		\draw [style=red edge] (12) to (13);
+		\draw [style=red edge] (14) to (15);
+		\draw [style=red edge] (16) to (17);
+		\draw [style=green edge] (13) to (14);
+		\draw [style=green edge] (15) to (16);
+		\draw [style=green edge] (17) to (12);
+		\draw [style=green edge] (17) to (14);
+		\draw [style=green edge] (18.center) to (17);
+		\draw [style=green edge] (19.center) to (14);
+		\draw [style=red edge] (19.center) to (16);
+		\draw [style=red edge] (18.center) to (15);
+	\end{pgfonlayer}
+\end{tikzpicture}

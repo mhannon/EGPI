@@ -1,0 +1,51 @@
+\documentclass{ULBreport}
+
+\sceau{Pictures/sceauULB.jpg}
+
+\addbibresource{biblio.bib}
+
+\input{common/packages}
+
+\makeglossaries
+
+% \newglossaryentry{strip mining}
+% {
+%   name=strip mining,
+%   description={is the practice of mining a seam of mineral, by first removing a long strip of overlying soil and rock}
+% }
+
+
+
+% \newacronym{t}{t}{tons}
+
+
+
+\begin{document}
+
+\titleULB{
+	title={Inherited vertex colouring of graphs - research on Krenn's conjecture},
+	course={MEMO-F403 - Preparatory work for the master thesis},
+	author={Merlin Hannon},
+	date={Accademic year : 2022 - 2023},
+	teacher={Supervisors : Gwenaël JORET, Yelena YUDITSKY},
+	logo={Pictures/ULB_logo.jpg}
+}
+
+% \listoftables % ToC for tables
+
+% \listoffigures % ToC for figures
+
+\input{content/chapters.tex}
+
+\printglossary
+
+\printglossary[type=\acronymtype]
+
+\listoftheorems
+
+%Bibliography
+\nocite{*}
+\printbibliography % [type=article,title=Articles]
+% \printbibliography[type=misc,title=Other references]
+
+\end{document}

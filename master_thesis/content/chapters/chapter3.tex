@@ -1,0 +1,107 @@
+\chapter{Plan of realization}
+
+\section{Special case studies}
+
+First of all, I am interested to study the very simplified case of perfectly monochromatic graphs where all weights are included in $\{-1, 1\}$. This case is highly motivated by 2 points :
+
+\begin{itemize}
+    \item First, this seems to simplify the problem a lot : we pass from a graph that had an infinite amount of states per edge to a graph that has only 2 possible states per edge. This might allow us to find on an easier way interesting characterisations of those graphs.
+
+    \item Secondly, I discovered that the results we might find here can be extended to more graphs. The following lemma and its proof are my first results, and they justify the study of our special case.
+\end{itemize}
+
+\begin{lemma}[PM graphs with integer weights]
+    Let $G_k^w$ be a perfectly monochromatic graph that has only edge weights included in $\mathbb{Z}$. For all upper bound $\beta \in \mathbb{N}$, if the following conjecture is true :
+    \begin{center}
+        \fbox{$\forall {G'_{k'}}^{w'}$ perfectly monochromatic graphs that has only weights included in $\{-1, 1\}$, $\Tilde{c}(G', k', w') \leq \beta$}
+    \end{center}
+    then we have also $\Tilde{c}(G, k, w) \leq \beta$.
+\end{lemma}
+
+\begin{proof}
+    Let $G_k^w$ be a perfectly monochromatic graph that has only edge weights included in $\mathbb{Z}$. We will show that we can build a perfectly monochromatic graph that has only weights included in $\{-1, 1\}$ and that has the same weighted matching index than $G_k^w$. \\
+
+    First, we choose an edge in $G_k^w$ that has a weight different from 1 nor -1 (if such an edge doe not exist, we are done). We replace this edge by $|w(e)|$ parallel edges of the same colour, and that have all a weight of $\frac{w(e)}{|w(e)|}$ (1 if $w(e) > 0$, -1 if $w(e) < 0$). Remember this can be done because we allow multi edges. This creates a new graph ${G'_{k'}}^{w'}$. That process is illustrated in Figure \ref{fig:demo_integers}.\\
+
+    \begin{figure}[H]
+        \ctikzfig{figures/demo_integers}
+        \caption{Illustration of the transformation from a graph with integer weights to a graph with weights included in $\{-1, 1\}$.}
+        \label{fig:demo_integers}
+    \end{figure}
+    
+    Let $\kappa$ be a feasible vertex colouring of $G_k^w$. What is the weight of $\kappa$ in $G_k^w$ ? To express it, we will denote by 
+    \begin{center}
+        $\left\{
+            \begin{array}{ll}
+                M_{\kappa}          & \mbox{the set of perfect matchings of } G_k^w \mbox{ that induce the vertex colouring } \kappa \\
+                M_{\kappa}^e        & \mbox{the set of perfect matchings of } G_k^w \mbox{ that induce the vertex colouring } \kappa \mbox{ and contain } e \\
+                M_{\kappa}^{\neg e} & \mbox{the set of perfect matchings of } G_k^w \mbox{ that induce the vertex colouring } \kappa \mbox{ and do not contain } e
+            \end{array}
+        \right.$
+    \end{center}
+
+    The weight of $\kappa$ in $G_k^w$ is
+    
+    \begin{center}
+        $\begin{array}{lclcl}
+            w(\kappa \mbox{ in } G_c^w) 
+                & = & \sum\limits_{M \in M_{\kappa}} w(M) \\
+                & = & \sum\limits_{M \in M_{\kappa}^{\neg e}} w(M) & + & \sum\limits_{M \in M_{\kappa}^{e}} w(M)
+        \end{array}$
+    \end{center}
+
+    The next step, which is the heart of the proof, consists of computing the weight of the vertex colouring $\kappa$ in ${G'_{k'}}^{w'}$. We will denote by
+
+    \begin{center}
+        $\left\{
+            \begin{array}{ll}
+                M'_{\kappa}            & \mbox{the set of perfect matchings of } {G'_{k'}}^{w'} \mbox{ that induce the vertex colouring } \kappa \\
+                {M'_{\kappa}}^e        & \mbox{the set of perfect matchings of } {G'_{k'}}^{w'} \mbox{ that induce the vertex colouring } \kappa \\
+                                   & \mbox{and contain an edge that was derived from } e \\
+                {M'_{\kappa}}^{\neg e} & \mbox{the set of perfect matchings of } {G'_{k'}}^{w'} \mbox{ that induce the vertex colouring } \kappa \\
+                                   & \mbox{and does not contain an edge that was derived from } e
+            \end{array}
+        \right.$
+    \end{center}
+    
+    In addition to these concepts, for every perfect matching $M \in M_{\kappa}^e$, we define $\mathcal{M}'(M)$ as the set of corresponding perfect matchings $M'$ in ${M'_{\kappa}}^e$, i.e. the perfect matchings that are the same as $M$ on every edge except $e$, and that contain one of the edges that were added when $e$ was removed. It follows that for every $M \in M_{\kappa}^e$ $|\mathcal{M}'(M)| = w(e)$. Also, given $M \in M_{\kappa}^e$, for each perfect matching $M' \in \mathcal{M}'(M)$, $w(M') = \frac{w(M)}{|w(e)|}$. Finally, we notice the following relations between the different sets we defined :
+
+    \begin{center}
+        $\left\{
+            \begin{array}{lcl}
+                {M'_{\kappa}}^{\neg e} & = & M_{\kappa}^{\neg e} \\
+                {M'_{\kappa}}^e        & = & \bigcup\limits_{M \in M_{\kappa}^e} \mathcal{M}'(M) 
+            \end{array}
+        \right.$
+    \end{center}
+
+    Having all these observations in mind, we can know compute the weight of $\kappa$ in ${G'_{k'}}^{w'}$.
+
+    \begin{center}
+        $\begin{array}{lclcl}
+            w(\kappa \mbox{ in } {G'_{k'}}^{w'}) 
+                & = & \sum\limits_{M' \in M'_{\kappa}} w(M') \\
+                & = & \sum\limits_{M' \in {M'_{\kappa}}^{\neg e}} w(M') & + & \sum\limits_{M' \in {M'_{\kappa}}^{e}} w(M') \\
+                & = & \sum\limits_{M \in {M_{\kappa}}^{\neg e}} w(M)    & + & \sum\limits_{M \in M_{\kappa}^e} \left( \sum\limits_{M' \in \mathcal{M}'(M)} w(M') \right) \\
+                & = & \sum\limits_{M \in {M_{\kappa}}^{\neg e}} w(M)    & + & \sum\limits_{M \in M_{\kappa}^e} \left( \sum\limits_{M' \in \mathcal{M}'(M)} \frac{w(M)}{|w(e)|} \right) \\
+                & = & \sum\limits_{M \in {M_{\kappa}}^{\neg e}} w(M)    & + & \sum\limits_{M \in M_{\kappa}^e} \left( |w(e)| \frac{w(M)}{|w(e)|} \right) \\
+                & = & \sum\limits_{M \in {M_{\kappa}}^{\neg e}} w(M)    & + & \sum\limits_{M \in M_{\kappa}^e} w(M) \\
+                & = & w(\kappa \mbox{ in } G_k^w)
+        \end{array}$
+    \end{center}
+
+    So, since the weight of each feasible vertex colouring in $G_k^w$ remains unchanged in ${G'_{k'}}^{w'}$, the monochromatic feasible vertex colourings have still a weight of 1, and the non-monochromatic feasible vertex colourings have still a weight of 0. So, ${G'_{k'}}^{w'}$ is still perfectly monochromatic and $\Tilde{c}(G', k', w') = \Tilde{c}(G, k, w)$. Now, we can rename $G'$ as $G$ and repeat the whole procedure while $G_k^w$ has still edges with a weight different from $\{-1, 1\}$. The resulting graph has only edges that have signed unitary weights and has the same weighted chromatic index as the initial graph. So if any upper bound can be found on the weighted matching index of the final graph with signed unitary weights, it will still the valid for the weighted matching index of the initial one, with integer weights.
+\end{proof}
+
+Studying this special case of perfectly monochromatic graphs with signed unitary weights and, by extension, with integer weights might already take a lot of time. It is not sure at all that the conjecture is easy to prove even for that simplified case. Indeed, even finding any constant bound was never reached for this type of graphs at the time of the redaction. So finding any constant upper bound in my research would already be a big step. And of course, the best case scenario would be to prove Krenn's conjecture for this type of graphs. If we manage to do it, the next step would probably be to extend our results to graphs with complex weights that have integer coefficients (i.e. of the form $m \cdot i + n$, where $m, n \in \mathbb{Z}$). At last, we would finally try to generalize our results to graphs with real weights and complex weights. 
+
+
+\section{Experimental approach}
+
+Finding interesting structural characterisations of perfectly monochromatic graphs might be the clue to the discovery of any constant bound on their weighted matching index. But building and analysing such graphs by hand can be hard. So, an idea could be to write a program that automatically builds and draws perfectly monochromatic graphs. The advantages of such a program would be multiple :
+
+\begin{itemize}
+    \item Building a big number of perfectly monochromatic graphs could lead to the finding of a counter example of the Krenn's conjecture. But we have to note that some researchers already tried to do that and failed.
+    \item By looking only to graphs that have a matching index of 1 (which is the only unsolved case), we could find some resemblance between them that might give us ideas of ways to build a proof. Thanks to Chandran and Gajjala's research, there exists an algorithm to find if a graph has a chromatic index of 1. This algorithm is described in details in \cite{chandran}.
+    \item The fact that, in our studied case, the weights can be only -1 or 1 might make the implementation of such a program simpler - we would have to generate only those graphs.
+\end{itemize}

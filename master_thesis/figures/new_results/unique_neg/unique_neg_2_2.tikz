@@ -1,0 +1,42 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=blue dot] (0) at (-1.25, 4.25) {};
+		\node [style=green dot] (1) at (1.25, 4.25) {};
+		\node [style=blue dot] (2) at (-3.25, 3.25) {};
+		\node [style=green dot] (3) at (3.25, 3.25) {};
+		\node [style=blue dot] (4) at (-4.25, 1.25) {};
+		\node [style=blue dot] (5) at (4.25, 1.25) {};
+		\node [style=blue dot] (6) at (-4.25, -1.25) {};
+		\node [style=green dot] (7) at (-3.25, -3.25) {};
+		\node [style=red dot] (8) at (-1.25, -4.25) {};
+		\node [style=red dot] (9) at (1.25, -4.25) {};
+		\node [style=green dot] (10) at (3.25, -3.25) {};
+		\node [style=blue dot] (11) at (4.25, -1.25) {};
+		\node [style=none] (12) at (1.75, -0.5) {$e^-$};
+		\node [style=none] (13) at (0, -1) {$e$};
+		\node [style=none] (14) at (-2, 0) {$e'$};
+		\node [style=none] (15) at (2.75, 1.25) {$e''$};
+		\node [style=none] (16) at (1.75, 4.75) {$v_i$};
+		\node [style=none] (17) at (3.75, 3.75) {$v_{i+1}$};
+		\node [style=none] (18) at (3.75, -3.75) {$v_j$};
+		\node [style=none] (19) at (-3.75, -3.75) {$v_k$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=red edge] (0) to (1);
+		\draw [style=red edge] (3) to (5);
+		\draw [style=red edge] (11) to (10);
+		\draw [style=bold red] (9) to (8);
+		\draw [style=red edge] (7) to (6);
+		\draw [style=red edge] (4) to (2);
+		\draw [style=blue edge] (1) to (3);
+		\draw [style=bold blue] (5) to (11);
+		\draw [style=blue edge] (10) to (9);
+		\draw [style=blue edge] (8) to (7);
+		\draw [style=bold blue] (6) to (4);
+		\draw [style=bold blue] (0) to (2);
+		\draw [style=bold green] (1) to (10);
+		\draw [style=bold green] (3) to (7);
+		\draw [style=green edge] (1) to (7);
+		\draw [style=green edge] (3) to (10);
+	\end{pgfonlayer}
+\end{tikzpicture}

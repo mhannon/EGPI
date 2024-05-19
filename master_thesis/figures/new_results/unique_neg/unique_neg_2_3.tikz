@@ -1,0 +1,49 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=blue dot] (0) at (-2.25, 4.25) {};
+		\node [style=blue dot] (1) at (2.25, 4.25) {};
+		\node [style=blue dot] (2) at (-4.25, 3.25) {};
+		\node [style=green dot] (3) at (4.25, 3.25) {};
+		\node [style=blue dot] (4) at (-5.25, 1.25) {};
+		\node [style=green dot] (5) at (5.25, 1.25) {};
+		\node [style=blue dot] (6) at (-5.25, -1.25) {};
+		\node [style=green dot] (7) at (-4.25, -3.25) {};
+		\node [style=red dot] (8) at (-2.25, -4.25) {};
+		\node [style=green dot] (9) at (2.25, -4.25) {};
+		\node [style=blue dot] (10) at (4.25, -3.25) {};
+		\node [style=blue dot] (11) at (5.25, -1.25) {};
+		\node [style=none] (12) at (-3.75, 1) {$e^-$};
+		\node [style=none] (13) at (2.25, -1.75) {$e'$};
+		\node [style=none] (14) at (0.5, -0.25) {$e''$};
+		\node [style=blue dot] (15) at (0, 4.5) {};
+		\node [style=red dot] (16) at (0, -4.5) {};
+		\node [style=none] (17) at (-2, -0.5) {$e$};
+		\node [style=none] (18) at (-5, -4) {$v_j = v_n$};
+		\node [style=none] (19) at (-2.5, -5) {$v_k$};
+		\node [style=none] (20) at (2.5, -5) {$v_m$};
+		\node [style=none] (22) at (6, 1.5) {$v_{l+1}$};
+		\node [style=none] (23) at (4.5, 4) {$v_l$};
+		\node [style=none] (24) at (0, 5.5) {$v_{i+1}$};
+		\node [style=none] (25) at (-2.75, 5) {$v_i$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=blue edge] (3) to (5);
+		\draw [style=red edge] (7) to (6);
+		\draw [style=red edge] (4) to (2);
+		\draw [style=red edge] (1) to (3);
+		\draw [style=red edge] (5) to (11);
+		\draw [style=red edge] (10) to (9);
+		\draw [style=blue edge] (8) to (7);
+		\draw [style=bold blue] (6) to (4);
+		\draw [style=bold blue] (0) to (2);
+		\draw [style=bold blue] (1) to (15);
+		\draw [style=red edge] (15) to (0);
+		\draw [style=bold red] (8) to (16);
+		\draw [style=blue edge] (9) to (16);
+		\draw [style=bold blue] (11) to (10);
+		\draw [style=green edge] (0) to (7);
+		\draw [style=bold green] (3) to (9);
+		\draw [style=bold green] (5) to (7);
+		\draw [style=green edge] (15) to (8);
+	\end{pgfonlayer}
+\end{tikzpicture}

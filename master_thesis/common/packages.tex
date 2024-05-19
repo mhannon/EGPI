@@ -1,0 +1,40 @@
+% Math notations
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{braket}
+
+% Glossary and acronyms package
+
+\usepackage[toc,acronyms]{glossaries}
+\usepackage{float}
+\usepackage{eurosym}
+
+% Theorems and definitions
+
+\usepackage{amsthm}
+\usepackage{thmtools}
+\theoremstyle{definition}
+\renewcommand{\listtheoremname}{List of theorems and definitions}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{observation}[theorem]{Observation}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem*{claim}{Claim}
+
+% Figures
+
+\usepackage{tikzit}
+\input{common/graphs.tikzstyles}
+
+% Enumerations
+
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}}
+\renewcommand{\labelenumiv}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}}
+
+% Algorithms
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}

@@ -14,7 +14,93 @@ def powerset(iterable, min_size=0):
     return itertools.chain.from_iterable(itertools.combinations(s, r) for r in range(min_size, len(s) + 1))
 
 
+def random_experiment_graphs_research(number_of_trials: int,
+                                      number_of_nodes: int,
+                                      colours: list,
+                                      weights: list,
+                                      complexity_bounds: list,
+                                      results_folder: str):
+    """
+    Draws a random graph with the given parameters.
+    :param number_of_trials: number of graphs to draw
+    :param number_of_nodes: number of nodes in the graph
+    :param colours: list of colours to use for the edges
+    :param weights: list of complex numbers to use as the weights
+    :param complexity_bounds: list of the complexity bounds to use
+    :param results_folder: folder where the results will be stored
+    :return: None
+    """
+    number_of_discovered_graphs = 0
+    used_complexity_bound = 0
+
+    for i in range(number_of_trials):  # Generate m random graphs
+
+        # Display advancement in terminal for convenience
+        display_advancement(i, number_of_trials, number_of_discovered_graphs)
+        # Loop through the complexity bounds
+        used_complexity_bound = (used_complexity_bound + 1) % len(complexity_bounds)
+        # Generate a random candidate graph with our parameters
+        candidate_graph = generate_random_candidate_graph(number_of_nodes, colours, weights,
+                                                          complexity_bounds[used_complexity_bound])
+        # Get the feasible vertex colourings of the generated graph
+        feasible_vertex_colourings_weights = candidate_graph.get_feasible_vertex_colourings_weights()
+        is_monochromatic = not any(len(set(vertex_colouring)) > 1
+                                   for vertex_colouring in feasible_vertex_colourings_weights)
+        # Save the results if they are of interest
+        if candidate_graph.get_weighted_matching_index() == len(colours) \
+                and not is_monochromatic:
+            number_of_discovered_graphs += 1
+            save_candidate_graph(results_folder, candidate_graph, number_of_nodes, len(colours), len(weights),
+                                 complexity_bounds[used_complexity_bound])
+
+
+def display_advancement(current_trials, total_trials, number_of_discovered_graphs):
+    """
+    Displays the advancement of the generation of the graphs in the terminal.
+    :param current_trials: number of graphs generated so far
+    :param total_trials: total number of graphs to generate
+    :param number_of_discovered_graphs: number of graphs that have been found
+    :return: None
+    """
+    if current_trials % 10000 == 0:
+        print("Generating graph " + str(current_trials) + " / " + str(total_trials) + "... (" + str(
+            current_trials * 100 // total_trials) + "%) - " + str(number_of_discovered_graphs) + " graphs found.")
+
+
+def generate_random_candidate_graph(number_of_nodes, colours, weights, complexity_bound):
+    """
+    Generates a random candidate graph with the given parameters.
+    :param number_of_nodes: of the graph.
+    :param colours: to use for the edges.
+    :param weights: to use for the edges.
+    :param complexity_bound: number of attempts to add a random perfect matching.
+    :return: the generated experiment graph.
+    """
+    # Create new empty experiment graph
+    exp_graph = ExperimentGraph()
+    exp_graph.add_nodes_from(range(number_of_nodes))
+    # Generate at least one perfect matching of each colour
+    for colour in colours:
+        random_node_order = random.sample(range(number_of_nodes), number_of_nodes)
+        for edge_index in range(number_of_nodes // 2):
+            u, v = random_node_order[2 * edge_index], random_node_order[2 * edge_index + 1]
+            c_weight = random.choice(weights)
+            exp_graph.add_edge(u, v, colour, colour, c_weight)
+            # TODO : add a step to ensure that the weights of all PMs are 1
+    # Add random perfect matchings to the already present ones
+    for _ in range(complexity_bound):
+        add_random_perfect_matching(exp_graph, weights, colours)
+    return exp_graph
+
+
 def add_random_perfect_matching(exp_graph: ExperimentGraph, weights: list, colours: list):
+    """
+    Adds random edges to the graph that belong to at least one perfect matching.
+    :param exp_graph: graph to add the edges to.
+    :param weights: to use for the edges.
+    :param colours: to use for the edges.
+    :return:
+    """
     # Positions of the edges of the perfect matching
     random_vertex_order = random.sample(range(exp_graph.number_of_nodes), exp_graph.number_of_nodes)
 
@@ -27,8 +113,7 @@ def add_random_perfect_matching(exp_graph: ExperimentGraph, weights: list, colou
         edges = exp_graph.edges(u, v)
         present_bicolours = [(edge.get_u_colour(), edge.get_v_colour()) for edge in edges]
         possible_bicolours = [(u_colour, v_colour) for u_colour in colours for v_colour in colours]
-        # print("Present bicolours : " + str(present_bicolours))
-        # print("Possible bicolours : " + str(possible_bicolours))
+
         for bicolour in present_bicolours:
             possible_bicolours.remove(bicolour)
         if len(possible_bicolours) > 0:
@@ -42,69 +127,48 @@ def add_random_perfect_matching(exp_graph: ExperimentGraph, weights: list, colou
                 exp_graph.add_edge(u, v, u_colour, v_colour, c_weight)
 
 
-def generate_m_random_graph(number_of_trials: int,
-                            number_of_nodes: int,
-                            colours: list,
-                            weights: list,
-                            results_folder: str,
-                            min_matching_index: int):
+def save_candidate_graph(results_folder, candidate_graph, number_of_nodes, number_of_colours, number_of_weights,
+                         complexity_bound):
     """
-    Draws a random graph with the given parameters.
-    :param number_of_trials: number of graphs to draw
-    :param number_of_nodes: number of nodes in the graph
-    :param colours: list of colours to use for the edges
-    :param weights: list of complex numbers to use as the weights
-    :param results_folder: folder where the results will be stored
-    :param min_matching_index: minimum matching index to consider
-    :return:
+    Saves the candidate graph in the results folder.
+    :param results_folder: name of the root folder where the results will be stored
+    :param candidate_graph: experiment graph to save
+    :param number_of_nodes: of the graph
+    :param number_of_colours: of the edges of the graph
+    :param number_of_weights: of the edges of the graph
+    :param complexity_bound: used to generate the graph
+    :return: None
     """
-    number_of_discovered_graphs = 0
-    number_of_added_PMs = 0
-
-    for i in range(number_of_trials):  # Generate m random graphs
-
-        # Display advancement for convenience
-        if i % 10000 == 0:
-            print("Generating graph " + str(i) + " / " + str(number_of_trials) + "... (" + str(
-                i * 100 // number_of_trials) + "%) - " + str(number_of_discovered_graphs) + " graphs found.")
-
-        # Create new empty experiment graph
-        exp_graph = ExperimentGraph()
-        exp_graph.add_nodes_from(range(number_of_nodes))
-
-        # Generate at least one perfect matching of each colour
-        for colour in colours:
-            random_node_order = random.sample(range(number_of_nodes), number_of_nodes)
-            for edge_index in range(number_of_nodes // 2):
-                u, v = random_node_order[2 * edge_index], random_node_order[2 * edge_index + 1]
-                c_weight = random.choice(weights)
-                exp_graph.add_edge(u, v, colour, colour, c_weight)
-                # TODO : add a step to ensure that the weights of all PMs are 1
-
-        # Add random perfect matchings to the already present ones
-        number_of_added_PMs = (number_of_added_PMs % 6) + 1  # TODO : change this to a parameter
-        for _ in range(number_of_added_PMs):
-            add_random_perfect_matching(exp_graph, weights, colours)
-
-        # Get the feasible vertex colourings of the generated graph
-        feasible_vertex_colourings_weights = exp_graph.get_feasible_vertex_colourings_weights()
-        is_monochromatic = not any(len(set(vertex_colouring)) > 1
-                                   for vertex_colouring in feasible_vertex_colourings_weights)
-
-        # Draw the graph
-        if exp_graph.get_weighted_matching_index() >= min_matching_index \
-                and not is_monochromatic:
-            number_of_discovered_graphs += 1
-            exp_graph.to_pdf(results_folder, "graph_" + str(number_of_discovered_graphs))
-            exp_graph.to_json(results_folder + "/graph_" + str(number_of_discovered_graphs))
+    folder_name = (results_folder + "/" +
+                   str(number_of_nodes) + "_nodes/" +
+                   str(number_of_colours) + "_colours/" +
+                   str(number_of_weights) + "_weights/" +
+                   str(complexity_bound) + "_complexity")
+    graph_name = "graph_" + str(number_of_saved_graph_in(folder_name) + 1)
+    candidate_graph.to_pdf(folder_name, graph_name)
+    candidate_graph.to_json(folder_name, graph_name)
 
 
+def number_of_saved_graph_in(folder: str):
+    """
+    Finds the number of graphs in a given folder.
+    :param folder: folder to look for the graphs in
+    :return: number of graphs in the folder
+    """
+    if not os.path.exists(folder):
+        os.makedirs(folder)
+
+    files = os.listdir(folder)
+    return len([file for file in files if file.endswith(".json")])
+
+
+"""
 def generate_all_graphs(number_of_nodes: int,
                         colours: list,
                         weights: list,
                         results_folder: str,
                         min_matching_index: int):
-    """
+    
     Draws all possible graphs with the given parameters.
     :param number_of_nodes: number of nodes in the graph
     :param number_of_colours: determines the number of colours to use for the edges
@@ -113,7 +177,7 @@ def generate_all_graphs(number_of_nodes: int,
     :param results_folder: folder where the results will be stored
     :param min_matching_index: minimum matching index to consider
     :return:
-    """
+    
     possible_edge_positions = list(itertools.combinations(range(number_of_nodes), 2))
     possible_edges = list(itertools.product(possible_edge_positions, colours, weights))
 
@@ -133,30 +197,32 @@ def generate_all_graphs(number_of_nodes: int,
             perfectly_monochromatic_graphs_counter += 1
             exp_graph.to_pdf(results_folder, "graph_" + str(perfectly_monochromatic_graphs_counter))
         del exp_graph
+"""
 
 
 def main():
-    number_of_graphs = int(input("Enter the number of graphs to generate: "))
-    n = int(input("Enter the size of the randomly generated graphs (number of nodes): "))
-    colours = input("Enter the colours to use for the edges (separated by a space): ").split()
-    weights_as_strings = input(
-        "Enter the weights to use for the edges (separated by a space, in the form a+bj): ").split()
-    weights = [complex(weight) for weight in weights_as_strings]
-    min_matching_index = int(input("Enter the minimum matching index to consider: "))
-    results_folder = "../results/" + \
-                     str(n) + "_nodes/" + \
-                     str(len(colours)) + "_colours/" + \
-                     str(len(weights)) + "_weights/" + \
-                     str(min_matching_index) + "_matching_index"
-    if not os.path.exists(results_folder):
-        os.makedirs(results_folder)
+    """
+    Main function of the program. Asks the user for the parameters of the random experiment graphs
+    research process and performs it.
+    :return: None
+    """
+    number_of_graphs = int(input(
+        "Enter the number of graphs to generate: "))
+    number_of_nodes = int(input(
+        "Enter the size of the randomly generated graphs (number of nodes): "))
+    colours = input(
+        "Enter the colours to use for the edges (separated by a space): ").split()
+    weights = [complex(weight) for weight in input(
+        "Enter the weights to use for the edges (separated by a space, in the form a+bj): ").split()]
+    complexity_bounds = [int(x) for x in input(
+        "Enter the complexity bound(s) to use (separated by a space): ").split()]
 
-    generate_m_random_graph(number_of_graphs,
-                            n,
-                            colours,
-                            weights,
-                            results_folder,
-                            min_matching_index)
+    random_experiment_graphs_research(number_of_graphs,
+                                      number_of_nodes,
+                                      colours,
+                                      weights,
+                                      complexity_bounds,
+                                      "results")
 
 
 if __name__ == "__main__":

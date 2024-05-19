@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=white dot] (0) at (-2.5, 0) {f};
+		\node [style=white dot] (1) at (-1, 2) {a};
+		\node [style=white dot] (2) at (1, 2) {b};
+		\node [style=white dot] (3) at (2.5, 0) {c};
+		\node [style=white dot] (4) at (1, -2) {d};
+		\node [style=white dot] (5) at (-1, -2) {e};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=blue line] (1) to (2);
+		\draw [style=red line] (2) to (3);
+		\draw [style=blue line] (3) to (4);
+		\draw [style=red line] (4) to (5);
+		\draw [style=blue line] (5) to (0);
+		\draw [style=red line] (0) to (1);
+	\end{pgfonlayer}
+\end{tikzpicture}
