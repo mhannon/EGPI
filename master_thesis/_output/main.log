@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.18)  20 MAY 2024 09:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.18)  20 MAY 2024 18:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1897,7 +1897,7 @@ LaTeX Font Info:    Redeclaring math symbol \iiintop on input line 23.
 LaTeX Font Info:    Redeclaring math symbol \oiintop on input line 23.
 LaTeX Font Info:    Redeclaring math accent \widehat on input line 23.
 LaTeX Font Info:    Redeclaring math accent \widetilde on input line 23.
-<Pictures/ULB_logo.jpg, id=123, 128.3997pt x 38.7849pt>
+<Pictures/ULB_logo.jpg, id=127, 128.3997pt x 38.7849pt>
 File: Pictures/ULB_logo.jpg Graphic file (type jpg)
 <use Pictures/ULB_logo.jpg>
 Package pdftex.def Info: Pictures/ULB_logo.jpg  used on input line 32.
@@ -1907,7 +1907,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--32
 
  []
 
-<Pictures/sceauULB.jpg, id=124, 1250.6725pt x 1250.6725pt>
+<Pictures/sceauULB.jpg, id=128, 1250.6725pt x 1250.6725pt>
 File: Pictures/sceauULB.jpg Graphic file (type jpg)
 <use Pictures/sceauULB.jpg>
 Package pdftex.def Info: Pictures/sceauULB.jpg  used on input line 32.
@@ -1970,7 +1970,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.28 ...tionalities of EGPI}{34}{subsection.4.2.2}
+l.28 ...tionalities of EGPI}{35}{subsection.4.2.2}
                                                   % [2
 
 {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}])
@@ -1984,18 +1984,37 @@ een already used, duplicate ignored
                    \relax 
 l.32 }
        [3] (./content/chapters.tex (./content/chapters/introduction.tex
-Underfull \hbox (badness 10000) in paragraph at lines 20--24
+Underfull \hbox (badness 10000) in paragraph at lines 6--11
+
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+futs on input line 
+15.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/fourier/ts1futs.fd
+File: ts1futs.fd 2003/09/14 Fontinst v1.801 font definitions for TS1/futs.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 12--18
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 25--29
+Underfull \hbox (badness 10000) in paragraph at lines 19--22
 
  []
 
-) (./content/chapters/chapter1.tex [1
 
-]
+Underfull \hbox (badness 10000) in paragraph at lines 23--26
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--33
+
+ []
+
+[1
+
+]) (./content/chapters/chapter1.tex [2]
 Chapter 1.
 LaTeX Font Info:    Trying to load font information for OT1+pzc on input line 3
 .
@@ -2006,7 +2025,7 @@ LaTeX Font Info:    Font shape `OT1/pzc/m/n' in size <76> not available
 (Font)              Font shape `OT1/pzc/m/it' tried instead on input line 3.
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
 nput line 21.
- [2
+ [3
 
 ]
 Overfull \hbox (17.61656pt too wide) in paragraph at lines 76--78
@@ -2017,7 +2036,7 @@ $ \T1/futs/m/n/10.95 be a graph that ad-mits a Hamil-to-nian cy-cle $\FML/futmi
 []; v[]; [] ; v[]\T1/futs/m/n/10.95 )$.
  []
 
-(./figures/problem_presentation/definitions/H_i_j.tikz) [3
+(./figures/problem_presentation/definitions/H_i_j.tikz) [4
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1.1}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -2027,7 +2046,7 @@ l.130 \begin{definition}[Matching]
 (./figures/problem_presentation/simplified/k4_pm.tikz)
 Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
 t line 176.
- [4
+ [5
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1.2}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -2041,19 +2060,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 215--216
 
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+futs on input line 
-221.
-(/usr/local/texlive/2024/texmf-dist/tex/latex/fourier/ts1futs.fd
-File: ts1futs.fd 2003/09/14 Fontinst v1.801 font definitions for TS1/futs.
-)
-(./figures/problem_presentation/simplified/proof_odd.tikz) [5]
-(./figures/problem_presentation/simplified/proof_even.tikz) [6
+(./figures/problem_presentation/simplified/proof_odd.tikz) [6]
+(./figures/problem_presentation/simplified/proof_even.tikz) [7
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1.3}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.266     \end{itemize}
-                       ] [7
+                       ] [8
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1.4}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -2070,7 +2084,7 @@ Overfull \hbox (4.5994pt too wide) in paragraph at lines 315--316
 (./figures/problem_presentation/krenn_conjecture/perfectly_mono.tikz)
 Package hyperref Info: bookmark level for unknown observation defaults to 0 on 
 input line 331.
- [8
+ [9
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1.5}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -2080,46 +2094,46 @@ l.334 \end{observation}
 Package hyperref Info: bookmark level for unknown conjecture defaults to 0 on i
 nput line 365.
 
-Underfull \hbox (badness 10000) in paragraph at lines 376--377
+Underfull \hbox (badness 10000) in paragraph at lines 376--379
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 378--379
+Underfull \hbox (badness 10000) in paragraph at lines 380--387
 
  []
 
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 380--381
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 388--389
 
  []
 
 
-Overfull \hbox (6.19972pt too wide) in paragraph at lines 403--404
+Overfull \hbox (6.19972pt too wide) in paragraph at lines 411--412
 []\T1/futs/m/n/10.95 This lead to the for-mu-la-tion of the \T1/futs/b/n/10.95 
 Krenn's con-jec-ture []\T1/futs/m/n/10.95 1.3.9[] in graph the-ory, which re-ma
 ins un-solved.[[][]Kre[]]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 403--404
+Underfull \hbox (badness 10000) in paragraph at lines 411--412
 
  []
 
-<figures/problem_presentation/motivations/krenn_graph.png, id=319, 315.5071pt x
+<figures/problem_presentation/motivations/krenn_graph.png, id=344, 315.5071pt x
  377.52985pt>
 File: figures/problem_presentation/motivations/krenn_graph.png Graphic file (ty
 pe png)
 <use figures/problem_presentation/motivations/krenn_graph.png>
 Package pdftex.def Info: figures/problem_presentation/motivations/krenn_graph.p
-ng  used on input line 407.
+ng  used on input line 415.
 (pdftex.def)             Requested size: 220.85345pt x 264.26907pt.
-[10]) (./content/chapters/chapter2.tex
-Underfull \hbox (badness 10000) in paragraph at lines 412--1
+[11]) (./content/chapters/chapter2.tex
+Underfull \hbox (badness 10000) in paragraph at lines 420--1
 
  []
 
-[11
+[12
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1.6}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -2128,13 +2142,13 @@ l.1 \chapter
             {State of the art} <./figures/problem_presentation/motivations/kren
 n_graph.png>]
 Chapter 2.
-[12
+[13
 
-] [13] (./figures/state_of_the_art/non_redundant_induced_graph.tikz)
+] [14] (./figures/state_of_the_art/non_redundant_induced_graph.tikz)
 Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input 
 line 115.
 
-[14
+[15
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -2146,7 +2160,7 @@ Overfull \hbox (3.63533pt too wide) in paragraph at lines 121--122
 -i-tive by def-i-ni-tion []1.3.5[]. But all the non-monochromatic
  []
 
-(./figures/state_of_the_art/special_cases/c_not_c_tilde.tikz) [15]
+(./figures/state_of_the_art/special_cases/c_not_c_tilde.tikz) [16]
 Underfull \hbox (badness 10000) in paragraph at lines 175--176
 
  []
@@ -2162,7 +2176,7 @@ This ver-tex must be cov-ered by $\FML/futmi/m/it/10.95 M[]; M[]; [] ; M[]$\T1/
 futs/m/n/10.95 .
  []
 
-[16
+[17
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -2174,14 +2188,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 229--230
 
  []
 
-[17
+[18
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.3}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.230 
       ] (./figures/state_of_the_art/known_bounds/proof_lambda_odd.tikz)
-[18
+[19
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.4}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -2198,7 +2212,7 @@ Overfull \hbox (8.14706pt too wide) in paragraph at lines 320--321
 hro-matic per-fect match-
  []
 
-[19
+[20
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.5}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -2219,7 +2233,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 361--362
 
  []
 
-[20]) (./content/chapters/chapter3.tex [21]
+[21]) (./content/chapters/chapter3.tex [22]
 Chapter 3.
 
 Underfull \hbox (badness 10000) in paragraph at lines 22--23
@@ -2231,45 +2245,45 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
  []
 
-(./figures/demo_integers.tikz) [22
+(./figures/demo_integers.tikz) [23
 
-] [23
+] [24
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.91     \end{center}
-                     ] [24]) (./content/chapters/chapter4.tex [25]
+                     ] [25]) (./content/chapters/chapter4.tex [26]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--11
+Underfull \hbox (badness 10000) in paragraph at lines 8--12
 
  []
 
-[26
+[27
 
 ] (./figures/new_results/unique_neg/unique_neg_ham.tikz)
-(./figures/new_results/unique_neg/unique_neg_odd_crossings.tikz) [27
+(./figures/new_results/unique_neg/unique_neg_odd_crossings.tikz) [28
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.86 
-     ] [28
+l.87 
+     ] [29
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.113 
+l.114 
       ] (./figures/new_results/unique_neg/unique_neg_2_2.tikz)
-(./figures/new_results/unique_neg/unique_neg_2_3.tikz) [29
+(./figures/new_results/unique_neg/unique_neg_2_3.tikz) [30
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.3}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.142 
+l.143 
       ]
-Overfull \hbox (11.71912pt too wide) in paragraph at lines 143--144
+Overfull \hbox (11.71912pt too wide) in paragraph at lines 144--145
 \T1/futs/m/n/10.95 There-fore, $\FMS/futm/m/n/10.95 9$ \T1/futs/m/n/10.95 an-ot
 her non-monochromatic per-fect match-ing $\FML/futmi/m/it/10.95 N[]$ \T1/futs/m
 /n/10.95 such that $\FML/futmi/m/it/10.95 ^^T\T1/futs/m/n/10.95 (\FML/futmi/m/i
@@ -2279,118 +2293,139 @@ i/m/it/10.95 w\T1/futs/m/n/10.95 (\FML/futmi/m/it/10.95 N[]\T1/futs/m/n/10.95 )
  \FMS/futm/m/n/10.95 ‚
  []
 
-[30
+[31
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.4}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.162     \end{center}
+l.163     \end{center}
                       ]
 (./figures/new_results/2_pos_classes/2_pos_classes_ham_cycle.tikz)
-(./figures/new_results/unique_neg/unique_neg_odd_crossings.tikz) [31
+(./figures/new_results/unique_neg/unique_neg_odd_crossings.tikz) [32
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.5}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.200 
-      ] (./figures/new_results/2_pos_classes/2_pos_classes_proof.tikz) [32
+l.202 
+      ] (./figures/new_results/2_pos_classes/2_pos_classes_proof.tikz) [33
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.6}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.234     \end{figure}
-                      ] [33
+l.236     \end{figure}
+                      ] [34
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.7}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.256 
-      ] [34]
-Underfull \hbox (badness 10000) in paragraph at lines 305--306
+l.258 
+      ] [35]
+Underfull \hbox (badness 10000) in paragraph at lines 307--308
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 307--311
+Underfull \hbox (badness 10000) in paragraph at lines 309--313
 
  []
 
-<figures/new_results/egpi/structure_diagram.png, id=617, 1723.43875pt x 1721.43
+<figures/new_results/egpi/structure_diagram.png, id=642, 1723.43875pt x 1721.43
 124pt>
 File: figures/new_results/egpi/structure_diagram.png Graphic file (type png)
 <use figures/new_results/egpi/structure_diagram.png>
 Package pdftex.def Info: figures/new_results/egpi/structure_diagram.png  used o
-n input line 318.
+n input line 320.
 (pdftex.def)             Requested size: 430.85863pt x 430.35677pt.
-[35]
+[36]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 329.
- [36
+put line 331.
+ [37
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.8}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.360         \end{itemize}
+l.362         \end{itemize}
                             <./figures/new_results/egpi/structure_diagram.png>]
-[37] [38]
-Underfull \hbox (badness 10000) in paragraph at lines 486--490
+[38] [39]
+Underfull \hbox (badness 10000) in paragraph at lines 488--492
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 506--509
-
- []
-
-[39]
-Underfull \hbox (badness 10000) in paragraph at lines 531--533
+Underfull \hbox (badness 10000) in paragraph at lines 508--511
 
  []
 
 [40]
-Underfull \hbox (badness 10000) in paragraph at lines 588--589
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 606--610
+Underfull \hbox (badness 10000) in paragraph at lines 533--535
 
  []
 
 [41]
-Underfull \hbox (badness 10000) in paragraph at lines 614--617
+Underfull \hbox (badness 10000) in paragraph at lines 590--591
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 648--655
+Underfull \hbox (badness 10000) in paragraph at lines 608--612
 
  []
 
-[42
+[42]
+Underfull \hbox (badness 10000) in paragraph at lines 616--619
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 650--656
+
+ []
+
+[43
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.9}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.656 H
-       owever, I am surprised that, when $n=8$, a graph was found with $b=3$...
-]) (./content/chapters/conclusion.tex [43]
-Underfull \hbox (badness 10000) in paragraph at lines 5--6
+l.656 
+      ]) (./content/chapters/conclusion.tex [44]
+Underfull \hbox (badness 10000) in paragraph at lines 6--11
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--8
+Underfull \hbox (badness 10000) in paragraph at lines 12--17
+
+ []
+
+) (./content/chapters/aknowledgements.tex
+Underfull \hbox (badness 10000) in paragraph at lines 31--2
+
+ []
+
+[45
+
+] [46]
+Underfull \hbox (badness 10000) in paragraph at lines 6--9
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--10
+Underfull \hbox (badness 10000) in paragraph at lines 10--13
 
  []
 
-)) (/Users/Merlin/PycharmProjects/EGPI/master_thesis/_output/main.gls)
-(/Users/Merlin/PycharmProjects/EGPI/master_thesis/_output/main.acr) [44
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--16
+
+ []
+
+))
+Underfull \hbox (badness 10000) in paragraph at lines 17--39
+
+ []
+
+(/Users/Merlin/PycharmProjects/EGPI/master_thesis/_output/main.gls)
+(/Users/Merlin/PycharmProjects/EGPI/master_thesis/_output/main.acr) [47
 
 ]
 (/Users/Merlin/PycharmProjects/EGPI/master_thesis/_output/main.loe
@@ -2413,9 +2448,9 @@ Overfull \hbox (4.55519pt too wide) detected at line 14
 \T1/futs/m/n/10.95 1.1.13 
  []
 
-[45
+[48
 
-]) [46]
+]) [49]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
 8.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/base/t1cmtt.fd
@@ -2426,22 +2461,22 @@ Overfull \hbox (4.78864pt too wide) in paragraph at lines 50--50
  of Three-Photon Greenberger-Horne-Zeilinger
  []
 
+[50
 
+]
 Overfull \hbox (0.95842pt too wide) in paragraph at lines 50--50
 [][]\T1/futs/m/n/10.95 Krenn, Mario, Xue-mei Gu, and An-ton Zeilinger (Dec. 201
 7). ^^P  Quan-tum Ex-per-i-ments and Graphs:
  []
 
-[47
 
-]
 Overfull \hbox (5.6953pt too wide) in paragraph at lines 50--50
 [][]\T1/futs/m/n/10.95 Sciences, The Royal Swedish Academy of (2022). \T1/futs/
 m/it/10.95 The No-bel Prize in Physics 2022 --- no-bel-prize.org\T1/futs/m/n/10
 .95 .
  []
 
-[48]
+[51]
 \tf@loe=\write10
 \openout10 = `main.loe'.
 
@@ -2451,20 +2486,21 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: EA6960A44F62781FBAFB007D1CE97AFA;5428.
+(rerunfilecheck)             Checksum: 48823B7F046317BB715ADE612EB99289;5548.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56676 strings out of 474116
- 1251770 string characters out of 5743682
- 2293333 words of memory out of 5000000
- 77688 multiletter control sequences out of 15000+600000
+ 56720 strings out of 474116
+ 1252968 string characters out of 5743682
+ 2293751 words of memory out of 5000000
+ 77718 multiletter control sequences out of 15000+600000
  629905 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,12n,121p,2365b,2348s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/fourier/fourier-bb.pfb
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/fourier/fourier-alt.pf
+b></usr/local/texlive/2024/texmf-dist/fonts/type1/public/fourier/fourier-bb.pfb
 ></usr/local/texlive/2024/texmf-dist/fonts/type1/public/fourier/fourier-mcl.pfb
 ></usr/local/texlive/2024/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb
 ></usr/local/texlive/2024/texmf-dist/fonts/type1/public/fourier/fourier-ml.pfb>
@@ -2478,10 +2514,10 @@ ive/2024/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texliv
 e/2024/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/
 2024/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
 Output written on /Users/Merlin/PycharmProjects/EGPI/master_thesis/_output/main
-.pdf (51 pages, 1898480 bytes).
+.pdf (54 pages, 1908938 bytes).
 PDF statistics:
- 924 PDF objects out of 1000 (max. 8388607)
- 826 compressed objects within 9 object streams
- 260 named destinations out of 1000 (max. 500000)
- 265 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 976 PDF objects out of 1000 (max. 8388607)
+ 873 compressed objects within 9 object streams
+ 271 named destinations out of 1000 (max. 500000)
+ 273 words of extra memory for PDF output out of 10000 (max. 10000000)
 

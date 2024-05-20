@@ -1,4 +1,5 @@
 \chapter{New contributions}
+\label{ch:new-contributions}
 
 
 \section{Algorithmic approach}
@@ -184,7 +185,8 @@ The main argument of the proof of the previous analysed case was that 2 colour c
 \end{observation}
 
 \begin{proof}
-    Let assume by contradiction that $j-i$ is odd. Without loss of generality, we can assume that the colour of $(v_i, v_{i+1})$ is $1$ (otherwise, inverse colours $1$ and $2$). Then the following non-monochromatic perfect matching can be built.
+    Let assume by contradiction that $j-i$ is odd.
+    Without loss of generality, we can assume that the colour of $(v_i, v_{i+1})$ is $1$ (otherwise, inverse colours $1$ and $2$). Then the following non-monochromatic perfect matching can be built.
 
     \begin{center}
         $N = e \cup (M_2 \cap H_{i+1, j-1}) \cup (M_1 \cap H_{j+1, i-1})$
@@ -636,9 +638,9 @@ In three different random experiment graphs research processes generating graphs
         \hline
         $n$ & $b = 1$ & $b = 2$ & $b = 3$ & $b = 4$ & $b = 5$ & total \\
         \hline
-        $6 $ & $199$ & $68$ & $9$ & $0$ & $0$ & $276$ \\
-        $8 $ & $66$  & $0$  & $1$ & $0$ & $0$ & $67$   \\
-        $10$ & $13$  & $0$  & $0$ & $0$ & $0$ & $13$  \\
+        $6 $ & $103$ & $18$ & $4$ & $0$ & $0$ & $125$ \\
+        $8 $ & $39$  & $1$  & $0$ & $0$ & $0$ & $40$  \\
+        $10$ & $3$   & $0$  & $0$ & $0$ & $0$ & $3$   \\
         \hline
     \end{tabular}
     \caption{Results of $3$ different random experiment graphs research process with $n=6$, $n=8$ and $n=10$ respectively.}
@@ -647,10 +649,22 @@ In three different random experiment graphs research processes generating graphs
 
 From the results in figure~\ref{fig:results-experiment}, we can do the following observations.
 Firstly, it is a lot harder to find perfectly monochromatic graphs in these conditions when their size is bigger.
-This can be explained by the fact that the number of possible graphs grows exponentially with the number of vertices.
-Secondly, the complexity bound has a big impact on the number of found graphs.
-A higher complexity bound results in a smaller number of found graphs.
+Indeed, the number of possibilities grows exponentially with the number of vertices, and the probability to find a perfectly monochromatic graph decreases.
+Secondly, the complexity bound has a big impact on the number of found graphs: a higher complexity bound results in a smaller number of found graphs.
 This was expected, since the graphs generated with a higher complexity bound have higher chances to have more edges and perfect matchings.
-The probability that all the randomly generated edges and perfect matchings together satisfy the definition~\ref{def:perfectly_monochromatic_graph} are small.\\
+The probability that all these randomly generated edges and perfect matchings together satisfy the definition~\ref{def:perfectly_monochromatic_graph} are small.\\
 
-However, I am surprised that, when $n=8$, a graph was found with $b=3$ and none was found with $b=2$.
+The last thing I am interested in is to count bipartite graphs among all the perfectly monochromatic graphs found.
+The result is the following: \textbf{none} of the perfectly monochromatic graphs found were bipartite.
+This is an alluring new observation: indeed, it is consistent with the arguments we used in the proofs of lemmas~\ref{lem:one_neg_edge} and~\ref{lem:2_positive_colour_classes_forbidden}.
+One of the observations these proofs used is that, in these particular cases, the perfectly monochromatic graphs found were not bipartite.
+This allows me to formulate the following conjecture.
+
+\begin{conjecture}
+    \label{con:bipartite_perfectly_monochromatic}
+    Let $G_k^w$ be a perfectly monochromatic graph with a weighted matching index
+    \begin{center}
+        $\Tilde{c}(G, k, w) \geq 2$
+    \end{center}
+    Then, $G_k^w$ is not bipartite.
+\end{conjecture}

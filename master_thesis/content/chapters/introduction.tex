@@ -5,26 +5,48 @@
 
 Quantum computing has hugely developed in the last few years, with the rise of new technologies and the development of new algorithms.
 Advancements made in quantum information and computation promise theoretical ways to solve problems that are currently intractable with classical computers.
-% TODO: there is a problem in the results table
-% TODO: continue the introduction
-% TODO: add references
-% TODO: count the bipartite graphs
-% TODO: write conclusion
+It is already used a lot in the field of cryptography~\cite{kumar2021state}, and its potential uses extend to many other fields such as artificial intelligence~\cite{otterbach2017unsupervised}, financial planning and medicine~\cite{hassija2020forthcoming}.
+However, quantum computers are still in their infancy and are not yet able to solve a lot of practical problems.
+One of the reasons for this is the difficulty to physically create some specific quantum states.\\
 
+In its research, the physicist Mario Krenn has been working on the generation of high-dimensional multipartite quantum states~\cite{Krenn_2017}.
+In this same paper, he discovered a new surprising link between the generation of these quantum states and a specific problem in graph theory.
+The problem was summarized by Mario Krenn himself on his website~\cite{wordpress}.
+Furthermore, to promote research on the subject, the physicist promised a reward of 3000€ to the first person who will solve his conjecture, and an additional reward of 1000€ was offered during the last $2$ years to the best paper on the subject~\cite{wordpress}.
+This problem, that we will refer to as the \textit{Krenn's conjecture}, is about proving the existence of a bound on some quantity called the \textit{weighted matching index} of a graph.
+It will be defined in details in the chapter~\ref{ch:description-of-the-problem} of this thesis.\\
+
+The main points of this master thesis are the following: first, the Krenn's conjecture will be rigorously defined.
+This will be done through a progressive approach, starting from reminders of basic graph theory concepts (section~\ref{sec:prerequisites-and-used-notations}), then looking at a simplified version of the conjecture (section~\ref{sec:simplified-version-of-the-conjecture}), and at last introducing the Krenn's conjecture (section~\ref{sec:krenn_conjecture}).
+This definition will be directly followed by a detailed explanation of its physical interpretations (section~\ref{sec:motivations}).\\
+
+Then, a state of the art in the domain will be established in Chapter~\ref{ch:state-of-the-art}.
+In dressing the state of the art, we will focus on the special cases of the problem that were already solved by other researchers.
+Also, we will rewrite some proofs in our own terms, to get a better understanding of the reasoning.\\
+
+Lastly, I will present my own new contributions to the problem in chapter~\ref{ch:new-contributions}, which can be summarized in $2$ main points.
+Firstly, I proved algorithmically a new special case of the Krenn's conjecture.
+This proof will be presented by taking a simple known case of the problem, and then relaxing some of its constraints to generalize it.
+And secondly, I will present a new tool I developed, called EGPI, to experimentally test the conjecture on a large number of graphs.
+The use cases and technical implementation of this tool will be discussed in section ... % TODO: add reference
+At last, and to finish this master thesis, I present some experimental results I got using EGPI, and my interpretation of them in section~\ref{subsec:realized_experiments}.\\
+
+
+% TODO: add references
 % TODO: (ASK) add preface (or abstract)
 % TODO: (ASK) manage plan of realization
 % TODO: (ASK) complexity of finding perfect matchings
 % TODO: (ASK) complexity of is_bipartite
 
 
-Graph colourings and matchings are two major concepts of graph theory that were studied and restudied since the rising of that field.
-Finding new exciting results in this domain can be challenging due to the vast amount of existing research.
-But recently, a new compelling problem linking the 2 subjects was posted by the physicist Mario Krenn in~\cite{wordpress} in the context of its study of quantum physics questions.
-We will refer to this problem as the \textit{Krenn's conjecture}, since it remains unresolved to this day.\\
+% Graph colourings and matchings are two major concepts of graph theory that were studied and restudied since the rising of that field.
+% Finding new exciting results in this domain can be challenging due to the vast amount of existing research.
+% But recently, a new compelling problem linking the 2 subjects was posted by the physicist Mario Krenn in~\cite{wordpress} in the context of its study of quantum physics questions.
+% We will refer to this problem as the \textit{Krenn's conjecture}, since it remains unresolved to this day.\\
 
-The problem introduces a unique form of vertex colourings in graphs that incorporates perfect matchings, and that was never investigated before.
-The Krenn's conjecture, if solved, might reveal new intriguing insights in quantum optical physics.
-In fact, Mario Krenn showed in his publication~\cite{Krenn_2017} a link between experimental setups for generating high-dimensional multipartite quantum states and a specific problem in graph theory.
-While this preparatory work focuses only on the graph theory aspects and does not analyse the physical implications of the findings, the reader is encouraged to read the original article by Mario Krenn to acquire a deeper understanding of the physical aspects. \\
+% The problem introduces a unique form of vertex colourings in graphs that incorporates perfect matchings, and that was never investigated before.
+% The Krenn's conjecture, if solved, might reveal new intriguing insights in quantum optical physics.
+% In fact, Mario Krenn showed in his publication~\cite{Krenn_2017} a link between experimental setups for generating high-dimensional multipartite quantum states and a specific problem in graph theory.
+% While this preparatory work focuses only on the graph theory aspects and does not analyse the physical implications of the findings, the reader is encouraged to read the original article by Mario Krenn to acquire a deeper understanding of the physical aspects. \\
 
-The problem is about proving the existence of a bound on some quantity called the \textit{weighted matching index} of a graph and is defined in details in the first chapter. In the context of this thesis, I will focus my research on finding at least some bound, constant if possible, on that value for special cases of the Krenn's conjecture. The approach I will take is based on the fact that I believe the conjecture to be true, but of course the discovery of a counter example can not be excluded. This preparatory work explains in details the Krenn's conjecture, establishes a state of the art in the domain, and defines a plan of realization of my research. At the end of this preparatory work, the goal will be to fully understand the problem and get a better view of what can be done to solve it.
+% The problem is about proving the existence of a bound on some quantity called the \textit{weighted matching index} of a graph and is defined in details in the first chapter. In the context of this thesis, I will focus my research on finding at least some bound, constant if possible, on that value for special cases of the Krenn's conjecture. The approach I will take is based on the fact that I believe the conjecture to be true, but of course the discovery of a counter example can not be excluded. This preparatory work explains in details the Krenn's conjecture, establishes a state of the art in the domain, and defines a plan of realization of my research. At the end of this preparatory work, the goal will be to fully understand the problem and get a better view of what can be done to solve it.

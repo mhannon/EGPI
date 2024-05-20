@@ -405,6 +405,58 @@
       \field{pages}{61502}
       \range{pages}{1}
     \endentry
+    \entry{hassija2020forthcoming}{article}{}
+      \name{author}{5}{}{%
+        {{hash=10e5db2334dbca6bd5462fd2c81a369c}{%
+           family={Hassija},
+           familyi={H\bibinitperiod},
+           given={Vikas},
+           giveni={V\bibinitperiod}}}%
+        {{hash=b739bdf70b8d0a68cb988c0f29cc3b7e}{%
+           family={Chamola},
+           familyi={C\bibinitperiod},
+           given={Vinay},
+           giveni={V\bibinitperiod}}}%
+        {{hash=0506cb7f3f9a3826352e9671cebba05c}{%
+           family={Goyal},
+           familyi={G\bibinitperiod},
+           given={Adit},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d42de3a8c3ca3cd3c2b0613ce846f25d}{%
+           family={Kanhere},
+           familyi={K\bibinitperiod},
+           given={Salil\bibnamedelima S},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=9c228bd01e2166a16996e9e43b3fa928}{%
+           family={Guizani},
+           familyi={G\bibinitperiod},
+           given={Nadra},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{5c5a1006345ba8cf9b0d60075777fbd1}
+      \strng{fullhash}{22e3bef109aa19daae127e7516b3243c}
+      \strng{bibnamehash}{5c5a1006345ba8cf9b0d60075777fbd1}
+      \strng{authorbibnamehash}{5c5a1006345ba8cf9b0d60075777fbd1}
+      \strng{authornamehash}{5c5a1006345ba8cf9b0d60075777fbd1}
+      \strng{authorfullhash}{22e3bef109aa19daae127e7516b3243c}
+      \field{labelalpha}{Has+20}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IET Quantum Communication}
+      \field{number}{2}
+      \field{title}{Forthcoming applications of quantum computing: peeking into the future}
+      \field{volume}{1}
+      \field{year}{2020}
+      \field{pages}{35\bibrangedash 41}
+      \range{pages}{7}
+    \endentry
     \entry{wordpress}{misc}{}
       \name{author}{1}{}{%
         {{hash=f924a10adb49d1b1042cff6432a3e12b}{%
@@ -483,6 +535,114 @@
       \verb{url}
       \verb https://doi.org/10.1103%2Fphysrevlett.119.240403
       \endverb
+    \endentry
+    \entry{kumar2021state}{article}{}
+      \name{author}{2}{}{%
+        {{hash=eb6a64cf20a5b21db872c9ca0d491ed9}{%
+           family={Kumar},
+           familyi={K\bibinitperiod},
+           given={Ajay},
+           giveni={A\bibinitperiod}}}%
+        {{hash=e17483fd0e528553d5e3e548b3b85d1a}{%
+           family={Garhwal},
+           familyi={G\bibinitperiod},
+           given={Sunita},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{2c4a98e5865d1d2a53389e85066f812b}
+      \strng{fullhash}{2c4a98e5865d1d2a53389e85066f812b}
+      \strng{bibnamehash}{2c4a98e5865d1d2a53389e85066f812b}
+      \strng{authorbibnamehash}{2c4a98e5865d1d2a53389e85066f812b}
+      \strng{authornamehash}{2c4a98e5865d1d2a53389e85066f812b}
+      \strng{authorfullhash}{2c4a98e5865d1d2a53389e85066f812b}
+      \field{labelalpha}{KG21}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Archives of Computational Methods in Engineering}
+      \field{title}{State-of-the-art survey of quantum cryptography}
+      \field{volume}{28}
+      \field{year}{2021}
+      \field{pages}{3831\bibrangedash 3868}
+      \range{pages}{38}
+    \endentry
+    \entry{otterbach2017unsupervised}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{hash=07692b03edbdfea5d33a9ac0f8b13f37}{%
+           family={Otterbach},
+           familyi={O\bibinitperiod},
+           given={Johannes\bibnamedelima S},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=823413ddae8f1d1ebdd7613db661c858}{%
+           family={Manenti},
+           familyi={M\bibinitperiod},
+           given={Riccardo},
+           giveni={R\bibinitperiod}}}%
+        {{hash=0c9ff5ceb735e804824b23d7e37cc4f8}{%
+           family={Alidoust},
+           familyi={A\bibinitperiod},
+           given={Nasser},
+           giveni={N\bibinitperiod}}}%
+        {{hash=f4bfaf30b5a34da0e6da0e91a4f77ab4}{%
+           family={Bestwick},
+           familyi={B\bibinitperiod},
+           given={A},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ef572a9da44468a49b3271306fca7577}{%
+           family={Block},
+           familyi={B\bibinitperiod},
+           given={M},
+           giveni={M\bibinitperiod}}}%
+        {{hash=cc8a2b5263132186462d8fd09f4070be}{%
+           family={Bloom},
+           familyi={B\bibinitperiod},
+           given={B},
+           giveni={B\bibinitperiod}}}%
+        {{hash=83ca18e6c9cd2b3ba0ef7fd90e49b8d3}{%
+           family={Caldwell},
+           familyi={C\bibinitperiod},
+           given={S},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f56cac86d376ba3773bd5731f93f879f}{%
+           family={Didier},
+           familyi={D\bibinitperiod},
+           given={N},
+           giveni={N\bibinitperiod}}}%
+        {{hash=dd1f5616928ab8fa8a85845b711b5f3b}{%
+           family={Fried},
+           familyi={F\bibinitperiod},
+           given={E\bibnamedelima Schuyler},
+           giveni={E\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=40514c5e084b29e34830e7e01add0cac}{%
+           family={Hong},
+           familyi={H\bibinitperiod},
+           given={S},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{7a4d266f1f47e254e44996ad25db9303}
+      \strng{fullhash}{64715159403e327d3179e1aebd7fcea4}
+      \strng{bibnamehash}{7a4d266f1f47e254e44996ad25db9303}
+      \strng{authorbibnamehash}{7a4d266f1f47e254e44996ad25db9303}
+      \strng{authornamehash}{7a4d266f1f47e254e44996ad25db9303}
+      \strng{authorfullhash}{64715159403e327d3179e1aebd7fcea4}
+      \field{labelalpha}{Ott+17}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1712.05771}
+      \field{title}{Unsupervised machine learning on a hybrid quantum computer}
+      \field{year}{2017}
     \endentry
     \entry{pivoluska2018layered}{article}{}
       \name{author}{3}{}{%

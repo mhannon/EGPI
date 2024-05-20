@@ -1,11 +1,38 @@
 \setcounter{secnumdepth}{-1}
 
 \chapter{Conclusion}
+\label{ch:conclusion}
 
-In conclusion, the first goals that we fixed ourselves for that preparatory work are completed. At first, a proper definition of the Krenn's conjecture was established. For this, we showed an interesting parallel between monochromatic graphs and perfectly monochromatic graphs that was presented by Mario Krenn himself in \cite{wordpress}. A simplified version of the conjecture was explained, which was solved by Bogdanov in \cite{bogdanov}. Nevertheless, we could understand and redo the Bogdanov's proof to make it stick to our own notations. Keeping in mind the simplified version of the conjecture, we could define and understand all the concepts linked to the complete Krenn's conjecture, including the notions of perfectly monochromatic graphs and of weighted matching index. \\
+In this master thesis, we started by understanding and summarizing the concept of the Krenn's conjecture: a conjecture about perfect matchings and their intersections in edge-weighted edge-bi-coloured multigraphs.\cite{wordpress}
+We dived deeper in the connection between this conjecture and quantum physics, investigated for the first time by Mario Krenn in~\cite{Krenn_2017}.
+Mario Krenn indeed discovered that the (non-)existence of certain specific graphs could lead to the (non-)feasibility to create specific quantum states, called $GHZ$-states, through the use of certain experiments.
+Being able to create such states is a key point in quantum computing~\cite{gu2020compact} and cryptography~\cite{pivoluska2018layered}.
+This discovery was the starting point of its conjecture in graph theory, which remains unsolved.\\
 
-Secondly, we could summarize the state of the research on the Krenn's conjecture up to this day. Thanks to Bogdanov in \cite{bogdanov}, the conjecture is already solved for real, positive weights. Also, Chandran and Gajjala proved in their paper \cite{chandran} the conjecture in the special case of graphs that have a matching index different from 1. In that same paper, they could find some upper bounds on the weighted matching index in term of minimum degree and of edge connectivity. We managed to redo these last proofs here in the context of our own work. \\
+We then focused on dressing a state of the art of the research on the Krenn's conjecture.
+In it, we could see that the conjecture was already solved for real, positive weights by Bogdanov in~\cite{bogdanov}.
+We also spoke about Chandran and Gajjala, who proved the conjecture in the special case of graphs that have a matching index (defined in~\ref{def:matching_index}) different from 1~\cite{chandran}.
+In that same paper, they could find some upper bounds on the weighted matching index in terms of minimum degree and of edge connectivity.\\
+Their researches were extremely valuable for us, as they introduced a lot of notations and concepts that we used in our own work.\\
 
-Lastly, the beginning of a plan of realization of our research was built. This plan includes the study of perfectly monochromatic graphs with a matching index of 1 and integer weights. We showed, as a first result, that the study of such graphs could be reduced to the study of graphs that have weights included in $\{-1, 1\}$. Furthermore, the hypothesis of implementing a program was analysed. Such a program would allow us to adopt a more experimental approach in the research by drawing random graphs constrained by our studied case. \\
+After that, we adopted an algorithmic approach to find new interesting results related to the problem.
+We first tried to perform problem reductions to find out what restrained cases were interesting to study.
+By doing so, we discovered that the study of non-redundant experiment graphs (defined in~\ref{def:redundant-experiment-graph}) with integer weights could be reduced to the study of redundant experiment graphs that have weights included in $\{-1, 1\}$.
+We then focused on proving some new special cases of the Krenn's conjecture.
+Our main results are the following: we could extend Bogdanov's results\cite{bogdanov} by allowing one weight to be negative.
+This attempt was a success, and encouraged us to extend the used arguments to a more general case.
+This is how we came by with what I consider to be the main result of this master thesis, formulated in Lemma~\ref{lem:2_positive_colour_classes_forbidden}.
 
-To finish this preparatory work, I would like to thank again my promoters, Gwenaël Joret and Yelena Yuditsky, who helped me so much in my understanding of the different proofs we came across. Their help was highly appreciated and I had - and still will have - a very good experience working with them.
+\begin{lemma}[2 positive colour classes]
+    Let $G_k^w$ be a simple perfectly monochromatic graph that has only real weights, and that has at least $2$ colour classes that have only positive weighted edges.
+    Then, if $G$ is not isomorphic to $K_4$, $\Tilde{c}(G, k, w) \leq 2$.
+\end{lemma}
+
+At last, we adopted a more experimental approach to the problem by looking for counter-examples to the Krenn's conjecture.
+In practice, this was done through the implementation of a new program called EGPI (Experiment Graphs Properties Identifier) — a program that generates random experiment graphs and checks properties related to the Krenn's conjecture on them.
+In my opinion, such a tool was currently missing in the researchers' community.
+Indeed, finding interesting graphs to analyse or showcase by hand is hard, and the EGPI program could help in this task.
+Also, even though I strongly believe the conjecture to be true at this point, the EGPI program could still be used to find counter-examples to it by chance.
+Using EGPI, I looked for such counter-examples and could not find any, which reinforces my belief in the conjecture's truth.
+EGPI also allowed me to analyse a big number of random perfectly monochromatic graphs with a weighted matching index of $2$, and to discover that none of them were bipartite.
+Therefore, I finished my work by stating a new conjecture about the non-existence of bipartite perfectly-monochromatic graphs with a weighted matching index of $2$.\\
