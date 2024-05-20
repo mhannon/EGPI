@@ -590,7 +590,7 @@ In this section, I present some of the experiments I realized with EGPI. The goa
 \subsubsection{Research for counter-examples}
 
 The first experiment I realized with EGPI was to try to find a counter-example to the Krenn's conjecture.
-To do so, I performed three different random experiment graphs research process, defined in definition~\ref{def:random_experiment_graphs_research_process}.
+To do so, I performed three different random experiment graphs research processes, defined in definition~\ref{def:random_experiment_graphs_research_process}.
 Each of these processes generated $10^7$ candidate graphs (defined in definition) with the following properties.
 
 \begin{itemize}
@@ -606,7 +606,7 @@ Each of these processes generated $10^7$ candidate graphs (defined in definition
 The $3$ experiments generated graphs of size $n=6$, $n=8$ and $n=10$ vertices respectively.
 On all the $30$ millions generated candidate graphs, none of them was perfectly monochromatic.
 This result is a new argument in favour of the Krenn's conjecture, at least for graphs that have less than $10$ vertices.
-Nevertheless, it does not constitute a proof of it in any case, and I encourage future researchers to continue looking for counterexamples to it alongside to their researches (by using EGPI or any other method).\\
+Nevertheless, it does not constitute a proof of it in any case, and I encourage future researchers to continue looking for counterexamples to it alongside their researches (by using EGPI or any other method). \\
 
 
 \subsubsection{Research for perfectly monochromatic graphs with a weighted matching index of $2$}
@@ -626,20 +626,31 @@ Using the following parameters,
     \item The complexity bound was an integer $b$ varying between $1$ and $6$.
 \end{itemize}
 
-In three different random experiment graphs research processes generating graphs of size $n=6$, $n=8$ and $n=10$ vertices respectively, I got the following results.
+In three different random experiment graphs research processes generating graphs of size $n=6$, $n=8$ and $n=10$ vertices respectively, I got results summarized in figure~\ref{fig:results-experiment}.
 
-\begin{center}
-    \begin{tabular}{ |p{1cm}||p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|  }
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{ |p{1cm}||p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|  }
         \hline
         \multicolumn{7}{|c|}{Results of the experiment} \\
         \hline
         $n$ & $b = 1$ & $b = 2$ & $b = 3$ & $b = 4$ & $b = 5$ & total \\
         \hline
         $6 $ & $199$ & $68$ & $9$ & $0$ & $0$ & $276$ \\
-        $8 $ & $66$  & $0$  & $1$ & $0$ & $0$ & $0$ \\
-        $10$ & $0$ & $0$ & $0$ & $0$ & $0$ & $0$ \\
+        $8 $ & $66$  & $0$  & $1$ & $0$ & $0$ & $67$   \\
+        $10$ & $13$  & $0$  & $0$ & $0$ & $0$ & $13$  \\
         \hline
     \end{tabular}
-\end{center}
+    \caption{Results of $3$ different random experiment graphs research process with $n=6$, $n=8$ and $n=10$ respectively.}
+    \label{fig:results-experiment}
+\end{figure}
 
+From the results in figure~\ref{fig:results-experiment}, we can do the following observations.
+Firstly, it is a lot harder to find perfectly monochromatic graphs in these conditions when their size is bigger.
+This can be explained by the fact that the number of possible graphs grows exponentially with the number of vertices.
+Secondly, the complexity bound has a big impact on the number of found graphs.
+A higher complexity bound results in a smaller number of found graphs.
+This was expected, since the graphs generated with a higher complexity bound have higher chances to have more edges and perfect matchings.
+The probability that all the randomly generated edges and perfect matchings together satisfy the definition~\ref{def:perfectly_monochromatic_graph} are small.\\
 
+However, I am surprised that, when $n=8$, a graph was found with $b=3$ and none was found with $b=2$.

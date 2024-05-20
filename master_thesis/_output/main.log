@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.18)  19 MAY 2024 14:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.18)  20 MAY 2024 09:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1984,12 +1984,12 @@ een already used, duplicate ignored
                    \relax 
 l.32 }
        [3] (./content/chapters.tex (./content/chapters/introduction.tex
-Underfull \hbox (badness 10000) in paragraph at lines 5--6
+Underfull \hbox (badness 10000) in paragraph at lines 20--24
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7--8
+Underfull \hbox (badness 10000) in paragraph at lines 25--29
 
  []
 
@@ -2005,11 +2005,11 @@ File: ot1pzc.fd 2020/03/25 font definitions for OT1/pzc.
 LaTeX Font Info:    Font shape `OT1/pzc/m/n' in size <76> not available
 (Font)              Font shape `OT1/pzc/m/it' tried instead on input line 3.
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
-nput line 18.
+nput line 21.
  [2
 
 ]
-Overfull \hbox (17.61656pt too wide) in paragraph at lines 67--68
+Overfull \hbox (17.61656pt too wide) in paragraph at lines 76--78
 [][]\T1/futs/b/n/10.95 Definition 1.1.8 \T1/futs/m/n/10.95 (Arc of Hamil-to-nia
 n cy-cle)\T1/futs/b/n/10.95 . []\T1/futs/m/n/10.95 Let $\FML/futmi/m/it/10.95 G
 $ \T1/futs/m/n/10.95 be a graph that ad-mits a Hamil-to-nian cy-cle $\FML/futmi
@@ -2022,27 +2022,27 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.1.1})
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.115 \begin{definition}[Matching]
+l.130 \begin{definition}[Matching]
                                   ]
 (./figures/problem_presentation/simplified/k4_pm.tikz)
 Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
-t line 155.
+t line 176.
  [4
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1.2}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.158 \end{theorem}
+l.180 \end{theorem}
                    ]
 Package hyperref Info: bookmark level for unknown claim defaults to 0 on input 
-line 166.
+line 191.
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--186
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
 
  []
 
 LaTeX Font Info:    Trying to load font information for TS1+futs on input line 
-191.
+221.
 (/usr/local/texlive/2024/texmf-dist/tex/latex/fourier/ts1futs.fd
 File: ts1futs.fd 2003/09/14 Fontinst v1.801 font definitions for TS1/futs.
 )
@@ -2052,15 +2052,15 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.1.3})
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.236     \end{itemize}
+l.266     \end{itemize}
                        ] [7
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1.4}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.270 \end{definition}
+l.300 \end{definition}
                       ]
-Overfull \hbox (4.5994pt too wide) in paragraph at lines 285--286
+Overfull \hbox (4.5994pt too wide) in paragraph at lines 315--316
 [][]\T1/futs/b/n/10.95 Definition 1.3.6 \T1/futs/m/n/10.95 (Per-fectly monochro
 -matic graph)\T1/futs/b/n/10.95 . []\T1/futs/m/n/10.95 An ex-per-i-ment graph $
 \FML/futmi/m/it/10.95 G[]$ \T1/futs/m/n/10.95 is said to be \T1/futs/m/it/10.95
@@ -2069,40 +2069,40 @@ Overfull \hbox (4.5994pt too wide) in paragraph at lines 285--286
 
 (./figures/problem_presentation/krenn_conjecture/perfectly_mono.tikz)
 Package hyperref Info: bookmark level for unknown observation defaults to 0 on 
-input line 301.
+input line 331.
  [8
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1.5}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.304 \end{observation}
+l.334 \end{observation}
                        ]
 Package hyperref Info: bookmark level for unknown conjecture defaults to 0 on i
-nput line 335.
+nput line 365.
 
-Underfull \hbox (badness 10000) in paragraph at lines 346--347
+Underfull \hbox (badness 10000) in paragraph at lines 376--377
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 348--349
+Underfull \hbox (badness 10000) in paragraph at lines 378--379
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 350--351
+Underfull \hbox (badness 10000) in paragraph at lines 380--381
 
  []
 
 
-Overfull \hbox (6.19972pt too wide) in paragraph at lines 373--374
+Overfull \hbox (6.19972pt too wide) in paragraph at lines 403--404
 []\T1/futs/m/n/10.95 This lead to the for-mu-la-tion of the \T1/futs/b/n/10.95 
 Krenn's con-jec-ture []\T1/futs/m/n/10.95 1.3.9[] in graph the-ory, which re-ma
 ins un-solved.[[][]Kre[]]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 373--374
+Underfull \hbox (badness 10000) in paragraph at lines 403--404
 
  []
 
@@ -2112,10 +2112,10 @@ File: figures/problem_presentation/motivations/krenn_graph.png Graphic file (ty
 pe png)
 <use figures/problem_presentation/motivations/krenn_graph.png>
 Package pdftex.def Info: figures/problem_presentation/motivations/krenn_graph.p
-ng  used on input line 377.
+ng  used on input line 407.
 (pdftex.def)             Requested size: 220.85345pt x 264.26907pt.
 [10]) (./content/chapters/chapter2.tex
-Underfull \hbox (badness 10000) in paragraph at lines 382--1
+Underfull \hbox (badness 10000) in paragraph at lines 412--1
 
  []
 
@@ -2363,56 +2363,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 614--617
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 635--635
-[]|\T1/futs/m/n/10.95 Number of
+Underfull \hbox (badness 10000) in paragraph at lines 648--655
+
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 635--635
-\T1/futs/m/n/10.95 per-fectly
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 635--635
-\T1/futs/m/n/10.95 monochro-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 635--635
-\T1/futs/m/n/10.95 matic
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 635--635
-[]|\T1/futs/m/n/10.95 Number of
- []
-
-
-Underfull \hbox (badness 1635) in paragraph at lines 635--635
-\T1/futs/m/n/10.95 graphs with
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 635--635
-\T1/futs/m/n/10.95 a weighted
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 635--635
-\T1/futs/m/n/10.95 match-ing
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 635--636
-[]|\T1/futs/m/n/10.95 Number of
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 635--636
-\T1/futs/m/n/10.95 bi-par-tite
- []
-
-) (./content/chapters/conclusion.tex [42]
+[42
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4.9}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.656 H
+       owever, I am surprised that, when $n=8$, a graph was found with $b=3$...
+]) (./content/chapters/conclusion.tex [43]
 Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
@@ -2428,7 +2390,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
  []
 
 )) (/Users/Merlin/PycharmProjects/EGPI/master_thesis/_output/main.gls)
-(/Users/Merlin/PycharmProjects/EGPI/master_thesis/_output/main.acr) [43
+(/Users/Merlin/PycharmProjects/EGPI/master_thesis/_output/main.acr) [44
 
 ]
 (/Users/Merlin/PycharmProjects/EGPI/master_thesis/_output/main.loe
@@ -2451,9 +2413,9 @@ Overfull \hbox (4.55519pt too wide) detected at line 14
 \T1/futs/m/n/10.95 1.1.13 
  []
 
-[44
+[45
 
-]) [45]
+]) [46]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
 8.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/base/t1cmtt.fd
@@ -2470,7 +2432,7 @@ Overfull \hbox (0.95842pt too wide) in paragraph at lines 50--50
 7). ^^P  Quan-tum Ex-per-i-ments and Graphs:
  []
 
-[46
+[47
 
 ]
 Overfull \hbox (5.6953pt too wide) in paragraph at lines 50--50
@@ -2479,7 +2441,7 @@ m/it/10.95 The No-bel Prize in Physics 2022 --- no-bel-prize.org\T1/futs/m/n/10
 .95 .
  []
 
-[47]
+[48]
 \tf@loe=\write10
 \openout10 = `main.loe'.
 
@@ -2489,16 +2451,16 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 6DECA1C14116C5E3AF181970C07F2464;5433.
+(rerunfilecheck)             Checksum: EA6960A44F62781FBAFB007D1CE97AFA;5428.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56669 strings out of 474116
- 1251587 string characters out of 5743682
- 2292955 words of memory out of 5000000
- 77683 multiletter control sequences out of 15000+600000
+ 56676 strings out of 474116
+ 1251770 string characters out of 5743682
+ 2293333 words of memory out of 5000000
+ 77688 multiletter control sequences out of 15000+600000
  629905 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,12n,121p,2365b,2348s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2516,10 +2478,10 @@ ive/2024/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texliv
 e/2024/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/
 2024/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
 Output written on /Users/Merlin/PycharmProjects/EGPI/master_thesis/_output/main
-.pdf (50 pages, 1897079 bytes).
+.pdf (51 pages, 1898480 bytes).
 PDF statistics:
- 915 PDF objects out of 1000 (max. 8388607)
- 818 compressed objects within 9 object streams
- 258 named destinations out of 1000 (max. 500000)
+ 924 PDF objects out of 1000 (max. 8388607)
+ 826 compressed objects within 9 object streams
+ 260 named destinations out of 1000 (max. 500000)
  265 words of extra memory for PDF output out of 10000 (max. 10000000)
 

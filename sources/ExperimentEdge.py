@@ -11,10 +11,14 @@ class ExperimentEdge(Edge):
     def get_weight(self):
         return self.weight
 
-    def get_u_colour(self):
-        return self.u_colour
-
-    def get_v_colour(self):
+    def get_colour(self, vertex):
+        """
+        Returns the colour of the vertex.
+        :param vertex: int
+        :return: str
+        """
+        if vertex == self.u:
+            return self.u_colour
         return self.v_colour
 
     def weight_to_string(self):

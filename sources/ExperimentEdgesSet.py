@@ -17,8 +17,9 @@ class ExperimentEdgesSet(EdgesSet):
     def get_vertex_colouring(self, number_of_nodes):
         vertex_colouring = [None] * number_of_nodes
         for edge in self.edges:
-            vertex_colouring[edge.get_u()] = edge.get_u_colour()
-            vertex_colouring[edge.get_v()] = edge.get_v_colour()
+            u, v = edge.get_u(), edge.get_v()
+            vertex_colouring[u] = edge.get_colour(u)
+            vertex_colouring[v] = edge.get_colour(v)
         return tuple(vertex_colouring)
 
     def to_dict(self, number_of_nodes):

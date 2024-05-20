@@ -16,7 +16,7 @@ def powerset(iterable, min_size=0):
 
 
 def random_experiment_graphs_research(number_of_trials: int,
-                                      number_of_nodes: int,
+                                      numbers_of_nodes: list,
                                       colours: list,
                                       weights: list,
                                       complexity_bounds: list,
@@ -24,35 +24,40 @@ def random_experiment_graphs_research(number_of_trials: int,
     """
     Draws a random graph with the given parameters.
     :param number_of_trials: number of graphs to draw
-    :param number_of_nodes: number of nodes in the graph
+    :param numbers_of_nodes: number of nodes in the graph
     :param colours: list of colours to use for the edges
     :param weights: list of complex numbers to use as the weights
     :param complexity_bounds: list of the complexity bounds to use
     :param results_folder: folder where the results will be stored
     :return: None
     """
-    number_of_discovered_graphs = 0
-    used_complexity_bound = 0
+    current_experiment = 0
+    number_of_experiments = len(numbers_of_nodes) * len(complexity_bounds)
 
-    for i in range(number_of_trials):  # Generate m random graphs
+    for number_of_nodes in numbers_of_nodes:  # Loop through the number of nodes
+        for complexity_bound in complexity_bounds:  # Loop through the complexity bounds
 
-        # Display advancement in terminal for convenience
-        display_advancement(i, number_of_trials, number_of_discovered_graphs)
-        # Loop through the complexity bounds
-        used_complexity_bound = (used_complexity_bound + 1) % len(complexity_bounds)
-        # Generate a random candidate graph with our parameters
-        candidate_graph = generate_random_candidate_graph(number_of_nodes, colours, weights,
-                                                          complexity_bounds[used_complexity_bound])
-        # Get the feasible vertex colourings of the generated graph
-        feasible_vertex_colourings_weights = candidate_graph.get_feasible_vertex_colourings_weights()
-        is_monochromatic = not any(len(set(vertex_colouring)) > 1
-                                   for vertex_colouring in feasible_vertex_colourings_weights)
-        # Save the results if they are of interest
-        if candidate_graph.get_weighted_matching_index() == len(colours) \
-                and not is_monochromatic:
-            number_of_discovered_graphs += 1
-            save_candidate_graph(results_folder, candidate_graph, number_of_nodes, len(colours), len(weights),
-                                 complexity_bounds[used_complexity_bound])
+            current_experiment += 1
+            print("Running experiment" + str(current_experiment) + "/" + str(number_of_experiments) + ": " +
+                  "n = " + str(number_of_nodes) + ", b = " + str(complexity_bound))
+            number_of_discovered_graphs = 0
+
+            for trial in range(number_of_trials):  # Generate m random graphs
+
+                # Display advancement in terminal for convenience
+                display_advancement(trial, number_of_trials, number_of_discovered_graphs)
+                # Generate a random candidate graph with our parameters
+                candidate_graph = generate_random_candidate_graph(number_of_nodes, colours, weights, complexity_bound)
+                # Get the feasible vertex colourings of the generated graph
+                feasible_vertex_colourings_weights = candidate_graph.get_feasible_vertex_colourings_weights()
+                is_monochromatic = not any(len(set(vertex_colouring)) > 1
+                                           for vertex_colouring in feasible_vertex_colourings_weights)
+                # Save the results if they are of interest
+                if candidate_graph.get_weighted_matching_index() == len(colours) \
+                        and not is_monochromatic:
+                    number_of_discovered_graphs += 1
+                    save_candidate_graph(results_folder, candidate_graph, number_of_nodes, len(colours), len(weights),
+                                         complexity_bound)
 
 
 def display_advancement(current_trials, total_trials, number_of_discovered_graphs):
@@ -64,7 +69,7 @@ def display_advancement(current_trials, total_trials, number_of_discovered_graph
     :return: None
     """
     if current_trials % 10000 == 0:
-        print("Generating graph " + str(current_trials) + " / " + str(total_trials) + "... (" + str(
+        print("    Generating graph " + str(current_trials) + " / " + str(total_trials) + "... (" + str(
             current_trials * 100 // total_trials) + "%) - " + str(number_of_discovered_graphs) + " graphs found.")
 
 
@@ -112,7 +117,7 @@ def add_random_perfect_matching(exp_graph: ExperimentGraph, weights: list, colou
 
         # Get the bicolour of the potential new edge
         edges = exp_graph.edges(u, v)
-        present_bicolours = [(edge.get_u_colour(), edge.get_v_colour()) for edge in edges]
+        present_bicolours = [(edge.get_colour(u), edge.get_colour(v)) for edge in edges]
         possible_bicolours = [(u_colour, v_colour) for u_colour in colours for v_colour in colours]
 
         for bicolour in present_bicolours:
@@ -178,8 +183,9 @@ def count_bipartite_graphs_in_folder(folder: str):
         if file.endswith(".json"):
             with open(folder + "/" + file, "r") as f:
                 data = json.load(f)
-                if data["is_bipartite"]:
+                if data["properties"]["is_bipartite"]:
                     counter += 1
+                    print("   " + file)
     return counter
 
 
@@ -191,18 +197,21 @@ def main():
     """
 
     number_of_graphs = int(input(
-        "Enter the number of graphs to generate: "))
-    number_of_nodes = int(input(
-        "Enter the size of the randomly generated graphs (number of nodes): "))
+        "Enter the number of candidate graphs to generate per experiment: "))
+    numbers_of_nodes = [int(x) for x in input(
+        "Enter the size(s) of the randomly generated graphs "
+        "(entering multiple numbers separated by a space will result in multiple experiments): ").split()]
+    complexity_bounds = [int(x) for x in input(
+        "Enter the complexity bound(s) to use"
+        "(entering multiple numbers separated by a space will result in multiple experiments): ").split()]
     colours = input(
-        "Enter the colours to use for the edges (separated by a space): ").split()
+        "Enter the colours to use for the edges"
+        "(separated by a space, the number of colours determines the weighted matching index we look for): ").split()
     weights = [complex(weight) for weight in input(
         "Enter the weights to use for the edges (separated by a space, in the form a+bj): ").split()]
-    complexity_bounds = [int(x) for x in input(
-        "Enter the complexity bound(s) to use (separated by a space): ").split()]
 
     random_experiment_graphs_research(number_of_graphs,
-                                      number_of_nodes,
+                                      numbers_of_nodes,
                                       colours,
                                       weights,
                                       complexity_bounds,
@@ -235,3 +244,16 @@ if __name__ == "__main__":
     """
 
     main()
+
+    # print("results/6_nodes/2_colours/4_weights/1_complexity")
+    # print("Bipartite graphs : " + str(count_bipartite_graphs_in_folder("results/6_nodes/2_colours/4_weights/1_complexity")))
+    # print("results/6_nodes/2_colours/4_weights/2_complexity")
+    # print("Bipartite graphs : " + str(count_bipartite_graphs_in_folder("results/6_nodes/2_colours/4_weights/2_complexity")))
+    # print("results/6_nodes/2_colours/4_weights/3_complexity")
+    # print("Bipartite graphs : " + str(count_bipartite_graphs_in_folder("results/6_nodes/2_colours/4_weights/3_complexity")))
+    # print("results/8_nodes/2_colours/4_weights/1_complexity")
+    # print("Bipartite graphs : " + str(count_bipartite_graphs_in_folder("results/8_nodes/2_colours/4_weights/1_complexity")))
+    # print("results/8_nodes/2_colours/4_weights/3_complexity")
+    # print("Bipartite graphs : " + str(count_bipartite_graphs_in_folder("results/8_nodes/2_colours/4_weights/3_complexity")))
+    # print("results/10_nodes/2_colours/4_weights/1_complexity")
+    # print("Bipartite graphs : " + str(count_bipartite_graphs_in_folder("results/10_nodes/2_colours/4_weights/1_complexity")))

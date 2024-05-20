@@ -56,7 +56,8 @@ class ExperimentGraph(MultiGraph):
 
     def add_edges_from(self, edges):
         for edge in edges:
-            self.add_edge(edge.get_u(), edge.get_v(), edge.get_u_colour(), edge.get_v_colour(), edge.get_weight())
+            u, v = edge.get_u(), edge.get_v()
+            self.add_edge(u, v, edge.get_colour(u), edge.get_colour(v), edge.get_weight())
 
     def get_perfect_matchings(self):
         if self.perfect_matchings is None:
@@ -223,8 +224,8 @@ class ExperimentGraph(MultiGraph):
                                                                  number_of_edges)
                 x_v, y_v = node_positions[v]
 
-                u_colour = edge.get_u_colour()
-                v_colour = edge.get_v_colour()
+                u_colour = edge.get_colour(u)
+                v_colour = edge.get_colour(v)
                 c_weight = edge.weight_to_string()
 
                 latex += "\\draw [style=thin, color=" + u_colour + "] (" + str(x_u) + "," + str(y_u) + ") to (" + str(
