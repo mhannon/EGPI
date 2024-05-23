@@ -1,17 +1,17 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'main.blg'
-[23] biber-darwin:340> INFO - === Mon May 20, 2024, 18:41:30
-[28] Biber.pm:419> INFO - Reading 'main.bcf'
-[56] Biber.pm:976> INFO - Using all citekeys in bib section 0
-[61] Biber.pm:4419> INFO - Processing section 0
-[64] Biber.pm:4610> INFO - Looking for bibtex file 'biblio.bib' for section 0
-[65] bibtex.pm:1713> INFO - LaTeX decoding ...
-[72] bibtex.pm:1519> INFO - Found BibTeX data source '/Users/Merlin/PycharmProjects/EGPI/master_thesis/biblio.bib'
-[130] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[130] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[130] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[130] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
-[139] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[143] bbl.pm:763> INFO - Output to main.bbl
-[143] Biber.pm:131> WARN - legacy month field 'May' in entry 'EPR' is not an integer - this will probably not sort properly.
-[143] Biber.pm:133> INFO - WARNINGS: 1
+[26] biber-darwin:340> INFO - === Thu May 23, 2024, 15:04:57
+[33] Biber.pm:419> INFO - Reading 'main.bcf'
+[63] Biber.pm:976> INFO - Using all citekeys in bib section 0
+[69] Biber.pm:4419> INFO - Processing section 0
+[73] Biber.pm:4610> INFO - Looking for bibtex file 'biblio.bib' for section 0
+[74] bibtex.pm:1713> INFO - LaTeX decoding ...
+[83] bibtex.pm:1519> INFO - Found BibTeX data source '/Users/Merlin/PycharmProjects/EGPI/master_thesis/biblio.bib'
+[165] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[165] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[165] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[165] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[178] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[182] bbl.pm:763> INFO - Output to main.bbl
+[183] Biber.pm:131> WARN - legacy month field 'May' in entry 'EPR' is not an integer - this will probably not sort properly.
+[183] Biber.pm:133> INFO - WARNINGS: 1

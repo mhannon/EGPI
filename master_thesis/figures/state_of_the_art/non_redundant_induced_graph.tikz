@@ -42,12 +42,12 @@
 		\node [style=none] (47) at (1.5, 4.5) {${G'}_{k'}^{w'}$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
-		\draw [style=red edge] (1) to (12);
-		\draw [style=green edge] (1) to (2);
-		\draw [style=green edge] (12) to (3);
-		\draw [style=red edge] (3) to (4);
-		\draw [style=red edge] (2) to (5);
-		\draw [style=green edge] (5) to (4);
+		\draw [style=green edge] (1) to (12);
+		\draw [style=red edge] (1) to (2);
+		\draw [style=red edge] (12) to (3);
+		\draw [style=green edge] (3) to (4);
+		\draw [style=green edge] (2) to (5);
+		\draw [style=red edge] (5) to (4);
 		\draw [style=green edge] (2) to (3);
 		\draw [style=red edge, bend left=15, looseness=0.50] (4) to (14.center);
 		\draw [style=red edge] (5) to (13.center);
@@ -57,12 +57,12 @@
 		\draw [style=red edge, bend right=15, looseness=0.50] (4) to (15.center);
 		\draw [style=red edge] (1) to (3);
 		\draw [style=red edge, in=150, out=30] (2) to (3);
-		\draw [style=red edge] (16) to (21);
-		\draw [style=green edge] (16) to (17);
-		\draw [style=green edge] (21) to (18);
-		\draw [style=red edge] (18) to (19);
-		\draw [style=red edge] (17) to (20);
-		\draw [style=green edge] (20) to (19);
+		\draw [style=green edge] (16) to (21);
+		\draw [style=red edge] (16) to (17);
+		\draw [style=red edge] (21) to (18);
+		\draw [style=green edge] (18) to (19);
+		\draw [style=green edge] (17) to (20);
+		\draw [style=red edge] (20) to (19);
 		\draw [style=green edge] (17) to (18);
 		\draw [style=red edge] (20) to (22.center);
 		\draw [style=green edge] (22.center) to (18);

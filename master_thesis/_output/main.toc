@@ -5,32 +5,29 @@
 \contentsline {subsection}{\numberline {1.1.1}The different definitions of graphs}{3}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2}Paths and connectivity concepts}{4}{subsection.1.1.2}%
 \contentsline {subsection}{\numberline {1.1.3}Matching definitions and notations}{5}{subsection.1.1.3}%
-\contentsline {section}{\numberline {1.2}Simplified version of the conjecture (solved)}{5}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Krenn's conjecture (unsolved)}{8}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Motivations}{10}{section.1.4}%
-\contentsline {chapter}{\numberline {2}State of the art}{13}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Special cases that were already proven}{16}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Restrictions on the weights}{16}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Restrictions on the matching index}{16}{subsection.2.1.2}%
-\contentsline {section}{\numberline {2.2}Known non-constant bounds on the weighted matching index}{17}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Computational approach}{22}{section.2.3}%
-\contentsline {chapter}{\numberline {3}Plan of realization}{23}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Special case studies}{23}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Experimental approach}{25}{section.3.2}%
-\contentsline {chapter}{\numberline {4}New contributions}{27}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Algorithmic approach}{27}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Problem reduction}{27}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Constraints relaxation}{27}{subsection.4.1.2}%
-\contentsline {subsubsection}{Allowing one negative edge}{27}{section*.2}%
-\contentsline {subsubsection}{Allowing an arbitrary number of negative weights in one single colour class}{31}{section*.3}%
-\contentsline {section}{\numberline {4.2}Computational approach}{34}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Motivation}{34}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Functionalities of EGPI}{35}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Details of implementation}{36}{subsection.4.2.3}%
-\contentsline {paragraph}{Complexity of algorithm \ref {alg:perfect_matchings}:}{37}{section*.4}%
-\contentsline {subsection}{\numberline {4.2.4}Limitations of EGPI}{40}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}Realized experiments with EGPI}{42}{subsection.4.2.5}%
-\contentsline {subsubsection}{Research for counter-examples}{42}{section*.5}%
-\contentsline {subsubsection}{Research for perfectly monochromatic graphs with a weighted matching index of $2$}{43}{section*.6}%
-\contentsline {chapter}{Conclusion}{45}{chapter*.7}%
-\contentsline {chapter}{Aknowledgements}{47}{chapter*.8}%
+\contentsline {section}{\numberline {1.2}Simplified version of the conjecture (solved)}{6}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Krenn's conjecture (unsolved)}{9}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Motivations}{12}{section.1.4}%
+\contentsline {chapter}{\numberline {2}State of the art}{15}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Special cases that were already proven}{18}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Restrictions on the weights}{18}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Restrictions on the matching index}{18}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Known non-constant bounds on the weighted matching index}{20}{section.2.2}%
+\contentsline {chapter}{\numberline {3}New contributions}{26}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Theoretical approach}{26}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Problem reduction}{26}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Constraints' relaxation}{28}{subsection.3.1.2}%
+\contentsline {subsubsection}{Allowing one negative edge}{29}{section*.2}%
+\contentsline {subsubsection}{Allowing all the classes to have arbitrary weights except 2}{34}{section*.3}%
+\contentsline {section}{\numberline {3.2}Computational approach}{36}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Motivation}{36}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Limitations of the experimental approach}{36}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Functionalities of EGPI}{39}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Details of implementation}{41}{subsection.3.2.4}%
+\contentsline {paragraph}{Complexity of algorithm \ref {alg:perfect_matchings}:}{42}{section*.4}%
+\contentsline {subsection}{\numberline {3.2.5}Realized experiments with EGPI}{45}{subsection.3.2.5}%
+\contentsline {subsubsection}{Research for counter-examples}{45}{section*.5}%
+\contentsline {subsubsection}{Research for perfectly monochromatic graphs with a weighted matching index of $2$}{46}{section*.6}%
+\contentsline {subsubsection}{Possible improvements for EGPI}{48}{section*.7}%
+\contentsline {chapter}{Conclusion}{49}{chapter*.8}%
+\contentsline {chapter}{Acknowledgements}{51}{chapter*.9}%

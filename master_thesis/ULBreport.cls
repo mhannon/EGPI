@@ -19,7 +19,7 @@
 \RequirePackage[backend=biber,citestyle=alphabetic,bibstyle=authoryear]{biblatex}
 
 \RequirePackage{tabularx}
-\RequirePackage[top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+\RequirePackage[top=2cm,bottom=2cm,left=3.5cm,right=3.5cm]{geometry}
 \RequirePackage{hyperref}
 \RequirePackage{enumitem}
 \RequirePackage{xkeyval}

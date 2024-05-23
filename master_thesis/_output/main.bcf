@@ -2370,53 +2370,60 @@
     <bcf:citekey order="6" intorder="1">wordpress</bcf:citekey>
     <bcf:citekey order="7" intorder="1">graphtheory</bcf:citekey>
     <bcf:citekey order="8" intorder="1">graphtheory</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">wordpress</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">bogdanov</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">Krenn_2017</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">wordpress</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">chandran2023graphtheoretic</bcf:citekey>
-    <bcf:citekey order="14" intorder="1">wordpress</bcf:citekey>
-    <bcf:citekey order="15" intorder="1">chandran</bcf:citekey>
-    <bcf:citekey order="16" intorder="1">EPR</bcf:citekey>
-    <bcf:citekey order="17" intorder="1">bell1964</bcf:citekey>
-    <bcf:citekey order="18" intorder="1">notFasterThanLight</bcf:citekey>
-    <bcf:citekey order="19" intorder="1">2012QuantumTA</bcf:citekey>
-    <bcf:citekey order="20" intorder="1">GHZ</bcf:citekey>
-    <bcf:citekey order="21" intorder="1">Bouwmeester_1999</bcf:citekey>
-    <bcf:citekey order="22" intorder="1">dirac1939</bcf:citekey>
-    <bcf:citekey order="23" intorder="1">wang2016experimental</bcf:citekey>
-    <bcf:citekey order="24" intorder="1">Krenn_2017</bcf:citekey>
-    <bcf:citekey order="25" intorder="1">wordpress</bcf:citekey>
-    <bcf:citekey order="26" intorder="1">Krenn_2017</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">bondy1976graph</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">graphtheory</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">wordpress</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">bogdanov</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">Krenn_2017</bcf:citekey>
+    <bcf:citekey order="13" intorder="2">wordpress</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">chandran2023graphtheoretic</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">wordpress</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">chandran</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">EPR</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">bell1964</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">notFasterThanLight</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">2012QuantumTA</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">GHZ</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">Bouwmeester_1999</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">dirac1939</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">wang2016experimental</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">Krenn_2017</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">wordpress</bcf:citekey>
     <bcf:citekey order="27" intorder="1">Krenn_2017</bcf:citekey>
-    <bcf:citekey order="28" intorder="1">nobelprizeNobelPrize</bcf:citekey>
-    <bcf:citekey order="29" intorder="1">gu2020compact</bcf:citekey>
-    <bcf:citekey order="30" intorder="1">pivoluska2018layered</bcf:citekey>
-    <bcf:citekey order="31" intorder="1">Krenn_2017</bcf:citekey>
-    <bcf:citekey order="31" intorder="2">bogdanov</bcf:citekey>
-    <bcf:citekey order="31" intorder="3">chandran</bcf:citekey>
-    <bcf:citekey order="31" intorder="4">chandran2023graphtheoretic</bcf:citekey>
-    <bcf:citekey order="32" intorder="1">bogdanov</bcf:citekey>
-    <bcf:citekey order="33" intorder="1">chandran</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">Krenn_2017</bcf:citekey>
+    <bcf:citekey order="29" intorder="1">nobelprizeNobelPrize</bcf:citekey>
+    <bcf:citekey order="30" intorder="1">gu2020compact</bcf:citekey>
+    <bcf:citekey order="31" intorder="1">pivoluska2018layered</bcf:citekey>
+    <bcf:citekey order="32" intorder="1">Krenn_2017</bcf:citekey>
+    <bcf:citekey order="32" intorder="2">bogdanov</bcf:citekey>
+    <bcf:citekey order="32" intorder="3">chandran</bcf:citekey>
+    <bcf:citekey order="32" intorder="4">chandran2023graphtheoretic</bcf:citekey>
+    <bcf:citekey order="33" intorder="1">bogdanov</bcf:citekey>
     <bcf:citekey order="34" intorder="1">chandran</bcf:citekey>
     <bcf:citekey order="35" intorder="1">chandran</bcf:citekey>
     <bcf:citekey order="36" intorder="1">chandran</bcf:citekey>
     <bcf:citekey order="37" intorder="1">chandran</bcf:citekey>
     <bcf:citekey order="38" intorder="1">chandran</bcf:citekey>
-    <bcf:citekey order="39" intorder="1">chandran2023graphtheoretic</bcf:citekey>
+    <bcf:citekey order="39" intorder="1">chandran</bcf:citekey>
     <bcf:citekey order="40" intorder="1">chandran2023graphtheoretic</bcf:citekey>
-    <bcf:citekey order="41" intorder="1">chandran</bcf:citekey>
+    <bcf:citekey order="41" intorder="1">chandran2023graphtheoretic</bcf:citekey>
     <bcf:citekey order="42" intorder="1">bogdanov</bcf:citekey>
-    <bcf:citekey order="43" intorder="1">python</bcf:citekey>
-    <bcf:citekey order="44" intorder="1">wikipediaBinomialTheorem</bcf:citekey>
-    <bcf:citekey order="45" intorder="1">wordpress</bcf:citekey>
-    <bcf:citekey order="46" intorder="1">Krenn_2017</bcf:citekey>
-    <bcf:citekey order="47" intorder="1">gu2020compact</bcf:citekey>
-    <bcf:citekey order="48" intorder="1">pivoluska2018layered</bcf:citekey>
-    <bcf:citekey order="49" intorder="1">bogdanov</bcf:citekey>
-    <bcf:citekey order="50" intorder="1">chandran</bcf:citekey>
-    <bcf:citekey order="51" intorder="1">bogdanov</bcf:citekey>
-    <bcf:citekey order="52" intorder="1" nocite="1">*</bcf:citekey>
+    <bcf:citekey order="43" intorder="1">bogdanov</bcf:citekey>
+    <bcf:citekey order="44" intorder="1">githubEGPI</bcf:citekey>
+    <bcf:citekey order="45" intorder="1">wikipediaBinomialTheorem</bcf:citekey>
+    <bcf:citekey order="46" intorder="1">bogdanov</bcf:citekey>
+    <bcf:citekey order="47" intorder="1">python</bcf:citekey>
+    <bcf:citekey order="48" intorder="1">networkx</bcf:citekey>
+    <bcf:citekey order="49" intorder="1">MCKAY201494</bcf:citekey>
+    <bcf:citekey order="50" intorder="1">Edmonds_1965</bcf:citekey>
+    <bcf:citekey order="51" intorder="1">wordpress</bcf:citekey>
+    <bcf:citekey order="52" intorder="1">Krenn_2017</bcf:citekey>
+    <bcf:citekey order="53" intorder="1">gu2020compact</bcf:citekey>
+    <bcf:citekey order="54" intorder="1">pivoluska2018layered</bcf:citekey>
+    <bcf:citekey order="55" intorder="1">bogdanov</bcf:citekey>
+    <bcf:citekey order="56" intorder="1">chandran</bcf:citekey>
+    <bcf:citekey order="57" intorder="1">bogdanov</bcf:citekey>
+    <bcf:citekey order="58" intorder="1" nocite="1">*</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

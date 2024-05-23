@@ -58,10 +58,10 @@
 		\draw [style=green edge] (13) to (14);
 		\draw [style=green edge] (15) to (16);
 		\draw [style=green edge] (17) to (12);
-		\draw [style=green edge] (17) to (14);
-		\draw [style=green edge] (18.center) to (17);
-		\draw [style=green edge] (19.center) to (14);
-		\draw [style=red edge] (19.center) to (16);
-		\draw [style=red edge] (18.center) to (15);
+		\draw [style=red edge] (17) to (14);
+		\draw [style=red edge] (18.center) to (17);
+		\draw [style=red edge] (19.center) to (14);
+		\draw [style=green edge] (19.center) to (16);
+		\draw [style=green edge] (18.center) to (15);
 	\end{pgfonlayer}
 \end{tikzpicture}
