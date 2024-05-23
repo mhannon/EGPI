@@ -44,13 +44,14 @@
 \contentsline {theorem}{\ifthmt@listswap Theorem~2.2.6\else \numberline {2.2.6}Theorem\fi \thmtformatoptarg {Upper bound in terms of number of vertices}}{25}{theorem.2.2.6}%
 \addvspace {10\p@ }
 \contentsline {lemma}{\ifthmt@listswap Lemma~3.1.1\else \numberline {3.1.1}Lemma\fi \thmtformatoptarg {PM graphs with integer weights}}{26}{lemma.3.1.1}%
-\contentsline {observation}{\ifthmt@listswap Observation~3.1.2\else \numberline {3.1.2}Observation\fi \thmtformatoptarg {Existence of a Hamiltonian cycle}}{29}{observation.3.1.2}%
-\contentsline {observation}{\ifthmt@listswap Observation~3.1.3\else \numberline {3.1.3}Observation\fi \thmtformatoptarg {Parity of crossing edges}}{30}{observation.3.1.3}%
-\contentsline {lemma}{\ifthmt@listswap Lemma~3.1.4\else \numberline {3.1.4}Lemma\fi \thmtformatoptarg {One negative edge allowed}}{31}{lemma.3.1.4}%
-\contentsline {lemma}{\ifthmt@listswap Lemma~3.1.5\else \numberline {3.1.5}Lemma\fi \thmtformatoptarg {2 positive colour classes}}{34}{lemma.3.1.5}%
-\contentsline {conjecture}{\ifthmt@listswap Conjecture~3.2.1\else \numberline {3.2.1}Conjecture\fi }{36}{conjecture.3.2.1}%
-\contentsline {observation}{\ifthmt@listswap Observation~3.2.2\else \numberline {3.2.2}Observation\fi }{37}{observation.3.2.2}%
-\contentsline {definition}{\ifthmt@listswap Definition~3.2.3\else \numberline {3.2.3}Definition\fi \thmtformatoptarg {Random creation of a candidate experiment graph}}{39}{definition.3.2.3}%
-\contentsline {definition}{\ifthmt@listswap Definition~3.2.4\else \numberline {3.2.4}Definition\fi \thmtformatoptarg {Random Experiment Graphs Research Process}}{41}{definition.3.2.4}%
-\contentsline {conjecture}{\ifthmt@listswap Conjecture~3.2.5\else \numberline {3.2.5}Conjecture\fi }{47}{conjecture.3.2.5}%
-\contentsline {lemma}{\ifthmt@listswap Lemma~3.2.6\else \numberline {3.2.6}Lemma\fi \thmtformatoptarg {2 positive colour classes}}{49}{lemma.3.2.6}%
+\contentsline {observation}{\ifthmt@listswap Observation~3.2.1\else \numberline {3.2.1}Observation\fi \thmtformatoptarg {Existence of a Hamiltonian cycle}}{29}{observation.3.2.1}%
+\contentsline {observation}{\ifthmt@listswap Observation~3.2.2\else \numberline {3.2.2}Observation\fi \thmtformatoptarg {Parity of crossing edges}}{30}{observation.3.2.2}%
+\contentsline {lemma}{\ifthmt@listswap Lemma~3.2.3\else \numberline {3.2.3}Lemma\fi \thmtformatoptarg {One negative edge allowed}}{31}{lemma.3.2.3}%
+\contentsline {lemma}{\ifthmt@listswap Lemma~3.2.4\else \numberline {3.2.4}Lemma\fi \thmtformatoptarg {2 positive colour classes}}{34}{lemma.3.2.4}%
+\addvspace {10\p@ }
+\contentsline {conjecture}{\ifthmt@listswap Conjecture~4.2.1\else \numberline {4.2.1}Conjecture\fi }{37}{conjecture.4.2.1}%
+\contentsline {observation}{\ifthmt@listswap Observation~4.2.2\else \numberline {4.2.2}Observation\fi }{37}{observation.4.2.2}%
+\contentsline {definition}{\ifthmt@listswap Definition~4.3.1\else \numberline {4.3.1}Definition\fi \thmtformatoptarg {Random creation of a candidate experiment graph}}{39}{definition.4.3.1}%
+\contentsline {definition}{\ifthmt@listswap Definition~4.3.2\else \numberline {4.3.2}Definition\fi \thmtformatoptarg {Random Experiment Graphs Research Process}}{40}{definition.4.3.2}%
+\contentsline {conjecture}{\ifthmt@listswap Conjecture~4.5.1\else \numberline {4.5.1}Conjecture\fi }{47}{conjecture.4.5.1}%
+\contentsline {lemma}{\ifthmt@listswap Lemma~4.6.1\else \numberline {4.6.1}Lemma\fi \thmtformatoptarg {2 positive colour classes}}{49}{lemma.4.6.1}%

@@ -13,21 +13,20 @@
 \contentsline {subsection}{\numberline {2.1.1}Restrictions on the weights}{18}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}Restrictions on the matching index}{18}{subsection.2.1.2}%
 \contentsline {section}{\numberline {2.2}Known non-constant bounds on the weighted matching index}{20}{section.2.2}%
-\contentsline {chapter}{\numberline {3}New contributions}{26}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Theoretical approach}{26}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Problem reduction}{26}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Constraints' relaxation}{28}{subsection.3.1.2}%
-\contentsline {subsubsection}{Allowing one negative edge}{29}{section*.2}%
-\contentsline {subsubsection}{Allowing all the classes to have arbitrary weights except 2}{34}{section*.3}%
-\contentsline {section}{\numberline {3.2}Computational approach}{36}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Motivation}{36}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Limitations of the experimental approach}{36}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Functionalities of EGPI}{39}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Details of implementation}{41}{subsection.3.2.4}%
-\contentsline {paragraph}{Complexity of algorithm \ref {alg:perfect_matchings}:}{42}{section*.4}%
-\contentsline {subsection}{\numberline {3.2.5}Realized experiments with EGPI}{45}{subsection.3.2.5}%
-\contentsline {subsubsection}{Research for counter-examples}{45}{section*.5}%
-\contentsline {subsubsection}{Research for perfectly monochromatic graphs with a weighted matching index of $2$}{46}{section*.6}%
-\contentsline {subsubsection}{Possible improvements for EGPI}{48}{section*.7}%
-\contentsline {chapter}{Conclusion}{49}{chapter*.8}%
-\contentsline {chapter}{Acknowledgements}{51}{chapter*.9}%
+\contentsline {chapter}{\numberline {3}New theoretical contributions}{26}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Problem reduction}{26}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Constraints' relaxation}{28}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Allowing one negative edge}{29}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Allowing all the classes to have arbitrary weights except 2}{34}{subsection.3.2.2}%
+\contentsline {chapter}{\numberline {4}Computational approach}{36}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Motivation}{36}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Limitations of the experimental approach}{36}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Functionalities of EGPI}{39}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Details of implementation}{41}{section.4.4}%
+\contentsline {paragraph}{Complexity of algorithm \ref {alg:perfect_matchings}:}{42}{section*.2}%
+\contentsline {section}{\numberline {4.5}Realized experiments with EGPI}{45}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Research for counter-examples}{45}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Research for perfectly monochromatic graphs with a weighted matching index of $2$}{46}{subsection.4.5.2}%
+\contentsline {section}{\numberline {4.6}Possible improvements for EGPI}{48}{section.4.6}%
+\contentsline {chapter}{Conclusion}{49}{chapter*.3}%
+\contentsline {chapter}{Acknowledgements}{51}{chapter*.4}%

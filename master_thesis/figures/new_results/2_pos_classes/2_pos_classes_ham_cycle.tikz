@@ -23,12 +23,12 @@
 		\node [style=none] (20) at (2.25, 3.75) {$C_1$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
-		\draw [style=blue edge] (11) to (13);
-		\draw [style=blue edge] (15) to (17);
-		\draw [style=blue edge] (16) to (14);
-		\draw [style=blue edge] (12) to (10);
-		\draw [style=blue edge] (0) to (1);
-		\draw [style=blue edge] (3) to (2);
+		\draw [style=green edge] (11) to (13);
+		\draw [style=green edge] (15) to (17);
+		\draw [style=green edge] (16) to (14);
+		\draw [style=green edge] (12) to (10);
+		\draw [style=green edge] (0) to (1);
+		\draw [style=green edge] (3) to (2);
 		\draw [style=bold red] (10) to (11);
 		\draw [style=bold red] (13) to (15);
 		\draw [style=bold red] (17) to (16);
@@ -38,8 +38,8 @@
 		\draw [style=red edge] (8) to (7);
 		\draw [style=red edge] (9) to (4);
 		\draw [style=red edge] (6) to (5);
-		\draw [style=bold blue] (8) to (9);
-		\draw [style=bold blue] (7) to (6);
-		\draw [style=bold blue] (5) to (4);
+		\draw [style=bold green] (8) to (9);
+		\draw [style=bold green] (7) to (6);
+		\draw [style=bold green] (5) to (4);
 	\end{pgfonlayer}
 \end{tikzpicture}

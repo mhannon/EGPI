@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.18)  23 MAY 2024 15:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.18)  23 MAY 2024 15:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1897,7 +1897,7 @@ LaTeX Font Info:    Redeclaring math symbol \iiintop on input line 23.
 LaTeX Font Info:    Redeclaring math symbol \oiintop on input line 23.
 LaTeX Font Info:    Redeclaring math accent \widehat on input line 23.
 LaTeX Font Info:    Redeclaring math accent \widetilde on input line 23.
-<Pictures/ULB_logo.jpg, id=111, 128.3997pt x 38.7849pt>
+<Pictures/ULB_logo.jpg, id=127, 128.3997pt x 38.7849pt>
 File: Pictures/ULB_logo.jpg Graphic file (type jpg)
 <use Pictures/ULB_logo.jpg>
 Package pdftex.def Info: Pictures/ULB_logo.jpg  used on input line 32.
@@ -1907,7 +1907,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--32
 
  []
 
-<Pictures/sceauULB.jpg, id=112, 1250.6725pt x 1250.6725pt>
+<Pictures/sceauULB.jpg, id=128, 1250.6725pt x 1250.6725pt>
 File: Pictures/sceauULB.jpg Graphic file (type jpg)
 <use Pictures/sceauULB.jpg>
 Package pdftex.def Info: Pictures/sceauULB.jpg  used on input line 32.
@@ -1970,10 +1970,16 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.32 ...line {chapter}{Conclusion}{49}{chapter*.8}
+l.27 ...ed experiments with EGPI}{45}{section.4.5}
                                                   % [2
 
-{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}])
+{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
+Overfull \hbox (6.77771pt too wide) in paragraph at lines 29--29
+ [][] [][]\T1/futs/m/n/10.95 Research for per-fectly monochro-matic graphs with
+ a weighted match- 
+ []
+
+)
 \tf@toc=\write9
 \openout9 = `main.toc'.
 
@@ -1993,24 +1999,24 @@ LaTeX Font Info:    Trying to load font information for TS1+futs on input line
 (/usr/local/texlive/2024/texmf-dist/tex/latex/fourier/ts1futs.fd
 File: ts1futs.fd 2003/09/14 Fontinst v1.801 font definitions for TS1/futs.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 12--18
+Underfull \hbox (badness 10000) in paragraph at lines 12--19
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--22
+Underfull \hbox (badness 10000) in paragraph at lines 20--23
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--26
+Underfull \hbox (badness 10000) in paragraph at lines 24--27
 
  []
 
 [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 27--33
+Underfull \hbox (badness 10000) in paragraph at lines 28--34
 
  []
 
@@ -2132,7 +2138,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 484--487
 
  []
 
-<figures/problem_presentation/motivations/krenn_graph.png, id=347, 315.5071pt x
+<figures/problem_presentation/motivations/krenn_graph.png, id=371, 315.5071pt x
  377.52985pt>
 File: figures/problem_presentation/motivations/krenn_graph.png Graphic file (ty
 pe png)
@@ -2278,19 +2284,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--8
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--32
+Underfull \hbox (badness 10000) in paragraph at lines 27--29
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--38
+Underfull \hbox (badness 10000) in paragraph at lines 30--35
 
  []
 
 [26
 
 ] (./figures/new_results/problem_reduction/demo_integers.tikz)
-Overfull \hbox (58.73587pt too wide) in paragraph at lines 48--55
+Overfull \hbox (58.73587pt too wide) in paragraph at lines 45--52
  []$ 
  []
 
@@ -2299,17 +2305,17 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1})
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.95     \end{center}
-                     ] [28]
+l.96     \begin{center}
+                       ] [28]
 (./figures/new_results/2_pos_classes/2_pos_classes_ham_cycle.tikz) [29
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.2}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.173     \begin{center}
+l.170     \begin{center}
                         ]
-Overfull \hbox (0.41966pt too wide) in paragraph at lines 185--187
-[][]\T1/futs/b/n/10.95 Observation 3.1.3 \T1/futs/m/n/10.95 (Par-ity of cross-i
+Overfull \hbox (0.41966pt too wide) in paragraph at lines 182--184
+[][]\T1/futs/b/n/10.95 Observation 3.2.2 \T1/futs/m/n/10.95 (Par-ity of cross-i
 ng edges)\T1/futs/b/n/10.95 . []\T1/futs/m/n/10.95 Let $\FML/futmi/m/it/10.95 G
 []$ \T1/futs/m/n/10.95 be a per-fectly monochro-matic graph
  []
@@ -2319,15 +2325,15 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.3.3})
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.223 
+l.220 
       ]
-Overfull \hbox (11.11217pt too wide) in paragraph at lines 250--254
-[]\T1/futs/m/n/10.95 The sketch of the proof of lemma []3.1.4[] goes as fol-low
-. Us-ing ob-ser-va-tions []3.1.2[] and []3.1.3[],
+Overfull \hbox (11.11217pt too wide) in paragraph at lines 247--251
+[]\T1/futs/m/n/10.95 The sketch of the proof of lemma []3.2.3[] goes as fol-low
+. Us-ing ob-ser-va-tions []3.2.1[] and []3.2.2[],
  []
 
 [31]
-Overfull \hbox (11.49265pt too wide) in paragraph at lines 264--273
+Overfull \hbox (11.49265pt too wide) in paragraph at lines 261--270
 []\T1/futs/m/n/10.95 If $\FML/futmi/m/it/10.95 G[]$ \T1/futs/m/n/10.95 has ex-a
 ctly one neg-a-tive weight: let $\FML/futmi/m/it/10.95 M[]$\T1/futs/m/n/10.95 ,
  $\FML/futmi/m/it/10.95 M[]$ \T1/futs/m/n/10.95 and $\FML/futmi/m/it/10.95 M[]$
@@ -2340,145 +2346,171 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.3.4})
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.334         \end{enumerate}
+l.331         \end{enumerate}
                              
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.5}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.334         \end{enumerate}
+l.331         \end{enumerate}
                              ] [34]
-(./figures/new_results/2_pos_classes/2_pos_classes_proof.tikz) [35
+(./figures/new_results/2_pos_classes/2_pos_classes_proof.tikz))
+(./content/chapters/chapter4.tex [35
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.6}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.413 
-      ]
-Overfull \hbox (0.30615pt too wide) in paragraph at lines 430--434
+l.1 \chapter
+            {Computational approach}]
+Chapter 4.
+
+Overfull \hbox (0.30615pt too wide) in paragraph at lines 24--28
 \T1/futs/m/n/10.95 Assuming that we suc-cess-fully find a way to com-pute in a 
 quick time the weighted match-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 430--434
+Underfull \hbox (badness 10000) in paragraph at lines 24--28
 
  []
 
-[36]
-Underfull \hbox (badness 10000) in paragraph at lines 450--453
+[36
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 44--47
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 475--477
+Underfull \hbox (badness 10000) in paragraph at lines 69--71
 
  []
 
 [37]
-Underfull \hbox (badness 10000) in paragraph at lines 525--527
+Underfull \hbox (badness 10000) in paragraph at lines 119--121
 
  []
 
-[38]
+[38] [39]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 558.
- [39] [40]
-Underfull \hbox (badness 10000) in paragraph at lines 620--622
+put line 152.
+ [40]
+Underfull \hbox (badness 10000) in paragraph at lines 214--216
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 623--628
+Underfull \hbox (badness 10000) in paragraph at lines 217--222
 
  []
 
-[41]
-<figures/new_results/egpi/structure_diagram.png, id=695, 1723.43875pt x 1721.43
+<figures/new_results/egpi/structure_diagram.png, id=711, 1723.43875pt x 1721.43
 124pt>
 File: figures/new_results/egpi/structure_diagram.png Graphic file (type png)
 <use figures/new_results/egpi/structure_diagram.png>
 Package pdftex.def Info: figures/new_results/egpi/structure_diagram.png  used o
-n input line 635.
+n input line 229.
 (pdftex.def)             Requested size: 430.85863pt x 430.35677pt.
 
-Overfull \hbox (32.52003pt too wide) in paragraph at lines 635--636
+Overfull \hbox (32.52003pt too wide) in paragraph at lines 229--230
  [][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 669--675
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 263--269
 
  []
 
 [42
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3.7}) 
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.675 
-       <./figures/new_results/egpi/structure_diagram.png>] [43]
-Overfull \hbox (6.73412pt too wide) in paragraph at lines 722--745
+l.269 
+       <./figures/new_results/egpi/structure_diagram.png>]
+Overfull \hbox (6.73412pt too wide) in paragraph at lines 316--339
 []\T1/futs/b/n/10.95 The weighted match-ing in-dex of the graph: \T1/futs/m/n/1
 0.95 de-fined in def-i-ni-tion []1.3.7[], the weighted
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 784--785
+[43]
+Underfull \hbox (badness 10000) in paragraph at lines 378--379
 
  []
 
 [44]
-Overfull \hbox (18.86108pt too wide) in paragraph at lines 800--803
+Overfull \hbox (18.86108pt too wide) in paragraph at lines 395--398
 []\T1/futs/m/n/10.95 On all the $21$ mil-lions gen-er-ated can-di-date graphs, 
 none of them was per-fectly monochro-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 800--803
+Underfull \hbox (badness 10000) in paragraph at lines 395--398
 
  []
 
 [45]
-Underfull \hbox (badness 10000) in paragraph at lines 807--810
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 11.03998pt on input line 400.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 8.27998pt on input line 400.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 6.43999pt on input line 400.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 11.03998pt on input line 400.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 8.27998pt on input line 400.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 6.43999pt on input line 400.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 400.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 400.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 403--406
 
  []
 
 [46
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3.8}) 
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.892 
+l.488 
       ]
-Underfull \hbox (badness 10000) in paragraph at lines 893--899
+Underfull \hbox (badness 10000) in paragraph at lines 489--495
 
  []
 
 
-Overfull \hbox (8.85086pt too wide) in paragraph at lines 900--905
+Overfull \hbox (8.85086pt too wide) in paragraph at lines 496--501
 \T1/futs/m/n/10.95 monochro-matic graphs found. The re-sult is the fol-low-ing:
  \T1/futs/b/n/10.95 none \T1/futs/m/n/10.95 of the per-fectly monochro-
  []
 
 [47
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3.9}) 
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4.3}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.910         \item $
+l.506         \item $
                      \Tilde{c}(G, k, w) \geq 2$]
-Underfull \hbox (badness 10000) in paragraph at lines 922--923
+Underfull \hbox (badness 10000) in paragraph at lines 519--520
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 924--931
+Underfull \hbox (badness 10000) in paragraph at lines 521--528
 
  []
 
 ) (./content/chapters/conclusion.tex
-Underfull \hbox (badness 10000) in paragraph at lines 932--2
+Underfull \hbox (badness 10000) in paragraph at lines 529--2
 
  []
 
@@ -2641,19 +2673,19 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 359C465A098B9D68E7FE7C1A3EB16EA0;5032.
+(rerunfilecheck)             Checksum: CA763471CA26A8F58FECEBC89C775D3C;6379.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56768 strings out of 474116
- 1254378 string characters out of 5743682
- 2295423 words of memory out of 5000000
- 77769 multiletter control sequences out of 15000+600000
- 629905 words of font info for 117 fonts, out of 8000000 for 9000
+ 56813 strings out of 474116
+ 1255116 string characters out of 5743682
+ 2295580 words of memory out of 5000000
+ 77809 multiletter control sequences out of 15000+600000
+ 649654 words of font info for 148 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 117i,12n,121p,2365b,2373s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 117i,12n,121p,2365b,2348s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/fourier/fourier-alt.pf
 b></usr/local/texlive/2024/texmf-dist/fonts/type1/public/fourier/fourier-bb.pfb
 ></usr/local/texlive/2024/texmf-dist/fonts/type1/public/fourier/fourier-mcl.pfb
@@ -2669,10 +2701,10 @@ ive/2024/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texliv
 e/2024/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/
 2024/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
 Output written on /Users/Merlin/PycharmProjects/EGPI/master_thesis/_output/main
-.pdf (59 pages, 1914806 bytes).
+.pdf (59 pages, 1915743 bytes).
 PDF statistics:
- 1023 PDF objects out of 1200 (max. 8388607)
- 914 compressed objects within 10 object streams
- 276 named destinations out of 1000 (max. 500000)
- 241 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1041 PDF objects out of 1200 (max. 8388607)
+ 932 compressed objects within 10 object streams
+ 275 named destinations out of 1000 (max. 500000)
+ 273 words of extra memory for PDF output out of 10000 (max. 10000000)
 
