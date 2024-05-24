@@ -399,3 +399,85 @@ In this section, we will reuse the arguments from section~\ref{subsec:one_negati
         This ends the proof of lemma~\ref{lem:2_positive_colour_classes_forbidden}.
     \end{enumerate}
 \end{proof}
+
+
+\section{Other explored cases}
+\label{sec:other-explored-cases}
+
+Before finding these interesting results, I explored other subcases of the Krenn's conjecture that were less successful.
+In this section, I will present the main ideas of these explorations.
+
+\subsection{Focus on bipartite graphs}
+\label{subsec:focus-on-bipartite-graphs}
+
+Many problems in graph theory about matchings are easier to solve when restricted to bipartite graphs.
+For this reason, I spent some time trying to find a proof of the Krenn's conjecture that would be valid only for bipartite graphs.
+This was unsuccessful, but I will present the main observations I made during this exploration.
+
+\begin{observation}[Bipartite graphs]
+    \label{obs:bipartite_graphs}
+    Let $G_k^w$ be a perfectly monochromatic graph of size $n$ that respects the following properties.
+    \begin{itemize}
+        \item $G_K^w$ is a simple graph, in the sense it has no multi-edges.
+        \item $G_K^w$ has no bicoloured edges.
+        \item $G_k^w$ is bipartite.
+        \item $\forall e \in E(G_k^w)$, $w(e) \in \{-1, 1\}$
+        \item $\Tilde{c}(G, k, w) \geq 3$
+        \item $\forall$ pair of monochromatic perfect matching $M_r$ and $M_g$ of $G_k^w$ of different colour, $M_r$ and $M_g$ form a Hamiltonian cycle.
+    \end{itemize}
+    Then, $G_k^w$ has at least $n + 7$ distinct perfect matchings.   % TODO : find a bound
+\end{observation}
+
+\begin{proof}
+    Let $M_r$, $M_g$ and $M_b$ be three monochromatic perfect matchings of $G_k^w$ that have colour $r$, $g$ and $b$ respectively.
+    Their existence is guaranteed by definition~\ref{def:weighted_matching_index} of the weighted matching index.
+    Let $H = (v_1, v_2, \dots, v_n)$ be the Hamiltonian cycle formed by $M_r$ and $M_g$.
+    Let $e = (v_i, v_j) \in M_b$.
+    Since $G_k^w$ is bipartite, $j-i$ is odd.
+    We can assume without loss of generality that the colour of $(v_i, v_{i+1})$ is $r$ (otherwise, we exchange colours $r$ and $g$ in the following reasoning).
+    Then, we can build a non-monochromatic perfect matching as follows.
+
+    \begin{center}
+        $\begin{array}{r c l}
+            N & = & e                             \\
+              &   & \cup (H_{i+1, j-1} \cap M_g)  \\
+              &   & \cup (H_{j+1, i-1} \cap M_r)
+        \end{array}$
+    \end{center}
+
+    Since $N$ is non-monochromatic, the weight of its induced vertex colouring $w(\kappa(N)) = \sum\limits_{N_i \in \mathcal{M}_{\kappa(N)}} N_i = 0$ by definition~\ref{def:perfectly_monochromatic_graph}.
+    Also, $w(N) \in \{-1, 1\}$ because all its edges have a weight in $\{-1, 1\}$.
+    Therefore, $\exists N'$ such that $\kappa(N') = \kappa(N)$ and $w(N') = -w(N)$.\\
+
+    This reasoning can be applied to all the edges of $M_b$.
+    This means that $G_k^w$ has at least $2 \cdot \frac{n}{2} = n$ distinct non-monochromatic perfect matchings.\\
+
+    The reasoning can still go a bit further.
+    We notice that both $N$ and $N'$ contain $e$.
+    This means that the only way for $N'$ to differ from $N$ is that they differ in the edges that have colour $r$ or $g$.
+    Let say without loss of generality that they differ (at least) in their red parts.
+    Let $N'_r$ be the set of red edges of $N'$.
+    Then, we can find a new monochromatic red perfect matching as follows.
+
+    \begin{center}
+        $\begin{array}{r c l}
+            M'_r & = & N'r \\
+                 &   & \cup (H_{j+1, i-1} \cap M_r)
+        \end{array}$
+    \end{center}
+
+    We will denote by $\kappa_r$ the red monochromatic vertex colouring.
+    Let's compute the current weight of $\kappa_r$.
+    \begin{center}
+        $w(\kappa_r) = w(M_r) + w(M'_r) \in \{-2, 0, 2\}$
+    \end{center}
+    Currently, this weight can not be $1$.
+    This means that $\exists M''_r$, different from $M'_r$ and $M_r$, such that $\kappa(M''_r) = \kappa_r$.\\
+
+    This leaves us with (at least) $3$ monochromatic perfect matchings that induce the vertex colouring $\kappa_r$.
+    The same reasoning is possible by forming an initial hamiltonian cycle with $M_g$ and $M_b$.
+    Therefore, $\kappa_g$ or $\kappa_b$ is also induced by (at least) $3$ monochromatic perfect matchings.
+    The other is induced by (at least) $1$ perfect matching because $\Tilde{c}(G, k, w) \geq 3$.
+    By summing everything up, we find that $G_k^w$ has at least $n + 7$ distinct perfect matchings.
+
+\end{proof}

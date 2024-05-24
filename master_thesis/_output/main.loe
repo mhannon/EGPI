@@ -48,10 +48,11 @@
 \contentsline {observation}{\ifthmt@listswap Observation~3.2.2\else \numberline {3.2.2}Observation\fi \thmtformatoptarg {Parity of crossing edges}}{30}{observation.3.2.2}%
 \contentsline {lemma}{\ifthmt@listswap Lemma~3.2.3\else \numberline {3.2.3}Lemma\fi \thmtformatoptarg {One negative edge allowed}}{31}{lemma.3.2.3}%
 \contentsline {lemma}{\ifthmt@listswap Lemma~3.2.4\else \numberline {3.2.4}Lemma\fi \thmtformatoptarg {2 positive colour classes}}{34}{lemma.3.2.4}%
+\contentsline {observation}{\ifthmt@listswap Observation~3.3.1\else \numberline {3.3.1}Observation\fi \thmtformatoptarg {Bipartite graphs}}{36}{observation.3.3.1}%
 \addvspace {10\p@ }
-\contentsline {conjecture}{\ifthmt@listswap Conjecture~4.2.1\else \numberline {4.2.1}Conjecture\fi }{37}{conjecture.4.2.1}%
-\contentsline {observation}{\ifthmt@listswap Observation~4.2.2\else \numberline {4.2.2}Observation\fi }{37}{observation.4.2.2}%
-\contentsline {definition}{\ifthmt@listswap Definition~4.3.1\else \numberline {4.3.1}Definition\fi \thmtformatoptarg {Random creation of a candidate experiment graph}}{39}{definition.4.3.1}%
-\contentsline {definition}{\ifthmt@listswap Definition~4.3.2\else \numberline {4.3.2}Definition\fi \thmtformatoptarg {Random Experiment Graphs Research Process}}{40}{definition.4.3.2}%
-\contentsline {conjecture}{\ifthmt@listswap Conjecture~4.5.1\else \numberline {4.5.1}Conjecture\fi }{47}{conjecture.4.5.1}%
-\contentsline {lemma}{\ifthmt@listswap Lemma~4.6.1\else \numberline {4.6.1}Lemma\fi \thmtformatoptarg {2 positive colour classes}}{49}{lemma.4.6.1}%
+\contentsline {conjecture}{\ifthmt@listswap Conjecture~4.2.1\else \numberline {4.2.1}Conjecture\fi }{39}{conjecture.4.2.1}%
+\contentsline {observation}{\ifthmt@listswap Observation~4.2.2\else \numberline {4.2.2}Observation\fi }{39}{observation.4.2.2}%
+\contentsline {definition}{\ifthmt@listswap Definition~4.3.1\else \numberline {4.3.1}Definition\fi \thmtformatoptarg {Random creation of a candidate experiment graph}}{41}{definition.4.3.1}%
+\contentsline {definition}{\ifthmt@listswap Definition~4.3.2\else \numberline {4.3.2}Definition\fi \thmtformatoptarg {Random Experiment Graphs Research Process}}{42}{definition.4.3.2}%
+\contentsline {conjecture}{\ifthmt@listswap Conjecture~4.5.1\else \numberline {4.5.1}Conjecture\fi }{49}{conjecture.4.5.1}%
+\contentsline {lemma}{\ifthmt@listswap Lemma~4.6.1\else \numberline {4.6.1}Lemma\fi \thmtformatoptarg {2 positive colour classes}}{51}{lemma.4.6.1}%

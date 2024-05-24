@@ -16,9 +16,8 @@ In order to understand the following chapters, it is needed to (re)introduce som
 A reader who is not familiar with the field of graph theory needs first to understand the basic concepts of graphs.
 The following definitions constitute the foundation of the domain, and I personally learned them in a course based on the book ~\cite{graphtheory}.\\
 
-In the context of discrete mathematics, a \textit{graph} $G = (V, E)$ is a set $V$ of objects, called \textit{vertices}, and a set $E$ of tuples (or pairs) between these vertices, called \textit{edges}.
-The notations $V(G)$ and $E(G)$ denote the set of vertices and the set of edges of $G$ respectively.
-Graph theorists distinguish different types of graphs.
+In the context of discrete mathematics, a \textit{graph} $G = (V, E)$ is a set $V$ of objects, called \textit{vertices}, and a set $E$ of pairs of elements from $V$, called \textit{edges}.
+The notations $V(G)$ and $E(G)$ denote the set of vertices and the set of edges of $G$, respectively.
 The following definitions cover the graphs that will be used in the context of this master thesis.
 
 \begin{definition}[Simple graph]
@@ -29,11 +28,11 @@ The following definitions cover the graphs that will be used in the context of t
 
 \begin{definition}[Undirected graph]
     \label{def:undirected_graph}
-    A graph $G$ is said to be \textit{undirected} if $E(G)$ is a set of unordered pairs, i.e.\ if its edges are bidirectional.
+    A graph $G$ is said to be \textit{undirected} if $E(G)$ is a set of unordered pairs of elements of $V(G)$.
     It is opposed to the concept of \textit{directed graphs}, in which the edges are ordered tuples.
 \end{definition}
 
-\begin{definition}[Edge-coloured graph]
+\begin{definition}[Edge-coloured graph]     % TODO : different notations ?
     \label{def:edge_coloured_graph}
     An \textit{edge-colouring} $k$ of a graph $G$ is a function that maps each edge $e \in E(G)$ to a colour $k(e)$ (often represented as an unsigned integer).
     An \textit{edge-coloured graph} $G_k$ is a graph $G$ equipped with an edge-colouring $k$.
@@ -41,17 +40,20 @@ The following definitions cover the graphs that will be used in the context of t
 
 \begin{definition}[Mixed edge-coloured graph]
     \label{def:mixed_edge_coloured_graph}
-    A \textit{mixed edge-colouring} $k$ of a graph $G$ is a function that maps each edge $e = (v_1, v_2) \in E(G)$ to two colours $k(e, v_1)$ and $k(e, v_2)$ (often represented as unsigned integers).
+    A \textit{mixed edge-colouring} $k$ of a graph $G$ is a function that maps each edge $e = \{v_1, v_2\} \in E(G)$ to two colours $k(e, v_1)$ and $k(e, v_2)$ (often represented as unsigned integers).
     A \textit{mixed edge-coloured graph} $G_k$ is a graph $G$ equipped with a mixed edge-colouring $k$.
 \end{definition}
 
 \begin{definition}[Weighted graph]
     \label{def:weighted_graph}
     A \textit{weighting} $w$ of a graph $G$ is a function that maps each edge $e \in E(G)$ to a weight $w(e)$.
-    Most often, this weight is assumed to be a real number.
-    However, in the context of this master thesis, this weight is a complex number.
+    In the context of this master thesis, this weight is a complex number.
     A \textit{weighted graph} $G^w$ is a graph $G$ equipped with a weighting $w$.
 \end{definition}
+
+This definition of a weighting might surprise some readers.
+Indeed, the weight of an edge is often assumed to be a real number in the literature and not a complex one.
+However, this definition is more general and will be convenient to study the Krenn's conjecture in section~\ref{sec:krenn_conjecture}.
 
 
 \subsection{Paths and connectivity concepts}
@@ -64,7 +66,7 @@ The definitions of these concepts are recalled here to ensure a better understan
     \label{def:path}
     Given a graph $G$, a \textit{path} $P = (e_1, e_2, \dots, e_l)$ is an ordered sequence of different edges from $E(G)$ respecting the following property.
     \begin{itemize}
-        \item $\forall i \in \{1, 2, \cdots, l - 1\}$, the vertices $e_i$ and $e_{i+1}$ share a common vertex.
+        \item $\forall i \in \{1, 2, \cdots, l - 1\}$, the edges $e_i$ and $e_{i+1}$ share a common vertex.
         \item $\forall$ vertex $v \in V(G)$, there is at most two edges $e \in P$ that contain $v$.
             In other words, $P$ does not pass through the same vertex twice.
     \end{itemize}
@@ -122,7 +124,7 @@ The definitions of these concepts are recalled here to ensure a better understan
 
 \begin{definition}[Maximum and minimum degree]
     \label{def:degree}
-    The \textit{degree} of a vertex $v$ in a graph $G$, denoted $d(v)$, is the number of edges touching $v$ in $E(G)$.
+    The \textit{degree} of a vertex $v$ in a graph $G$, denoted $d(v)$, is the number of edges adjacent to $v$ in $E(G)$.
     The \textit{minimum degree} of $G$, denoted $\delta(G)$, and the \textit{maximum degree} of $G$, denoted $\Delta(G)$, are defined as follows.
     \begin{center}
         $\left\{
@@ -143,13 +145,13 @@ For this reason, the matching-related concepts are (re-)defined here~\cite{graph
 
 \begin{definition}[Matching]
     \label{def:matching}
-    Given a graph $G$, two edges in $E(G)$ are said to be \textit{independent} if they do not contain any vertex in common.
-    A \textit{matching} $M$ of $G$ is a set of edges $M \in E(G)$ that are independent $2$ by $2$.
+    Given a graph $G$, two edges in $E(G)$ are said to be \textit{independent} if their intersection is empty.
+    A \textit{matching} $M$ of $G$ is a set $M \subseteq E(G)$ of independent edges.
 \end{definition}
 
 \begin{definition}[Perfect matching]
     \label{def:perfect_matching}
-    A matching $M$ of a graph $G$ is said to be \textit{perfect} if it covers the whole set of $G'$s vertices, i.e.\ if every vertex $v \in V(G)$ appears in one of the edges of $M$.
+    A matching $M$ of a graph $G$ is said to be \textit{perfect} if $\bigcup\limits_{e \in M} e = V(G)$, i.e.\ if every vertex $v \in V(G)$ appears in one and at most one edge of $M$.
 \end{definition}
 
 
@@ -161,16 +163,22 @@ He first defines the notion of monochromatic graphs, followed by the notion of i
 
 \begin{definition}[Monochromatic graph]
     \label{def:monochromatic_graph}
-    An edge-coloured graph $G_k$ is said to be \textit{monochromatic} if all its perfect matchings are monochromatic, i.e., for all perfect matchings $M$, the edges of $M$ are all the same colour.
+    In the context of this master thesis, an edge-coloured graph $G_k$ is said to be \textit{monochromatic} if all its perfect matchings are monochromatic, i.e., for all perfect matchings $M$, the edges of $M$ are all the same colour.
 \end{definition}
 
 An example of monochromatic graph is shown in figure~\ref{fig:k4_pm}.
+This concept is different from the one of a monochromatic edge set.
+
+\begin{definition}
+    \label{def:monochromatic_edge_set}
+    An edge set $S$ is said to be \textit{monochromatic} if all of its edges have the same colour.
+\end{definition}
 
 \begin{definition}[Matching index]
     \label{def:matching_index}
     Let $G$ be a graph.
-    For any edge-colouring $k$ such that $G_k$ is monochromatic, let $c(G, k)$ be defined as the number of different colour classes containing at least one perfect matching of $G_k$.
-    The \textit{matching index} of $G$, denoted $c(G)$, is the maximum value that $c(G, k)$ can take.
+    For any edge-colouring $k$ such that $G_k$ is monochromatic, let $c(G, k)$ be defined as the number of colours such that $\exists$ a monochromatic perfect matching of $G_k$ of that colour.
+    The \textit{matching index} of $G$, denoted by $c(G)$, is the maximum value that $c(G, k)$ can take.
     \begin{center}
         $c(G) = \max\limits_{k \in \mathcal{K}(G)}(c(G, k))$
     \end{center}
@@ -192,13 +200,13 @@ Equipped with these concepts, the reader has now all the knowledge to understand
     Otherwise, $c(G) \leq 2$.
 \end{theorem}
 
-The proof of theorem~\ref{thm:bogdanov} was first proposed by Ilya Bogdanov in a post on a forum. \cite{bogdanov}
+The proof of theorem~\ref{thm:bogdanov} was first proposed by Ilya Bogdanov in a post on a forum~\cite{bogdanov}.
 I rewrote it in my own terms to make it clearer, according to our own formulation of the problem.
 
 \begin{proof}
     Let $G$ be a monochromatic graph with a matching index $c(G) \geq 2$, and let $k$ be an edge-colouring of $G$ such that $c(G, k) = c(G)$.
     Let $M_1$, $M_2$ be two monochromatic perfect matchings of $G_k$ of different colours.
-    Clearly, they are disjoint.
+    Then, they are disjoint.
     
     \begin{claim}
         \label{clm:even_cycles}
@@ -243,10 +251,10 @@ I rewrote it in my own terms to make it clearer, according to our own formulatio
             
             \begin{center}
                 $\begin{array}{r c l}
-                    N & = & e \\
+                    N & = & \{e\} \\
                       &   & \cup M_1 \cap H_{i+1, j-1} \\
                       &   & \cup M_2 \cap H_{j+1, i-1}
-                \end{array}$
+                \end{array}$        % TODO : period at the end ?
             \end{center}
             
             The construction of $N$ is shown in figure~\ref{fig:proof_simplified_odd}.
