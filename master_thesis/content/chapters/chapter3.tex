@@ -1,36 +1,54 @@
 \chapter{New theoretical contributions}
 \label{ch:new-contributions}
 
-There are $2$ intuitive ways to tackle the problem of the Krenn's conjecture.
+There are two intuitive ways to tackle the problem of the Krenn's conjecture.
 The first way, done in this chapter, is to use a theoretical approach to find interesting properties about perfectly monochromatic graphs.
-In this approach, I hope that the conjecture is true and try to prove it in some very restricted cases.
-Also, I present $2$ different ways of thinking to the problems by showing an equivalency between $2$ cases in the subsection~\ref{sec:problem-reduction}.\\
+In this approach, I prove the Krenn's conjecture in a very restrained subcase in subsection~\ref{subsec:one_negative_edge}.
+Then, I show how to relax the constraints of this analysed subcase in the subsection~\ref{subsec:2-pos-classes}.
+Also, I present two different ways of thinking to the problems by showing an equivalency between two cases in the subsection~\ref{sec:problem-reduction}.\\
 
 The second approach is a computational approach, and is presented in chapter~\ref{ch:computational-approach}.
-The goal of this second approach will be to generate a big number of random perfectly monochromatic experiment graphs, and extract conclusions from these data.
-To do so, it will present a new tool I developed, called EGPI, that aims to perform such experiments.
+The goal of this second approach will be to generate a big number of random perfectly monochromatic experiment graphs, and extract conclusions from the data.
+To do so, I will present a new tool I developed, called EGPI, that aims to perform such experiments.
 
 
 \section{Problem reduction}
 \label{sec:problem-reduction}
 
-\begin{lemma}[PM graphs with integer weights]
-    Let $G_k^w$ be a perfectly monochromatic graph that has only edge weights included in $\mathbb{Z}$.
-    For all upper bounds $\beta \in \mathbb{N}$, if the following conjecture is true:
-    \begin{itemize}
-        \item $\forall {G'_{k'}}^{w'}$ perfectly monochromatic graphs that have only weights included in $\{-1, 1\}$, $\Tilde{c}(G', k', w') \leq \beta$.
-    \end{itemize}
-    then we have also $\Tilde{c}(G, k, w) \leq \beta$.
+Let $\beta \in \mathbb{N}_0$ be a strictly positive integer.
+Having $\beta$, we can formulate the two following conjectures.
+
+\begin{conjecture}[Weighted matching index bounded by $\beta$ if binary weights]
+    \label{con:c-bounded-by-beta-binary}
+    Let $\forall {G_\mu}^w$ be a perfectly monochromatic graphs such that $w: E(G) \rightarrow \{-1, 1\}$.
+    Then, $\Tilde{c}(G, \mu, w) \leq \beta$.
+\end{conjecture}
+
+\begin{conjecture}[Weighted matching index bounded by $\beta$ if integer weights]
+    \label{con:c-bounded-by-beta-integer}
+    Let $\forall {G_\mu}^w$ be a perfectly monochromatic graphs such that $w: E(G) \rightarrow \mathbb{Z}$.
+    Then, $\Tilde{c}(G, \mu, w) \leq \beta$.
+\end{conjecture}
+
+Since the conjecture~\ref{con:c-bounded-by-beta-binary} seems to be a particular case of the conjecture~\ref{con:c-bounded-by-beta-integer}, the conjecture~\ref{con:c-bounded-by-beta-binary} seems to be easier to prove.
+However, the following lemma holds.
+
+\begin{lemma}[Conjectures \ref{con:c-bounded-by-beta-binary} and \ref{con:c-bounded-by-beta-integer} are equivalent]
+    \label{lem:pm_graphs_with_integer_weights}
+    Let $\beta \in \mathbb{N}_0$ be a strictly positive integer.
+    The conjecture~\ref{con:c-bounded-by-beta-binary} is true for $\beta$ if and only if the conjecture~\ref{con:c-bounded-by-beta-integer} is true for $\beta$.
+    In other words, the two conjectures are equivalent.
 \end{lemma}
 
-\begin{proof}
-    Let $G_k^w$ be a perfectly monochromatic graph that has only edge weights included in $\mathbb{Z}$.
-    We will show that we can build a perfectly monochromatic graph that has only weights included in $\{-1, 1\}$ and that has the same weighted matching index than $G_k^w$. \\
+\begin{proof}[Proof of Lemma \ref{lem:pm_graphs_with_integer_weights}]
+    Let $G_\mu^w$ be a perfectly monochromatic graph that has only edge weights included in $\mathbb{Z}$.
+    We will show that we can build a perfectly monochromatic graph that has only weights included in $\{-1, 1\}$ and that has the same weighted matching index than $G_\mu^w$. \\
 
-    First, we choose an edge in $G_k^w$ that has a weight different from $1$ nor $-1$ (if such an edge doe not exist, we are done).
+    First, we choose an edge in $G_\mu^w$ that has a weight different from $1$ or $-1$ (if such an edge doe not exist, we are done).
     We replace this edge by $|w(e)|$ parallel edges of the same colour, and that have all a weight of $\frac{w(e)}{|w(e)|}$ (1 if $w(e) > 0$, -1 if $w(e) < 0$).
-    Remember this can be done because experiment graphs allow multi edges by definition~\ref{def:experiment_graph}.
-    This creates a new graph ${G'_{k'}}^{w'}$.
+    We say that each of these new edges is \textit{derived} from $e$.
+    Remember this can be done because experiment graphs allow multi-edges by definition~\ref{def:experiment_graph}.
+    This creates a new graph ${G'_{\mu'}}^{w'}$.
     That process is illustrated in figure~\ref{fig:demo_integers}.\\
 
     \begin{figure}[H]
@@ -39,38 +57,38 @@ To do so, it will present a new tool I developed, called EGPI, that aims to perf
         \label{fig:demo_integers}
     \end{figure}
 
-    Let $\kappa$ be a feasible vertex colouring of $G_k^w$.
-    What is the weight of $\kappa$ in $G_k^w$ ? To express it, we will denote by
+    Let $\kappa$ be a feasible vertex colouring of $G_\mu^w$.
+    To compute the weight of $\kappa$ in $G_\mu^w$, we will denote by
     \begin{center}
         $\left\{
             \begin{array}{ll}
-                M_{\kappa}          & \mbox{the set of perfect matchings of } G_k^w \mbox{ that induce the vertex colouring } \kappa \\
-                M_{\kappa}^e        & \mbox{the set of perfect matchings of } G_k^w \mbox{ that induce the vertex colouring } \kappa \mbox{ and contain } e \\
-                M_{\kappa}^{\neg e} & \mbox{the set of perfect matchings of } G_k^w \mbox{ that induce the vertex colouring } \kappa \mbox{ and do not contain } e
+                M_{\kappa}          & \mbox{the set of perfect matchings of } G_\mu^w \mbox{ that induce the vertex colouring } \kappa \\
+                M_{\kappa}^e        & \mbox{the set of perfect matchings of } G_\mu^w \mbox{ that induce the vertex colouring } \kappa \mbox{ and contain } e \\
+                M_{\kappa}^{\neg e} & \mbox{the set of perfect matchings of } G_\mu^w \mbox{ that induce the vertex colouring } \kappa \mbox{ and do not contain } e
             \end{array}
         \right.$
     \end{center}
 
-    The weight of $\kappa$ in $G_k^w$ is
+    The weight of $\kappa$ in $G_\mu^w$ is
 
     \begin{center}
         $\begin{array}{lclcl}
-            w(\kappa \mbox{ in } G_c^w)
+            w(\kappa \mbox{ in } G_\mu^w)
                 & = & \sum\limits_{M \in M_{\kappa}} w(M) \\
                 & = & \sum\limits_{M \in M_{\kappa}^{\neg e}} w(M) & + & \sum\limits_{M \in M_{\kappa}^{e}} w(M)
         \end{array}$
     \end{center}
 
-    The next step, which is the heart of the proof, consists of computing the weight of the vertex colouring $\kappa$ in ${G'_{k'}}^{w'}$.
+    The next step, which is the heart of the proof, consists of computing the weight of the vertex colouring $\kappa$ in ${G'_{\mu'}}^{w'}$.
     We will denote by
 
     \begin{center}
         $\left\{
             \begin{array}{ll}
-                M'_{\kappa}            & \mbox{the set of perfect matchings of } {G'_{k'}}^{w'} \mbox{ that induce the vertex colouring } \kappa \\
-                {M'_{\kappa}}^e        & \mbox{the set of perfect matchings of } {G'_{k'}}^{w'} \mbox{ that induce the vertex colouring } \kappa \\
+                M'_{\kappa}            & \mbox{the set of perfect matchings of } {G'_{\mu'}}^{w'} \mbox{ that induce the vertex colouring } \kappa \\
+                {M'_{\kappa}}^e        & \mbox{the set of perfect matchings of } {G'_{\mu'}}^{w'} \mbox{ that induce the vertex colouring } \kappa \\
                                    & \mbox{and contain an edge that was derived from } e \\
-                {M'_{\kappa}}^{\neg e} & \mbox{the set of perfect matchings of } {G'_{k'}}^{w'} \mbox{ that induce the vertex colouring } \kappa \\
+                {M'_{\kappa}}^{\neg e} & \mbox{the set of perfect matchings of } {G'_{\mu'}}^{w'} \mbox{ that induce the vertex colouring } \kappa \\
                                    & \mbox{and does not contain an edge that was derived from } e
             \end{array}
         \right.$
@@ -91,30 +109,30 @@ To do so, it will present a new tool I developed, called EGPI, that aims to perf
         \right.$
     \end{center}
 
-    Having all these observations in mind, we can now compute the weight of $\kappa$ in ${G'_{k'}}^{w'}$.
+    Having all these observations in mind, we can now compute the weight of $\kappa$ in ${G'_{\mu'}}^{w'}$.
 
     \begin{center}
         $\begin{array}{lclcl}
-            w(\kappa \mbox{ in } {G'_{k'}}^{w'})
+            w(\kappa \mbox{ in } {G'_{\mu'}}^{w'})
                 & = & \sum\limits_{M' \in M'_{\kappa}} w(M') \\
                 & = & \sum\limits_{M' \in {M'_{\kappa}}^{\neg e}} w(M') & + & \sum\limits_{M' \in {M'_{\kappa}}^{e}} w(M') \\
                 & = & \sum\limits_{M \in {M_{\kappa}}^{\neg e}} w(M)    & + & \sum\limits_{M \in M_{\kappa}^e} \left( \sum\limits_{M' \in \mathcal{M}'(M)} w(M') \right) \\
                 & = & \sum\limits_{M \in {M_{\kappa}}^{\neg e}} w(M)    & + & \sum\limits_{M \in M_{\kappa}^e} \left( \sum\limits_{M' \in \mathcal{M}'(M)} \frac{w(M)}{|w(e)|} \right) \\
                 & = & \sum\limits_{M \in {M_{\kappa}}^{\neg e}} w(M)    & + & \sum\limits_{M \in M_{\kappa}^e} \left( |w(e)| \frac{w(M)}{|w(e)|} \right) \\
                 & = & \sum\limits_{M \in {M_{\kappa}}^{\neg e}} w(M)    & + & \sum\limits_{M \in M_{\kappa}^e} w(M) \\
-                & = & w(\kappa \mbox{ in } G_k^w)
+                & = & w(\kappa \mbox{ in } G_\mu^w)
         \end{array}$
     \end{center}
 
-    So, since the weight of each feasible vertex colouring in $G_k^w$ remains unchanged in ${G'_{k'}}^{w'}$, the monochromatic feasible vertex colourings have still a weight of 1, and the non-monochromatic feasible vertex colourings have still a weight of 0.
-    So, ${G'_{k'}}^{w'}$ is still perfectly monochromatic and $\Tilde{c}(G', k', w') = \Tilde{c}(G, k, w)$.
-    Now, we can rename $G'$ as $G$ and repeat the whole procedure while $G_k^w$ has still edges with a weight different from $\{-1, 1\}$.
+    So, since the weight of each feasible vertex colouring in $G_\mu^w$ remains unchanged in ${G'_{\mu'}}^{w'}$, the monochromatic feasible vertex colourings have still a weight of 1, and the non-monochromatic feasible vertex colourings have still a weight of 0.
+    So, ${G'_{\mu'}}^{w'}$ is still perfectly monochromatic and $\Tilde{c}(G', \mu', w') = \Tilde{c}(G, \mu, w)$.
+    Now, we can rename $G'$ as $G$ and repeat the whole procedure while $G_\mu^w$ has still edges with a weight different from $\{-1, 1\}$.
     The resulting graph has only edges that have signed unitary weights and has the same weighted chromatic index as the initial graph.
     So if any upper bound can be found on the weighted matching index of the final graph with signed unitary weights, it will still be valid for the weighted matching index of the initial one, with integer weights.
 \end{proof}
 
-The implication of this lemma is that there are actually $2$ ways to reason about the Krenn's conjecture when we are interested in integer weights.
-The first way is to consider only non-redundant graphs (as defined in definition~\ref{def:non_redundant_induced_subgraph}) and to try to find a bound on their weighted matching index.
+The implication of Lemma~\ref{lem:pm_graphs_with_integer_weights} is that there are actually two ways to reason about the Krenn's conjecture when we are interested in integer weights.
+The first way is to consider only non-redundant graphs (as defined in definition~\ref{def:redundant-experiment-graph}) and to try to find a bound on their weighted matching index.
 And the second way is to consider redundant graphs in which each edge has a weight included in $\{-1, 1\}$.
 Every result discovered in the second approach can be translated to the first approach, and vice versa.
 
@@ -123,37 +141,37 @@ Every result discovered in the second approach can be translated to the first ap
 \label{sec:constraints-relaxation}
 
 As it was explained in the introduction, a simplified version of the conjecture was already proven thanks to Bogdanov.\cite{bogdanov}
-This version, presented in lemma~\ref{lem:real_pos_weights}, is only valid when all the weights of a perfectly monochromatic graph $G_k^w$ are positive.
+This version, presented in Lemma~\ref{lem:real_pos_weights}, is only valid when all the weights of a perfectly monochromatic graph $G_\mu^w$ are positive.  % TODO: check if we can have bicoloured edges
 In this section, our main goal will be to relax these constraints.
 
 \subsection{Allowing one negative edge}
 \label{subsec:one_negative_edge}
 
-Since the conjecture is proven to be true when all the weights are positive, it is natural to ask ourselves how the proof would be affected if this constraint was relaxed.
+Since the conjecture is proven to be true when all the weights are positive, it is natural to ask ourselves how the proof would be affected if this constraint is relaxed.
 The most simple case is the one where one edge is allowed to have a negative weight.
-The goal of this section is to answer that question.
-Let's begin by remarking the $2$ following observations.
+In this section, I show that the Krenn's conjecture is true for simple graphs in the absence of bicoloured edges and when maximum one edge has a negative weight.
+Let's begin by proving the two following claims.
 
-\begin{observation}[Existence of a Hamiltonian cycle]
-    \label{obs:2_positive_classes_ham_cycle}
-    Let $G_k^w$ be a perfectly monochromatic graph that respects the following properties.
+\begin{claim}[Existence of a Hamiltonian cycle]
+    \label{clm:2_positive_classes_ham_cycle}
+    Let $G_\eta^w$ be a perfectly monochromatic graph that respects the following properties.
     \begin{itemize}
-        \item $G_K^w$ is a simple graph, in the sense it has no multi-edges.
-        \item $G_K^w$ has no bicoloured edges.
-        \item $G_k^w$ has a weighted matching index $\Tilde{c}(G, k, w) \geq 3$.
-        \item It has at least $2$ colour classes, denoted $r$, and $g$, such that all the edges coloured $r$ or $g$ have a real, positive weight.
+        \item $G$ is a simple graph, referring to definition~\ref{def:simple_graph}.
+        \item $\eta$ is a pure edge colouring, referring to definition~\ref{def:edge-coloured-graph}.
+        \item $G_\eta^w$ has a weighted matching index $\Tilde{c}(G, \eta, w) \geq 3$.
+        \item $\exists$ two colours $r, g \in \left(\eta(E(G))\right)^2, r \neq g$, such that all the edges coloured $r$ or $g$ in $G_\eta^w$ have a real, positive weight.
     \end{itemize}
 
-    Let $M_r$ and $M_g$ be $2$ monochromatic perfect matchings of $G_k^w$ coloured $r$ and $g$ respectively.
+    Let $M_r$ and $M_g$ be $2$ monochromatic perfect matchings of $G_\eta^w$ coloured $r$ and $g$ respectively.
     Then, the union of $M_r$ and $M_g$ forms a Hamiltonian cycle of even length.
-\end{observation}
+\end{claim}
 
-\begin{proof}
-    Since $M_r$ and $M_g$ are disjoint, they form a disjoint union of $\mathcal{C}$ cycles of even length.
-    If $\mathcal{C} \geq 2$, we will denote by $C_i$ the $i^{th}$ cycle.
+\begin{proof}[Proof of Claim \ref{clm:2_positive_classes_ham_cycle}]
+    Since $M_r$ and $M_g$ are disjoint, they form a disjoint union $\mathcal{C}$ of cycles of even length.
+    If $\left| \mathcal{C} \right| \geq 2$, we will denote by $C_i$ the $i^{th}$ cycle.
     Then, we can build the following non-monochromatic perfect matching :
     \begin{center}
-        $N = (C_1 \cap M_r) \cup \left(\bigcup\limits_{i=2}^{\mathcal{C}} C_i \cap M_g\right)$
+        $N = (C_1 \cap M_r) \cup \left(\bigcup\limits_{i=2}^{\left| \mathcal{C} \right|} C_i \cap M_g\right)$
     \end{center}
 
     The construction of $N$ is highlighted in figure~\ref{fig:demo_unique_neg_ham}.
@@ -171,28 +189,28 @@ Let's begin by remarking the $2$ following observations.
         $w(\kappa(N)) = \sum\limits_{N_i \in \mathcal{M}_{\kappa(N)}} N_i = 0$
     \end{center}
 
-    Therefore, we know that $\exists N'$ such that $\kappa(N') = \kappa(N)$ and $w(N') < 0$.
+    Therefore, we know that $\exists N' \in \mathcal{M}_{\kappa(N)}$ such that $w(N') < 0$.
     This is impossible, because the only way for $N'$ to have a negative weight is to include at least one negative edge.
-    And negative edges don't exist in colour $r$ nor $g$.
-    We can conclude that $\mathcal{C} = 1$, which means that $M_r$ and $M_g$ form a Hamiltonian cycle.
+    And negative edges don't exist in colours $r$ or $g$.       % TODO: check if there are still nor's left
+    We can conclude that $\left| \mathcal{C} \right| = 1$, which means that the union of $M_r$ and $M_g$ forms a Hamiltonian cycle.
 \end{proof}
 
-\begin{observation}[Parity of crossing edges]
-    \label{obs:2_positive_classes_parity_crossing_edge}
-    Let $G_k^w$ be a perfectly monochromatic graph that respects the following properties.
+\begin{claim}[Parity of crossing edges]
+    \label{clm:2_positive_classes_parity_crossing_edge}
+    Let $G_\eta^w$ be a perfectly monochromatic graph that respects the following properties.
     \begin{itemize}
-        \item $G_K^w$ is a simple graph, in the sense it has no multi-edges.
-        \item $G_K^w$ has no bicoloured edges.
-        \item $G_k^w$ has a weighted matching index $\Tilde{c}(G, k, w) \geq 3$.
-        \item It has at least $2$ colour classes, denoted $r$, and $g$, such that all the edges coloured $r$ or $g$ have a real, positive weight.
+        \item $G$ is a simple graph, referring to definition~\ref{def:simple_graph}.
+        \item $\eta$ is a pure edge colouring, referring to definition~\ref{def:edge-coloured-graph}.
+        \item $G_\eta^w$ has a weighted matching index $\Tilde{c}(G, \eta, w) \geq 3$.
+        \item $\exists$ two colours $r, g \in \left(\eta(E(G))\right)^2, r \neq g$, such that all the edges coloured $r$ or $g$ in $G_\eta^w$ have a real, positive weight.
     \end{itemize}
-    Let $M_r, M_g$ be $2$ monochromatic perfect matchings of colours $r$ and $g$ respectively.
-    Let $H = (v_1, \dots, v_n)$ be the Hamiltonian cycle of $G_k^w$ formed by $M_r$ and $M_g$.
-    Let $e = (v_i, v_j)$ be an edge whose colour is $b$.
+    Let $M_r, M_g$ be $2$ monochromatic perfect matchings of different colours $r$ and $g$ respectively.
+    Let $H = (v_1, \dots, v_n)$ be the Hamiltonian cycle of $G_\eta^w$ formed by $M_r$ and $M_g$.
+    Let $e = (v_i, v_j) \in E(G)$ be an edge whose colour is $b \notin \{r, g\}$.
     Then, $j-i$ is even.
-\end{observation}
+\end{claim}
 
-\begin{proof}
+\begin{proof}[Proof of Claim \ref{clm:2_positive_classes_parity_crossing_edge}]
     Let's assume by contradiction that $j-i$ is odd.
     Without loss of generality, we can assume that the colour of $(v_i, v_{i+1})$ is $r$ (otherwise, inverse colours $r$ and $g$ in the following arguments).
     Then the following non-monochromatic perfect matching can be built.
@@ -203,16 +221,18 @@ Let's begin by remarking the $2$ following observations.
 
     The construction of the non-monochromatic perfect matching $N$ is shown in figure~\ref{fig:2_pos_classes_odd_crossings}.
 
-    \begin{figure}[H]   % TODO : check the colours of this figure
-        \ctikzfig{figures/new_results/unique_neg/unique_neg_odd_crossings}
-        \caption{Construction of $N$ from $M_r$, $M_g$ and $e$ if $j-i$ is odd.}
+    \begin{figure}[H]
+        \ctikzfig{figures/new_results/2_pos_classes/2_pos_classes_odd_crossings}
+        \caption{Construction of $N$ from $M_r$, $M_g$ and $e$ if $j-i$ is odd.
+            On this figure, $N$ is represented by thick edges.
+            The induced vertex colouring $\kappa(N)$ is also visible.}
         \label{fig:2_pos_classes_odd_crossings}
     \end{figure}
 
     \begin{itemize}
         \item If $w(e) > 0$, then $w(N) > 0$ by definition~\ref{def:matching_weight}.
         But $w(\kappa(N)) = \sum\limits_{N_i \in \mathcal{M}_{\kappa(N)}} N_i = 0$ by definitions~\ref{def:weighted_matching_index} and~\ref{def:perfectly_monochromatic_graph} (using a notation introduced in definition \ref{def:induced_vertex_colouring}).
-        Therefore, $\exists$ another non-monochromatic perfect matching $N'$ such that $\kappa(N') = \kappa(N)$ and $w(N') < 0$.
+        Therefore, $\exists$ another non-monochromatic perfect matching $N' \in \mathcal{M}_\kappa(N)$ (using notations introduced in~\ref{def:feasible_vertex_colouring}) such that $w(N') < 0$.
         To satisfy this constraint, $e \in N'$.
         But $e$ is the only edge that has a colour different from $r$ nor $g$ in $N'$, which means that the sign of $w(e)$ determines the sign of $w(N')$ by definition~\ref{def:matching_weight}.
         Therefore, $w(N')$ can not be negative.
@@ -220,7 +240,7 @@ Let's begin by remarking the $2$ following observations.
 
         \item If $w(e) < 0$, then $w(N) < 0$ by definition~\ref{def:matching_weight}.
         But $w(\kappa(N)) = \sum\limits_{N_i \in \mathcal{M}_{\kappa(N)}} N_i = 0$ by definitions~\ref{def:vertex_colouring_weight} and~\ref{def:perfectly_monochromatic_graph} (using a notation introduced in definition \ref{def:induced_vertex_colouring}).
-        Therefore, $\exists$ another non-monochromatic perfect matching $N'$ such that $\kappa(N') = \kappa(N)$ and $w(N') > 0$.
+        Therefore, $\exists$ another non-monochromatic perfect matching$N' \in \mathcal{M}_\kappa(N)$ such that $w(N') > 0$.
         To satisfy this constraint, $e \in N'$.
         But $e$ is the only edge that has a colour different from $r$ nor $g$ in $N'$, which means that the sign of $w(e)$ determines the sign of $w(N')$ by definition~\ref{def:matching_weight}.
         Therefore, $w(N')$ can not be positive.
@@ -233,142 +253,155 @@ These observations may seem obscure at first, but they are necessary to prove th
 
 \begin{lemma}[One negative edge allowed]
     \label{lem:one_neg_edge}
-    Let $G_k^w$ be a perfectly monochromatic graph that respects the following properties.
+    Let $G_\eta^w$ be a perfectly monochromatic graph that respects the following properties.
     \begin{itemize}
-        \item $G_K^w$ is a simple graph, in the sense it has no multi-edges.
-        \item $G_K^w$ has no bicoloured edges.
-        \item $G_k^w$ has a weighted matching index $\Tilde{c}(G, k, w) \geq 3$.
-        \item $\forall e \in E(G_k^w)$, $w(e) \in \mathbb{R}$.
-        Also, $E(G_k^w)$ has at most one edge that has a negative weight.
+        \item $G$ is a simple graph, referring to definition~\ref{def:simple_graph}.
+        \item $\eta$ is a pure edge colouring, referring to definition~\ref{def:edge-coloured-graph}.
+        \item $G_\eta^w$ has a weighted matching index $\Tilde{c}(G, \eta, w) \geq 3$.
+        \item $\forall e \in E(G_\eta^w)$, $w(e) \in \mathbb{R}$.
+        Also, $E(G_\eta^w)$ has at most one edge that has a negative weight.
     \end{itemize}
-    Then, if $G_k^w$ is not isomorphic to $K_4$, $\Tilde{c}(G, k, w) \leq 2$.
+    Then, if $G_\eta^w$ is not isomorphic to $K_4$, $\Tilde{c}(G, \eta, w) \leq 2$.
 \end{lemma}
 
-The sketch of the proof of lemma~\ref{lem:one_neg_edge} goes as follow.
-Using observations~\ref{obs:2_positive_classes_ham_cycle} and~\ref{obs:2_positive_classes_parity_crossing_edge}, we build a Hamiltonian cycle that has two colours and build non-monochromatic perfect matchings in it that use a negative edge $e$.
+The sketch of the proof of Lemma~\ref{lem:one_neg_edge} goes as follows.
+Using observations~\ref{clm:2_positive_classes_ham_cycle} and~\ref{clm:2_positive_classes_parity_crossing_edge}, we build a Hamiltonian cycle that has two colours and build non-monochromatic perfect matchings in it that use a negative edge $e$.
 We then show that they create a disbalance in the weight of their feasible vertex colouring that can not be counterbalanced with another perfect matching.
 Let's dive into it.
 
-\begin{proof}[Proof of lemma \ref{lem:one_neg_edge}]
+\begin{proof}[Proof of Lemma \ref{lem:one_neg_edge}]
 
-    Let assume by contradiction that the weighted matching index of $G_k^w$ $\Tilde{c}(G, k, w) \geq 3$.
+    Let's assume by contradiction that the weighted matching index of $G_\eta^w$ $\Tilde{c}(G, \eta, w) \geq 3$.
 
     \begin{enumerate}
         \item[]
 
-        \item If $G_k^w$ has only positive weights, then we're done — this case is already solved by Bogdanov in~\cite{bogdanov} and was presented in the lemma~\ref{lem:real_pos_weights} of this master thesis.
+        \item If $G_\eta^w$ has only positive weights, then we're done — this case is already solved by Bogdanov in~\cite{bogdanov} and was presented in the Lemma~\ref{lem:real_pos_weights} of this master thesis.
 
-        \item If $G_k^w$ has exactly one negative weight: let $M_r$, $M_g$ and $M_b$ be three distinct monochromatic perfect matchings of $G_k^w$ that have colour $r$, $g$ and $b$ respectively.
+        \item If $G_\eta^w$ has exactly one negative weight: let $M_r$, $M_g$ and $M_b$ be three distinct monochromatic perfect matchings of $G_\eta^w$ that have colours $r$, $g$ and $b$ respectively.
         They exist by definition~\ref{def:weighted_matching_index} of the weighted matching index.
-        Let $e^-$ be the only negatively weighted edge of $G_k^w$.
+        Let $e^-$ be the only negatively weighted edge of $G_\eta^w$.
         Without loss of generality, I will say that the colour of $e^-$ is $b$.
-        From observation~\ref{obs:2_positive_classes_ham_cycle}, $M_r$ and $M_g$ form a Hamiltonian cycle $H = (v_1, v_2, \dots, v_n)$ of even length.
-        In this new vertex ordering, $e^- = (v_i, v_j)$.
-        We know from observation~\ref{obs:2_positive_classes_parity_crossing_edge} that $j-i$ is even.
+        From observation~\ref{clm:2_positive_classes_ham_cycle}, $M_r$ and $M_g$ form a Hamiltonian cycle $H = (v_1, v_2, \dots, v_n)$ of even length.
+        Let $e = \{v_i, v_j\} \in M_b$ be a minimal cutting edge of $H$, which means it respects the following property.
+        \begin{center}
+            $\left| H_{i, j} \right| = \min\limits_{\{v_k, v_l\} \in M_3} \left| H_{k, l} \right|$
+        \end{center}
+
+        We know from Claim~\ref{clm:2_positive_classes_parity_crossing_edge} that $j-i$ is even.
         Without loss of generality, I can assume that the color of $(v_i, v_{i + 1})$ is $r$ (otherwise we exchange colours $r$ and $g$ in the following reasoning).
-        Let $e = (v_{i + 1}, v_k) \in M_b$ (we are certain of the existence of $e$ because $v_{i+1}$ must be covered by $M_b$). Now, three situations can occur.
+        Let $e' = (v_{i + 1}, v_k) \in M_b$ (we are certain of the existence of $e$ because $v_{i+1}$ must be covered by $M_b$).
+        We observe that $v_k$ must appear in a vertex of $H_{j+1, i-1}$, because otherwise we would have $\left| H_{i, j} \right| > \left| H_{j+1, k} \right|$, which contradicts the minimality of $e$.\\
 
+        Also, $j - i$ and $k - (i + 1)$ are even numbers, by the Claim~\ref{clm:2_positive_classes_parity_crossing_edge}.
+        We can now build a non-monochromatic perfect matching $N$ as follows.
+
+        \begin{center}
+            $\begin{array}{r c l}
+                N & = & \{e\}                             \\
+                  &   & \cup \{e'\}                       \\
+                  &   & \cup (H_{j+1, k-1} \cap M_g)      \\
+                  &   & \cup (H_{i + 2, j - 1} \cap M_r)  \\
+                  &   & \cup (H_{k+1, i-1} \cap M_r)
+            \end{array}$
+        \end{center}
+
+        The construction of $N$ is illustrated in figure~\ref{fig:one-neg-edge}.
+
+        \begin{figure}[H]
+            \ctikzfig{figures/new_results/unique_neg/one_neg_edge}
+            \caption{Illustration of the construction of $N$ using the fact that $e$ is a minimal cutting edge.
+                This construction works because of the parity argument proved in Claim~\ref{clm:2_positive_classes_parity_crossing_edge}.
+                The induced vertex colouring $\kappa(N)$ is also visible.}
+            \label{fig:one-neg-edge}
+        \end{figure}
+
+        The weight of $N$ is computed as follows.
+        \begin{center}
+            $\begin{array}{r c l}
+            w(N) & = & \prod\limits_{e_i \in N} w(e_i) \\
+                 & = & w(e) \cdot w(e') \cdot \prod\limits_{e_i \in N \setminus \{e, e'\}} w(e_i) \\
+            \end{array}$.
+        \end{center}
+
+        Since $e^-$ is a $b$-coloured edge, three situations can occur.
         \begin{enumerate}
-            \item If $v_k = v_j$: this situation is impossible from observation~\ref{obs:2_positive_classes_parity_crossing_edge}, because $k - (i + 1)$ is odd.    % TODO : add a figure to illustrate this case
+            \item If $e = e^-$, then $w(N) < 0$.
+                But $w(\kappa(N)) = \sum\limits_{N_i \in \mathcal{M}_{\kappa(N)}} N_i = 0$ by definitions~\ref{def:weighted_matching_index} and~\ref{def:perfectly_monochromatic_graph} (using a notation introduced in definition \ref{def:induced_vertex_colouring}).
+                Therefore, $\exists N' \in \mathcal{M}_\kappa(N)$ (using notations introduced in~\ref{def:feasible_vertex_colouring}) such that $w(N') > 0$.
+                To satisfy this constraint, $e^- = e \notin N'$.\\
 
-            \item If $v_k$ appears in an edge from the arc $H_{j+1, i-1}$ (using the notation introduced in definition~\ref{def:arc} of an arc), then we can form a non-monochromatic perfect matching as follows.
+                The only way to match $v_i$ with a $b$-coloured edge different from $e^-$ is that $\exists$ a $b$-coloured edge $e'' = (v_i, v_k) \in N'$.
+                Indeed, $e''$ can't be between $v_i$ and $v_{i+1}$ because there's already an $r$-coloured edge there, and $G$ is a simple graph.
+                But this is impossible, because $k-i$ is an odd number, which is forbidden by Claim~\ref{clm:2_positive_classes_parity_crossing_edge}.
+                This is a contradiction.
 
-                \begin{center}
-                    $\begin{array}{r c l}
-                        N & = & e^-                                 \\
-                          &   & \cup e                              \\
-                          &   & \cup (H_{j+1, k-1} \cap M_g)        \\
-                          &   & \cup (H_{i + 2, j - 1} \cap M_r)    \\
-                          &   & \cup (H_{k+1, i-1} \cap M_r)
-                    \end{array}$
-                \end{center}
+            \item If $e' = e^-$, then $w(N) < 0$.
+                But $w(\kappa(N)) = \sum\limits_{N_i \in \mathcal{M}_{\kappa(N)}} N_i = 0$ by definitions~\ref{def:weighted_matching_index} and~\ref{def:perfectly_monochromatic_graph} (using a notation introduced in definition \ref{def:induced_vertex_colouring}).
+                Therefore, $\exists N' \in \mathcal{M}_\kappa(N)$ (using notations introduced in~\ref{def:feasible_vertex_colouring}) such that $w(N') > 0$.
+                To satisfy this constraint, $e^- = e' \notin N'$.\\
 
-                This works because we are sure that $k - (i + 1)$ is even from observation~\ref{obs:2_positive_classes_parity_crossing_edge}.
-                Since $e^- \in N$, $w(N) < 0$ by definition~\ref{def:matching_weight}.
-                But $w(\kappa(N)) = \sum\limits_{N_i \in \mathcal{M}_{\kappa(N)}} N_i = 0$ by definitions~\ref{def:vertex_colouring_weight} and~\ref{def:perfectly_monochromatic_graph}.
-                Therefore, $\exists$ a non-monochromatic perfect matching $N'$ such that $\kappa(N') = \kappa(N)$ and $w(N') > 0$.
-                This is possible only if $e^- \notin N'$.
-                The only vertices that get colour $b$ in $\kappa(N) = \kappa(N')$ are $v_i, v_{i+1}, v_j$ and $v_k$.
-                The only way to match these vertices in $N'$ with $b$-coloured edges without using $e^-$ is that $\exists e' = (v_i, v_k)$ and $e'' = (v_{i+1}, v_j)$ that have colour $b$ and that are included in $N'$.
-                But this is impossible, because $k-i$ and $j-(i+1)$ are odd numbers, which is forbidden by observation~\ref{obs:2_positive_classes_parity_crossing_edge}.
-                This reasoning is summarized in figure~\ref{fig:unique_neg_2_2}.
+                The only way to match $v_{i+1}$ with a $b$-coloured edge different from $e^-$ is that $\exists$ a $b$-coloured edge $e'' = (v_{i+1}, v_j) \in N'$.
+                Indeed, $e''$ can't be between $v_i$ and $v_{i+1}$ because there's already an $r$-coloured edge there, and $G$ is a simple graph.
+                But this is impossible, because $j - (i+1)$ is an odd number, which is forbidden by Claim~\ref{clm:2_positive_classes_parity_crossing_edge}.
+                This is a contradiction.
 
-                \begin{figure}[H]
-                    \ctikzfig{figures/new_results/unique_neg/unique_neg_2_2}
-                    \caption{Illustration of the reasoning in case 2.2. In this figure, $N$ is represented by thick edges, and the induced vertex colouring from $N$ is visible. The edges $e'$ and $e''$ that should be in $N'$ are also represented. It is clear in this figure that $e'$ and $e''$ can't exist using the parity argument.}
-                    \label{fig:unique_neg_2_2}
-                \end{figure}
+            \item If $e^- \notin \left\{ e, e' \right\}$, then $w(N) > 0$.
+                But $w(\kappa(N)) = \sum\limits_{N_i \in \mathcal{M}_{\kappa(N)}} N_i = 0$ by definitions~\ref{def:weighted_matching_index} and~\ref{def:perfectly_monochromatic_graph} (using a notation introduced in definition \ref{def:induced_vertex_colouring}).
+                Therefore, $\exists N' \in \mathcal{M}_\kappa(N)$ (using notations introduced in~\ref{def:feasible_vertex_colouring}) such that $w(N') < 0$.
+                To satisfy this constraint, $e^- \in N'$.\\
 
-            \item If $v_k$ appears in an edge from $H_{i+1, j-1}$, then it is possible to find an edge of $M_b$, called $e' = (v_l, v_m)$, that has both endpoints in $H_{i+1, k}(H)$, and such that the edge $e'' = (v_{l+1}, v_n) \in M_b$ has its $v_n$-endpoint in $H_{m+1, l-1}(H)$.
-            This is true because it is known from observation~\ref{obs:2_positive_classes_parity_crossing_edge} that $m-l$ is even.
-            Actually, $e'$ might be equal to $e$.
-            Assuming without loss of generality that the colour of $(v_l, v_{l+1})$ is $r$, we find a new non-monochromatic perfect matching.
+                Because $e^-$ is $b$-coloured, it connects $2$ vertices $\in \left\{ v_i, v_{i+1}, v_j, v_k \right\}$
+                \begin{itemize}
+                    \item $e^- \neq \left\{ v_i, v_{i+1} \right\}$ because there's already an $r$-coloured edge there, and $G$ is a simple graph.
+                    \item Also, $e^- \neq \left\{ v_j, v_k \right\}$, since it would imply again the existence of a $b$-coloured edge between $v_i$ and $v_{i+1}$.
+                    \item At last, $e^- \neq \left\{ \left\{v_i, v_j\right\}, \left\{v_{i+1}, v_k\right\} \right\}$, because it is different from $e$ and $e'$.
+                \end{itemize}
 
-                \begin{center}
-                    $\begin{array}{r c l}
-                        N & = & e'                              \\
-                          &   & \cup e''                        \\
-                          &   & \cup (H_{l+2, m-1} \cap M_r)    \\
-                          &   & \cup (H_{n+1, l-1} \cap M_r)    \\
-                          &   & \cup (H_{m+1, n-1} \cap M_g)
-                    \end{array}$
-                \end{center}
-
-                The construction of $N$ is illustrated in figure~\ref{fig:unique_neg_2_3}.
-
-                \begin{figure}[H]
-                    \ctikzfig{figures/new_results/unique_neg/unique_neg_2_3}
-                    \caption{Illustration of the reasoning in case 2.3. In this figure, $N$ is represented by thick edges, and the induced vertex colouring from $N$ is visible. It this particular case, $v_j = v_n$. Nevertheless, it is impossible for $v_i$ and $v_j$ to be both green in $\kappa(N)$.}
-                    \label{fig:unique_neg_2_3}
-                \end{figure}
-
-                Since $e^- \notin N$, $w(N) > 0$ by definition~\ref{def:matching_weight}.
-                But $w(\kappa(N)) = \sum\limits_{N_i \in \mathcal{M}_{\kappa(N)}} N_i = 0$ by definition~\ref{def:vertex_colouring_weight} and~\ref{def:perfectly_monochromatic_graph}.
-                Therefore, $\exists$ another non-monochromatic perfect matching $N'$ such that $\kappa(N') = \kappa(N)$ and $w(N') < 0$.
-                For this condition to be satisfied, $e^- \in N'$.
-                But it is impossible that both $v_i$ and $v_j$ get colour $3$ in $\kappa(N) = \kappa(N')$ (only one of them maximum).
-                This means that $e^-$ can't be in $N'$, which forms a contradiction.
+                The last possibilities are that $e^- = \left\{ v_i, v_k \right\}$ or $e^- = \left\{ v_{i+1}, v_j \right\}$.
+                But this is impossible, because $k - i$ and $j - (i+1)$ are odd numbers, which is forbidden by Claim~\ref{clm:2_positive_classes_parity_crossing_edge}.
+                This is a contradiction, and its ends our proof.
         \end{enumerate}
     \end{enumerate}
-
 \end{proof}
+
 
 \subsection{Allowing all the classes to have arbitrary weights except 2}
 \label{subsec:2-pos-classes}
 
-The main argument of the proof of the previous analysed case was that 2 colour classes had only positive weighted edges.
+The main argument of the proof of the previous analysed case was that there were two colours containing only positively weighted edges.
 This suggests that the structure of the proof might work as well if more than one single negatively weighted edge was present in the combination of the other colour classes.
-Such a result would be even more powerful since it would prove the conjecture to be true whenever 2 colour classes have only positive weighted edges, no matther the weights of the other colour classes.
+Such a result would be even more powerful since it would prove the conjecture to be true whenever 2 colours have only positive weighted edges, no matter the weights of the other edges.
 In this section, we will reuse the arguments from section~\ref{subsec:one_negative_edge} to verify them in the situation where multiple negative edge-weights are allowed.
 
 
-\begin{lemma}[2 positive colour classes]
+\begin{lemma}[2 positive colours]
     \label{lem:2_positive_colour_classes_forbidden}
-    Let $G_k^w$ be a perfectly monochromatic graph that respects the following properties.
+    Let $G_\eta^w$ be a perfectly monochromatic graph that respects the following properties.
     \begin{itemize}
-        \item $G_K^w$ is a simple graph, in the sense it has no multi-edges.
-        \item $G_K^w$ has no bicoloured edges.
-        \item $\exists$ two colour classes $r$ and $g$ such that all the edges coloured $r$ or $g$ have a real, positive weight.
+        \item $G$ is a simple graph, referring to definition~\ref{def:simple_graph}.
+        \item $\eta$ is a pure edge colouring, referring to definition~\ref{def:edge-coloured-graph}.
+        \item $\exists r, g \in \left(\eta(E(G))\right)^2, r \neq g$ such that all the edges coloured $r$ or $g$ in $G_\eta^w$ have a real, positive weight.
     \end{itemize}
-    Then, if $G_k^w$ is not isomorphic to $K_4$, $\Tilde{c}(G, k, w) \leq 2$.
+    Then, if $G_\eta^w$ is not isomorphic to $K_4$, $\Tilde{c}(G, \eta, w) \leq 2$.
 \end{lemma}
 
-\begin{proof}
-    By contradiction, let assume that $\Tilde{c}(G, k, w) \geq 3$.
-    Let $M_r$, $M_g$ and $M_b$ be 3 distinct monochromatic perfect matchings of $G_k^w$ that have colour $r$, $g$ and $b$ respectively, and let assume that the colour classes $r$ and $g$ have only positive weighted edges.
-    From observation~\ref{obs:2_positive_classes_ham_cycle}, $M_r$ and $M_g$ form a Hamiltonian cycle $H = (v_1, v_2, \dots, v_n)$ of even length.
-    We know from observation~\ref{obs:2_positive_classes_parity_crossing_edge} that $\forall e = (v_i, v_j) \in M_b$, $j-i$ is even.
+\begin{proof}[Proof of Lemma \ref{lem:2_positive_colour_classes_forbidden}]
+    By contradiction, let's assume that $\Tilde{c}(G, \eta, w) \geq 3$.
+    Let $M_r$, $M_g$ and $M_b$ be 3 distinct monochromatic perfect matchings of $G_\eta^w$ that have colour $r$, $g$ and $b$ respectively, and let assume that the colours $r$ and $g$ have only positive weighted edges.
+    From observation~\ref{clm:2_positive_classes_ham_cycle}, $M_r$ and $M_g$ form a Hamiltonian cycle $H = (v_1, v_2, \dots, v_n)$ of even length.
+    We know from observation~\ref{clm:2_positive_classes_parity_crossing_edge} that $\forall e = (v_i, v_j) \in M_b$, $j-i$ is even.
     Without loss of generality, let's assume that the color of $(v_i, v_{i + 1})$ is $r$ (otherwise we exchange colours $r$ and $g$ in the following arguments).
     Let $e = (v_i, v_j) \in M_b$ be a minimal crossing edge, i.e.\ be such that $e' = (v_{i+1}, v_k) \in M_b$ has its $v_k$ endpoint in $H_{j+1, i-1}$.
     It is then possible to find a non-monochromatic perfect matching as follows.
 
     \begin{center}
         $\begin{array}{r c l}
-             N & = & e                           \\
-             &   & \cup e'                       \\
-             &   & \cup M_1 \cap P_{i+2, j-1}(H) \\
-             &   & \cup M_1 \cap P_{k+1, i-1}(H) \\
-             &   & \cup M_2 \cap P_{j+1, k-1}(H)
+             N & = & \{e\}                    \\
+             &   & \cup \{e'\}                \\
+             &   & \cup M_r \cap H_{i+2, j-1} \\
+             &   & \cup M_r \cap H_{k+1, i-1} \\
+             &   & \cup M_g \cap H_{j+1, k-1}
         \end{array}$
     \end{center}
 
@@ -376,27 +409,45 @@ In this section, we will reuse the arguments from section~\ref{subsec:one_negati
 
     \begin{figure}[H]
         \ctikzfig{figures/new_results/2_pos_classes/2_pos_classes_proof}
-        \caption{Construction of $N$ from $M_1$, $M_2$, $e$ and $e'$. $N$ is represented by the thick edges. $\kappa(N)$ is also represented.}
+        \caption{Construction of $N$ from $M_r$, $M_g$, $e$ and $e'$. $N$ is represented by the thick edges.
+            $\kappa(N)$ is also represented.}
         \label{fig:2_pos_classes_proof}
     \end{figure}
 
-    Centering the analysis around the potential signs of $w(e)$ and $w(e')$, $2$ situations can occur.
+    By definition~\ref{def:matching_weight}, the weight of $N$ is given by
+
+    \begin{center}
+        $\begin{array}{r c l}
+            w(N) & = & \prod\limits_{e_i \in N} w(e_i) \\
+                 & = & w(e) \cdot w(e') \cdot \prod\limits_{e_i \in N \setminus \{e, e'\}} w(e_i) \\
+        \end{array}$.
+    \end{center}
+
+    We notice that $N \setminus \{e, e'\}$ has only $r$ and $g$-coloured edges, which have positive weights.
+    Therefore, the sign of $w(N)$ is determined by the signs of $w(e)$ and $w(e')$.
 
     \begin{enumerate}
-        \item if $w(e)$ and $w(e')$ have the same sign: then $w(N) > 0$ by definition~\ref{def:matching_weight}.    % TODO : add a figure to illustrate these 2 cases
-        But $w(\kappa(N)) = \sum\limits_{N_i \in \mathcal{M}_{\kappa(N)}} N_i = 0$ by definitions~\ref{def:vertex_colouring_weight} and~\ref{def:perfectly_monochromatic_graph}.
-        This means that $\exists N'$ such that $\kappa(N') = \kappa(N)$ and $w(N') < 0$.
-        Since the sign of $N'$ is defined by the sign of its $b$-coloured edges, it can not contain $e$ and $e'$.
-        This last condition is satisfied only if $\exists e'' = (v_i, v_k)$ and $e''' = (v_{i+1}, v_j)$ of colour $b$.
-        But this is forbidden by observation~\ref{obs:2_positive_classes_parity_crossing_edge} because $(k - i)$ and $\left(j - (i + 1)\right)$ are odd numbers.
+        \item if $w(e)$ and $w(e')$ have the same sign: then, $w(N) > 0$.
 
-        \item if $w(e)$ and $w(e')$ have different signs: then $w(N) < 0$ by definition~\ref{def:matching_weight}.
-        But $w(\kappa(N)) = \sum\limits_{N_i \in \mathcal{M}_{\kappa(N)}} N_i = 0$ by definitions~\ref{def:vertex_colouring_weight} and~\ref{def:perfectly_monochromatic_graph}.
-        This means that $\exists N'$ such that $\kappa(N') = \kappa(N)$ and $w(N') > 0$.
-        Since the sign of $N'$ is defined by the sign of its $b$-coloured edges, it can not contain $e$ and $e'$.
-        This last condition is satisfied only if $\exists e'' = (v_i, v_k)$ and $e''' = (v_{i+1}, v_j)$ of colour $b$.
-        But this is forbidden by observation~\ref{obs:2_positive_classes_parity_crossing_edge} because $(k - i)$ and $\left(j - (i + 1)\right)$ are odd numbers.
-        This ends the proof of lemma~\ref{lem:2_positive_colour_classes_forbidden}.
+            But $w(\kappa(N)) = \sum\limits_{N_i \in \mathcal{M}_{\kappa(N)}} N_i = 0$ by definitions~\ref{def:vertex_colouring_weight} and~\ref{def:perfectly_monochromatic_graph}.
+            This means that $\exists N' \in \mathcal{M}_{\kappa(N)}$ such that $w(N') < 0$.\\
+
+            The only $b$-coloured vertices in $\kappa(N) = \kappa(N')$ are $v_i, v_{i+1}, v_j$ and $v_k$.
+            For that reason, we can not have $\{e, e'\} \in N'$ (otherwise the signs of $w(N)$ and $w(N')$ would be the same).
+            This last condition is satisfied only if $\exists e'' = (v_i, v_k)$ and $e''' = (v_{i+1}, v_j)$ of colour $b$.
+            But this is forbidden by observation~\ref{clm:2_positive_classes_parity_crossing_edge} because $(k - i)$ and $\left(j - (i + 1)\right)$ are odd numbers.
+
+        \item if $w(e)$ and $w(e')$ have different signs: then, $w(N) < 0$.
+
+            But $w(\kappa(N)) = \sum\limits_{N_i \in \mathcal{M}_{\kappa(N)}} N_i = 0$ by definitions~\ref{def:vertex_colouring_weight} and~\ref{def:perfectly_monochromatic_graph}.
+            This means that $\exists N' \in \mathcal{M}_{\kappa(N)}$ such that $w(N') > 0$.\\
+
+            The only $b$-coloured vertices in $\kappa(N) = \kappa(N')$ are $v_i, v_{i+1}, v_j$ and $v_k$.
+            For that reason, we can not have $\{e, e'\} \in N'$ (otherwise the signs of $w(N)$ and $w(N')$ would be the same).
+            This last condition is satisfied only if $\exists e'' = (v_i, v_k)$ and $e''' = (v_{i+1}, v_j)$ of colour $b$.
+            But this is forbidden by observation~\ref{clm:2_positive_classes_parity_crossing_edge} because $(k - i)$ and $\left(j - (i + 1)\right)$ are odd numbers.\\
+
+            This ends the proof of Lemma~\ref{lem:2_positive_colour_classes_forbidden}.
     \end{enumerate}
 \end{proof}
 
@@ -414,32 +465,32 @@ Many problems in graph theory about matchings are easier to solve when restricte
 For this reason, I spent some time trying to find a proof of the Krenn's conjecture that would be valid only for bipartite graphs.
 This was unsuccessful, but I will present the main observations I made during this exploration.
 
-\begin{observation}[Bipartite graphs]
-    \label{obs:bipartite_graphs}
-    Let $G_k^w$ be a perfectly monochromatic graph of size $n$ that respects the following properties.
+\begin{lemma}[Bipartite graphs]
+    \label{lem:bipartite_graphs}
+    Let $G_\eta^w$ be a perfectly monochromatic graph of size $n$ that respects the following properties.
     \begin{itemize}
-        \item $G_K^w$ is a simple graph, in the sense it has no multi-edges.
-        \item $G_K^w$ has no bicoloured edges.
-        \item $G_k^w$ is bipartite.
-        \item $\forall e \in E(G_k^w)$, $w(e) \in \{-1, 1\}$
-        \item $\Tilde{c}(G, k, w) \geq 3$
-        \item $\forall$ pair of monochromatic perfect matching $M_r$ and $M_g$ of $G_k^w$ of different colour, $M_r$ and $M_g$ form a Hamiltonian cycle.
+        \item $G$ is a simple graph, referring to definition~\ref{def:simple_graph}.
+        \item $\eta$ is a pure edge colouring, referring to definition~\ref{def:edge-coloured-graph}.
+        \item $G$ is bipartite.
+        \item $\forall e \in E(G_\eta^w)$, $w(e) \in \{-1, 1\}$
+        \item $\Tilde{c}(G, \eta, w) \geq 3$
+        \item $\forall$ pair of monochromatic perfect matching $M_r$ and $M_g$ of $G_\eta^w$ of different colours, $M_r$ and $M_g$ form a Hamiltonian cycle.
     \end{itemize}
-    Then, $G_k^w$ has at least $n + 7$ distinct perfect matchings.   % TODO : find a bound
-\end{observation}
+    Then, $G_\eta^w$ has at least $n + 7$ distinct perfect matchings.   % TODO : if we have time, improve this bound
+\end{lemma}
 
-\begin{proof}
-    Let $M_r$, $M_g$ and $M_b$ be three monochromatic perfect matchings of $G_k^w$ that have colour $r$, $g$ and $b$ respectively.
+\begin{proof}[Proof of Lemma \ref{lem:bipartite_graphs}]
+    Let $M_r$, $M_g$ and $M_b$ be three monochromatic perfect matchings of $G_\eta^w$ that have the different colours $r$, $g$ and $b$ respectively.
     Their existence is guaranteed by definition~\ref{def:weighted_matching_index} of the weighted matching index.
     Let $H = (v_1, v_2, \dots, v_n)$ be the Hamiltonian cycle formed by $M_r$ and $M_g$.
     Let $e = (v_i, v_j) \in M_b$.
-    Since $G_k^w$ is bipartite, $j-i$ is odd.
+    Since $G_\eta^w$ is bipartite, $j-i$ is odd.
     We can assume without loss of generality that the colour of $(v_i, v_{i+1})$ is $r$ (otherwise, we exchange colours $r$ and $g$ in the following reasoning).
     Then, we can build a non-monochromatic perfect matching as follows.
 
     \begin{center}
         $\begin{array}{r c l}
-            N & = & e                             \\
+            N & = & \{e\}                         \\
               &   & \cup (H_{i+1, j-1} \cap M_g)  \\
               &   & \cup (H_{j+1, i-1} \cap M_r)
         \end{array}$
@@ -450,18 +501,29 @@ This was unsuccessful, but I will present the main observations I made during th
     Therefore, $\exists N'$ such that $\kappa(N') = \kappa(N)$ and $w(N') = -w(N)$.\\
 
     This reasoning can be applied to all the edges of $M_b$.
-    This means that $G_k^w$ has at least $2 \cdot \frac{n}{2} = n$ distinct non-monochromatic perfect matchings.\\
+    Let
+    \begin{itemize}
+        \item $N_e, N'_e$ be the $2$ distinct non-monochromatic perfect matchings that can be built from $e \in M_b$.
+        \item $N_{e'}, N'_{e'}$ be the $2$ distinct non-monochromatic perfect matchings that can be built from $e' \in M_b$ ($e' \neq e$).
+    \end{itemize}
 
-    The reasoning can still go a bit further.
-    We notice that both $N$ and $N'$ contain $e$.
-    This means that the only way for $N'$ to differ from $N$ is that they differ in the edges that have colour $r$ or $g$.
-    Let say without loss of generality that they differ (at least) in their red parts.
-    Let $N'_r$ be the set of red edges of $N'$.
+    We observe that $\kappa(N_e) = \kappa(N'_e) \neq \kappa(N_{e'}) = N'_{e'}$.
+    Indeed, the only $b$-edge in $N_e$ and $N'_e$ is $e$, and the only $b$-edge in $N_{e'}$ and $N'_{e'}$ is $e'$.
+    This means that $N_e$, $N'_e$, $N_{e'}$ and $N'_{e'}$ are all distinct.\\
+
+    This reasoning can be applied to all pair of edges of $M_b$.
+    We conclude that $G_\eta^w$ has at least $2 \cdot \frac{n}{2} = n$ distinct non-monochromatic perfect matchings.\\
+
+    Actually, the reasoning can still go a bit further.
+    Having $e \in M_b$, we notice that both $N_e$ and $N'_e$ contain $e$.
+    This means that the only way for $N'_e$ to differ from $N_e$ is that they differ in the edges that have colour $r$ or $g$.
+    Let's say without loss of generality that they differ (at least) in their red parts.
+    Let $N'_{e}\left[r\right]$ be the set of red edges of $N'_e$.
     Then, we can find a new monochromatic red perfect matching as follows.
 
     \begin{center}
         $\begin{array}{r c l}
-            M'_r & = & N'r \\
+            M'_r & = & N'_{e}\left[r\right] \\
                  &   & \cup (H_{j+1, i-1} \cap M_r)
         \end{array}$
     \end{center}
@@ -477,7 +539,7 @@ This was unsuccessful, but I will present the main observations I made during th
     This leaves us with (at least) $3$ monochromatic perfect matchings that induce the vertex colouring $\kappa_r$.
     The same reasoning is possible by forming an initial hamiltonian cycle with $M_g$ and $M_b$.
     Therefore, $\kappa_g$ or $\kappa_b$ is also induced by (at least) $3$ monochromatic perfect matchings.
-    The other is induced by (at least) $1$ perfect matching because $\Tilde{c}(G, k, w) \geq 3$.
-    By summing everything up, we find that $G_k^w$ has at least $n + 7$ distinct perfect matchings.
+    The other is induced by (at least) $1$ perfect matching because $\Tilde{c}(G, \eta, w) \geq 3$.
+    By summing everything up, we find that $G_\eta^w$ has at least $n + 7$ distinct perfect matchings.
 
 \end{proof}

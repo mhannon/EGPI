@@ -30,7 +30,7 @@ Let's consider a quick and simple example by trying to prove experimentally the 
 
 \begin{conjecture}
     \label{con:krenn_6}
-    Let $G_k^w$ be a non-redundant experiment graph of size $n = 6$ vertices, and let say that, for all edge $e \in E(G)$,
+    Let $G_\mu^w$ be a non-redundant experiment graph of size $n = 6$ vertices, and let say that, for all edge $e \in E(G)$,
     \begin{center}
         $\left\{\begin{array}{l l}
             Re(w(e)) & \in \{-1, 0, 1\} \\
@@ -38,7 +38,7 @@ Let's consider a quick and simple example by trying to prove experimentally the 
             w(e)     & \neq 0          \\
         \end{array}\right.$
     \end{center}
-    Then, the weighted matching index $\Tilde{c}(G, k, w) \leq 2$.
+    Then, the weighted matching index $\Tilde{c}(G, \mu, w) \leq 2$.
 \end{conjecture}
 
 One way to prove the conjecture~\ref{con:krenn_6} is to use a brute force algorithm that generates every possible graph respecting the pre-conditions of the conjecture~\ref{con:krenn_6} with bicoloured edges that can take their colours in $3$ defined colours $(r, g, b)$, and check their weighted matching index.
@@ -46,10 +46,11 @@ If none of their weighted matching index is $3$, then the conjecture is true.
 Unfortunately, this is not possible because of the following observation.\\
 
 \begin{observation}
-    Let $G_k^w$ be an experiment graph that has $n$ vertices, and let say that, for all edge $e = (u, v) \in E(G)$, the edge can have a value different from $0$ chosen among $W$ different values.
-    Furthermore, $k(e, u)$ and $k(e, v)$ are chosen among $K$ different colours.
-    At last, $\forall e' = (u, v), k(e') \neq k(e)$.
-    Then, the number of different possible graphs that $G_k^w$ can be, denoted $N_{graphs}$, is
+    \label{obs:possible_graphs}
+    Let $G_\mu^w$ be an experiment graph that has $n$ vertices, and let say that, for all edge $e = \{u, v\} \in E(G)$, the edge can have a value different from $0$ chosen among $W$ different values.
+    Furthermore, $\mu(e, u)$ and $\mu(e, v)$ are chosen among $K$ different colours.
+    At last, $\forall e' = (u', v')$, we have $\mu(e', u') \neq \mu(e, u)$ or $\mu(e', v') \neq \mu(e, v)$.
+    Then, the number of different possible graphs that $G_\mu^w$ can be, denoted $N_{graphs}$, is
 
     \begin{center}
         $N_{graphs} = (1 + W)^{\left(\frac{K^2 \cdot n \cdot (n-1)}{2}\right)}$
@@ -57,7 +58,7 @@ Unfortunately, this is not possible because of the following observation.\\
 \end{observation}
 
 
-\begin{proof}
+\begin{proof}[Proof of observation~\ref{obs:possible_graphs}]
     Indeed, each edge $e$ is characterized by the following properties.
     \begin{itemize}
         \item It has a position $\{u, v\}$, that can take $\frac{n \cdot (n -1)}{2}$ different values.
@@ -80,7 +81,7 @@ Unfortunately, this is not possible because of the following observation.\\
         \end{array}$
     \end{center}
 
-    It is possible to simplify this expression by using the binomial theorem~\cite{wikipediaBinomialTheorem}.
+    It is possible to simplify this expression by using the binomial theorem~\cite{wikipediaBinomialTheorem}.   % TODO: find a better reference
 
     \begin{center}
         $\begin{array}{r c l}
@@ -156,28 +157,28 @@ At the current state of its development, EGPI implements functions that allow th
                     \Require $L_{colours}$ is a list of colours
                     \Require $L_{weights}$ is a list of complex numbers different from 0
                     \Require $b \in \mathbb{N}$
-                    \State $G_k^w \gets$ an empty graph with $n$ vertices and no edge
-                    \For {$k \in L_{colours}$}
-                        \State $S \gets \frac{n}{2}$ non-touching edges at random positions of $G_k^w$
-                        \State Colour each edge $\in S$ with colour $k$
+                    \State $G_\mu^w \gets$ an empty graph with $n$ vertices and no edge
+                    \For {$r \in L_{colours}$}
+                        \State $S \gets \frac{n}{2}$ non-touching edges at random positions of $G_\mu^w$
+                        \State Colour each edge $\in S$ with colour $r$
                         \State Assign random weights $\in L_{weights}$ to each edge $\in S$
-                        \State Add $S$ to $E(G_k^w)$
+                        \State Add $S$ to $E(G_\mu^w)$
                         \Comment{These edges form a monochromatic perfect matching}
                     \EndFor
 
                     \For {$i \in \{1, 2, \dots, b\}$}
-                        \State $S \gets \frac{n}{2}$ non-touching edges at random positions of $G_k^w$
-                        \For {each pair of vertices $(u, v) \in S$}
-                            \If {there is no edge between $u$ and $v$ in $G_k^w$}
+                        \State $S \gets \frac{n}{2}$ non-touching edges at random positions of $G_\mu^w$
+                        \For {each pair of vertices $\{u, v\} \in S$}
+                            \If {there is no edge between $u$ and $v$ in $G_\mu^w$}
                                 \State Add an edge $e$ between $u$ and $v$
-                                \State Colour $e$ with a bicolour $\in L_{colours}^2$
-                                \State Assign a weight $\in L_{weights}$ to $e$
+                                \State Colour $e$ with a random bicolour $\in L_{colours}^2$
+                                \State Assign a random weight $\in L_{weights}$ to $e$
                             \Else
                                 \State $add\_edge \gets True$ with probability $\frac{1}{(\mbox{\#edges between u and v}) + 1}$
                                 \If {$add\_edge$}
                                     \State Add an edge $e$ between $u$ and $v$
-                                    \State Colour $e$ with a bicolour $\in L_{colours}^2$ different from the bicolour of the other edges between $u$ and $v$
-                                    \State Assign a weight $\in L_{weights}$ to $e$
+                                    \State Colour $e$ with a random bicolour $\in L_{colours}^2$ different from the bicolour of the other edges between $u$ and $v$
+                                    \State Assign a random weight $\in L_{weights}$ to $e$
                                 \EndIf
                             \EndIf
                         \EndFor
@@ -196,9 +197,9 @@ At the current state of its development, EGPI implements functions that allow th
         \begin{definition}[Random Experiment Graphs Research Process]
             \label{def:random_experiment_graphs_research_process}
             Given a number of nodes $n \in \mathbb{N}$, a list of colours $L_{colours}$, a complexity bound $b \in \mathbb{N}$, a list of complex numbers $L_{weights}$, and a number of trials $m \in \mathbb{N}$, a \textit{Random Experiment Graphs Research Process} is the process of randomly creating $m$ candidate experiment graphs respecting $n$, $L_{colours}$, $L_{weights}$ and $b$, and analyse them.
-            More specifically, each of these graphs $G_k^w$ gets verified to check if it is perfectly monochromatic and if it has at least one non-monochromatic feasible vertex colouring.
-            If it is, $G_k^w$ is saved as a JSON file containing all its properties (including its perfect matchings, its feasible vertex colourings, its weighted matching index, and the fact it is bipartite or not).
-            Then, $G_k^w$ is drawn in another pdf file.
+            More specifically, each of these graphs $G_\mu^w$ gets verified to check if it is perfectly monochromatic and if it has at least one non-monochromatic feasible vertex colouring.
+            If it is, $G_\mu^w$ is saved as a JSON file containing all its properties (including its perfect matchings, its feasible vertex colourings, its weighted matching index, and the fact it is bipartite or not).
+            Then, $G_\mu^w$ is drawn in another pdf file.
         \end{definition}
 
         In short, this experiment allows the user to generate a big number of experiment graphs and analyse properties on them.
@@ -224,7 +225,7 @@ The main purpose of EGPI is to encode and apply operations on experiment graphs,
 It is therefore important to build a good data structure of experiment graphs.
 The architecture of the program to do so is detailed in a state diagram available in figure~\ref{fig:structure_diagram}.
 
-\begin{figure}[H]
+\begin{figure}[H]       % TODO: remove the background
     \centering
     \includegraphics[scale=0.25]{figures/new_results/egpi/structure_diagram}
     \caption{Structure diagram of EGPI showing the important relations between the different implemented data structures. Most of the implemented methods of the program are shown in the diagram.}
@@ -261,8 +262,8 @@ Here is an exhaustive list of all non-trivial experiment graphs' properties we a
 
         \paragraph{Complexity of algorithm \ref {alg:perfect_matchings}:}
         The algorithm is a depth first search (DFS) algorithm.
-        In the worst case scenario, $G_k^w$ is a complete graph with $n$ vertices.
-        In other words, each node has $n-1$ neighbours in $G_k^w$.
+        In the worst case scenario, $G_\mu^w$ is a complete graph with $n$ vertices.
+        In other words, each node has $n-1$ neighbours in $G_\mu^w$.
         Also, at each recursive step of the algorithm, we remove $2$ nodes from the graph.
         This means that the depth of the search tree is $\frac{n}{2}$.
         The running time of this search algorithm is then $O\left(n^\frac{n}{2}\right)$. \\
@@ -271,11 +272,11 @@ Here is an exhaustive list of all non-trivial experiment graphs' properties we a
         The next steps to find them and their weights are simpler and are described in algorithm~\ref{alg:feasible_vertex_colourings}.
 
         \begin{algorithm}
-            \caption{Find all feasible vertex colourings of an experiment graph $G_k^w$}
+            \caption{Find all feasible vertex colourings of an experiment graph $G_\mu^w$}
             \label{alg:feasible_vertex_colourings}
             \begin{algorithmic}
-                \Require $G_k^w$ is an experiment graph
-                \State $PMs \gets$ all perfect matchings of $G_k^w$
+                \Require $G_\mu^w$ is an experiment graph
+                \State $PMs \gets$ all perfect matchings of $G_\mu^w$
                 \State $FVCs \gets$ empty Python dictionary
                 \ForAll{$PM \in PMs$}
                     \State $FVC \gets$ feasible vertex colouring induced by $PM$
@@ -286,17 +287,17 @@ Here is an exhaustive list of all non-trivial experiment graphs' properties we a
             \end{algorithmic}
         \end{algorithm}
 
-        The hardest step of this algorithm is to find all the perfect matchings of $G_k^w$.
+        The hardest step of this algorithm is to find all the perfect matchings of $G_\mu^w$.
         Therefore, the complexity of this algorithm is the same as the one of algorithm~\ref{alg:perfect_matchings}, which is $O\left(n^\frac{n}{2}\right)$ in the worst case.
 
     \item \textbf{If the graph is perfectly monochromatic:} by definition~\ref{def:perfectly_monochromatic_graph}, finding if an experiment graph is perfectly monochromatic or not just requires looking at all its feasible vertex colourings.
         This is done in algorithm~\ref{alg:perfectly_monochromatic}.
 
         \begin{algorithm}
-            \caption{Check if an experiment graph $G_k^w$ is perfectly monochromatic}
+            \caption{Check if an experiment graph $G_\mu^w$ is perfectly monochromatic}
             \label{alg:perfectly_monochromatic}
             \begin{algorithmic}
-                \Require $G_k^w$ is an experiment graph
+                \Require $G_\mu^w$ is an experiment graph
                 \State $FVCs \gets$ all feasible vertex colourings of $G$
                 \State $isPM \gets$ True
                 \ForAll{$FVC \in FVCs$}
@@ -310,19 +311,19 @@ Here is an exhaustive list of all non-trivial experiment graphs' properties we a
             \end{algorithmic}
         \end{algorithm}
 
-        The only hard step of this algorithm is to find all the feasible vertex colourings of $G_k^w$.
+        The only hard step of this algorithm is to find all the feasible vertex colourings of $G_\mu^w$.
         Therefore, the complexity of this algorithm is the same as the one of algorithm~\ref{alg:feasible_vertex_colourings}, which is $O\left(n^\frac{n}{2}\right)$ in the worst case.
 
     \item \textbf{The weighted matching index of the graph:} defined in definition~\ref{def:weighted_matching_index}, the weighted matching index of a perfectly monochromatic experiment graph is the number of monochromatic feasible vertex colourings in this graph.
         If the graph is not perfectly monochromatic, the weighted matching index is $0$ by definition.
         EGPI uses the algorithm~\ref{alg:weighted_matching_index} to compute the weighted matching index of a graph.
         \begin{algorithm}
-            \caption{Compute the weighted matching index of an experiment graph $G_k^w$}
+            \caption{Compute the weighted matching index of an experiment graph $G_\mu^w$}
             \label{alg:weighted_matching_index}
             \begin{algorithmic}
-                \Require $G_k^w$ is an experiment graph
-                \State $FVCs \gets$ all feasible vertex colourings of $G_k^w$
-                \State $isPM \gets$ is $G_k^w$ perfectly monochromatic ?
+                \Require $G_\mu^w$ is an experiment graph
+                \State $FVCs \gets$ all feasible vertex colourings of $G_\mu^w$
+                \State $isPM \gets$ is $G_\mu^w$ perfectly monochromatic ?
                 \If{$isPM$}
                     \State $c \gets 0$
                     \ForAll{$FVC \in FVCs$}
@@ -343,12 +344,12 @@ Here is an exhaustive list of all non-trivial experiment graphs' properties we a
         EGPI uses the following greedy algorithm to find if a graph is bipartite or not.
         The algorithm is written in algorithm~\ref{alg:bipartite}.
         \begin{algorithm}
-            \caption{Check if an experiment graph $G_k^w$ is bipartite}
+            \caption{Check if an experiment graph $G_\mu^w$ is bipartite}
             \label{alg:bipartite}
             \begin{algorithmic}
-                \Require $G_k^w$ is an experiment graph
+                \Require $G_\mu^w$ is an experiment graph
                 \State $Q \gets$ empty queue
-                \State add $v_0 \in V(G_k^w)$ to $Q$
+                \State add $v_0 \in V(G_\mu^w)$ to $Q$
                 \State colour of $v_0 \gets$ red
                 \State $isBipartite \gets$ True
                 \While{$Q$ is not empty}
@@ -366,8 +367,8 @@ Here is an exhaustive list of all non-trivial experiment graphs' properties we a
             \end{algorithmic}
         \end{algorithm}
 
-        This algorithm visits all the nodes of $G_k^w$ only once.
-        Therefore, its complexity is $\mathcal{O}(n)$, where $n$ is the number of vertices of $G_k^w$.
+        This algorithm visits all the nodes of $G_\mu^w$ only once.
+        Therefore, its complexity is $\mathcal{O}(n)$, where $n$ is the number of vertices of $G_\mu^w$.
 
 \end{enumerate}
 
@@ -397,7 +398,7 @@ This result is a new argument in favour of the Krenn's conjecture, at least for 
 Nevertheless, it does not constitute a proof of it in any case, and I encourage future researchers to continue looking for counterexamples to it alongside their researches (by using EGPI or any other tool). \\
 
 
-\subsection{Research for perfectly monochromatic graphs with a weighted matching index of $2$}
+\subsection{Research for perfectly monochromatic graphs with a weighted matching index of 2}
 \label{subsec:research-for-graphs-with-c-of-2}
 
 The second experiment I realized with EGPI was to try to find perfectly monochromatic graphs that have a weighted matching index of $2$.
@@ -434,7 +435,7 @@ I got results summarized in figure~\ref{fig:results-experiment}.
     \label{fig:results-experiment}
 \end{figure}
 
-Here is an example of discovered perfectly monochromatic graph by the program.
+An example of discovered perfectly monochromatic graph by the program is shown in figure~\ref{fig:egpi_graph_example}.
 
 \begin{figure}[H]
     \centering
@@ -495,19 +496,19 @@ The probability that all these randomly generated edges and perfect matchings to
 
 The last thing I am interested in is to count bipartite graphs among all the perfectly monochromatic graphs found.
 The result is the following: \textbf{none} of the perfectly monochromatic graphs found were bipartite.
-This is an alluring new observation: indeed, it is consistent with the arguments we used in the proofs of lemmas~\ref{lem:one_neg_edge} and~\ref{lem:2_positive_colour_classes_forbidden}.
+This is an alluring new observation: indeed, it is consistent with the arguments we used in the proofs of Lemmas~\ref{lem:one_neg_edge} and~\ref{lem:2_positive_colour_classes_forbidden}.
 One of the observations these proofs used is that, in these particular cases, the perfectly monochromatic graphs found were not bipartite.
 This allows me to formulate the following conjecture.
 
 \begin{conjecture}
     \label{con:bipartite_perfectly_monochromatic}
-    Let $G_k^w$ be a non-redundant perfectly monochromatic graph that respects the following properties.
+    Let $G_\mu^w$ be a non-redundant perfectly monochromatic graph that respects the following properties.
     \begin{itemize}
-        \item $\Tilde{c}(G, k, w) \geq 2$
-        \item $\forall e \in E(G_k^w), w(e) \in \{-1, 1, -i, i\}$
-        \item $G_k^w$ has at least one non-monochromatic feasible vertex colouring.
+        \item $\Tilde{c}(G, \mu, w) \geq 2$
+        \item $\forall e \in E(G_\mu^w), w(e) \in \{-1, 1, -i, i\}$
+        \item $G_\mu^w$ has at least one non-monochromatic feasible vertex colouring.
     \end{itemize}
-    Then, $G_k^w$ is not bipartite.
+    Then, $G_\mu^w$ is not bipartite.
 \end{conjecture}
 
 This conjecture might constitute a new interesting subcase of the Krenn's conjecture to investigate in the future.

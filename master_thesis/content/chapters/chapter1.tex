@@ -3,7 +3,6 @@
 \chapter{Description of the problem}
 \label{ch:description-of-the-problem}
 
-
 \section{Prerequisites and used notations}
 \label{sec:prerequisites-and-used-notations}
 
@@ -20,33 +19,48 @@ In the context of discrete mathematics, a \textit{graph} $G = (V, E)$ is a set $
 The notations $V(G)$ and $E(G)$ denote the set of vertices and the set of edges of $G$, respectively.
 The following definitions cover the graphs that will be used in the context of this master thesis.
 
-\begin{definition}[Simple graph]
-    \label{def:simple_graph}
-    A graph $G$ is said to be \textit{simple} if it has at most one edge between each pair of its vertices.
-    Furthermore, a simple graph has no edge that begins and ends at the same vertex.
-\end{definition}
-
 \begin{definition}[Undirected graph]
     \label{def:undirected_graph}
     A graph $G$ is said to be \textit{undirected} if $E(G)$ is a set of unordered pairs of elements of $V(G)$.
     It is opposed to the concept of \textit{directed graphs}, in which the edges are ordered tuples.
 \end{definition}
 
-\begin{definition}[Edge-coloured graph]     % TODO : different notations ?
-    \label{def:edge_coloured_graph}
-    An \textit{edge-colouring} $k$ of a graph $G$ is a function that maps each edge $e \in E(G)$ to a colour $k(e)$ (often represented as an unsigned integer).
-    An \textit{edge-coloured graph} $G_k$ is a graph $G$ equipped with an edge-colouring $k$.
+\begin{definition}[Simple graph]
+    \label{def:simple_graph}
+    A graph $G$ is said to be \textit{simple} if it has at most one edge between each pair of its vertices.
+    In the context of this master thesis, simple graphs are considered to be undirected and have no edges that begin and end at the same vertex (called \textit{loops}).
 \end{definition}
 
-\begin{definition}[Mixed edge-coloured graph]
-    \label{def:mixed_edge_coloured_graph}
-    A \textit{mixed edge-colouring} $k$ of a graph $G$ is a function that maps each edge $e = \{v_1, v_2\} \in E(G)$ to two colours $k(e, v_1)$ and $k(e, v_2)$ (often represented as unsigned integers).
-    A \textit{mixed edge-coloured graph} $G_k$ is a graph $G$ equipped with a mixed edge-colouring $k$.
+\begin{definition}[Multigraph]
+    \label{def:multigraph}
+    A graph $G$ is said to be a \textit{multigraph} if it is allowed to have multiple edges between the same pair of vertices.
+    In the context of this master thesis, multigraphs are considered to be undirected and have no loops.
+\end{definition}
+
+\begin{definition}[Edge-coloured graph]
+    \label{def:edge-coloured-graph}
+    An \textit{edge-colouring} $f$ of a graph $G$ is a function that maps each edge $e = \{v_1, v_2\} \in E(G)$ to two colours $f(e, v_1)$ and $f(e, v_2)$ (often represented as unsigned integers).
+    \begin{itemize}
+        \item The edge colouring is said to be \textit{pure}, and is denoted by the letter $\eta$, if $\forall e = \{v_1, v_2\} \in E(G), \eta(e, v_1) = \eta(e, v_2)$.
+            A \textit{pure edge-coloured graph} $G_\eta$ is a graph $G$ equipped with a pure edge-colouring $\eta$.
+        \item The edge colouring is said to be \textit{mixed}, and is denoted by the letter $\mu$, if it is not necessarily pure.
+            A \textit{mixed edge-coloured graph} $G_\mu$ is a graph $G$ equipped with a mixed edge-colouring $\mu$.
+    \end{itemize}
+    Given an edge set $S$ and a (pure or mixed) edge-colouring $k$, the image of $f$ on $S$, denoted $f(S)$, is
+    \begin{center}
+        $f(S) = \bigcup\limits_{e \in S} \{f(e, v_1), f(e, v_2)\}$
+    \end{center}
+\end{definition}
+
+\begin{definition}[Vertex-coloured graph]
+    \label{def:vertex_coloured_graph}
+    A \textit{vertex-colouring} $\kappa$ of a graph $G$ is a function that maps each vertex $v \in V(G)$ to a colour $\kappa(v)$ (often represented as unsigned integers).
+    A \textit{vertex-coloured graph} $G_\kappa$ is a graph $G$ equipped with a vertex-colouring $\kappa$.
 \end{definition}
 
 \begin{definition}[Weighted graph]
     \label{def:weighted_graph}
-    A \textit{weighting} $w$ of a graph $G$ is a function that maps each edge $e \in E(G)$ to a weight $w(e)$.
+    A \textit{weighting} of a graph $G$ is a function $w: E(G) \rightarrow \mathbb{C}$, that maps each edge $e \in E(G)$ to a weight $w(e)$.
     In the context of this master thesis, this weight is a complex number.
     A \textit{weighted graph} $G^w$ is a graph $G$ equipped with a weighting $w$.
 \end{definition}
@@ -163,7 +177,7 @@ He first defines the notion of monochromatic graphs, followed by the notion of i
 
 \begin{definition}[Monochromatic graph]
     \label{def:monochromatic_graph}
-    In the context of this master thesis, an edge-coloured graph $G_k$ is said to be \textit{monochromatic} if all its perfect matchings are monochromatic, i.e., for all perfect matchings $M$, the edges of $M$ are all the same colour.
+    In the context of this master thesis, an pure edge-coloured graph $G_\eta$ is said to be \textit{monochromatic} if all its perfect matchings are monochromatic, i.e., for all perfect matchings $M$, the edges of $M$ are all the same colour.
 \end{definition}
 
 An example of monochromatic graph is shown in figure~\ref{fig:k4_pm}.
@@ -176,18 +190,18 @@ This concept is different from the one of a monochromatic edge set.
 
 \begin{definition}[Matching index]
     \label{def:matching_index}
-    Let $G$ be a graph.
-    For any edge-colouring $k$ such that $G_k$ is monochromatic, let $c(G, k)$ be defined as the number of colours such that $\exists$ a monochromatic perfect matching of $G_k$ of that colour.
-    The \textit{matching index} of $G$, denoted by $c(G)$, is the maximum value that $c(G, k)$ can take.
+    Let $G$ be a simple graph.
+    For any pure edge colouring $\eta$ such that $G_\eta$ is monochromatic, let $c(G, \eta)$ be defined as the number of colours such that $\exists$ a monochromatic perfect matching of $G_\eta$ of that colour.
+    The \textit{matching index} of $G$, denoted by $c(G)$, is the maximum value that $c(G, \eta)$ can take.
     \begin{center}
-        $c(G) = \max\limits_{k \in \mathcal{K}(G)}(c(G, k))$
+        $c(G) = \max\limits_{\eta \in \mathcal{E}(G)}(c(G, \eta))$
     \end{center}
-    Where $\mathcal{K}(G)$ describes here the set of all possible edges-colourings $k$ of $G$ such that $G_{k}$ is monochromatic.
+    Where $\mathcal{E}(G)$ describes here the set of all possible edges-colourings $\eta$ of $G$ such that $G_\eta$ is monochromatic.
 \end{definition}
 
 \begin{figure}[H]
     \ctikzfig{figures/problem_presentation/simplified/k4_pm}
-    \caption{Example of monochromatic graph: an edge-coloured version of $K_4$. It has at most three monochromatic perfect matchings of different colours.
+    \caption{Example of monochromatic graph: a pure edge coloured version of $K_4$. It has at most three monochromatic perfect matchings of different colours.
         Therefore, $c(K_4) = 3$.}
     \label{fig:k4_pm}
 \end{figure}
@@ -196,25 +210,25 @@ Equipped with these concepts, the reader has now all the knowledge to understand
 
 \begin{theorem}[Simplified version of Krenn's conjecture]
     \label{thm:bogdanov}
-    For all graphs $G$, if $G$ is isomorphic to $K_4$, then $c(G) = 3$.
+    For all simple graphs $G$, if $G$ is isomorphic to $K_4$, then $c(G) = 3$.
     Otherwise, $c(G) \leq 2$.
 \end{theorem}
 
-The proof of theorem~\ref{thm:bogdanov} was first proposed by Ilya Bogdanov in a post on a forum~\cite{bogdanov}.
+The proof of Theorem~\ref{thm:bogdanov} was first proposed by Ilya Bogdanov in a post on a forum~\cite{bogdanov}.
 I rewrote it in my own terms to make it clearer, according to our own formulation of the problem.
 
-\begin{proof}
-    Let $G$ be a monochromatic graph with a matching index $c(G) \geq 2$, and let $k$ be an edge-colouring of $G$ such that $c(G, k) = c(G)$.
-    Let $M_1$, $M_2$ be two monochromatic perfect matchings of $G_k$ of different colours.
+\begin{proof}[Proof of Theorem~\ref{thm:bogdanov}]
+    Let $G$ be a monochromatic graph with a matching index $c(G) \geq 2$, and let $\eta$ be a pure edge colouring of $G$ such that $c(G, \eta) = c(G)$.
+    Let $M_1$, $M_2$ be two monochromatic perfect matchings of $G_\eta$ of different colours.
     Then, they are disjoint.
     
     \begin{claim}
         \label{clm:even_cycles}
-        The union of $M_1$ and $M_2$ form a disjointed union of cycles of even length.
+        The union of $M_1$ and $M_2$ form a disjoint union of cycles of even length.
     \end{claim}
     
-    \begin{proof}[Proof of the claim]
-        For each vertex $v \in V(G_k)$, $v$ is touched by exactly one edge from $M_1$ and one edge of $M_2$ (by definition~\ref{def:perfect_matching} of a perfect matching).
+    \begin{proof}[Proof of Claim \ref{clm:even_cycles}]
+        For each vertex $v \in V(G_\eta)$, $v$ is touched by exactly one edge from $M_1$ and one edge of $M_2$ (by definition~\ref{def:perfect_matching} of a perfect matching).
         So all the vertices are of degree 2 in $M_1 \bigcup M_2$.
         This already proves the first statement.
         Then, on each cycle in $M_1 \bigcup M_2$, the edges must be alternating between edges from $M_1$ and edges from $M_2$ (otherwise we would have two edges from the same perfect matching that touch the same vertex, which is forbidden by definition~\ref{def:matching}).
@@ -227,7 +241,7 @@ I rewrote it in my own terms to make it clearer, according to our own formulatio
     \begin{center}
         $N = \left\{
         \begin{array}{ll}
-            M_1 & \mbox{on the } k - 1 \mbox{ first cycles} \\
+            M_1 & \mbox{on the } \mathcal{C} - 1 \mbox{ first cycles} \\
             M_2 & \mbox{on the last cycle}
         \end{array}
         \right.$
@@ -238,23 +252,23 @@ I rewrote it in my own terms to make it clearer, according to our own formulatio
     We will denote $H = (v_1, v_2, \dots, v_n)$ the Hamiltonian cycle formed by $M_1$ and $M_2$.
     We notice that $n$ is an even number, since $|H| = 2 \cdot |M_1| = 2 \cdot |M_2|$.\\
 
-    Now let's consider the case where $c(G) = c(G, k) \geq 3$.
+    Now let's consider the case where $c(G) = c(G, \eta) \geq 3$.
     Let $M_3$ be a third monochromatic perfect matching such that the colour of $M_3$ differs from the colours of $M_1$ and $M_2$.
     Let $e = \{v_i, v_j\} \in M_3$, where the indices $i$ and $j$ are denoting positions in $H$.
     From now, it will be considered without loss of generality that the colour of $\{v_i, v_{i+1}\}$ is $1$.
-    Indeed, if it is not the case, the colour $1$ and $2$ can be exchanged in the following reasoning.
+    Indeed, if it is not the case, the colours $1$ and $2$ can be exchanged in the following reasoning.
 
     \begin{itemize}
         \item
-            \textbf{If $j - i$ is odd :} using the notation introduced in definition~\ref{def:arc}, $e$ splits $H$ in two arcs $H_{i+1, j-1}$ and $H_{j+1, i-1}$ of odd lengths.
-            Then we build a new non-monochromatic perfect matching $N$ as follows :
+            \textbf{If $j - i$ is odd:} using the notation introduced in definition~\ref{def:arc}, $e$ splits $H$ in two arcs $H_{i+1, j-1}$ and $H_{j+1, i-1}$ of odd lengths.
+            Then we build a new non-monochromatic perfect matching $N$ as follows.
             
             \begin{center}
                 $\begin{array}{r c l}
                     N & = & \{e\} \\
                       &   & \cup M_1 \cap H_{i+1, j-1} \\
                       &   & \cup M_2 \cap H_{j+1, i-1}
-                \end{array}$        % TODO : period at the end ?
+                \end{array}$
             \end{center}
             
             The construction of $N$ is shown in figure~\ref{fig:proof_simplified_odd}.
@@ -273,8 +287,8 @@ I rewrote it in my own terms to make it clearer, according to our own formulatio
             Let $e' = \{v_{i + 1}, v_k\} \in M_3$.
             The existence of $e'$ is certain by definition~\ref{def:perfect_matching} of a perfect matching.
             By the previous case, we know that $k - (i + 1)$ can not be odd, so it is even.
-            $v_k$ does not appear in $H_{i, j}$ since $H_{i, j}$ was the smallest arc possible delimited by $e$.
-            Let $C$ be defined as the cycle formed by the following edges.
+            The vertex $v_k$ does not appear in $H_{i, j}$ since $H_{i, j}$ was the smallest arc possible delimited by $e$.
+            Let $C$ be defined as the following cycle.
             
             \begin{center}
                 $C = \left\{
@@ -282,13 +296,13 @@ I rewrote it in my own terms to make it clearer, according to our own formulatio
                 \right\}$
             \end{center}
             
-            $C$ has an even length, $H_{i+1, j}$ and $H_{k, i}$ have also an even length.
+            Note that the cycle $C$ has an even length, $H_{i+1, j}$ and $H_{k, i}$ have also an even length.
             This observation can be easily understood when looking at figure~\ref{fig:proof_simplified_even}.
             Knowing all these parities, it is possible to find a new non-monochromatic perfect matching $N$.
             
             \begin{center}
                 $\begin{array}{r c l}
-                    N & = & e \cup e' \\
+                    N & = & \{e \cup e'\} \\
                       &   & \cup M_1 \cap H_{i+1, j} \\
                       &   & \cup M_1 \cap H_{k, i} \\
                       &   & \cup M_2 \cap H_{j, k}
@@ -313,16 +327,14 @@ I rewrote it in my own terms to make it clearer, according to our own formulatio
 \section{Krenn's conjecture (unsolved)}
 \label{sec:krenn_conjecture}
 
-All the graphs that were studied in the previous section were simple, undirected edge-coloured graphs.
-(Referring to the definitions~\ref{def:simple_graph},~\ref{def:undirected_graph} and~\ref{def:edge_coloured_graph}).
+All the graphs that were studied in the previous section were simple pure edge coloured graphs.
+(Referring to the definitions~\ref{def:simple_graph}, and~\ref{def:edge-coloured-graph}).
 However, in the context of Mario Krenn's research, these graphs constitute a particular case of all the graphs that need to be studied~\cite{Krenn_2017,wordpress}.
-The exact motivations to extend the problem to a whole new level are directly motivated by quantum optics experiment, and will be described into details in section~\ref{sec:motivations}.
+The exact reasons to extend the problem to a whole new level are directly motivated by quantum optics experiment, and will be described into details in section~\ref{sec:motivations}.
 
 \begin{definition}[Experiment graph]
     \label{def:experiment_graph}
-    In the context of this master thesis, what is called an \textit{experiment graph} is a mixed-edge coloured weighted graph, refering to the definitions~\ref{def:mixed_edge_coloured_graph} and~\ref{def:weighted_graph}.
-    Furthermore, experiment graphs allow arbitrary number of edges between the same pair of vertices; they are therefore not simple in the sense of definition~\ref{def:simple_graph}.
-    Nevertheless, they do not allow loops, i.e.\ no edge begins and ends at the same vertex.
+    In the context of this master thesis, what is called an \textit{experiment graph} $G_\mu^w$ is a mixed edge coloured weighted multigraph, referring to the definitions~\ref{def:edge-coloured-graph},~\ref{def:weighted_graph} and~\ref{def:multigraph}.
 \end{definition}
 
 The denomination of experiment graph was used by Gajjala and Chandran in~\cite{chandran2023graphtheoretic}.
@@ -340,21 +352,21 @@ Again, these definitions come directly from~\cite{wordpress}.
 
 \begin{definition}[Induced vertex colouring]
     \label{def:induced_vertex_colouring}
-    Given an experiment graph $G_k^w$, it is said that a vertex colouring $\kappa$ is \textit{induced} by a perfect matching $M$ of $G$ if and only if, for each vertex $v \in V(G)$, $\exists e \in M$ such that $\kappa(v) = k(e, v)$.
-    (Using the notation introduced in definition~\ref{def:mixed_edge_coloured_graph}).
-    The induced vertex colouring by a perfect matching $M$ is denoted $\kappa(M)$ in the context of this master thesis.
+    Given an experiment graph $G_\mu^w$, it is said that a vertex colouring $\kappa$ is \textit{induced} by a perfect matching $M$ of $G$ if and only if, for each vertex $v \in V(G)$, $\exists e \in M$ such that $\kappa(v) = \mu(e, v)$.
+    (Using the notation introduced in definition~\ref{def:edge-coloured-graph}).
+    The induced vertex colouring by a perfect matching $M$ is denoted $\kappa(M)$ in the context of this master thesis.     % TODO: if we have time - change this to an indice
     The other way around, $\mathcal{M}_\kappa$ denotes the set of all perfect matchings that induce a vertex colouring $\kappa$.
 \end{definition}
 
 \begin{definition}[Feasible vertex colouring]
     \label{def:feasible_vertex_colouring}
-    Let $G_k^w$ be an experiment graph.
-    It is said of a vertex colouring $\kappa$ that it is \textit{feasible} for $G_k^w$ if and only if there is at least one perfect matching of $G_k^w$ that induces $\kappa$.
+    Let $G_\mu^w$ be an experiment graph.
+    It is said of a vertex colouring $\kappa$ that it is \textit{feasible} for $G_\mu^w$ if and only if there is at least one perfect matching of $G_\mu^w$ that induces $\kappa$.
 \end{definition}
 
 \begin{definition}[Weight of a vertex colouring]
     \label{def:vertex_colouring_weight}
-    The \textit{weight} of a feasible vertex colouring $\kappa$ of an experiment graph $G_k^w$, denoted $w(\kappa)$, is the sum of all the weights of the perfect matchings that induce this vertex colouring.
+    The \textit{weight} of a feasible vertex colouring $\kappa$ of an experiment graph $G_\mu^w$, denoted $w(\kappa)$, is the sum of all the weights of the perfect matchings that induce this vertex colouring.
     
     \begin{center}
         $w(\kappa) = \sum\limits_{M \in \mathcal{M}_{\kappa}} w(M)$
@@ -365,7 +377,7 @@ Again, these definitions come directly from~\cite{wordpress}.
 
 \begin{definition}[Perfectly monochromatic graph]
     \label{def:perfectly_monochromatic_graph}
-    An experiment graph $G_k^w$ is said to be \textit{perfectly monochromatic} if the weights of all its feasible monochromatic vertex colourings are equal to 1, and the weights of all its feasible non-monochromatic vertex colourings are equal to 0.
+    An experiment graph $G_\mu^w$ is said to be \textit{perfectly monochromatic} if the weights of all its feasible monochromatic vertex colourings are equal to 1, and the weights of all its feasible non-monochromatic vertex colourings are equal to 0.
 \end{definition}
 
 An example of a perfectly monochromatic graph is presented in the figure~\ref{fig:perfectly_mono}.
@@ -375,69 +387,76 @@ Just like the matching index of a monochromatic graph was defined in the previou
 
 \begin{definition}[Weighted matching index]
     \label{def:weighted_matching_index}
-    Given a perfectly monochromatic graph $G_k^w$, let $\Tilde{c}(G, k, w)$ be the number of different feasible monochromatic vertex colourings in $G_k^w$.
-    We define the \textit{weighted matching index} of $G$, denoted $\Tilde{c}(G)$, as the maximum number that $\Tilde{c}(G, k, w)$ can take for a mixed-edge colouring $k$ and a weighting $w$.
+    Given a perfectly monochromatic graph $G_\mu^w$, let $\Tilde{c}(G, \mu, w)$ be the number of different feasible monochromatic vertex colourings in $G_\mu^w$.
+    We define the \textit{weighted matching index} of $G$, denoted $\Tilde{c}(G)$, as the maximum number that $\Tilde{c}(G, \mu, w)$ can take for a mixed-edge colouring $\mu$ and a weighting $w$.
 \end{definition}
 
 \begin{figure}[H]
     \ctikzfig{figures/problem_presentation/krenn_conjecture/perfectly_mono}
-    \caption{Example of a perfectly monochromatic graph $G_k^w$.
-        With this mixed-edge colouring $k$ and weighting $w$, we have $\Tilde{c}(G, k, w) = 2$ because there are 2 feasible monochromatic vertex colourings in $G_k^w$.
-        It can be shown that it is not possible to find a mixed-edge colouring $k'$ and a weight attribution $w'$ such that $\Tilde{c}(G, k', w') > \Tilde{c}(G, k, w)$.
+    \caption{Example of a perfectly monochromatic graph $G_\mu^w$.
+        With this mixed edge colouring $\mu$ and weighting $w$, we have $\Tilde{c}(G, \mu, w) = 2$ because there are 2 feasible monochromatic vertex colourings in $G_\mu^w$.
+        It can be shown that it is not possible to find a mixed edge colouring $\mu'$ and a weight attribution $w'$ such that $\Tilde{c}(G, \mu', w') > \Tilde{c}(G, \mu, w)$.
         Therefore, $\Tilde{c}(G) = 2$.}
     \label{fig:perfectly_mono}
 \end{figure}
 
-\begin{observation}[Link between $c$ and $\Tilde{c}$]
-    \label{obs:c_tilde_greater_than_c}
+\begin{lemma}[Link between $c$ and $\Tilde{c}$]
+    \label{lem:c_tilde_greater_than_c}
     For all graphs $G$, $\Tilde{c}(G) \geq c(G)$.
-\end{observation}
+\end{lemma}
 
-\begin{proof}
+\begin{proof}[Proof of lemma~\ref{lem:c_tilde_greater_than_c}]
     The structure of this proof follows the one proposed by Chandran and Gajjala in~\cite{chandran}.
-    Let $G_k = (V, E)$ be a monochromatic graph.
+    Let $G_\eta = (V, E)$ be a monochromatic graph such that $c(G, \eta) = c(G)$.
     Let $n_{M}(b)$ be the number of different monochromatic perfect matchings in $G$ of the colour $b$.
-    Now we assign the following weights to each edge $e$ of $G$ :
+    Now let's define the following weighting $w$.
+    For each edge $e \in E(G)$:
     
     \begin{center}
         $w(e) = \left\{
         \begin{array}{ll}
-            \left(\frac{1}{n_{M}(k(e))}\right)^{\frac{2}{|V|}} & \mbox{if there are PMs of the colour } k(e) \\
+            \left(\frac{1}{n_{M}(\eta(e))}\right)^{\frac{2}{|V|}} & \mbox{if there are PMs of the colour } \eta(e) \\
             1 & \mbox{if there are none}
         \end{array}
         \right.$
     \end{center}
 
-    Because $G_k$ is monochromatic, we know that all of its perfect matchings are monochromatic.
+    Because $G_\eta$ is monochromatic, we know that all of its perfect matchings are monochromatic.
     For each of these monochromatic perfect matching $M$, we have
     
     \begin{center}
-        $w(M) = \left( (\frac{1}{n_{M}(k(M))})^{\frac{2}{|V|}}\right)^{\frac{|V|}{2}} = \frac{1}{n_{M}(k(M))}$
+        $w(M) = \left( \left(\frac{1}{n_{M}(\eta(M))}\right)^{\frac{2}{|V|}}\right)^{\frac{|V|}{2}} = \frac{1}{n_{M}(\eta(M))}$
     \end{center}
-    
+
+    Where $\eta(M)$ is the colour of the edges in the monochromatic perfect matching $M$, using a notation introduced in definition~\ref{def:edge-coloured-graph}.
     It follows that for each monochromatic vertex colouring $\kappa$ of colour $b$,
     
     \begin{center}
         $w(\kappa) = n_{M}(b)\frac{1}{n_{M}(b)} = 1$
     \end{center}
     
-    Hence, $G_k^w$ is perfectly monochromatic and $c(G) = \Tilde{c}(G)$.
-    Of course, this means that $\Tilde{c}(G) \geq c(G)$.
+    Hence, $G_\eta^w$ is perfectly monochromatic and $c(G, \eta) = c(G) = \Tilde{c}(G, \eta, w)$.
+    By definition~\ref{def:weighted_matching_index}, we have
+    \begin{center}
+        $\Tilde{c}(G) = \max\limits_{\mu, w}(\Tilde{c}(G, \mu, w)) \geq \Tilde{c}(G, \eta, w)$.
+    \end{center}
+    We conclude that $\Tilde{c}(G) \geq c(G)$, which ends our proof.
 \end{proof}
 
 The reader now possesses all the needed tools to understand the Krenn's conjecture, which is the heart of this master thesis research.
 
 \begin{conjecture}[Krenn's conjecture]
     \label{con:krenn}
-    Let $G$ be a graph.
+    Let $G$ be a multigraph, as defined in definition~\ref{def:multigraph}.
     If $G$ is isomorphic to $K_4$, then $\Tilde{c}(G) = 3$.
     Otherwise, $\Tilde{c}(G) \leq 2$.
 \end{conjecture}
 
 This last statement is, as its name says, a conjecture: it was not yet proven and no constant upper bound is currently known for the weighted matching index of an experiment graph.
 However, some special cases were already studied.
-These are analyse in the next chapter.
-But before getting lost in maths, the reader is encouraged to read the next section, which justifies the study of this conjecture and explains why any progress on it is important.
+We analyse them in the next chapter.
+But before diving into the study of special cases, we first present in the next section the motivations behind the Krenn's conjecture.
+Indeed, the conjecture originated in quantum optics, and the answer to it has a direct impact on this field.
 
 
 \section{Motivations}
@@ -503,7 +522,7 @@ On the other hand, finding counter-examples to the conjecture would lead to the 
         On the other hand, the experiment described in $D$ is represented by the graph in $E$, which is non-monochromatic as shown in $F$.
         Therefore, the state it creates is not a GHZ-state.
         $\ket{\psi'} = \frac{1}{2} (\ket{000000} + \ket{111111} + \ket{222222} + \ket{121200})$.}
-    \label{fig:krenn_experiment}
+    \label{fig:krenn_experiment}        % TODO: explain this figure
 \end{figure}
 
 At last, please note that the study of GHZ-states is considered as a fundamental question in quantum physics.

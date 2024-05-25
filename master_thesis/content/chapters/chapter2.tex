@@ -7,74 +7,119 @@ Furthermore, non-constant bounds could also be found in more general cases of ex
 This section aims to present these results.
 But before getting started, it could be interesting to introduce some useful definitions and tools that will be used a lot during the different seen proofs.
 
+
+\begin{definition}[Redundant edge]
+    \label{def:redundant_edge}
+    An edge $e$ from a graph $G$ is said to be \textit{redundant} if it does not belong to any perfect matching of $G$.
+\end{definition}
+
+\begin{definition}[Redundant colour]
+    \label{def:redundant_colour}
+    Let $G_\mu^w$ be an experiment graph.
+    Let $r \in \mu\left(E(G)\right)$, using a notation introduced in definition~\ref{def:edge-coloured-graph}.
+    $r$ is said to be \textit{redundant} if there is no monochromatic perfect matching of colour $r$ in $G_\mu$.
+\end{definition}
+
+\begin{definition}[Redundant mixed-colour]
+    \label{def:redundant_mixed_colour}
+    Let $G_\mu^w$ be an experiment graph.
+    Let $r, g \in \left(\mu\left(E(G)\right)\right)^2$, using a notation introduced in definition~\ref{def:edge-coloured-graph}.
+
+    The mixed-colour $\{r, g\}$ is said to be \textit{redundant} if at least one of the two following conditions is true.
+    \begin{center}
+        $\left\{
+        \begin{array}{l}
+            r \mbox{ is a redundant colour} \\
+            g \mbox{ is a redundant colour}
+        \end{array}
+        \right.$
+    \end{center}
+\end{definition}
+
 \begin{definition}[(Non-)redundant experiment graph]    % TODO: use that
     \label{def:redundant-experiment-graph}
-    In the context of this master thesis, an experiment graph $G_k^w$ as defined in definition~\ref{def:experiment_graph} is said to be \textit{non-redundant} if it satisfies all the following properties.
+    In the context of this master thesis, an experiment graph $G_\mu^w$ as defined in definition~\ref{def:experiment_graph} is said to be \textit{non-redundant} if it satisfies all the following properties.
 
     \begin{itemize}
         \item $\forall e \in E(G), w(e) \neq 0$
-        \item $\forall e \in E(G), \exists$ a perfect matching $M$ such that $e \in M$
-        \item $\forall (v_1, v_2) \in (V(G))^2, v_1 \neq v_2,$ and $\forall$ colour pair $(r, g)$, $\exists$ at most one unique edge $e$ between $v_1$ and $v_2$ such that $k(e, v_1) = r$ and $k(e, v_2) = g$, using notations introduced in definition~\ref{def:mixed_edge_coloured_graph}.
+        \item $G_\mu^w$ does not have any redundant edge.
+        \item $\mu\left(E(G)\right)$ does not have any redundant colour.
+        \item $\forall e \in E(G)$, $\mu(e)$ is not a redundant mixed-colour.
+        \item $\forall (v_1, v_2) \in (V(G))^2, v_1 \neq v_2,$ and $\forall$ colour pair $(r, g)$, $\exists$ at most one unique edge $e$ between $v_1$ and $v_2$ such that $\mu(e, v_1) = r$ and $\mu(e, v_2) = g$, using notations introduced in definition~\ref{def:edge-coloured-graph}.
     \end{itemize}
 
     Otherwise, it is said to be \textit{redundant}.
 \end{definition}
 
+To build the \textit{non-redundant induced subgraph} of a redundant experiment graph $G_\mu^w$, apply successively the following operations.
 
-\begin{definition}[Non-redundant induced graph]     % TODO : there are some places where I mismatched the 2 definitions
-    \label{def:non_redundant_induced_subgraph}
-    Let $G_k^w$ be a redundant experiment graph.
-    Then its \textit{non-redundant-induced graph} is the graph built by doing successively the following operations.
+\begin{itemize}
+    \item $\forall e \in E(G)$ such that $w(e) = 0$, delete $e$.
+    \item $\forall e \in E(G)$, if $e$ is redundant, delete $e$.
+    \item $\forall e \in E(G)$, if $\mu(e)$ is a redundant (mixed) colour, delete $e$.
+    \item $\forall (v_1, v_2) \in (V(G))^2, v_1 \neq v_2$, and $\forall$ colour pair $(r, g)$, if there are multiple edges $e_1, e_2, \dots, e_m$ such that
 
-    \begin{itemize}
-        \item $\forall e \in E(G)$ such that $w(e) = 0$, delete $e$.
-        \item $\forall e \in E(G)$ that does not belong to any perfect matching $M$ of $G_k^w$, delete $e$.
-        \item $\forall (v_1, v_2) \in (V(G))^2, v_1 \neq v_2$ And $\forall$ colour pair $(r, g)$, if there are multiple edges $e_1, e_2, \dots, e_m$ such that
-        
-            \begin{center}
-                $\forall i \in \{1, \dots, m\}$, $k(e_i, v_1) = r$ and $k(e_i, v_2) = g$
-            \end{center}
+        \begin{center}
+            $\forall i \in \{1, \dots, m\}$, $\mu(e_i, v_1) = r$ and $\mu(e_i, v_2) = g$
+        \end{center}
 
-            Then, replace them by one single edge $e = (v_1, v_2)$ that has the following properties.
-        
-            \begin{center}
-                $k(e, v_1) = r$ And $k(e, v_2) = g$ \\
-                $w(e) = \sum\limits_{i = 1}^m w(e_i)$
-            \end{center}
-        
-    \end{itemize}
-    
-\end{definition}
+        Then, replace them by one single edge $e = (v_1, v_2)$ that has the following properties.
 
-This definition and denomination is entirely motivated by the following observation.
+        \begin{center}
+            $\mu(e, v_1) = r$ and $\mu(e, v_2) = g$ \\
+            $w(e) = \sum\limits_{i = 1}^m w(e_i)$
+        \end{center}
+
+\end{itemize}
+
+An example of such transformation is shown in figure~\ref{fig:non_redundant_induced_graph}.
+
+\begin{figure}[H]
+    \ctikzfig{figures/state_of_the_art/non_redundant_induced_graph}
+    \caption{In this figure, $G_\mu^w$ is an experiment graph and ${G'}_{\mu'}^{w'}$ is its non-redundant induced graph. In this particular case, it consisted in doing the following operations. First of all, the $0$-weighted edge between $v_3$ and $v_6$ is removed. Secondly, the edge $\{v_1, v_3\}$ is also deleted because it does not belong to any perfect matching (indeed, including it in a perfect matching $M$ would prevent $M$ to cover $v_2$). Lastly, the two edges between $v_4$ and $v_6$ are combined in one single edge, since they have the same colour at each endpoint. The reader can verify that the resulting graph ${G'}_{\mu'}^{w'}$ has a weighted matching index $\Tilde{c}(G', \mu', w') = 2$. Therefore, $\Tilde{c}(G, \mu, w) = 2$ by observation \ref{obs:non_redundancy_enough}.}
+    \label{fig:non_redundant_induced_graph}
+\end{figure}
+
+This definition and denomination of redundancy in a graph is entirely motivated by the following observation.
 
 \begin{observation}[Non-redundancy is enough]
     \label{obs:non_redundancy_enough}
-    Let $G_k^w$ be a redundant experiment graph, and let ${G'}_{k'}^{w'}$ be its non-redundant induced graph.
-    Then $\Tilde{c}(G, k, w) = \Tilde{c}(G', k', w')$.
+    Let $G_\mu^w$ be a redundant experiment graph, and let ${G'}_{\mu'}^{w'}$ be its non-redundant induced graph.
+    Then $\Tilde{c}(G, \mu, w) = \Tilde{c}(G', \mu', w')$.
 \end{observation}
 
-\begin{proof}
-    To prove this last observation, the procedure will be to show that each of the transformations that was applied on $G_k^w$ did not change its weighted matching index.
+\begin{proof}[Proof of observation \ref{obs:non_redundancy_enough}]
+    To prove this last observation, the procedure will be to show that each of the transformations that was applied on $G_\mu^w$ did not change its weighted matching index.
 
     \begin{enumerate}
         \item \textbf{Transformation 1:} $\forall e \in E(G)$ such that $w(e) = 0$, delete $e$. \\
-            Let $e = \{v_1, v_2\}$ be a zero-weighted edge of $G_k^w$.
-            At most, $e$ can contribute to the weights of all the feasible vertex colourings $\kappa$ such that $\kappa(v_1) = k(e, v_1)$ and $\kappa(v_2) = k(e, v_2)$.
+            Let $e = \{v_1, v_2\}$ be a zero-weighted edge of $G_\mu^w$.
+            At most, $e$ can contribute to the weights of all the feasible vertex colourings $\kappa$ such that $\kappa(v_1) = \mu(e, v_1)$ and $\kappa(v_2) = \mu(e, v_2)$.
             But since $w(e) = 0$, then all the perfect matchings $M$ such that $e \in M$ have a weight $w(M) = 0$.
-            Therefore, $e$'s contribution to $\kappa$ is null, and removing it doesn't change anything to the feasibility of $\kappa$.
+            Therefore, the contribution of $e$ to $\kappa$ is null, and removing it doesn't change anything to the feasibility of $\kappa$.
 
-        \item \textbf{Transformation 2:} $\forall e \in E(G)$ that do not belong to any perfect matching $M$ of $G_k^w$, delete $e$. \\
-            Since $e$ does not belong to any perfect matching $M$, its weight can not contribute to any feasible vertex colouring $\kappa$.
+        \item \textbf{Transformation 2:} $\forall e \in E(G)$, if $e$ is redundant, delete $e$. \\
+            Since $e$ does not belong to any perfect matching $M$ by definition~\ref{def:redundant_edge}, its weight can not contribute to any feasible vertex colouring $\kappa$.
             Removing it has therefore no impact.
 
-        \item \textbf{Transformation 3:} $\forall (v_1, v_2) \in (V(G))^2, v_1 \neq v_2$ and $\forall$ colour pair $(r, g)$, if there are multiple edges $e_1, e_2, \dots, e_m$ such that
+        \item \textbf{Transformation 3:} $\forall e \in E(G)$, if $\mu(e)$ is a redundant (mixed) colour, delete $e$. \\
+            Indeed, let $e = \{v_1, v_2\}$ be an edge of $G_\mu^w$ such that $\mu(e) = \{r, g\}$ is a redundant (mixed) colour.
+            Then, $r$ or $g$ is a redundant colour.
+            Let say without loss of generality that $r$ is a redundant colour.
+            Then, there is no monochromatic perfect matching of colour $r$ in $G_\mu^w$.
+            Therefore, $e$ has no impact on the weight of any monochromatic feasible vertex colouring.\\
+
+            However, $e$ can still be part of a non-monochromatic perfect matching $N$ that induces the non-monochromatic feasible vertex colouring $\kappa_N$.
+            But $\kappa_N$ has at least one $r$-coloured vertex, and no $r$-coloured edges remain in $G_\mu^w$ after the transformation.
+            Therefore, $\kappa_N$ is not feasible anymore, so we do not have to worry about its weight.
+
+        \item \textbf{Transformation 4:} $\forall (v_1, v_2) \in (V(G))^2, v_1 \neq v_2$ and $\forall$ colour pair $(r, g)$, if there are multiple edges $e_1, e_2, \dots, e_m$ such that
             \begin{center}
-                $\forall i \in \{1, \dots, m\}$, $k(e_i, v_1) = r$ and $k(e_i, v_2) = g$
+                $\forall i \in \{1, \dots, m\}$, $\mu(e_i, v_1) = r$ and $\mu(e_i, v_2) = g$
             \end{center}
             Then, replace them by one single edge $e = (v_1, v_2)$ that has the following properties.
             \begin{center}
-                $k(e, v_1) = r$ and $k(e, v_2) = g$ \\
+                $\mu(e, v_1) = r$ and $\mu(e, v_2) = g$ \\
                 $w(e) = \sum\limits_{i = 1}^m w(e_i)$
             \end{center}
 
@@ -82,12 +127,12 @@ This definition and denomination is entirely motivated by the following observat
             We need to introduce some new notations for this specific part of the proof, which are inspired by the notations we previously defined in definition~\ref{def:induced_vertex_colouring} of an induced vertex colouring.
 
             \begin{itemize}
-                \item $\mathcal{M}_\kappa$ Is the set of all perfect matching $M$ of $G$ that induce a vertex colouring $\kappa$ on $G$.
-                \item $\mathcal{M}_\kappa^{e_i}$ Is the set of perfect matchings $M$ of $G$ that induce a vertex colouring $\kappa$ on $G$ such that $e_i \in M$.
-                \item $\mathcal{M}_\kappa^{*}$ Is the set of perfect matchings $M$ of $G$ that have no edges from $\{e_1, \dots, e_m\}$.
-                \item $\mathcal{M'}_\kappa$ Is the set of all perfect matching of $G'$ that induce a vertex colouring $\kappa$ on $G'$.
-                \item $\mathcal{M'}_\kappa^{e}$ Is the set of perfect matchings of $G'$ that induce a vertex colouring $\kappa$ on $G'$ such that $e_i \in M$.
-                \item $\mathcal{M'}_\kappa^{*} = \mathcal{M}_\kappa^{*}$ Is the set of perfect matchings $M$ of $G'$ that have do not contain $e$.
+                \item $\mathcal{M}_\kappa$ is the set of all perfect matching $M$ of $G$ that induce a vertex colouring $\kappa$ on $G$.
+                \item $\mathcal{M}_\kappa^{e_i}$ is the set of perfect matchings $M$ of $G$ that induce a vertex colouring $\kappa$ on $G$ such that $e_i \in M$.
+                \item $\mathcal{M}_\kappa^{*}$ is the set of perfect matchings $M$ of $G$ that have no edges from $\{e_1, \dots, e_m\}$.
+                \item $\mathcal{M'}_\kappa$ is the set of all perfect matching of $G'$ that induce a vertex colouring $\kappa$ on $G'$.
+                \item $\mathcal{M'}_\kappa^{e}$ is the set of perfect matchings of $G'$ that induce a vertex colouring $\kappa$ on $G'$ such that $e_i \in M$.
+                \item $\mathcal{M'}_\kappa^{*} = \mathcal{M}_\kappa^{*}$ is the set of perfect matchings $M$ of $G'$ that have do not contain $e$.
             \end{itemize}
 
             Using these new notations, and by the definition~\ref{def:vertex_colouring_weight} of the weight of a vertex colouring,
@@ -107,13 +152,6 @@ This definition and denomination is entirely motivated by the following observat
 \end{proof}
 
 This last observation is convenient since it allows researchers to focus on non-redundant experiment graphs to prove bounds on their matching index, and these bounds are still valid in redundant experiment graphs without any loss of generality.
-An example of such transformation is shown in figure~\ref{fig:non_redundant_induced_graph}.
-
-\begin{figure}[H]
-    \ctikzfig{figures/state_of_the_art/non_redundant_induced_graph}
-    \caption{In this figure, $G_k^w$ is an experiment graph and ${G'}_{k'}^{w'}$ is its non-redundant induced graph. In this particular case, it consisted in doing the following operations. First of all, the $0$-weighted edge between $v_3$ and $v_6$ is removed. Secondly, the edge $\{v_1, v_3\}$ is also deleted because it does not belong to any perfect matching (indeed, including it in a perfect matching $M$ would prevent $M$ to cover $v_2$). Lastly, the two edges between $v_4$ and $v_6$ are combined in one single edge, since they have the same colour at each endpoint. The reader can verify that the resulting graph ${G'}_{k'}^{w'}$ has a weighted matching index $\Tilde{c}(G', k', w') = 2$. Therefore, $\Tilde{c}(G, k, w) = 2$ by observation \ref{obs:non_redundancy_enough}.}
-    \label{fig:non_redundant_induced_graph}
-\end{figure}
 
 
 \section{Special cases that were already proven}
@@ -124,18 +162,18 @@ An example of such transformation is shown in figure~\ref{fig:non_redundant_indu
 
 \begin{lemma}[Real, positive weights]
     \label{lem:real_pos_weights}
-    Let $G_k^w$ be a perfectly monochromatic graph which has only positive, real weights.
-    If $G$ is isomorphic to $K_4$, then $\Tilde{c}(G, k, w) \leq 3$.
+    Let $G_\mu^w$ be a perfectly monochromatic graph which has only positive, real weights.
+    If $G$ is isomorphic to $K_4$, then $\Tilde{c}(G, \mu, w) \leq 3$.
     Otherwise, $\Tilde{c}(G, k, w) \leq 2$.
 \end{lemma}
 
-\begin{proof}
-    This is a direct result from Bogdanov's proof, described in theorem~\ref{thm:bogdanov}~\cite{bogdanov}.
-    Because all the weights of $G_k^w$ are real, positive numbers, it means that the weight of any perfect matching is positive.
+\begin{proof}[Proof of Lemma \ref{lem:real_pos_weights}]
+    This is a direct result from Bogdanov's proof, described in Theorem~\ref{thm:bogdanov}~\cite{bogdanov}.
+    Because all the weights of $G_\mu^w$ are real, positive numbers, it means that the weight of any perfect matching is positive.
     Therefore, the weight of any feasible vertex colouring is positive by definition~\ref{def:vertex_colouring_weight}.
     But all the non-monochromatic feasible vertex colourings in a perfectly monochromatic graph should have a weight of 0 by definition~\ref{def:monochromatic_graph}.
-    It follows that $G_k^w$ has no non-monochromatic perfect matching.
-    Then $\Tilde{c}(G, k, w) = c(G, k)$.
+    It follows that $G_\mu^w$ has no non-monochromatic perfect matching.
+    Then $\Tilde{c}(G, \mu, w) = c(G, \mu)$.
 \end{proof}
 
 
@@ -150,10 +188,10 @@ Here are their results.
     If $G$ is a graph with a matching index of 0, then the Krenn's conjecture is true for $G$ and $\Tilde{c}(G) = c(G) = 0$.
 \end{lemma}
 
-\begin{proof}
+\begin{proof}[Proof of Lemma \ref{lem:if_c_is_0}]
     Let $G$ be a graph with a matching index of 0.
     Then, $G$ has no perfect matchings (otherwise it would be feasible to colour all the edges of $G$ in the same colour and find a monochromatic perfect matching, which contradicts the fact that $c(G) = 0$ by definition~\ref{def:matching_index} of a matching index).
-    Because it has no perfect matchings, there is no mixed-edge colouring $k$ and weight attribution $w$ such that $G_k^w$ has a feasible monochromatic vertex colouring.
+    Because it has no perfect matchings, there is no mixed-edge colouring $\mu$ and weight attribution $w$ such that $G_\mu^w$ has a feasible monochromatic vertex colouring.
     It follows that $\Tilde{c}(G) = 0$.
 \end{proof}
 
@@ -162,34 +200,34 @@ Here are their results.
     If $G$ is a graph with a matching index of 2, then the Krenn's conjecture is true for $G$ and $\Tilde{c}(G) = c(G) = 2$.
 \end{lemma}
 
-This last lemma is proved by Chandran and Gajjala in~\cite{chandran}.
+Lemma~\ref{lem:if_c_is_2} is proved by Chandran and Gajjala in~\cite{chandran}.
 The proof is not trivial and uses some very interesting observations about the structure of a perfectly monochromatic graph with $\Tilde{c}(G) = 2$.
 The reader is highly encouraged to have a look at it in the original paper in order to believe this claim.
-Nevertheless, the proof will not be discussed here since it would be a bit redundant.
-Thanks to their proof, Chandran and Gajjala could pose the following theorem, which is a summary of the two last lemmas~\ref{lem:if_c_is_0} and~\ref{lem:if_c_is_2}.
+Nevertheless, the proof will not be discussed here.
+Thanks to their proof, Chandran and Gajjala could pose the following theorem, which is a summary of the two last Lemmas~\ref{lem:if_c_is_0} and~\ref{lem:if_c_is_2}.
 
-\begin{theorem}[Chandran - Gajjala's theorem]
+\begin{theorem}[Chandran - Gajjala's Theorem]
     \label{thm:c_not_1}
     Let $G$ be a perfectly monochromatic graph.
     If $c(G) \neq 1$, then the Krenn's conjecture is true and $\Tilde{c}(G) = c(G)$.
 \end{theorem}
 
-Having that last theorem, it would be a natural question to ask ourselves if, for any graph $G$, $c(G) = \Tilde{c}(G)$.
+Having Theorem~\ref{thm:c_not_1}, it would be a natural question to ask ourselves if, for any graph $G$, $c(G) = \Tilde{c}(G)$.
 Unfortunately, it is not the case, since a counter-example was found by Chandran and Gajjala. \cite{chandran}
 
 \begin{observation}
     \label{obs:c_not_c_tilde}
     There exists a graph $G$ that satisfies $c(G) = 1$ and $\Tilde{c}(G) = 2$.
-    This counter example is shown in figure~\ref{fig:proof_c_not_c_tilde}.
+    This counter-example is shown in figure~\ref{fig:proof_c_not_c_tilde}.
 \end{observation}
 
-\begin{figure}[H]
+\begin{figure}[H]       % TODO: check the notations used on this figure
     \ctikzfig{figures/state_of_the_art/special_cases/c_not_c_tilde}
-    \caption{Example of graph $G$ that has a matching index of $1$ and a weighted matching index of $2$.
-        On this figure, the edge-colouring $k$ is an example of edge colouring that gives $c(G, k) = 1$.
-        Furthermore, the mixed-edge colouring $k'$ and the weight attribution $w$ are examples of mixed-edge colourings and weights attributions that result in $\Tilde{c}(G, k', w) = 2$.
-        Another example of mixed-edge colouring and weight attribution that gives the same matching index on $G$ is available in figure \ref{fig:perfectly_mono}.
-        It has still to be shown that it is impossible to find other edge-colourings / weight attributions that would lead to bigger (weighted) matching indexes.
+    \caption{Example of graph $G$ that has a matching index of $1$ and a weighted matching index of $2$.        % TODO: replace weight attribution everywhere with weighting
+        On this figure, the pure edge colouring $\eta$ is an example of pure edge colouring that gives $c(G, \eta) = 1$.
+        Furthermore, the mixed-edge colouring $\mu$ and the weighting $w$ are examples of mixed-edge colourings and weightings that result in $\Tilde{c}(G, \mu, w) = 2$.
+        Another example of mixed-edge colouring and weighting that gives the same matching index on $G$ is available in figure \ref{fig:perfectly_mono}.   % TODO: check this information
+        It has still to be shown that it is impossible to find other edge-colourings / weightings that would lead to bigger (weighted) matching indexes.
         This proof is not presented here, but is available in Chandran and Gajjala's original paper \cite{chandran}.}
     \label{fig:proof_c_not_c_tilde}
 \end{figure}
@@ -204,13 +242,13 @@ The two following theorems are due to them.
 
 \begin{lemma}[Upper bound in terms of minimum degree]
     \label{lem:bound_min_degree}
-    Let $G$ be a graph, and $\delta(G)$ be its minimum degree as defined in definition~\ref{def:degree}.
+    Let $G$ be a multigraph, and $\delta(G)$ be its minimum degree as defined in definition~\ref{def:degree}.
     Then $\Tilde{c}(G) \leq \delta(G)$.
 \end{lemma}
 
-\begin{proof}
-    Let $G_k^w$ be a perfectly monochromatic graph such that $\Tilde{c}(G, k, w) = \Tilde{c}(G)$.
-    It is known by definition~\ref{def:weighted_matching_index} of the weighted matching index that $G_k^w$ has at least one monochromatic perfect matching for $\Tilde{c}(G)$ different colour classes.
+\begin{proof}[Proof of Lemma~\ref{lem:bound_min_degree}]
+    Let $G_\mu^w$ be a perfectly monochromatic graph such that $\Tilde{c}(G, \mu, w) = \Tilde{c}(G)$.
+    It is known by definition~\ref{def:weighted_matching_index} of the weighted matching index that $G_\mu^w$ has at least one monochromatic perfect matching for $\Tilde{c}(G)$ different colour classes.
     In the context of this proof, these perfect matchings are denoted $M_1, M_2, \dots, M_{\Tilde{c}(G)}$.
     Because these perfect matchings are of different colours, they can not share any edge.\\
     
@@ -232,36 +270,13 @@ The two following theorems are due to them.
     Then $\Tilde{c}(G) \leq \lambda(G).$
 \end{theorem}
 
-The proof of this last theorem is not trivial and uses some concepts that need to be properly defined here.
-It was first described by Chandran and Gajjala in~\cite{chandran}, and we are using the same concepts than them here.
+The proof of Theorem~\ref{thm:bound_edge_connectivity} is not trivial.
+It was first described by Chandran and Gajjala in~\cite{chandran}, and we are using the same concepts than them here.   % TODO: finish to update here.
 
-\begin{definition}[Redundant edge]
-    \label{def:redundant_edge}
-    An edge $e$ from a graph $G$ is said to be \textit{redundant} if it does not belong to any perfect matching of $G$.
-\end{definition}
-
-\begin{definition}[Redundant colour class]      % TODO: these definitions should be grouped with redundant graphs
-    \label{def:redundant_colour_class}
-    A colour class $r$ from an edge colouring $k$ of a graph $G$ is said to be \textit{redundant} if there is no monochromatic perfect matching of colour $r$ in $G_k$.
-\end{definition}
-
-\begin{definition}[Redundant mixed-colour class]
-    \label{def:redundant_mixed_colour_class}
-    A mixed-colour class $(r, b)$ from an edge-colouring $k$ of a graph $G$ is said to be \textit{redundant} if at least one of the two following conditions is true.
-    \begin{center}
-        $\left\{
-        \begin{array}{l}
-            r \mbox{ is a redundant colour class} \\
-            b \mbox{ is a redundant colour class}
-        \end{array}
-        \right.$
-    \end{center}
-\end{definition}
 
 \begin{proof}[Proof of Theorem \ref{thm:bound_edge_connectivity}]
-    TODO : this proof can be simplified by using the concepts introduced at the beginning of the chapter.
-    I'm currently working on it.\\
-
+    % TODO : this proof can be simplified by using the concepts introduced at the beginning of the chapter.
+    % TODO : find the proof again in the original paper
     This theorem is proven by contradiction.
     Using the notations introduced in definitions~\ref{def:weighted_matching_index} and~\ref{def:edge_connectivity}, let's assume there exists a graph $G''$ such that $\Tilde{c}(G'') \geq \lambda(G'') + 1$.
     By removing all the redundant edges (defined in definition~\ref{def:redundant_edge}) of $G''$, it results in a graph $G'$ with $\Tilde{c}(G'') = \Tilde{c}(G')$.
@@ -271,19 +286,20 @@ It was first described by Chandran and Gajjala in~\cite{chandran}, and we are us
         $\Tilde{c}(G') \geq \lambda(G'') + 1$
     \end{center}
     
-    Therefore, there exists a mixed-edge colouring $k'$ and a weight attribution $w'$ such that
+    Therefore, there exists a mixed-edge colouring $\mu'$ and a weighting $w'$ such that
     
     \begin{center}
-        $\Tilde{c}(G') = \Tilde{c}(G', k', w') \geq \lambda(G'') + 1$
+        $\Tilde{c}(G') = \Tilde{c}(G', \mu', w') \geq \lambda(G'') + 1$
     \end{center}
     
-    From ${G'_{k'}}^{w'}$, let apply a new transformation that removes all edges that belong to a redundant colour class and all edges that belong to a redundant mixed-colour class (defined in definitions~\ref{def:redundant_colour_class} and~\ref{def:redundant_mixed_colour_class}), obtaining $G_k^w$.
-    It is straightforward to see that, if ${G'_{k'}}^{w'}$ was perfectly monochromatic, $G_k^w$ is still perfectly monochromatic.
-    Indeed, by removing all the edges from a redundant colour class, no monochromatic perfect matching is removed by definition~\ref{def:redundant_colour_class}.
-    If there were (non-monochromatic) perfect matchings containing edges of that colour class, they are all destroyed, so there is no induced vertex colouring of $G$ anymore that has vertices of the removed colour class.
+    From ${G'_{\mu'}}^{w'}$, let apply a new transformation that removes all edges that are coloured with a redundant colour, and all edges that are coloured with a redundant mixed-colour (defined in definitions~\ref{def:redundant_colour} and~\ref{def:redundant_mixed_colour}), obtaining $G_\mu^w$.
+    It is straightforward to see that, if ${G'_{\mu'}}^{w'}$ was perfectly monochromatic, $G_\mu^w$ is still perfectly monochromatic.
+    Indeed, by removing all the edges coloured with a redundant colour, no monochromatic perfect matching is removed by definition~\ref{def:redundant_colour}.
+    If there were (non-monochromatic) perfect matchings containing edges of that colour, they are all destroyed, so there is no induced vertex colouring of $G$ anymore that has vertices of that removed colour.   % TODO: if we have time, all of this is a bit confusing (since we removed ``colour class'')
     Then, it's not needed any more to worry about the weight of such vertex colourings. \\
     
-    $\Tilde{c}(G)$ did not decrease, because no non-redundant colour class was removed from ${G'_{k'}}^{w'}$, and did not increase, since removing edges can not create new perfect matchings.
+    $\Tilde{c}(G)$ did not decrease, because the edges that have non-redundant colours were not removed from ${G'_{\mu'}}^{w'}$.
+    Also, it did not increase, since removing edges can not create new perfect matchings.
     So again:
     
     \begin{center}
@@ -315,8 +331,8 @@ It was first described by Chandran and Gajjala in~\cite{chandran}, and we are us
             \end{figure}
             
             Let $E(S, S')$ be the set of crossing edges from $S$ to $S'$.
-            The maximum number of different colour classes that can be found on $E(S, S')$ is $\lambda(G)$ (otherwise more edges wold be needed).
-            The conclusion is that the monochromatic perfect matchings of $G_k^w$ can be of a most $\lambda(G)$ different colours.
+            The maximum number of different monochromatic edges that can be found on $E(S, S')$ is $\lambda(G)$ (otherwise more edges would be needed).
+            The conclusion is that the monochromatic perfect matchings of $G_\mu^w$ can be of a most $\lambda(G)$ different colours.
             Hence,
             
             \begin{center}
@@ -326,7 +342,7 @@ It was first described by Chandran and Gajjala in~\cite{chandran}, and we are us
             This forms a contradiction with the statement that $\Tilde{c}(G'') \geq \lambda(G'') + 1$.
             
         \item
-            \textbf{If $|S|$ and $|S'|$ are even} then let's separate all the colour classes of $G_k^w$ in
+            \textbf{If $|S|$ and $|S'|$ are even} then let's separate all the colours of $\mu\left(E(G)\right)$ in
             
             \begin{center}
                 $\left\{ \begin{array}{l c l c l}
@@ -378,15 +394,16 @@ It was first described by Chandran and Gajjala in~\cite{chandran}, and we are us
                     Then one can pick two colours from $[r]$ (let say $1$ and $2$).
                     
                     \begin{claim}
+                        \label{claim:two-mixed-edges}
                         There should be at least two mixed edges of colour $(1, 2)$ in $E(S, S')$.
                     \end{claim}
                     
-                    \begin{proof}[Proof of the claim]
+                    \begin{proof}[Proof of Claim \ref{claim:two-mixed-edges}]
                         By contradiction, suppose not.
                         Let's consider 2 monochromatic perfect matchings $M_1$ and $M_2$ of colour $1$ and $2$ that induce the monochromatic vertex colourings $1_{V(G)}$ and $2_{V(G)}$ respectively.
                         $M_1$ And $M_2$ do not have any edge in $E(S, S')$.
                         In general, in the context of this proof, $i_A$ will denote the monochromatic vertex colouring of colour $i$ of the vertices in $A$.
-                        Because $G_k^w$ is perfectly monochromatic, the weights of $1_{V(G)}$ and $2_{V(G)}$ must be $1$.
+                        Because $G_\mu^w$ is perfectly monochromatic, the weights of $1_{V(G)}$ and $2_{V(G)}$ must be $1$.     % TODO: change this to kappa1 and kappa2
                         Since $1, 2 \in [r]$, there are no normal edges of colour $1$ nor $2$ in $E(S, S')$.
                         Then we have the following relations, where $w(i_A)$ denotes the weight of the monochromatic vertex colouring of colour $i$ on the subgraph $A$.
                         
@@ -401,7 +418,7 @@ It was first described by Chandran and Gajjala in~\cite{chandran}, and we are us
 
                         Now let's consider a non-monochromatic vertex colouring $\kappa$ in which $S$ is coloured $1$ and $S'$ is coloured $2$.
                         $\kappa$ is feasible because we can build a perfect matching by taking all the edges from $M_1$ on $S$ and all the edges from $M_2$ on $S'$.
-                        Because $G_k^w$ is perfectly monochromatic, $w(\kappa)$ is 0 by definition~\ref{def:perfectly_monochromatic_graph}.
+                        Because $G_\mu^w$ is perfectly monochromatic, $w(\kappa)$ is 0 by definition~\ref{def:perfectly_monochromatic_graph}.
                         Also, since $|S|$ and $|S'|$ are even, every perfect matching contains an even number of edges from $E(S, S')$.
                         But by assumption, there is at most one crossing edge of colour $\{1, 2\}$ and no crossing edges of colour $1$ nor $2$.
                         In conclusion, no perfect matching that induces $\kappa$ can contain an edge from $E(S, S')$.
@@ -444,11 +461,11 @@ Last but not least, Chandran and Gajjala showed more recently an upper bound on 
 
 \begin{theorem}[Upper bound in terms of number of vertices]
     \label{thm:bound_num_vertices}
-    Let $G_k^w$ be an experiment graph that has $n$ vertices.
+    Let $G_\mu^w$ be an experiment graph that has $n$ vertices.
     Then,
     \begin{center}
-        $\Tilde{c}(G, k, w) \leq \frac{n}{\sqrt{2}}$
+        $\Tilde{c}(G, \mu, w) \leq \frac{n}{\sqrt{2}}$
     \end{center}
 \end{theorem}
 
-The proof of theorem~\ref{thm:bound_num_vertices} is detailed in Chandran and Gajjala's publication~\cite{chandran2023graphtheoretic}.
+The proof of Theorem~\ref{thm:bound_num_vertices} is detailed in Chandran and Gajjala's publication~\cite{chandran2023graphtheoretic}.
