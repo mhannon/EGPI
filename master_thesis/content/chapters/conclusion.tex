@@ -7,32 +7,32 @@ In this master thesis, we started by understanding and summarizing the concept o
 We dived deeper in the connection between this conjecture and quantum physics, investigated for the first time by Mario Krenn in~\cite{Krenn_2017}.
 Mario Krenn indeed discovered that the (non-)existence of certain specific graphs could lead to the (non-)feasibility to create specific quantum states, called $GHZ$-states, through the use of certain experiments.
 Being able to create such states is a key point in quantum computing~\cite{gu2020compact} and cryptography~\cite{pivoluska2018layered}.
-This discovery was the starting point of its conjecture in graph theory, which remains unsolved.\\
+This discovery was the starting point of his conjecture in graph theory, which remains unsolved.\\
 
 We then focused on dressing a state of the art of the research on the Krenn's conjecture.
 In it, we could see that the conjecture was already solved for real, positive weights by Bogdanov in~\cite{bogdanov}.
 We also spoke about Chandran and Gajjala, who proved the conjecture in the special case of graphs that have a matching index (defined in~\ref{def:matching_index}) different from 1~\cite{chandran}.
-In that same paper, they could find some upper bounds on the weighted matching index in terms of minimum degree and of edge connectivity.\\
+In that same paper, they could find some upper bounds on the weighted matching index in terms of minimum degree and of edge connectivity.
 Their researches were extremely valuable for us, as they introduced a lot of notations and concepts that we used in our own work.\\
 
-After that, we adopted an algorithmic approach to find new interesting results related to the problem.
+After that, we adopted a theoretical approach to find new interesting results related to the problem.
 We first tried to perform problem reductions to find out what restrained cases were interesting to study.
 By doing so, we discovered that the study of non-redundant experiment graphs (defined in~\ref{def:redundant-experiment-graph}) with integer weights could be reduced to the study of redundant experiment graphs that have weights included in $\{-1, 1\}$.
 We then focused on proving some new special cases of the Krenn's conjecture.
-Our main results are the following: we could extend Bogdanov's results\cite{bogdanov} by allowing one weight to be negative.
+Our main results are the following: we could extend Bogdanov's results\cite{bogdanov} by allowing one weight to be negative in the absence of bicoloured edges.
 This attempt was a success, and encouraged us to extend the used arguments to a more general case.
 This is how we came by with what I consider to be the main result of this master thesis, formulated in Lemma~\ref{lem:2_positive_colour_classes_forbidden}.
 
-\begin{lemma}[2 positive colour classes]
-    Let $G_k^w$ be a simple perfectly monochromatic graph that has only real weights, and that has at least $2$ colour classes that have only positive weighted edges.
-    Then, if $G$ is not isomorphic to $K_4$, $\Tilde{c}(G, k, w) \leq 2$.
-\end{lemma}
+\paragraph{Lemma~\ref{lem:2_positive_colour_classes_forbidden}}
+Let $G_\mu^w$ be a simple perfectly monochromatic graph that has only real weights, and that has at least $2$ colour classes that have only positive weighted edges.
+Then, if $G$ is not isomorphic to $K_4$, $\Tilde{c}(G, \mu, w) \leq 2$.\\
+
 
 At last, we adopted a more experimental approach to the problem by looking for counter-examples to the Krenn's conjecture.
 In practice, this was done through the implementation of a new program called EGPI (Experiment Graphs Properties Identifier) — a program that generates random experiment graphs and checks properties related to the Krenn's conjecture on them.
 In my opinion, such a tool was currently missing in the researchers' community.
 Indeed, finding interesting graphs to analyse or showcase by hand is hard, and the EGPI program could help in this task.
-Also, even though I strongly believe the conjecture to be true at this point, the EGPI program could still be used to find counter-examples to it by chance.
+Also, even though I strongly believe the conjecture to be true at this point, it is not excluded that the EGPI program (or any similar tool) finds a counter-examples to it by chance one day.
 Using EGPI, I looked for such counter-examples and could not find any, which reinforces my belief in the conjecture's truth.
 EGPI also allowed me to analyse a big number of random perfectly monochromatic graphs with a weighted matching index of $2$, and to discover that none of them were bipartite.
-Therefore, I finished my work by stating a new conjecture about the non-existence of bipartite perfectly-monochromatic graphs with a weighted matching index of $2$.\\
+Therefore, I finished my work by stating conjecture~\ref{con:bipartite_perfectly_monochromatic} about the non-existence of bipartite perfectly-monochromatic graphs in certain conditions.\\

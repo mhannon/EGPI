@@ -5,7 +5,8 @@ During the last few years, the problem was studied by a few researchers around t
 While none of them could find any constant upper bound on the weighted matching index of perfectly monochromatic graphs (defined in definitions~\ref{def:weighted_matching_index} and~\ref{def:perfectly_monochromatic_graph}), some special cases of the conjecture were proven to be true.
 Furthermore, non-constant bounds could also be found in more general cases of experiment graphs.
 This section aims to present these results.
-But before getting started, it could be interesting to introduce some useful definitions and tools that will be used a lot during the different seen proofs.
+But before getting started, it could be interesting to introduce some useful definitions and tools that will be used a lot in the different proofs.
+A variant of these tools was used by Chandran and Gajjala in~\cite{chandran} to prove some of the results presented in this section.
 
 
 \begin{definition}[Redundant edge]
@@ -36,7 +37,7 @@ But before getting started, it could be interesting to introduce some useful def
     \end{center}
 \end{definition}
 
-\begin{definition}[(Non-)redundant experiment graph]    % TODO: use that
+\begin{definition}[(Non-)redundant experiment graph]
     \label{def:redundant-experiment-graph}
     In the context of this master thesis, an experiment graph $G_\mu^w$ as defined in definition~\ref{def:experiment_graph} is said to be \textit{non-redundant} if it satisfies all the following properties.
 
@@ -84,7 +85,7 @@ This definition and denomination of redundancy in a graph is entirely motivated 
 
 \begin{observation}[Non-redundancy is enough]
     \label{obs:non_redundancy_enough}
-    Let $G_\mu^w$ be a redundant experiment graph, and let ${G'}_{\mu'}^{w'}$ be its non-redundant induced graph.
+    Let $G_\mu^w$ be a redundant experiment graph, and let ${G'}_{\mu'}^{w'}$ be its non-redundant induced subgraph.
     Then $\Tilde{c}(G, \mu, w) = \Tilde{c}(G', \mu', w')$.
 \end{observation}
 
@@ -164,7 +165,7 @@ This last observation is convenient since it allows researchers to focus on non-
     \label{lem:real_pos_weights}
     Let $G_\mu^w$ be a perfectly monochromatic graph which has only positive, real weights.
     If $G$ is isomorphic to $K_4$, then $\Tilde{c}(G, \mu, w) \leq 3$.
-    Otherwise, $\Tilde{c}(G, k, w) \leq 2$.
+    Otherwise, $\Tilde{c}(G, \mu, w) \leq 2$.
 \end{lemma}
 
 \begin{proof}[Proof of Lemma \ref{lem:real_pos_weights}]
@@ -180,24 +181,24 @@ This last observation is convenient since it allows researchers to focus on non-
 \subsection{Restrictions on the matching index}
 \label{subsec:proved-special-cases-matching-index}
 
-In 2022, Gajjala and Chandran analysed the Krenn's conjecture by separating the graphs in different subclasses according to their matching index (see definition~\ref{def:matching_index}).
+In 2022, Chandran and Gajjala analysed in~\cite{chandran} the Krenn's conjecture by separating the graphs in different subclasses according to their matching index (see definition~\ref{def:matching_index}).
 Here are their results.
 
 \begin{lemma}[Graphs with a matching index of 0]
     \label{lem:if_c_is_0}
-    If $G$ is a graph with a matching index of 0, then the Krenn's conjecture is true for $G$ and $\Tilde{c}(G) = c(G) = 0$.
+    If $G$ is a simple graph with a matching index of 0, then the Krenn's conjecture is true for $G$ and $\Tilde{c}(G) = c(G) = 0$.
 \end{lemma}
 
 \begin{proof}[Proof of Lemma \ref{lem:if_c_is_0}]
     Let $G$ be a graph with a matching index of 0.
     Then, $G$ has no perfect matchings (otherwise it would be feasible to colour all the edges of $G$ in the same colour and find a monochromatic perfect matching, which contradicts the fact that $c(G) = 0$ by definition~\ref{def:matching_index} of a matching index).
-    Because it has no perfect matchings, there is no mixed-edge colouring $\mu$ and weight attribution $w$ such that $G_\mu^w$ has a feasible monochromatic vertex colouring.
+    Because it has no perfect matchings, there is no mixed-edge colouring $\mu$ and weighting $w$ such that $G_\mu^w$ has a feasible monochromatic vertex colouring.
     It follows that $\Tilde{c}(G) = 0$.
 \end{proof}
 
 \begin{lemma}[Graphs with a matching index of 2]
     \label{lem:if_c_is_2}
-    If $G$ is a graph with a matching index of 2, then the Krenn's conjecture is true for $G$ and $\Tilde{c}(G) = c(G) = 2$.
+    If $G$ is a simple graph with a matching index of 2, then the Krenn's conjecture is true for $G$ and $\Tilde{c}(G) = c(G) = 2$.
 \end{lemma}
 
 Lemma~\ref{lem:if_c_is_2} is proved by Chandran and Gajjala in~\cite{chandran}.
@@ -208,25 +209,25 @@ Thanks to their proof, Chandran and Gajjala could pose the following theorem, wh
 
 \begin{theorem}[Chandran - Gajjala's Theorem]
     \label{thm:c_not_1}
-    Let $G$ be a perfectly monochromatic graph.
+    Let $G$ be a simple graph.
     If $c(G) \neq 1$, then the Krenn's conjecture is true and $\Tilde{c}(G) = c(G)$.
 \end{theorem}
 
 Having Theorem~\ref{thm:c_not_1}, it would be a natural question to ask ourselves if, for any graph $G$, $c(G) = \Tilde{c}(G)$.
-Unfortunately, it is not the case, since a counter-example was found by Chandran and Gajjala. \cite{chandran}
+Unfortunately, it is not the case, since a counter-example was found by Chandran and Gajjala~\cite{chandran}.
 
 \begin{observation}
     \label{obs:c_not_c_tilde}
     There exists a graph $G$ that satisfies $c(G) = 1$ and $\Tilde{c}(G) = 2$.
-    This counter-example is shown in figure~\ref{fig:proof_c_not_c_tilde}.
+    Such a graph is shown in figure~\ref{fig:proof_c_not_c_tilde}.
 \end{observation}
 
-\begin{figure}[H]       % TODO: check the notations used on this figure
+\begin{figure}[H]
     \ctikzfig{figures/state_of_the_art/special_cases/c_not_c_tilde}
-    \caption{Example of graph $G$ that has a matching index of $1$ and a weighted matching index of $2$.        % TODO: replace weight attribution everywhere with weighting
+    \caption{Example of graph $G$ that has a matching index of $1$ and a weighted matching index of $2$.
         On this figure, the pure edge colouring $\eta$ is an example of pure edge colouring that gives $c(G, \eta) = 1$.
         Furthermore, the mixed-edge colouring $\mu$ and the weighting $w$ are examples of mixed-edge colourings and weightings that result in $\Tilde{c}(G, \mu, w) = 2$.
-        Another example of mixed-edge colouring and weighting that gives the same matching index on $G$ is available in figure \ref{fig:perfectly_mono}.   % TODO: check this information
+        Another example of mixed-edge colouring and weighting that gives the same weighted matching index on $G$ is available in figure \ref{fig:perfectly_mono}.
         It has still to be shown that it is impossible to find other edge-colourings / weightings that would lead to bigger (weighted) matching indexes.
         This proof is not presented here, but is available in Chandran and Gajjala's original paper \cite{chandran}.}
     \label{fig:proof_c_not_c_tilde}
@@ -236,7 +237,7 @@ Unfortunately, it is not the case, since a counter-example was found by Chandran
 \section{Known non-constant bounds on the weighted matching index}
 \label{sec:known-non-constant-bounds}
 
-Despite the failure to find any constant bound on the weighted matching index of experiment graphs up to now, some interesting non-constant bounds were nevertheless found.
+Despite the failure to discover any constant bound on the weighted matching index of experiment graphs up to now, some interesting non-constant bounds were nevertheless found.
 Chandran and Gajjala discovered in~\cite{chandran} two interesting bounds in terms of minimum degree and edge connectivity that I considered to be relevant to rewrite here.
 The two following theorems are due to them.
 
@@ -254,8 +255,8 @@ The two following theorems are due to them.
     
     Let $v \in V(G)$ be a vertex of minimum degree $d(v) = \delta(G)$.
     This vertex must be covered by $M_1, M_2, \dots, M_{\Tilde{c}(G)}$.
-    $M_1$ Covers it through an edge $e_1$, $M_2$ through an edge $e_2$, $\dots$, $M_{\Tilde{c}(G)}$ through an edge $e_{\Tilde{c}(G)}$ (as shown in figure~\ref{fig:proof_min_degree}).
-    Then $v$ has at least $\Tilde{c}(G)$ outgoing edges, and $d(v) = \delta(G) \geq \Tilde{c}(G)$.
+    $M_1$ covers it through an edge $e_1$, $M_2$ through an edge $e_2$, $\dots$, $M_{\Tilde{c}(G)}$ through an edge $e_{\Tilde{c}(G)}$ (as shown in figure~\ref{fig:proof_min_degree}).
+    Then $v$ has at least $\Tilde{c}(G)$ incident edges, and $d(v) = \delta(G) \geq \Tilde{c}(G)$.
 \end{proof}
 
 \begin{figure}[H]
@@ -266,44 +267,22 @@ The two following theorems are due to them.
 
 \begin{theorem}[Upper bound in terms of edge connectivity]
     \label{thm:bound_edge_connectivity}
-    Let $G$ be a graph, and $\lambda(G)$ be its edge connectivity as defined in definition~\ref{def:edge_connectivity}.
+    Let $G$ be a multigraph, and $\lambda(G)$ be its edge connectivity as defined in definition~\ref{def:edge_connectivity}.
     Then $\Tilde{c}(G) \leq \lambda(G).$
 \end{theorem}
 
 The proof of Theorem~\ref{thm:bound_edge_connectivity} is not trivial.
-It was first described by Chandran and Gajjala in~\cite{chandran}, and we are using the same concepts than them here.   % TODO: finish to update here.
+It was first described by Chandran and Gajjala in~\cite{chandran}, and we are using the same concepts as them here.
 
 
 \begin{proof}[Proof of Theorem \ref{thm:bound_edge_connectivity}]
-    % TODO : this proof can be simplified by using the concepts introduced at the beginning of the chapter.
-    % TODO : find the proof again in the original paper
-    This theorem is proven by contradiction.
-    Using the notations introduced in definitions~\ref{def:weighted_matching_index} and~\ref{def:edge_connectivity}, let's assume there exists a graph $G''$ such that $\Tilde{c}(G'') \geq \lambda(G'') + 1$.
-    By removing all the redundant edges (defined in definition~\ref{def:redundant_edge}) of $G''$, it results in a graph $G'$ with $\Tilde{c}(G'') = \Tilde{c}(G')$.
-    This manipulation preserves the weighted matching index of the graph.
+    Let $G'$ be a multigraph, and let $\mu'$ be a mixed-edge colouring and $w'$ be a weighting such that $\Tilde{c}(G', \mu', w') = \Tilde{c}(G')$.
+    Let's say by contradiction that $\Tilde{c}(G', \mu', w') = \Tilde{c}(G') \geq \lambda(G') + 1$.
+    Let $G_\mu^w$ be the non-redundant induced subgraph of ${G'}_{\mu'}^{w'}$.
+    By observation~\ref{obs:non_redundancy_enough}, we know that
     
     \begin{center}
-        $\Tilde{c}(G') \geq \lambda(G'') + 1$
-    \end{center}
-    
-    Therefore, there exists a mixed-edge colouring $\mu'$ and a weighting $w'$ such that
-    
-    \begin{center}
-        $\Tilde{c}(G') = \Tilde{c}(G', \mu', w') \geq \lambda(G'') + 1$
-    \end{center}
-    
-    From ${G'_{\mu'}}^{w'}$, let apply a new transformation that removes all edges that are coloured with a redundant colour, and all edges that are coloured with a redundant mixed-colour (defined in definitions~\ref{def:redundant_colour} and~\ref{def:redundant_mixed_colour}), obtaining $G_\mu^w$.
-    It is straightforward to see that, if ${G'_{\mu'}}^{w'}$ was perfectly monochromatic, $G_\mu^w$ is still perfectly monochromatic.
-    Indeed, by removing all the edges coloured with a redundant colour, no monochromatic perfect matching is removed by definition~\ref{def:redundant_colour}.
-    If there were (non-monochromatic) perfect matchings containing edges of that colour, they are all destroyed, so there is no induced vertex colouring of $G$ anymore that has vertices of that removed colour.   % TODO: if we have time, all of this is a bit confusing (since we removed ``colour class'')
-    Then, it's not needed any more to worry about the weight of such vertex colourings. \\
-    
-    $\Tilde{c}(G)$ did not decrease, because the edges that have non-redundant colours were not removed from ${G'_{\mu'}}^{w'}$.
-    Also, it did not increase, since removing edges can not create new perfect matchings.
-    So again:
-    
-    \begin{center}
-        $\Tilde{c}(G) = \Tilde{c}(G') = \Tilde{c}(G'')$
+        $\Tilde{c}(G, \mu, w) = \Tilde{c}(G) = \Tilde{c}(G', \mu', w') = \Tilde{c}(G')$.
     \end{center}
     
     We also notice that the edge-connectivity of a graph can not increase when we remove edges.
@@ -311,9 +290,8 @@ It was first described by Chandran and Gajjala in~\cite{chandran}, and we are us
     
     \begin{center}
         $\begin{array}{l c l}
-            \Tilde{c}(G) & \geq & \lambda(G'') + 1 \\
-                         & \geq & \lambda(G') + 1 \\
-                         & \geq & \lambda(G) + 1
+            \Tilde{c}(G) & \geq & \lambda(G') + 1 \\
+                         & \geq & \lambda(G) + 1 \\
         \end{array}$
     \end{center}
     
@@ -322,7 +300,7 @@ It was first described by Chandran and Gajjala in~\cite{chandran}, and we are us
     
     \begin{enumerate}
         \item 
-            \textbf{If $|S|$ and $|S'|$ are odd} then, for all monochromatic perfect matching $M$, $M$ contains at least one crossing edge, i.e.\ an edge with one endpoint in $S$ and the other endpoint in $S'$ (see figure~\ref{fig:proof_lambda_odd}).
+            \textbf{If $|S|$ and $|S'|$ are odd} then, for every monochromatic perfect matching $M$, $M$ contains at least one crossing edge, i.e.\ an edge with one endpoint in $S$ and the other endpoint in $S'$ (see figure~\ref{fig:proof_lambda_odd}).
             
             \begin{figure}[H]
                 \ctikzfig{figures/state_of_the_art/known_bounds/proof_lambda_odd}
@@ -331,15 +309,15 @@ It was first described by Chandran and Gajjala in~\cite{chandran}, and we are us
             \end{figure}
             
             Let $E(S, S')$ be the set of crossing edges from $S$ to $S'$.
-            The maximum number of different monochromatic edges that can be found on $E(S, S')$ is $\lambda(G)$ (otherwise more edges would be needed).
+            The maximum number of different monochromatic edges that can be found on $E(S, S')$ is at most $\lambda(G)$ (otherwise more edges would be needed).
             The conclusion is that the monochromatic perfect matchings of $G_\mu^w$ can be of a most $\lambda(G)$ different colours.
             Hence,
             
             \begin{center}
-                $\Tilde{c}(G'') = \Tilde{c}(G) \leq \lambda(G) \leq \lambda(G'')$
+                $\Tilde{c}(G') = \Tilde{c}(G) \leq \lambda(G) \leq \lambda(G')$
             \end{center}
             
-            This forms a contradiction with the statement that $\Tilde{c}(G'') \geq \lambda(G'') + 1$.
+            This forms a contradiction with the statement that $\Tilde{c}(G') \geq \lambda(G') + 1$.
             
         \item
             \textbf{If $|S|$ and $|S'|$ are even} then let's separate all the colours of $\mu\left(E(G)\right)$ in
@@ -353,7 +331,7 @@ It was first described by Chandran and Gajjala in~\cite{chandran}, and we are us
                 \end{array} \right.$
             \end{center}
             
-            Clearly, $\Tilde{c}(G'') = \Tilde{c}(G) = r + r'$.
+            Clearly, $\Tilde{c}(G') = \Tilde{c}(G) = r + r'$.
             For all colours $i \in [r + 1, r + r']$, there exists a monochromatic perfect matching $M$ which intersects $E(S, S')$.
             And since $|S|$ and $|S'|$ are even, $M$ contains at least two edges from $E(S, S')$, as shown in figure~\ref{fig:proof_lambda_even}.
             
@@ -364,7 +342,7 @@ It was first described by Chandran and Gajjala in~\cite{chandran}, and we are us
             \end{figure}
             
             Then there exist at least 2 edges of colour $i$ in $E(S, S')$ for all $i \in [r + 1, r + r']$.
-            It follows that $\lambda(G'') \geq \lambda(G) \geq 2 \cdot r'$.
+            It follows that $\lambda(G') \geq \lambda(G) \geq 2 \cdot r'$.
             
             \begin{enumerate}
                 \item 
@@ -372,9 +350,9 @@ It was first described by Chandran and Gajjala in~\cite{chandran}, and we are us
                     
                     \begin{center}
                         $\begin{array}{l c l}
-                            \Tilde{c}(G'')  & =    & r + r' \\
+                            \Tilde{c}(G')  & =    & r + r' \\
                                             & \leq & 2 \cdot r' \\
-                                            & \leq & \lambda(G'')
+                                            & \leq & \lambda(G')
                         \end{array}$
                     \end{center}
                     
@@ -383,14 +361,14 @@ It was first described by Chandran and Gajjala in~\cite{chandran}, and we are us
                     
                     \begin{center}
                         $\begin{array}{lcl}
-                            \lambda(G'')  & \geq & 1 \\
+                            \lambda(G')  & \geq & 1 \\
                                           & \geq & r + r' \\
-                                          & =    & \Tilde{c}(G'')
+                                          & =    & \Tilde{c}(G')
                         \end{array}$
                     \end{center}
                     
                 \item
-                    \textbf{Else, $r \geq 2$}.
+                    \textbf{Otherwise, $r \geq 2$}.
                     Then one can pick two colours from $[r]$ (let say $1$ and $2$).
                     
                     \begin{claim}
@@ -401,10 +379,10 @@ It was first described by Chandran and Gajjala in~\cite{chandran}, and we are us
                     \begin{proof}[Proof of Claim \ref{claim:two-mixed-edges}]
                         By contradiction, suppose not.
                         Let's consider 2 monochromatic perfect matchings $M_1$ and $M_2$ of colour $1$ and $2$ that induce the monochromatic vertex colourings $1_{V(G)}$ and $2_{V(G)}$ respectively.
-                        $M_1$ And $M_2$ do not have any edge in $E(S, S')$.
+                        $M_1$ and $M_2$ do not have any edge in $E(S, S')$.
                         In general, in the context of this proof, $i_A$ will denote the monochromatic vertex colouring of colour $i$ of the vertices in $A$.
-                        Because $G_\mu^w$ is perfectly monochromatic, the weights of $1_{V(G)}$ and $2_{V(G)}$ must be $1$.     % TODO: change this to kappa1 and kappa2
-                        Since $1, 2 \in [r]$, there are no normal edges of colour $1$ nor $2$ in $E(S, S')$.
+                        Because $G_\mu^w$ is perfectly monochromatic, the weights of $1_{V(G)}$ and $2_{V(G)}$ must be $1$.
+                        Since $1, 2 \in [r]$, there are no normal edges of colour $1$ or $2$ in $E(S, S')$.
                         Then we have the following relations, where $w(i_A)$ denotes the weight of the monochromatic vertex colouring of colour $i$ on the subgraph $A$.
                         
                         \begin{center}
@@ -420,7 +398,7 @@ It was first described by Chandran and Gajjala in~\cite{chandran}, and we are us
                         $\kappa$ is feasible because we can build a perfect matching by taking all the edges from $M_1$ on $S$ and all the edges from $M_2$ on $S'$.
                         Because $G_\mu^w$ is perfectly monochromatic, $w(\kappa)$ is 0 by definition~\ref{def:perfectly_monochromatic_graph}.
                         Also, since $|S|$ and $|S'|$ are even, every perfect matching contains an even number of edges from $E(S, S')$.
-                        But by assumption, there is at most one crossing edge of colour $\{1, 2\}$ and no crossing edges of colour $1$ nor $2$.
+                        But by assumption, there is at most one crossing edge of colour $\{1, 2\}$ and no crossing edges of colour $1$ or $2$.
                         In conclusion, no perfect matching that induces $\kappa$ can contain an edge from $E(S, S')$.
                         Then,
                         
@@ -436,16 +414,16 @@ It was first described by Chandran and Gajjala in~\cite{chandran}, and we are us
                     Therefore, for a pair of colours $i, j \in [r]$, there should be at least two mixed edges of colour $\{i, j\}$ in $\{S, S'\}$.
                     
                     \begin{center}
-                        Minimum number of edges in $E(S, S') = 2 {r \choose 2} + 2 \cdot r' \leq \lambda(G'')$
+                        Minimum number of edges in $E(S, S') = 2 {r \choose 2} + 2 \cdot r' \leq \lambda(G')$
                     \end{center}
                     
                     Finally, it means that
                     
                     \begin{center}
                         $\begin{array}{lcl}
-                            \Tilde{c}(G'') & =    & r + r' \\
+                            \Tilde{c}(G') & =    & r + r' \\
                                            & \leq & 2 {r \choose 2} + 2 \cdot r' \\
-                                           & \leq & \lambda(G'')
+                                           & \leq & \lambda(G')
                         \end{array}$
                     \end{center}
                     
@@ -457,7 +435,7 @@ It was first described by Chandran and Gajjala in~\cite{chandran}, and we are us
 This proof was interesting to rewrite here since it uses some very interesting reasoning about the structure of perfectly monochromatic graphs and the definitions of their weights.
 Some similar reasoning is sometimes reused in this master thesis in order to prove my own new results. \\
 
-Last but not least, Chandran and Gajjala showed more recently an upper bound on the weighted matching index of graphs in terms of their number of vertices~\cite{chandran2023graphtheoretic}.
+Last but not least, Chandran and Gajjala showed in another paper an upper bound on the weighted matching index of graphs in terms of their number of vertices~\cite{chandran2023graphtheoretic}.
 
 \begin{theorem}[Upper bound in terms of number of vertices]
     \label{thm:bound_num_vertices}
@@ -468,4 +446,4 @@ Last but not least, Chandran and Gajjala showed more recently an upper bound on 
     \end{center}
 \end{theorem}
 
-The proof of Theorem~\ref{thm:bound_num_vertices} is detailed in Chandran and Gajjala's publication~\cite{chandran2023graphtheoretic}.
+The proof of Theorem~\ref{thm:bound_num_vertices} is detailed in Chandran and Gajjala's publication~\cite{chandran2023graphtheoretic}, and will not be discussed here.

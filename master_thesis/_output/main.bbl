@@ -248,6 +248,50 @@
       \verb 2304.06407
       \endverb
     \endentry
+    \entry{binomialTheorem}{article}{}
+      \name{author}{1}{}{%
+        {{hash=9cbdd96d537aae3d2ff728cb2fbfcf0d}{%
+           family={Coolidge},
+           familyi={C\bibinitperiod},
+           given={J.L.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{9cbdd96d537aae3d2ff728cb2fbfcf0d}
+      \strng{fullhash}{9cbdd96d537aae3d2ff728cb2fbfcf0d}
+      \strng{bibnamehash}{9cbdd96d537aae3d2ff728cb2fbfcf0d}
+      \strng{authorbibnamehash}{9cbdd96d537aae3d2ff728cb2fbfcf0d}
+      \strng{authornamehash}{9cbdd96d537aae3d2ff728cb2fbfcf0d}
+      \strng{authorfullhash}{9cbdd96d537aae3d2ff728cb2fbfcf0d}
+      \field{labelalpha}{Coo49}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The American Mathematical Monthly}
+      \field{number}{3}
+      \field{title}{The Story of the Binomial Theorem}
+      \field{volume}{56}
+      \field{year}{1949}
+      \field{pages}{147\bibrangedash 157}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1080/00029890.1949.11999350
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.1080/00029890.1949.11999350
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1080/00029890.1949.11999350
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1080/00029890.1949.11999350
+      \endverb
+    \endentry
     \entry{graphtheory}{book}{}
       \name{author}{1}{}{%
         {{hash=d7750765c1eb004bdcdce07ed2272ba7}{%
@@ -336,6 +380,7 @@
       \field{title}{Paths, Trees, and Flowers}
       \field{volume}{17}
       \field{year}{1965}
+      \true{nocite}
       \field{pages}{449\bibrangedash 467}
       \range{pages}{19}
       \verb{doi}
@@ -697,6 +742,63 @@
       \verb https://doi.org/10.1103%2Fphysrevlett.119.240403
       \endverb
     \endentry
+    \entry{PathIdentity}{article}{}
+      \name{author}{4}{}{%
+        {{hash=f924a10adb49d1b1042cff6432a3e12b}{%
+           family={Krenn},
+           familyi={K\bibinitperiod},
+           given={Mario},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4308f2fdb3bf5f069eb50f0bb569dc53}{%
+           family={Hochrainer},
+           familyi={H\bibinitperiod},
+           given={Armin},
+           giveni={A\bibinitperiod}}}%
+        {{hash=3db7fdbd997e1a70277d32ef4ff50b56}{%
+           family={Lahiri},
+           familyi={L\bibinitperiod},
+           given={Mayukh},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a961661d22885d8f3bcba104deec38f0}{%
+           family={Zeilinger},
+           familyi={Z\bibinitperiod},
+           given={Anton},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{d5e9f4016d6d45eaa0efd6687558062b}
+      \strng{fullhash}{74d14101583a808d8dce293e95f4d8ae}
+      \strng{bibnamehash}{d5e9f4016d6d45eaa0efd6687558062b}
+      \strng{authorbibnamehash}{d5e9f4016d6d45eaa0efd6687558062b}
+      \strng{authornamehash}{d5e9f4016d6d45eaa0efd6687558062b}
+      \strng{authorfullhash}{74d14101583a808d8dce293e95f4d8ae}
+      \field{labelalpha}{Kre+17}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{8}
+      \field{journaltitle}{Phys. Rev. Lett.}
+      \field{month}{2}
+      \field{title}{Entanglement by Path Identity}
+      \field{volume}{118}
+      \field{year}{2017}
+      \field{pages}{080401}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevLett.118.080401
+      \endverb
+      \verb{urlraw}
+      \verb https://link.aps.org/doi/10.1103/PhysRevLett.118.080401
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevLett.118.080401
+      \endverb
+    \endentry
     \entry{kumar2021state}{article}{}
       \name{author}{2}{}{%
         {{hash=eb6a64cf20a5b21db872c9ca0d491ed9}{%
@@ -951,6 +1053,39 @@
       \verb https://www.forbes.com/sites/startswithabang/2020/01/02/no-we-still-cant-use-quantum-entanglement-to-communicate-faster-than-light/
       \endverb
     \endentry
+    \entry{valiant1979complexity}{article}{}
+      \name{author}{1}{}{%
+        {{hash=5f6de757ace433a38a527a005db316f1}{%
+           family={Valiant},
+           familyi={V\bibinitperiod},
+           given={Leslie\bibnamedelima G},
+           giveni={L\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{5f6de757ace433a38a527a005db316f1}
+      \strng{fullhash}{5f6de757ace433a38a527a005db316f1}
+      \strng{bibnamehash}{5f6de757ace433a38a527a005db316f1}
+      \strng{authorbibnamehash}{5f6de757ace433a38a527a005db316f1}
+      \strng{authornamehash}{5f6de757ace433a38a527a005db316f1}
+      \strng{authorfullhash}{5f6de757ace433a38a527a005db316f1}
+      \field{labelalpha}{Val79}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Theoretical computer science}
+      \field{number}{2}
+      \field{title}{The complexity of computing the permanent}
+      \field{volume}{8}
+      \field{year}{1979}
+      \true{nocite}
+      \field{pages}{189\bibrangedash 201}
+      \range{pages}{13}
+    \endentry
     \entry{wang2016experimental}{article}{}
       \true{moreauthor}
       \true{morelabelname}
@@ -1029,28 +1164,6 @@
       \field{year}{2016}
       \field{pages}{210502}
       \range{pages}{1}
-    \endentry
-    \entry{wikipediaBinomialTheorem}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=9c677286866aad38f8e9b660f5411814}{%
-           family={Wikipedia},
-           familyi={W\bibinitperiod}}}%
-      }
-      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
-      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
-      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
-      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
-      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
-      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
-      \field{labelalpha}{Wik}
-      \field{sortinit}{W}
-      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
-      \field{labeldatesource}{nodate}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://en.wikipedia.org/wiki/Binomial_theorem}}
-      \field{note}{[Accessed 12-05-2024]}
-      \field{title}{{B}inomial theorem - {W}ikipedia --- en.wikipedia.org}
     \endentry
     \entry{python}{article}{}
       \name{author}{2}{}{%

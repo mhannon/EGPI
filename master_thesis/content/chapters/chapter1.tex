@@ -37,6 +37,13 @@ The following definitions cover the graphs that will be used in the context of t
     In the context of this master thesis, multigraphs are considered to be undirected and have no loops.
 \end{definition}
 
+The difference between simple graphs and multigraphs is illustrated in figure~\ref{fig:simple_vs_multigraph}.
+\begin{figure}[H]
+    \ctikzfig{figures/problem_presentation/definitions/simple_multi}
+    \caption{Example of simple graph $G$ and multigraph $G'$. In the simple graph, there is at most one edge between each pair of vertices. In the multigraph, there can be multiple edges between the same pair of vertices.}
+    \label{fig:simple_vs_multigraph}
+\end{figure}
+
 \begin{definition}[Edge-coloured graph]
     \label{def:edge-coloured-graph}
     An \textit{edge-colouring} $f$ of a graph $G$ is a function that maps each edge $e = \{v_1, v_2\} \in E(G)$ to two colours $f(e, v_1)$ and $f(e, v_2)$ (often represented as unsigned integers).
@@ -46,7 +53,7 @@ The following definitions cover the graphs that will be used in the context of t
         \item The edge colouring is said to be \textit{mixed}, and is denoted by the letter $\mu$, if it is not necessarily pure.
             A \textit{mixed edge-coloured graph} $G_\mu$ is a graph $G$ equipped with a mixed edge-colouring $\mu$.
     \end{itemize}
-    Given an edge set $S$ and a (pure or mixed) edge-colouring $k$, the image of $f$ on $S$, denoted $f(S)$, is
+    Given an edge set $S$ and a (pure or mixed) edge-colouring $f$, the image of $f$ on $S$, denoted $f(S)$, is
     \begin{center}
         $f(S) = \bigcup\limits_{e \in S} \{f(e, v_1), f(e, v_2)\}$
     \end{center}
@@ -69,6 +76,18 @@ This definition of a weighting might surprise some readers.
 Indeed, the weight of an edge is often assumed to be a real number in the literature and not a complex one.
 However, this definition is more general and will be convenient to study the Krenn's conjecture in section~\ref{sec:krenn_conjecture}.
 
+\begin{definition}[Bipartite graph]
+    \label{def:bipartite_graph}
+    A graph $G$ is said to be \textit{bipartite} if its vertex set $V(G)$ can be partitioned into two disjoint sets $V_1$ and $V_2$ such that every edge in $E(G)$ has one endpoint in $V_1$ and the other in $V_2$.
+\end{definition}
+
+An example of a bipartite graph is shown in figure~\ref{fig:bipartite}.
+\begin{figure}[H]
+    \ctikzfig{figures/problem_presentation/definitions/bipartite}
+    \caption{Example of bipartite graph. In this example, all the edges have one endpoint on the left and the other endpoint on the right.}
+    \label{fig:bipartite}
+\end{figure}
+
 
 \subsection{Paths and connectivity concepts}
 \label{subsec:paths-and-connectivity-concepts}
@@ -80,9 +99,11 @@ The definitions of these concepts are recalled here to ensure a better understan
     \label{def:path}
     Given a graph $G$, a \textit{path} $P = (e_1, e_2, \dots, e_l)$ is an ordered sequence of different edges from $E(G)$ respecting the following property.
     \begin{itemize}
-        \item $\forall i \in \{1, 2, \cdots, l - 1\}$, the edges $e_i$ and $e_{i+1}$ share a common vertex.
-        \item $\forall$ vertex $v \in V(G)$, there is at most two edges $e \in P$ that contain $v$.
+        \item $\forall i \in \{1, 2, \cdots, l - 1\}$, the edges $e_i$ and $e_{i+1}$ share one and only one common vertex.
+        \item $\forall$ vertex $v \in V(G)$, there are at most two edges $e \in P$ that contain $v$.
             In other words, $P$ does not pass through the same vertex twice.
+        \item If $l \geq 2$, then $e_1$ and $e_l$ do not share a vertex.
+            In other words, $P$ begins and ends at different vertices.
     \end{itemize}
 \end{definition}
 
@@ -90,7 +111,9 @@ The definitions of these concepts are recalled here to ensure a better understan
     \label{def:cycle}
     Given a graph $G$, a \textit{cycle} $C = (e_1, e_2, \dots, e_l)$ is an ordered sequence of different edges from $E(G)$ respecting the following property.
     \begin{itemize}
-        \item $C$ is a path.
+        \item $\forall i \in \{1, 2, \cdots, l - 1\}$, the edges $e_i$ and $e_{i+1}$ share one common vertex.
+        \item $\forall$ vertex $v \in V(G)$, there are at most two edges $e \in P$ that contain $v$.
+            In other words, $P$ does not pass through the same vertex twice.
         \item $e_1$ and $e_l$ share a vertex.
             In other words, $C$ begins and ends at the same vertex.
     \end{itemize}
@@ -168,6 +191,12 @@ For this reason, the matching-related concepts are (re-)defined here~\cite{graph
     A matching $M$ of a graph $G$ is said to be \textit{perfect} if $\bigcup\limits_{e \in M} e = V(G)$, i.e.\ if every vertex $v \in V(G)$ appears in one and at most one edge of $M$.
 \end{definition}
 
+An example of a perfect matching is shown in figure~\ref{fig:perfect_matching}.
+\begin{figure}[H]
+    \ctikzfig{figures/problem_presentation/definitions/perfect_matching}
+    \caption{Example of a perfect matching in a graph $G$. The edges in bold form a perfect matching.}
+    \label{fig:perfect_matching}
+\end{figure}
 
 \section{Simplified version of the conjecture (solved)}
 \label{sec:simplified-version-of-the-conjecture}
@@ -177,7 +206,7 @@ He first defines the notion of monochromatic graphs, followed by the notion of i
 
 \begin{definition}[Monochromatic graph]
     \label{def:monochromatic_graph}
-    In the context of this master thesis, an pure edge-coloured graph $G_\eta$ is said to be \textit{monochromatic} if all its perfect matchings are monochromatic, i.e., for all perfect matchings $M$, the edges of $M$ are all the same colour.
+    In the context of this master thesis, a pure edge-coloured graph $G_\eta$ is said to be \textit{monochromatic} if all its perfect matchings are monochromatic, i.e., for all perfect matchings $M$, the edges of $M$ are all the same colour.
 \end{definition}
 
 An example of monochromatic graph is shown in figure~\ref{fig:k4_pm}.
@@ -196,7 +225,7 @@ This concept is different from the one of a monochromatic edge set.
     \begin{center}
         $c(G) = \max\limits_{\eta \in \mathcal{E}(G)}(c(G, \eta))$
     \end{center}
-    Where $\mathcal{E}(G)$ describes here the set of all possible edges-colourings $\eta$ of $G$ such that $G_\eta$ is monochromatic.
+    Where $\mathcal{E}(G)$ describes here the set of all possible pure edge colourings $\eta$ of $G$ such that $G_\eta$ is monochromatic.
 \end{definition}
 
 \begin{figure}[H]
@@ -320,7 +349,7 @@ I rewrote it in my own terms to make it clearer, according to our own formulatio
     \end{itemize}
 
     In conclusion, $K_4$ is the only graph that has a matching index of 3.
-    For all graphs $G$ that have a size different from 4, $c(G) \leq 2$.
+    For all graphs $G$ that are different from $K_4$, $c(G) \leq 2$.
 \end{proof}
 
 
@@ -330,7 +359,7 @@ I rewrote it in my own terms to make it clearer, according to our own formulatio
 All the graphs that were studied in the previous section were simple pure edge coloured graphs.
 (Referring to the definitions~\ref{def:simple_graph}, and~\ref{def:edge-coloured-graph}).
 However, in the context of Mario Krenn's research, these graphs constitute a particular case of all the graphs that need to be studied~\cite{Krenn_2017,wordpress}.
-The exact reasons to extend the problem to a whole new level are directly motivated by quantum optics experiment, and will be described into details in section~\ref{sec:motivations}.
+The exact reasons to extend the problem to a whole new level are directly motivated by quantum optics experiments, and will be described into details in section~\ref{sec:motivations}.
 
 \begin{definition}[Experiment graph]
     \label{def:experiment_graph}
@@ -354,7 +383,7 @@ Again, these definitions come directly from~\cite{wordpress}.
     \label{def:induced_vertex_colouring}
     Given an experiment graph $G_\mu^w$, it is said that a vertex colouring $\kappa$ is \textit{induced} by a perfect matching $M$ of $G$ if and only if, for each vertex $v \in V(G)$, $\exists e \in M$ such that $\kappa(v) = \mu(e, v)$.
     (Using the notation introduced in definition~\ref{def:edge-coloured-graph}).
-    The induced vertex colouring by a perfect matching $M$ is denoted $\kappa(M)$ in the context of this master thesis.     % TODO: if we have time - change this to an indice
+    The induced vertex colouring by a perfect matching $M$ is denoted $\kappa(M)$ in the context of this master thesis.
     The other way around, $\mathcal{M}_\kappa$ denotes the set of all perfect matchings that induce a vertex colouring $\kappa$.
 \end{definition}
 
@@ -395,7 +424,7 @@ Just like the matching index of a monochromatic graph was defined in the previou
     \ctikzfig{figures/problem_presentation/krenn_conjecture/perfectly_mono}
     \caption{Example of a perfectly monochromatic graph $G_\mu^w$.
         With this mixed edge colouring $\mu$ and weighting $w$, we have $\Tilde{c}(G, \mu, w) = 2$ because there are 2 feasible monochromatic vertex colourings in $G_\mu^w$.
-        It can be shown that it is not possible to find a mixed edge colouring $\mu'$ and a weight attribution $w'$ such that $\Tilde{c}(G, \mu', w') > \Tilde{c}(G, \mu, w)$.
+        It can be shown that it is not possible to find a mixed edge colouring $\mu'$ and a weighting $w'$ such that $\Tilde{c}(G, \mu', w') > \Tilde{c}(G, \mu, w)$.
         Therefore, $\Tilde{c}(G) = 2$.}
     \label{fig:perfectly_mono}
 \end{figure}
@@ -438,7 +467,7 @@ Just like the matching index of a monochromatic graph was defined in the previou
     Hence, $G_\eta^w$ is perfectly monochromatic and $c(G, \eta) = c(G) = \Tilde{c}(G, \eta, w)$.
     By definition~\ref{def:weighted_matching_index}, we have
     \begin{center}
-        $\Tilde{c}(G) = \max\limits_{\mu, w}(\Tilde{c}(G, \mu, w)) \geq \Tilde{c}(G, \eta, w)$.
+        $\Tilde{c}(G) = \max\limits_{\mu, w'}(\Tilde{c}(G, \mu, w')) \geq \Tilde{c}(G, \eta, w)$.
     \end{center}
     We conclude that $\Tilde{c}(G) \geq c(G)$, which ends our proof.
 \end{proof}
@@ -486,17 +515,19 @@ Using the Dirac's notation~\cite{dirac1939}, a GHZ-state is formally defined as 
 A reader who's not familiar with the Dirac's formalism can interpret such a state as a system composed of 3 qubits that can't be described separately from each other.
 The whole system has eight classical states $\set{\ket{0}, \ket{1}}^3$, and is in a perfect mixed state between the classical states $\ket{000}$ and $\ket{111}$.
 In this base case, the involved particles have only two classical states, $\ket{0}$ and $\ket{1}$.
-Therefore, the system is said to be of dimension $d = 2$.   % TODO: add reference
+Therefore, the system is said to be of dimension $d = 2$~\cite{Krenn_2017}.
 Generalized GHZ-states accept other dimensions, and can involve more than $n = 3$ qubits.
 
 \begin{center}
     $GHZ_{n, d} = \frac{1}{\sqrt{d}}(\ket{0}^n + \ket{1}^n + \dots + \ket{d-1}^n)$
 \end{center}
 
-The use of photonic technologies allowed physicists to experimentally create GHZ-states~\cite{wang2016experimental}.
-However, it is still unknown if every GHZ-state can be created this way, it seems especially difficult to create higher dimensional states.
-In 2017, Mario Krenn studied this question and discovered an unexpected link between the ability to experimentally create high-dimensional GHZ-states and graph theory.
-Indeed, he could show that a large class of experiments could be represented as perfectly monochromatic graphs~\cite{Krenn_2017}.
+The use of photonic technologies allowed physicists to experimentally create generalized GHZ-states~\cite{wang2016experimental}.
+One method to create such states is called \textit{path identity}, it consists in a class of experiments designed to control the paths of photons pairs~\cite{PathIdentity}.
+However, it is still unknown if every generalized GHZ-state can be created using path identity.
+In particular it seems difficult to create higher dimensional states.
+In 2017, Mario Krenn studied this question and discovered an unexpected link between the ability to experimentally create high-dimensional GHZ-states by path identity and graph theory.
+Indeed, he could show that path identity experiments could be represented as perfectly monochromatic graphs~\cite{Krenn_2017}.
 Furthermore, given an experiment that allows to create GHZ-states of dimension $d$ involving $n$ qubits and its corresponding perfectly monochromatic graph $G$:
 
 \begin{center}
@@ -509,7 +540,7 @@ Furthermore, given an experiment that allows to create GHZ-states of dimension $
 \end{center}
 
 This lead to the formulation of the \textbf{Krenn's conjecture}~\ref{con:krenn} in graph theory, which remains unsolved~\cite{wordpress}.
-Finding any constant bound on the perfect matching index of a perfectly monochromatic graph would allow physicists to know the limits of this class of experiments.
+Finding any constant bound on the weighted matching index of a perfectly monochromatic graph would allow physicists to know the limits of this class of experiments.
 On the other hand, finding counter-examples to the conjecture would lead to the ability to create higher dimensional GHZ-states. \\
 
 \begin{figure}[H]
@@ -522,7 +553,7 @@ On the other hand, finding counter-examples to the conjecture would lead to the 
         On the other hand, the experiment described in $D$ is represented by the graph in $E$, which is non-monochromatic as shown in $F$.
         Therefore, the state it creates is not a GHZ-state.
         $\ket{\psi'} = \frac{1}{2} (\ket{000000} + \ket{111111} + \ket{222222} + \ket{121200})$.}
-    \label{fig:krenn_experiment}        % TODO: explain this figure
+    \label{fig:krenn_experiment}
 \end{figure}
 
 At last, please note that the study of GHZ-states is considered as a fundamental question in quantum physics.

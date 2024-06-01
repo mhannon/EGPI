@@ -10,7 +10,7 @@ Then, some of its potential uses are presented.
 
 Finding interesting examples of experimental graphs to study can be challenging due to the high degree of freedom experiment graphs can have, by definition~\ref{def:experiment_graph}.
 Also, the weighted matching index of experiment graphs as defined in definition~\ref{def:weighted_matching_index} is hard to find by hand since it requires finding all perfect matchings of a graph.
-In my knowledge, no public access tool exists at the time of writing to easily encode experimental graphs and compute their weighted matching index.
+To my knowledge, no public access tool exists at the time of writing to easily encode experimental graphs and compute their weighted matching index.
 My hope is that such a tool could help me and other researchers to quickly verify some properties on instances of graphs they want to test, without losing more time on it.
 For this reason, I developed a new program that does exactly that.
 The program is called \textbf{EGPI}, which stands for \textbf{Experiment Graphs Properties Identifier}.
@@ -30,7 +30,7 @@ Let's consider a quick and simple example by trying to prove experimentally the 
 
 \begin{conjecture}
     \label{con:krenn_6}
-    Let $G_\mu^w$ be a non-redundant experiment graph of size $n = 6$ vertices, and let say that, for all edge $e \in E(G)$,
+    Let $G_\mu^w$ be a non-redundant experiment graph with $n = 6$ vertices, and let say that, for all edge $e \in E(G)$,
     \begin{center}
         $\left\{\begin{array}{l l}
             Re(w(e)) & \in \{-1, 0, 1\} \\
@@ -41,16 +41,30 @@ Let's consider a quick and simple example by trying to prove experimentally the 
     Then, the weighted matching index $\Tilde{c}(G, \mu, w) \leq 2$.
 \end{conjecture}
 
-One way to prove the conjecture~\ref{con:krenn_6} is to use a brute force algorithm that generates every possible graph respecting the pre-conditions of the conjecture~\ref{con:krenn_6} with bicoloured edges that can take their colours in $3$ defined colours $(r, g, b)$, and check their weighted matching index.
-If none of their weighted matching index is $3$, then the conjecture is true.
-Unfortunately, this is not possible because of the following observation.\\
+
+One way to prove the conjecture~\ref{con:krenn_6} is to imagine a brute force algorithm $A$ that generates every possible graph respecting the pre-conditions of the conjecture~\ref{con:krenn_6}, with $\mu(e) \in \{r, g, b\}^2$, and check their weighted matching index.
+If none of their weighted matching index is $3$, then the conjecture~\ref{con:krenn_6} is true.
+Such an algorithm is much simpler to implement if the generated graphs are \textit{labelled}.
+
+\begin{definition}[Labelled graph]
+    \label{def:labelled_graph}
+    A graph $G$ is said to be \textit{labelled} if each of its vertices has a unique label.
+\end{definition}
+
+In other words, two different isomorphic labelled graphs are considered different in algorithm $A$, while they would be considered the same if they were not labelled.
+Working with labelled graphs is simpler since isomorphism is not something to take into account.
+However, the number of possible labelled graphs is bigger than the number of possible unlabelled graphs respecting these pre-conditions.
+Therefore, $A$ will check multiple times the same unlabelled graph, which is not efficient.\\
+
+The question is then if it is still interesting to implement $A$.
+Unfortunately, it is not, even if the graphs it is about seem tiny, because of the following observation.
 
 \begin{observation}
     \label{obs:possible_graphs}
     Let $G_\mu^w$ be an experiment graph that has $n$ vertices, and let say that, for all edge $e = \{u, v\} \in E(G)$, the edge can have a value different from $0$ chosen among $W$ different values.
     Furthermore, $\mu(e, u)$ and $\mu(e, v)$ are chosen among $K$ different colours.
     At last, $\forall e' = (u', v')$, we have $\mu(e', u') \neq \mu(e, u)$ or $\mu(e', v') \neq \mu(e, v)$.
-    Then, the number of different possible graphs that $G_\mu^w$ can be, denoted $N_{graphs}$, is
+    Then, the number of different possible labelled graphs that $G_\mu^w$ can be, denoted $N_{graphs}$, is
 
     \begin{center}
         $N_{graphs} = (1 + W)^{\left(\frac{K^2 \cdot n \cdot (n-1)}{2}\right)}$
@@ -67,11 +81,11 @@ Unfortunately, this is not possible because of the following observation.\\
         \item It has a complex weight that can have $W$ different value.
     \end{itemize}
 
-    A first observation is that the maximum number of edges between $2$ different nodes of $V(G)$ is $K^2$.
+    A first observation is that the maximum number of edges between $2$ different vertices of $V(G)$ is $K^2$.
     Indeed, more edges would imply that $2$ edges at least would have the same positions and colours, which is forbidden.\\
 
     Then, we observe that there are $W^x$ possibilities to assign weights to an edge set of size $x$.
-    Using these $2$ last observations, it is possible to compute the number of different weighted bicoloured edges sets between $2$ defined nodes $u$ and $v$.
+    Using these $2$ last observations, it is possible to compute the number of different weighted bicoloured edges sets between $2$ defined vertices $u$ and $v$.
     Let's denote this number $N_{edges}$.
 
     \begin{center}
@@ -81,7 +95,7 @@ Unfortunately, this is not possible because of the following observation.\\
         \end{array}$
     \end{center}
 
-    It is possible to simplify this expression by using the binomial theorem~\cite{wikipediaBinomialTheorem}.   % TODO: find a better reference
+    It is possible to simplify this expression by using the binomial theorem, a well known mathematical formula~\cite{binomialTheorem}.
 
     \begin{center}
         $\begin{array}{r c l}
@@ -91,9 +105,9 @@ Unfortunately, this is not possible because of the following observation.\\
         \end{array}$
     \end{center}
 
-    Having this number, it is easy to find the number $N_{graphs}$ of possible experiment graphs.
-    Indeed, we just have to choose one of the possible combinations of weighted bicoloured edges between $2$ defined nodes for each possible pair of nodes.
-    The number of possible pairs of nodes is $\frac{n \cdot (n-1)}{2}$.
+    Having this number, it is easy to find the number $N_{graphs}$ of possible labelled experiment graphs.
+    Indeed, we just have to choose one of the possible combinations of weighted bicoloured edges between $2$ defined vertices for each possible pair of vertices.
+    The number of possible pairs of vertices is $\frac{n \cdot (n-1)}{2}$.
     Therefore:
 
     \begin{center}
@@ -105,7 +119,7 @@ Unfortunately, this is not possible because of the following observation.\\
     \end{center}
 \end{proof}
 
-Returning to conjecture~\ref{con:krenn_6}, let's compute as an example the number of graphs needed to verify to prove it by a brute force algorithm.
+Returning to conjecture~\ref{con:krenn_6}, let's compute as an example the number of graphs needed to verify to prove it by using algorithm $A$.
 The graphs described in conjecture~\ref{con:krenn_6} have $n = 6$ vertices, $K = 3$ different possible colours per edge's endpoint, and $W = 8$ possible weights different from $0$.
 Therefore, in this case,
 
@@ -118,7 +132,7 @@ Therefore, in this case,
 \end{center}
 
 This number is absurdly big, and it is totally impossible to imagine being able to generate all of those graphs on a classical computer and compute their matching index, no matter of how efficient this operation is.
-Therefore, conjecture~\ref{con:krenn_6} cannot be solved by using a brute force algorithm, even if the graphs it is about are tiny and restricted compared to the space of all experiment graphs possible.\\
+Therefore, conjecture~\ref{con:krenn_6} cannot be solved by using the algorithm $A$, even if the graphs it is about are tiny and restricted compared to the space of all experiment graphs possible.\\
 
 This observation leads us to consider that EGPI, in its implementation, should not try to generate all possible graphs.
 Instead, it should focus on generating as wisely as possible random graphs that have a high probability to have a big weighted matching index.
@@ -147,7 +161,7 @@ At the current state of its development, EGPI implements functions that allow th
     \item \textbf{Randomly create candidate experiment graph}, a process that can be defined as follows.
         \begin{definition}[Random creation of a candidate experiment graph]
             \label{def:random-creation-candidate-experiment-graph}
-            Given an even number of nodes $n \in \mathbb{N}$, a list of colours $L_{colours}$, a list of complex numbers $L_{weights}$, and a complexity bound $b \in \mathbb{N}$, the \textit{random creation of a candidate experiment graph} respecting $n$, $L_{colours}$, $L_{weights}$ and $b$ is the process described in algorithm~\ref{alg:random_creation_candidate_experiment_graph}.
+            Given an even number of vertices $n \in \mathbb{N}$, a list of colours $L_{colours}$, a list of complex numbers $L_{weights}$, and a complexity bound $b \in \mathbb{N}$, the \textit{random creation of a candidate experiment graph} respecting $n$, $L_{colours}$, $L_{weights}$ and $b$ is the process described in algorithm~\ref{alg:random_creation_candidate_experiment_graph}.
 
             \begin{algorithm}
                 \caption{Random creation of a candidate experiment graph}
@@ -159,7 +173,7 @@ At the current state of its development, EGPI implements functions that allow th
                     \Require $b \in \mathbb{N}$
                     \State $G_\mu^w \gets$ an empty graph with $n$ vertices and no edge
                     \For {$r \in L_{colours}$}
-                        \State $S \gets \frac{n}{2}$ non-touching edges at random positions of $G_\mu^w$
+                        \State $S \gets \frac{n}{2}$ independent edges at random positions of $G_\mu^w$
                         \State Colour each edge $\in S$ with colour $r$
                         \State Assign random weights $\in L_{weights}$ to each edge $\in S$
                         \State Add $S$ to $E(G_\mu^w)$
@@ -167,7 +181,7 @@ At the current state of its development, EGPI implements functions that allow th
                     \EndFor
 
                     \For {$i \in \{1, 2, \dots, b\}$}
-                        \State $S \gets \frac{n}{2}$ non-touching edges at random positions of $G_\mu^w$
+                        \State $S \gets \frac{n}{2}$ independent edges at random positions of $G_\mu^w$
                         \For {each pair of vertices $\{u, v\} \in S$}
                             \If {there is no edge between $u$ and $v$ in $G_\mu^w$}
                                 \State Add an edge $e$ between $u$ and $v$
@@ -190,13 +204,13 @@ At the current state of its development, EGPI implements functions that allow th
     The denomination \textit{candidate} experiment graph comes from the fact that graphs built that way have higher chances to have big weighted matching index than completely random graphs.
     Also, this construction ensures that each of the edges included in a candidate graph is part of a perfect matching.
     Furthermore, they do not have multiple edges of the same bicolour between $2$ vertices.
-    Assuming $0 \in L_{weights}$, this makes them non-redundant, according to the definition~\ref{def:non_redundant_induced_subgraph}.
+    Assuming $0 \notin L_{weights}$, this makes them non-redundant, according to the definition~\ref{def:redundant-experiment-graph}.
     All of these observations make them indeed good \textit{candidates} to study.
 
     \item \textbf{Perform a random experiment graphs research process}, defined as follows.
         \begin{definition}[Random Experiment Graphs Research Process]
             \label{def:random_experiment_graphs_research_process}
-            Given a number of nodes $n \in \mathbb{N}$, a list of colours $L_{colours}$, a complexity bound $b \in \mathbb{N}$, a list of complex numbers $L_{weights}$, and a number of trials $m \in \mathbb{N}$, a \textit{Random Experiment Graphs Research Process} is the process of randomly creating $m$ candidate experiment graphs respecting $n$, $L_{colours}$, $L_{weights}$ and $b$, and analyse them.
+            Given a number of vertices $n \in \mathbb{N}$, a list of colours $L_{colours}$, a complexity bound $b \in \mathbb{N}$, a list of complex numbers $L_{weights}$, and a number of trials $m \in \mathbb{N}$, a \textit{Random Experiment Graphs Research Process} is the process of randomly creating $m$ candidate experiment graphs respecting $n$, $L_{colours}$, $L_{weights}$ and $b$, and analyse them.
             More specifically, each of these graphs $G_\mu^w$ gets verified to check if it is perfectly monochromatic and if it has at least one non-monochromatic feasible vertex colouring.
             If it is, $G_\mu^w$ is saved as a JSON file containing all its properties (including its perfect matchings, its feasible vertex colourings, its weighted matching index, and the fact it is bipartite or not).
             Then, $G_\mu^w$ is drawn in another pdf file.
@@ -225,7 +239,7 @@ The main purpose of EGPI is to encode and apply operations on experiment graphs,
 It is therefore important to build a good data structure of experiment graphs.
 The architecture of the program to do so is detailed in a state diagram available in figure~\ref{fig:structure_diagram}.
 
-\begin{figure}[H]       % TODO: remove the background
+\begin{figure}[H]
     \centering
     \includegraphics[scale=0.25]{figures/new_results/egpi/structure_diagram}
     \caption{Structure diagram of EGPI showing the important relations between the different implemented data structures. Most of the implemented methods of the program are shown in the diagram.}
@@ -242,13 +256,13 @@ Here is an exhaustive list of all non-trivial experiment graphs' properties we a
             \label{alg:perfect_matchings}
             \begin{algorithmic}
                 \Require $G$ is an experiment graph
-                \If{$G$ has no node}
+                \If{$G$ has no vertex}
                     \State The only perfect matching is $\varnothing$
-                \ElsIf{$G$ has nodes}
+                \ElsIf{$G$ has vertices}
                     \State $PMs$ $\gets$ empty list
-                    \State choose a random node $u \in V(G)$
+                    \State choose an arbitrary vertex $u \in V(G)$
                     \ForAll{$v \in$ neighbours of $u$}
-                        \State $subPMs \gets$ all perfect matchings of $G$ without $u$ and $v$
+                        \State $subPMs \gets$ all perfect matchings of $G - \left\{ u, v \right\}$
                         \ForAll{$subPM \in subPMs$}
                             \ForAll{$e \in$ edges between $u$ and $v$}
                                 \State add $subPM \cup e$ to $PMs$
@@ -261,10 +275,10 @@ Here is an exhaustive list of all non-trivial experiment graphs' properties we a
         \end{algorithm}
 
         \paragraph{Complexity of algorithm \ref {alg:perfect_matchings}:}
-        The algorithm is a depth first search (DFS) algorithm.
+        The algorithm is a backtracking algorithm.
         In the worst case scenario, $G_\mu^w$ is a complete graph with $n$ vertices.
-        In other words, each node has $n-1$ neighbours in $G_\mu^w$.
-        Also, at each recursive step of the algorithm, we remove $2$ nodes from the graph.
+        In other words, each vertex has $n-1$ neighbours in $G_\mu^w$.
+        Also, at each recursive step of the algorithm, we remove $2$ vertices from the graph.
         This means that the depth of the search tree is $\frac{n}{2}$.
         The running time of this search algorithm is then $O\left(n^\frac{n}{2}\right)$. \\
 
@@ -367,7 +381,7 @@ Here is an exhaustive list of all non-trivial experiment graphs' properties we a
             \end{algorithmic}
         \end{algorithm}
 
-        This algorithm visits all the nodes of $G_\mu^w$ only once.
+        This algorithm visits all the vertices of $G_\mu^w$ only once.
         Therefore, its complexity is $\mathcal{O}(n)$, where $n$ is the number of vertices of $G_\mu^w$.
 
 \end{enumerate}
@@ -483,7 +497,7 @@ An example of discovered perfectly monochromatic graph by the program is shown i
         \node [style=circle, fill=white, draw=black] (6) at (-8.869676734855019e-16,-4.82842712474619) {6};
         \node [style=circle, fill=white, draw=black] (7) at (3.414213562373094,-3.414213562373096) {7};
     \end{tikzpicture}
-    \caption{A perfectly monochromatic graph of size $8$ vertices, with a weighted matching index of $2$, discovered by EGPI during the experiment.}
+    \caption{A perfectly monochromatic graph $G_\mu^w$ with $8$ vertices that has a weighted matching index $\Tilde{c}(G, \mu, w) = 2$, discovered by EGPI during the experiment.}
     \label{fig:egpi_graph_example}
 \end{figure}
 
@@ -496,7 +510,7 @@ The probability that all these randomly generated edges and perfect matchings to
 
 The last thing I am interested in is to count bipartite graphs among all the perfectly monochromatic graphs found.
 The result is the following: \textbf{none} of the perfectly monochromatic graphs found were bipartite.
-This is an alluring new observation: indeed, it is consistent with the arguments we used in the proofs of Lemmas~\ref{lem:one_neg_edge} and~\ref{lem:2_positive_colour_classes_forbidden}.
+This is a very interesting new observation: indeed, it is consistent with the arguments we used in the proofs of Lemmas~\ref{lem:one_neg_edge} and~\ref{lem:2_positive_colour_classes_forbidden}.
 One of the observations these proofs used is that, in these particular cases, the perfectly monochromatic graphs found were not bipartite.
 This allows me to formulate the following conjecture.
 
@@ -522,13 +536,17 @@ EGPI is a tool that can still be improved in many ways.\\
 Firstly, currently it does not offer the functionality of generating only non-isomorphic graphs.
 This functionality could be interesting if the user wants to count the number of different graphs generated by the tool.
 This could be coded from scratch, or by using an external program.
-For instance, in Python, the package \textit{NetworkX} offers a function to check if $2$ graphs are isomorphic or not~\cite{networkx}.
+For instance, in Python, the package \textit{NetworkX} offers a function to check if two graphs are isomorphic or not~\cite{networkx}.
 A more common program used a lot in the field of graph theory is Nauty, a program originally designed by Brendan McKay~\cite{MCKAY201494}.
-Using it would offer a lot of advantages, but it would require to write a wrapper around it to use it in Python.
-Indeed, Nauty is written in C. \\
+Using it would offer a lot of advantages.\\
 
 A second improvement that could be brought to EGPI is to improve the efficiency of the algorithms used to find the perfect matchings of a graph.
 Indeed, this step bounds the efficiency of most of the tasks performed by EGPI\@.
 Improving this algorithm would allow the program to search more graphs in a given time, and to find more results in general.
-One idea to improve it could be to look at the Edmonds' Blossom algorithm, an algorithm to find a single perfect matching in a graph~\cite{Edmonds_1965}.
-It has to be determined whether this algorithm can be adapted to find all perfect matchings of a graph.\\
+However, doing so is a hard task, as the problem of finding all perfect matchings of a graph is known to be in the complexity class $\#\mathcal{P}$~cite{valiant1979complexity}, where $\#\mathcal{P}$ is the class of counting problems associated with $\mathcal{NP}$-time computations.
+Indeed, Valiant showed in 1979 that counting all the perfect matchings of a graph is equivalent to computing the permanent of a $(0, 1)$-matrix, which he proved to be a complete problem for the class $\#\mathcal{P}$~cite{valiant1979complexity}.\\
+
+At last, one more thing that could be improved in EGPI is its ability to check some properties in perfectly monochromatic graphs.
+For now, the program only checks if a graph is bipartite or not, and it already lead us to the intriguing observation that no discovered graphs were bipartite.
+It would be interesting to check other properties, such as the existence of Hamiltonian cycles, the chromatic index of the graphs for instance.
+This might lead to new interesting observations and conjectures to investigate in the future.

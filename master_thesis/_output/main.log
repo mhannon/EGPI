@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.18)  25 MAY 2024 23:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.18)  27 MAY 2024 18:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1970,7 +1970,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.26 ...}Functionalities of EGPI}{43}{section.4.3}
+l.26 ...}Functionalities of EGPI}{45}{section.4.3}
                                                   % [2
 
 {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
@@ -2015,12 +2015,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--27
 
 [1
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 28--34
+]) (./content/chapters/chapter1.tex
+Underfull \hbox (badness 10000) in paragraph at lines 28--2
 
  []
 
-) (./content/chapters/chapter1.tex [2]
+[2]
 Chapter 1.
 LaTeX Font Info:    Trying to load font information for OT1+pzc on input line 3
 .
@@ -2036,131 +2036,152 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--17
 
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
 nput line 22.
-[3
+(./figures/problem_presentation/definitions/simple_multi.tikz) [3
 
-] [4] (./figures/problem_presentation/definitions/H_i_j.tikz) [5
+]
+(./figures/problem_presentation/definitions/bipartite.tikz) [4
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1.1}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.150     \end{center}
-                      ]
-Overfull \hbox (1.35732pt too wide) in paragraph at lines 157--159
+l.89 \end{figure}
+                 ] [5
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1.2}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.138     \end{center}
+                      ] (./figures/problem_presentation/definitions/H_i_j.tikz)
+
+Overfull \hbox (1.35732pt too wide) in paragraph at lines 180--182
 \T1/futs/m/n/10.95 The stud-ied prob-lem in this mas-ter the-sis is cen-tered a
 bout the (non-)existence of match-
  []
 
-
-Overfull \hbox (23.2892pt too wide) in paragraph at lines 180--181
+[6
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1.3}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.192 \end{definition}
+                      ]
+(./figures/problem_presentation/definitions/perfect_matching.tikz)
+Overfull \hbox (23.2892pt too wide) in paragraph at lines 209--210
 \T1/futs/m/n/10.95 edge-coloured graph $\FML/futmi/m/it/10.95 G[]$ \T1/futs/m/n
 /10.95 is said to be \T1/futs/m/it/10.95 monochro-matic \T1/futs/m/n/10.95 if a
 ll its per-fect match-ings are monochro-
  []
 
-(./figures/problem_presentation/simplified/k4_pm.tikz) [6]
-Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
-t line 211.
-Package hyperref Info: bookmark level for unknown claim defaults to 0 on input 
-line 226.
-
-Underfull \hbox (badness 10000) in paragraph at lines 250--254
-
- []
-
-[7
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1.2}) 
+(./figures/problem_presentation/simplified/k4_pm.tikz) [7
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1.4}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.254 
+l.237 
       ]
-Overfull \hbox (5.26979pt too wide) in paragraph at lines 263--265
+Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
+t line 240.
+Package hyperref Info: bookmark level for unknown claim defaults to 0 on input 
+line 255.
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--283
+
+ []
+
+[8
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1.5}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.283 
+      ]
+Overfull \hbox (5.26979pt too wide) in paragraph at lines 292--294
 \T1/futs/m/n/10.95 arcs $\FML/futmi/m/it/10.95 H[]$ \T1/futs/m/n/10.95 and $\FM
 L/futmi/m/it/10.95 H[]$ \T1/futs/m/n/10.95 of odd lengths. Then we build a new 
 non-monochromatic
  []
 
-(./figures/problem_presentation/simplified/proof_odd.tikz) [8
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1.3}) 
+(./figures/problem_presentation/simplified/proof_odd.tikz) [9
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1.6}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.297             \end{center}
+l.326             \end{center}
                               ]
-(./figures/problem_presentation/simplified/proof_even.tikz) [9
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1.4}) 
+(./figures/problem_presentation/simplified/proof_even.tikz) [10
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1.7}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.344 
-      ] [10]
+l.373 
+      ] [11]
 (./figures/problem_presentation/krenn_conjecture/perfectly_mono.tikz)
 Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input 
-line 403.
+line 432.
 
-Overfull \hbox (7.54877pt too wide) in paragraph at lines 424--426
+Overfull \hbox (7.54877pt too wide) in paragraph at lines 453--455
 []\T1/futs/m/n/10.95 Because $\FML/futmi/m/it/10.95 G[]$ \T1/futs/m/n/10.95 is 
 monochro-matic, we know that all of its per-fect match-ings are monochro-
  []
 
-[11
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1.5}) 
+[12
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1.8}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.436     \end{center}
+l.465     \end{center}
                       ]
 Package hyperref Info: bookmark level for unknown conjecture defaults to 0 on i
-nput line 448.
+nput line 477.
 
-Overfull \hbox (7.3613pt too wide) in paragraph at lines 450--453
+Overfull \hbox (7.3613pt too wide) in paragraph at lines 479--482
 [][]\T1/futs/b/n/10.95 Conjecture 1.3.9 \T1/futs/m/n/10.95 (Krenn's con-jec-tur
 e)\T1/futs/b/n/10.95 . []\T1/futs/m/n/10.95 Let $\FML/futmi/m/it/10.95 G$ \T1/f
 uts/m/n/10.95 be a multi-graph, as de-fined in def-i-ni-tion []1.1.3[].
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 465--468
+Underfull \hbox (badness 10000) in paragraph at lines 494--497
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 469--476
+Underfull \hbox (badness 10000) in paragraph at lines 498--505
 
  []
 
-[12]
-Overfull \hbox (36.25497pt too wide) in paragraph at lines 477--481
+[13]
+Overfull \hbox (36.25497pt too wide) in paragraph at lines 506--510
 \T1/futs/m/n/10.95 These states are known to-day as GHZ-states, and were ex-per
 -i-men-tally ob-served in 1999 [[][]Bou+99[]].
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 477--481
+Underfull \hbox (badness 10000) in paragraph at lines 506--510
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 511--514
+Underfull \hbox (badness 10000) in paragraph at lines 542--545
 
  []
 
-[13]
-<figures/problem_presentation/motivations/krenn_graph.png, id=398, 315.5071pt x
+[14]
+<figures/problem_presentation/motivations/krenn_graph.png, id=413, 315.5071pt x
  377.52985pt>
 File: figures/problem_presentation/motivations/krenn_graph.png Graphic file (ty
 pe png)
 <use figures/problem_presentation/motivations/krenn_graph.png>
 Package pdftex.def Info: figures/problem_presentation/motivations/krenn_graph.p
-ng  used on input line 517.
+ng  used on input line 548.
 (pdftex.def)             Requested size: 220.85345pt x 264.26907pt.
 ) (./content/chapters/chapter2.tex
-Underfull \hbox (badness 10000) in paragraph at lines 528--1
+Underfull \hbox (badness 10000) in paragraph at lines 559--1
 
  []
 
-[14
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1.6}) 
+[15
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1.9}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -2168,76 +2189,67 @@ l.1 \chapter
             {State of the art} <./figures/problem_presentation/motivations/kren
 n_graph.png>]
 Chapter 2.
-[15
+[16
 
-] (./figures/state_of_the_art/non_redundant_induced_graph.tikz) [16]
+] (./figures/state_of_the_art/non_redundant_induced_graph.tikz) [17]
 Package hyperref Info: bookmark level for unknown observation defaults to 0 on 
-input line 85.
+input line 86.
 
-Underfull \hbox (badness 10000) in paragraph at lines 105--111
+Overfull \hbox (5.43286pt too wide) in paragraph at lines 88--90
+\T1/futs/m/n/10.95 graph, and let $[][]$ be its non-redundant in-duced sub-grap
+h. Then $[](\FML/futmi/m/it/10.95 G; ^^V; w\T1/futs/m/n/10.95 ) \FMS/futm/m/n/1
+0.95 Å []\T1/futs/m/n/10.95 (\FML/futmi/m/it/10.95 G[]; ^^V[]; w[]\T1/futs/m/n/
+10.95 )$. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--112
 
  []
 
-[17
+[18
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.111 
-      ] [18]
-Overfull \hbox (14.77672pt too wide) in paragraph at lines 154--155
+l.112 
+      ] [19]
+Overfull \hbox (14.77672pt too wide) in paragraph at lines 155--156
 []\T1/futs/m/n/10.95 This last ob-ser-va-tion is con-ve-nient since it al-lows 
 re-searchers to fo-cus on non-redundant
  []
 
-[19] (./figures/state_of_the_art/special_cases/c_not_c_tilde.tikz) [20]
-Underfull \hbox (badness 10000) in paragraph at lines 250--254
-
- []
-
-[21
-pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2}) 
-has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.254 
-      ] (./figures/state_of_the_art/known_bounds/proof_min_degree.tikz)
-Underfull \hbox (badness 10000) in paragraph at lines 295--300
+[20] (./figures/state_of_the_art/special_cases/c_not_c_tilde.tikz) [21]
+Underfull \hbox (badness 10000) in paragraph at lines 251--255
 
  []
 
 [22
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.255 
+      ] (./figures/state_of_the_art/known_bounds/proof_min_degree.tikz)
+(./figures/state_of_the_art/known_bounds/proof_lambda_odd.tikz) [23
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.3}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.301     $
-           \Tilde{c}(G)$ did not decrease, because the edges that have non-r...
-] (./figures/state_of_the_art/known_bounds/proof_lambda_odd.tikz) [23
+l.310 
+      ]
+Overfull \hbox (98.02611pt too wide) in paragraph at lines 326--332
+ []$ 
+ []
+
+(./figures/state_of_the_art/known_bounds/proof_lambda_even.tikz) [24
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.4}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.347             \begin{center}
-                                ]
-Overfull \hbox (98.02611pt too wide) in paragraph at lines 348--354
- []$ 
- []
-
-
-Overfull \hbox (2.25978pt too wide) in paragraph at lines 356--359
-[]\T1/futs/m/n/10.95 Clearly, $[](\FML/futmi/m/it/10.95 G[]\T1/futs/m/n/10.95 )
- \FMS/futm/m/n/10.95 Å []\T1/futs/m/n/10.95 (\FML/futmi/m/it/10.95 G\T1/futs/m/
-n/10.95 ) \FMS/futm/m/n/10.95 Å \FML/futmi/m/it/10.95 r \FMS/futm/m/n/10.95 Ä \
-FML/futmi/m/it/10.95 r[]$\T1/futs/m/n/10.95 . For all colours $\FML/futmi/m/it/
-10.95 i \FMS/futm/m/n/10.95 2 \T1/futs/m/n/10.95 [\FML/futmi/m/it/10.95 r \FMS/
-futm/m/n/10.95 Ä \T1/futs/m/n/10.95 1\FML/futmi/m/it/10.95 ; r \FMS/futm/m/n/10
-.95 Ä \FML/futmi/m/it/10.95 r[]\T1/futs/m/n/10.95 ]$, there ex-ists a monochro-
-
- []
-
-(./figures/state_of_the_art/known_bounds/proof_lambda_even.tikz)
-Overfull \hbox (7.5216pt too wide) in paragraph at lines 398--399
+l.343 
+      ]
+Overfull \hbox (7.5216pt too wide) in paragraph at lines 376--377
 [][]\T1/futs/b/n/10.95 Claim 2.2.3. []\T1/futs/m/n/10.95 There should be at lea
 st two mixed edges of colour $(1\FML/futmi/m/it/10.95 ; \T1/futs/m/n/10.95 2)$ 
 in $\FML/futmi/m/it/10.95 E\T1/futs/m/n/10.95 (\FML/futmi/m/it/10.95 S; S[]\T1/
@@ -2245,40 +2257,42 @@ futs/m/n/10.95 )$.
  []
 
 
-Overfull \hbox (12.32227pt too wide) in paragraph at lines 402--409
+Overfull \hbox (12.32227pt too wide) in paragraph at lines 380--387
 []\T1/futs/m/n/10.95 By con-tra-dic-tion, sup-pose not. Let's con-sider 2 monoc
 hro-
  []
 
 
-Overfull \hbox (12.53886pt too wide) in paragraph at lines 402--409
+Overfull \hbox (12.53886pt too wide) in paragraph at lines 380--387
 \T1/futs/m/n/10.95 matic per-fect match-ings $\FML/futmi/m/it/10.95 M[]$ \T1/fu
 ts/m/n/10.95 and $\FML/futmi/m/it/10.95 M[]$ \T1/futs/m/n/10.95 of colour $1$ a
 nd $2$ that in-duce the monochro-
  []
 
-[24
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--396
+
+ []
+
+[25
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.5}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.409 
-      ]
-Underfull \hbox (badness 10000) in paragraph at lines 417--418
-
- []
-
+l.397                         N
+                               ow let's consider a non-monochromatic vertex ...
+]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 439.
+(amsmath)                 on input line 417.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 457--459
+Underfull \hbox (badness 10000) in paragraph at lines 435--437
 
  []
 
-[25]) (./content/chapters/chapter3.tex [26]
+) (./content/chapters/chapter3.tex [26] [27]
 Chapter 3.
 
 Underfull \hbox (badness 10000) in paragraph at lines 4--9
@@ -2290,7 +2304,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--46
 
  []
 
-[27
+[28
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 47--53
@@ -2302,34 +2316,57 @@ Overfull \hbox (58.73587pt too wide) in paragraph at lines 63--70
  []$ 
  []
 
-[28
+[29
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.102 
-      ] [29] (./figures/new_results/2_pos_classes/2_pos_classes_ham_cycle.tikz)
-[30] [31
+      ] [30] (./figures/new_results/2_pos_classes/2_pos_classes_ham_cycle.tikz)
+[31] [32
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.2}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.220     \end{center}
                       ]
-(./figures/new_results/2_pos_classes/2_pos_classes_odd_crossings.tikz) [32
+(./figures/new_results/2_pos_classes/2_pos_classes_odd_crossings.tikz)
+Overfull \hbox (22.97644pt too wide) in paragraph at lines 237--244
+\T1/futs/m/n/10.95 ing a no-ta-tion in-tro-duced in def-i-ni-tion []1.3.3[]). T
+here-fore, $\FMS/futm/m/n/10.95 9$ \T1/futs/m/n/10.95 an-other non-monochromati
+c
+ []
+
+
+Overfull \hbox (9.7526pt too wide) in paragraph at lines 237--244
+\T1/futs/m/n/10.95 per-fect match-ing $\FML/futmi/m/it/10.95 N[] \FMS/futm/m/n/
+10.95 2 M[]\T1/futs/m/n/10.95 (\FML/futmi/m/it/10.95 N\T1/futs/m/n/10.95 )$ (us
+-ing no-ta-tions in-tro-duced in []1.3.4[]) such that $\FML/futmi/m/it/10.95 w\
+T1/futs/m/n/10.95 (\FML/futmi/m/it/10.95 N[]\T1/futs/m/n/10.95 ) \FMS/futm/m/n/
+10.95 Ç
+ []
+
+
+Overfull \hbox (22.97644pt too wide) in paragraph at lines 249--256
+\T1/futs/m/n/10.95 ing a no-ta-tion in-tro-duced in def-i-ni-tion []1.3.3[]). T
+here-fore, $\FMS/futm/m/n/10.95 9$ \T1/futs/m/n/10.95 an-other non-monochromati
+c
+ []
+
+[33
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.3}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.261         \item $
-                     \forall e \in E(G_\eta^w)$, $w(e) \in \mathbb{R}$.]
-Overfull \hbox (11.24527pt too wide) in paragraph at lines 267--271
-\T1/futs/m/n/10.95 and []3.2.2[], we build a Hamil-to-nian cy-cle that has two 
-colours and build non-monochromatic
+l.262 \begin{lemma}[One negative edge allowed]
+                                              ]
+Overfull \hbox (4.67526pt too wide) in paragraph at lines 274--280
+\T1/futs/m/n/10.95 and []3.2.2[], we find a Hamil-to-nian cy-cle formed of $2$ 
+dis-tinct monochro-matic per-fect match-
  []
 
 
-Overfull \hbox (11.49265pt too wide) in paragraph at lines 281--287
+Overfull \hbox (11.49265pt too wide) in paragraph at lines 290--296
 []\T1/futs/m/n/10.95 If $\FML/futmi/m/it/10.95 G[]$ \T1/futs/m/n/10.95 has ex-a
 ctly one neg-a-tive weight: let $\FML/futmi/m/it/10.95 M[]$\T1/futs/m/n/10.95 ,
  $\FML/futmi/m/it/10.95 M[]$ \T1/futs/m/n/10.95 and $\FML/futmi/m/it/10.95 M[]$
@@ -2337,28 +2374,28 @@ ctly one neg-a-tive weight: let $\FML/futmi/m/it/10.95 M[]$\T1/futs/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 291--295
+Underfull \hbox (badness 10000) in paragraph at lines 300--304
 
  []
 
-[33] (./figures/new_results/unique_neg/one_neg_edge.tikz)
-Underfull \hbox (badness 10000) in paragraph at lines 329--333
+[34] (./figures/new_results/unique_neg/one_neg_edge.tikz)
+Underfull \hbox (badness 10000) in paragraph at lines 338--342
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 339--343
-
- []
-
-[34
+[35
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.4}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.343 
+l.347 
       ]
-Overfull \hbox (0.71649pt too wide) in paragraph at lines 349--353
+Underfull \hbox (badness 10000) in paragraph at lines 348--352
+
+ []
+
+
+Overfull \hbox (0.71649pt too wide) in paragraph at lines 358--362
 []\T1/futs/m/n/10.95 If $\FML/futmi/m/it/10.95 e[] \FMS/futm/m/n/10.95 õ []$\T1
 /futs/m/n/10.95 , then $\FML/futmi/m/it/10.95 w\T1/futs/m/n/10.95 (\FML/futmi/m
 /it/10.95 N\T1/futs/m/n/10.95 ) \FMS/futm/m/n/10.95 É \T1/futs/m/n/10.95 0$. Bu
@@ -2369,67 +2406,72 @@ t $\FML/futmi/m/it/10.95 w\T1/futs/m/n/10.95 (\FML/futmi/m/it/10.95 ^^T\T1/futs
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--353
+Underfull \hbox (badness 10000) in paragraph at lines 358--362
 
  []
 
 
-Overfull \hbox (5.79245pt too wide) in paragraph at lines 357--358
+Overfull \hbox (5.79245pt too wide) in paragraph at lines 366--367
 []\T1/futs/m/n/10.95 Also, $\FML/futmi/m/it/10.95 e[] \FMS/futm/m/n/10.95 6Å []
 $\T1/futs/m/n/10.95 , since it would im-ply again the ex-is-tence of a $\FML/fu
 tmi/m/it/10.95 b$\T1/futs/m/n/10.95 -coloured
  []
 
-[35] (./figures/new_results/2_pos_classes/2_pos_classes_proof.tikz)
-Overfull \hbox (0.5401pt too wide) in paragraph at lines 426--428
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 406--409
+
+ []
+
+(./figures/new_results/2_pos_classes/2_pos_classes_proof.tikz) [37]
+Overfull \hbox (0.5401pt too wide) in paragraph at lines 441--443
 []\T1/futs/m/n/10.95 We no-tice that $\FML/futmi/m/it/10.95 N \FMS/futm/m/n/10.
 95 n f\FML/futmi/m/it/10.95 e; e[]\FMS/futm/m/n/10.95 g$ \T1/futs/m/n/10.95 has
  only $\FML/futmi/m/it/10.95 r$ \T1/futs/m/n/10.95 and $\FML/futmi/m/it/10.95 g
 $\T1/futs/m/n/10.95 -coloured edges, which have pos-i-tive weights.
  []
 
-[36
+
+Underfull \hbox (badness 10000) in paragraph at lines 447--449
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 457--459
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 460--464
+
+ []
+
+[38
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.5}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.428 
-      ]
-Underfull \hbox (badness 10000) in paragraph at lines 432--434
+l.464 
+      ] [39]
+Underfull \hbox (badness 10000) in paragraph at lines 515--518
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 442--444
+Underfull \hbox (badness 10000) in paragraph at lines 526--529
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 445--449
-
- []
-
-[37]
-Underfull \hbox (badness 10000) in paragraph at lines 499--502
+Underfull \hbox (badness 10000) in paragraph at lines 530--532
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 510--513
+Underfull \hbox (badness 10000) in paragraph at lines 552--554
 
  []
 
-[38]
-Underfull \hbox (badness 10000) in paragraph at lines 514--516
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 536--538
-
- []
-
-) (./content/chapters/chapter4.tex [39]
+[40]) (./content/chapters/chapter4.tex [41]
 Chapter 4.
 
 Overfull \hbox (0.30615pt too wide) in paragraph at lines 24--28
@@ -2442,130 +2484,133 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--28
 
  []
 
-[40
+[42
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 44--47
+Underfull \hbox (badness 10000) in paragraph at lines 54--58
+
+ []
+
+[43]
+Underfull \hbox (badness 10000) in paragraph at lines 84--86
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 70--72
-
+Overfull \hbox (1.39377pt too wide) in paragraph at lines 122--125
+\T1/futs/m/n/10.95 needed to ver-ify to prove it by us-ing al-go-rithm $\FML/fu
+tmi/m/it/10.95 A$\T1/futs/m/n/10.95 . The graphs de-scribed in con-jec-ture []4
+.2.1[]
  []
-
-[41]
-Underfull \hbox (badness 10000) in paragraph at lines 120--122
-
- []
-
-[42] [43]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 153.
-
-
-LaTeX Warning: Reference `def:non_redundant_induced_subgraph' on page 44 undefi
-ned on input line 193.
 
 [44]
-Underfull \hbox (badness 10000) in paragraph at lines 215--217
+Underfull \hbox (badness 10000) in paragraph at lines 134--136
+
+ []
+
+[45]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 167.
+ [46]
+Underfull \hbox (badness 10000) in paragraph at lines 229--231
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--223
+Underfull \hbox (badness 10000) in paragraph at lines 232--237
 
  []
 
-<figures/new_results/egpi/structure_diagram.png, id=798, 1723.43875pt x 1721.43
+[47]
+<figures/new_results/egpi/structure_diagram.png, id=825, 1723.43875pt x 1721.43
 124pt>
 File: figures/new_results/egpi/structure_diagram.png Graphic file (type png)
 <use figures/new_results/egpi/structure_diagram.png>
 Package pdftex.def Info: figures/new_results/egpi/structure_diagram.png  used o
-n input line 230.
+n input line 244.
 (pdftex.def)             Requested size: 430.85863pt x 430.35677pt.
 
-Overfull \hbox (32.52003pt too wide) in paragraph at lines 230--231
+Overfull \hbox (32.52003pt too wide) in paragraph at lines 244--245
  [][] 
  []
 
-[45]
-Underfull \hbox (badness 10000) in paragraph at lines 264--270
-
- []
-
-[46
+[48
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.270 
+l.253 
        <./figures/new_results/egpi/structure_diagram.png>]
-Overfull \hbox (6.73412pt too wide) in paragraph at lines 317--340
+Underfull \hbox (badness 10000) in paragraph at lines 278--284
+
+ []
+
+[49]
+Overfull \hbox (6.73412pt too wide) in paragraph at lines 331--354
 []\T1/futs/b/n/10.95 The weighted match-ing in-dex of the graph: \T1/futs/m/n/1
 0.95 de-fined in def-i-ni-tion []1.3.7[], the weighted
  []
 
-[47]
-Underfull \hbox (badness 10000) in paragraph at lines 379--380
+[50]
+Underfull \hbox (badness 10000) in paragraph at lines 393--394
 
  []
 
-[48]
-Overfull \hbox (18.86108pt too wide) in paragraph at lines 396--399
+[51]
+Overfull \hbox (18.86108pt too wide) in paragraph at lines 410--413
 []\T1/futs/m/n/10.95 On all the $21$ mil-lions gen-er-ated can-di-date graphs, 
 none of them was per-fectly monochro-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 396--399
+Underfull \hbox (badness 10000) in paragraph at lines 410--413
 
  []
 
-[49]
-Underfull \hbox (badness 10000) in paragraph at lines 404--407
+
+Underfull \hbox (badness 10000) in paragraph at lines 418--421
 
  []
 
-[50
+[52
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.489 
+l.453 
       ]
-Underfull \hbox (badness 10000) in paragraph at lines 490--496
+Underfull \hbox (badness 10000) in paragraph at lines 504--510
 
  []
 
 
-Overfull \hbox (8.85086pt too wide) in paragraph at lines 497--502
+Overfull \hbox (8.85086pt too wide) in paragraph at lines 511--516
 \T1/futs/m/n/10.95 monochro-matic graphs found. The re-sult is the fol-low-ing:
  \T1/futs/b/n/10.95 none \T1/futs/m/n/10.95 of the per-fectly monochro-
  []
 
-[51
+[53
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.3}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.507         \item $
-                     \Tilde{c}(G, \mu, w) \geq 2$]
-Underfull \hbox (badness 10000) in paragraph at lines 520--521
+l.518     \label
+                {con:bipartite_perfectly_monochromatic}]
+Underfull \hbox (badness 10000) in paragraph at lines 534--535
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 522--529
+Underfull \hbox (badness 10000) in paragraph at lines 536--542
 
  []
 
-) (./content/chapters/conclusion.tex
-Underfull \hbox (badness 10000) in paragraph at lines 530--2
+
+Underfull \hbox (badness 10000) in paragraph at lines 543--548
 
  []
 
-[52]
+) (./content/chapters/conclusion.tex [54] [55]
 Overfull \hbox (1.87198pt too wide) in paragraph at lines 6--11
 \T1/futs/m/n/10.95 tween this con-jec-ture and quan-tum physics, in-ves-ti-gate
 d for the first time by Mario Krenn
@@ -2581,25 +2626,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--17
 
  []
 
-[53
+
+Overfull \hbox (7.36156pt too wide) in paragraph at lines 18--25
+\T1/futs/m/n/10.95 cases were in-ter-est-ing to study. By do-ing so, we dis-cov
+-ered that the study of non-redundant
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--29
+
+ []
+
+[56
 
 ]) (./content/chapters/acknowledgements.tex
 Underfull \hbox (badness 10000) in paragraph at lines 31--2
 
  []
 
-[54]
+[57]
 Underfull \hbox (badness 10000) in paragraph at lines 6--9
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 10--13
+Underfull \hbox (badness 10000) in paragraph at lines 10--12
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--16
+Underfull \hbox (badness 10000) in paragraph at lines 13--16
 
  []
 
@@ -2609,7 +2665,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--39
  []
 
 (/Users/Merlin/PycharmProjects/EGPI/master_thesis/_output/main.gls)
-(/Users/Merlin/PycharmProjects/EGPI/master_thesis/_output/main.acr) [55
+(/Users/Merlin/PycharmProjects/EGPI/master_thesis/_output/main.acr) [58
 
 ]
 (/Users/Merlin/PycharmProjects/EGPI/master_thesis/_output/main.loe
@@ -2642,9 +2698,14 @@ Overfull \hbox (4.55519pt too wide) detected at line 16
 \T1/futs/m/n/10.95 1.1.15 
  []
 
-[56
 
-]) [57]
+Overfull \hbox (4.55519pt too wide) detected at line 17
+\T1/futs/m/n/10.95 1.1.16 
+ []
+
+[59
+
+]) [60]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
 8.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/base/t1cmtt.fd
@@ -2667,15 +2728,15 @@ Overfull \hbox (5.76753pt too wide) in paragraph at lines 50--50
  []$\T1/cmtt/m/n/10.95 2202 . 05562$ [cs.DM][]\T1/futs/m/n/10.95 . 
  []
 
+[61
 
+]
 Overfull \hbox (8.09122pt too wide) in paragraph at lines 50--50
 [][]\T1/futs/m/n/10.95 Einstein, A., B. Podol-sky, and N. Rosen (May 1935). ^^P
   Can Quantum-Mechanical
  []
 
-[58
 
-]
 Overfull \hbox (16.51717pt too wide) in paragraph at lines 50--50
 [][]\T1/futs/m/n/10.95 Gu, Xue-mei and Mario Krenn (2020). ^^P  Com-pact Green-
 berger^^VHorne^^VZeilinger
@@ -2707,7 +2768,7 @@ Overfull \hbox (3.24687pt too wide) in paragraph at lines 50--50
 ti-cal graph iso-mor-phism,
  []
 
-[59]
+[62]
 Overfull \hbox (0.1814pt too wide) in paragraph at lines 50--50
 [][]\T1/futs/m/n/10.95 Siegel, Ethan (2020). ^^P  No, We Still Can't Use Quan-t
 um En-tan-gle-ment To Com-
@@ -2719,7 +2780,7 @@ Overfull \hbox (5.24577pt too wide) in paragraph at lines 50--50
 oton en-tan-gle-ment^^Q. In: \T1/futs/m/it/10.95 Phys-
  []
 
-[60]
+[63]
 \tf@loe=\write10
 \openout10 = `main.loe'.
 
@@ -2728,21 +2789,17 @@ oton en-tan-gle-ment^^Q. In: \T1/futs/m/it/10.95 Phys-
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B93BC0E7FDF1469141951368EABB1E0B;6736.
+(rerunfilecheck)             Checksum: 15A2C35CB953D24E9E959FDED849F380;6736.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56810 strings out of 474116
- 1255187 string characters out of 5743682
- 2295846 words of memory out of 5000000
- 77796 multiletter control sequences out of 15000+600000
+ 56859 strings out of 474116
+ 1256817 string characters out of 5743682
+ 2296531 words of memory out of 5000000
+ 77825 multiletter control sequences out of 15000+600000
  629905 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,12n,121p,2365b,2348s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2761,10 +2818,10 @@ ive/2024/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texliv
 e/2024/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/
 2024/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
 Output written on /Users/Merlin/PycharmProjects/EGPI/master_thesis/_output/main
-.pdf (63 pages, 1933187 bytes).
+.pdf (66 pages, 1933300 bytes).
 PDF statistics:
- 1140 PDF objects out of 1200 (max. 8388607)
- 1025 compressed objects within 11 object streams
- 291 named destinations out of 1000 (max. 500000)
+ 1174 PDF objects out of 1200 (max. 8388607)
+ 1056 compressed objects within 11 object streams
+ 302 named destinations out of 1000 (max. 500000)
  289 words of extra memory for PDF output out of 10000 (max. 10000000)
 
