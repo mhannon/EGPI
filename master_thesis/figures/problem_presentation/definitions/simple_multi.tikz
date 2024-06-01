@@ -1,0 +1,32 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=white dot] (0) at (-2.5, 0.5) {};
+		\node [style=white dot] (1) at (-6.5, 0.5) {};
+		\node [style=white dot] (2) at (-4.5, 2) {};
+		\node [style=white dot] (3) at (-5.5, -1.5) {};
+		\node [style=white dot] (4) at (-3.5, -1.5) {};
+		\node [style=white dot] (5) at (6.5, 0.5) {};
+		\node [style=white dot] (6) at (2.5, 0.5) {};
+		\node [style=white dot] (7) at (4.5, 2) {};
+		\node [style=white dot] (8) at (3.5, -1.5) {};
+		\node [style=white dot] (9) at (5.5, -1.5) {};
+		\node [style=none] (10) at (-6.5, 2) {$G$};
+		\node [style=none] (11) at (2.5, 2) {$G'$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (1) to (2);
+		\draw (3) to (0);
+		\draw (0) to (4);
+		\draw (4) to (1);
+		\draw (2) to (0);
+		\draw [bend right] (6) to (7);
+		\draw [bend right] (7) to (6);
+		\draw (7) to (5);
+		\draw (9) to (6);
+		\draw [bend left=15] (9) to (6);
+		\draw [bend right=15] (9) to (6);
+		\draw (5) to (8);
+		\draw (9) to (7);
+		\draw (4) to (2);
+	\end{pgfonlayer}
+\end{tikzpicture}
