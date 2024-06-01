@@ -1,18 +1,18 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'main.blg'
-[22] biber-darwin:340> INFO - === Mon May 27, 2024, 18:59:06
-[28] Biber.pm:419> INFO - Reading 'main.bcf'
-[56] Biber.pm:976> INFO - Using all citekeys in bib section 0
-[61] Biber.pm:4419> INFO - Processing section 0
-[64] Biber.pm:4610> INFO - Looking for bibtex file 'biblio.bib' for section 0
-[65] bibtex.pm:1713> INFO - LaTeX decoding ...
-[75] bibtex.pm:1519> INFO - Found BibTeX data source '/Users/Merlin/PycharmProjects/EGPI/master_thesis/biblio.bib'
-[150] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[150] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[150] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[150] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
-[162] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[167] bbl.pm:763> INFO - Output to main.bbl
-[167] Biber.pm:131> WARN - legacy month field 'May' in entry 'EPR' is not an integer - this will probably not sort properly.
-[167] Biber.pm:131> WARN - legacy month field 'Feb' in entry 'PathIdentity' is not an integer - this will probably not sort properly.
-[167] Biber.pm:133> INFO - WARNINGS: 2
+[23] biber-darwin:340> INFO - === Sat Jun  1, 2024, 13:02:00
+[30] Biber.pm:419> INFO - Reading 'main.bcf'
+[58] Biber.pm:976> INFO - Using all citekeys in bib section 0
+[63] Biber.pm:4419> INFO - Processing section 0
+[67] Biber.pm:4610> INFO - Looking for bibtex file 'biblio.bib' for section 0
+[68] bibtex.pm:1713> INFO - LaTeX decoding ...
+[78] bibtex.pm:1519> INFO - Found BibTeX data source '/Users/Merlin/PycharmProjects/EGPI/master_thesis/biblio.bib'
+[151] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[151] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[151] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[151] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[164] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[169] bbl.pm:763> INFO - Output to main.bbl
+[169] Biber.pm:131> WARN - legacy month field 'Feb' in entry 'PathIdentity' is not an integer - this will probably not sort properly.
+[169] Biber.pm:131> WARN - legacy month field 'May' in entry 'EPR' is not an integer - this will probably not sort properly.
+[169] Biber.pm:133> INFO - WARNINGS: 2

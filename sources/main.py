@@ -195,7 +195,9 @@ def main():
     research process and performs it.
     :return: None
     """
-
+    print("--- EGPI ---")
+    results_folder = input(
+        "Enter the folder's name where the results of the experiment will be stored: ")
     number_of_graphs = int(input(
         "Enter the number of candidate graphs to generate per experiment: "))
     numbers_of_nodes = [int(x) for x in input(
@@ -215,7 +217,7 @@ def main():
                                       colours,
                                       weights,
                                       complexity_bounds,
-                                      "results")
+                                      results_folder)
 
 
 if __name__ == "__main__":
